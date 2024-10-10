@@ -10,11 +10,11 @@ import rehypeStringify from 'rehype-stringify';
 
 
 
+
+
 export async function getStaticProps() {
   const slug = 'documentation';
   const page = await fetchPageData(slug); // Use the correct slug
-
-  console.log(page, 'Page');
 
   if (!page || page.length === 0 || !page.content) {
     return {
@@ -28,7 +28,7 @@ export async function getStaticProps() {
                           .use(remarkRehype)
                           .use(rehypeStringify)
 
-  const { content, data } = matter(page.content);
+  const { content } = matter(page.content);
 
 const htmlContent = (await processor.process(content)).toString();
 
@@ -45,7 +45,7 @@ const htmlContent = (await processor.process(content)).toString();
 export default function DocumentPage({ htmlContent }) {
   return (
     <div className='w-full'>
-      <div className='prose dark:prose-h1:text-white' dangerouslySetInnerHTML={{__html: htmlContent}}></div>
+      <div className='prose dark:prose-invert' dangerouslySetInnerHTML={{__html: htmlContent}}></div>
       <Pagination
         pages={pages}
       />
