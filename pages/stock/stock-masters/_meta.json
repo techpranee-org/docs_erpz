@@ -1,0 +1,13 @@
+{
+    "stock-masters": "Introduction Stock Masters",
+    "item": "Item",
+    "item-group": "Item Group",
+    "brand": "Brand",
+    "product-bundle": "Product Bundle",
+    "item-alternative": "Item Alternative",
+    "manufacturer": "Manufacturer",
+    "item-variants": "Item Variants",
+    "item-attribute": "Item Attribute",
+    "uom": "UOM",
+    "fractions-uom": "Fractions UOM"
+}

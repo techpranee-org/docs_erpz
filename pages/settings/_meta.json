@@ -1,0 +1,9 @@
+{
+    "core-settings": "Core Settings",
+    "module-settings": "Module Settings",
+    "email-settings": "Email Settings",
+    "document-naming": "Document Naming",
+    "workflow": "Workflow",
+    "printing": "Printing",
+    "automation": "Automation"
+}

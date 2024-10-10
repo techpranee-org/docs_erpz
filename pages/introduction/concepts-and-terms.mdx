@@ -1,0 +1,425 @@
+import Pagination from '../../components/Pagination';
+import pages from '../../utils/order';
+import { Callout } from 'nextra/components'
+
+
+# Concepts and Terms
+
+Before you start implementing ERPZ, let's get familiar with the terminology used and some basic concepts in ERPZ.
+
+## Basic Concepts
+
+### Company
+Represents the company records for which ERPZ is set up. You can create multiple company records, each representing a different legal entity. The accounting for each company will be different, but they will share the customer, supplier, and item records.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Setup > Company`
+</Callout>
+
+
+### Customer
+Represents a customer, which can be either an individual or an organization. You can create multiple contacts and addresses for each customer.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Customer`
+</Callout>
+
+
+### Supplier
+Represents a supplier of goods or services. Your telecommunications company is a supplier, as is your raw materials supplier. A supplier can also be an individual or an organization and can have multiple contacts and addresses.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Buying > Supplier`
+</Callout>
+
+
+### Item
+A product, sub-product, or service that is either bought, sold, or manufactured and is uniquely identified.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Item`
+</Callout>
+
+
+### Account
+An account is a heading under which financial and business transactions are conducted. Examples of accounts include "Debtors", "Creditors", "VAT Payable", “Travel Expenses”, "Sales", and "Share Capital". ERPZ tracks customer and supplier balances in the background, so you don’t need to create dedicated accounts for them.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Accounting > Chart of Accounts`
+</Callout>
+
+
+### Address
+An address represents the location details of a customer or supplier. These can be different locations such as Head Office, Factory, Warehouse, or Shop.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Address`
+</Callout>
+
+
+### Contact
+An individual contact associated with a customer or supplier, or an independent contact. A contact has a name and contact details like email and phone number.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Contact`
+</Callout>
+
+
+### Communication
+A list of all communications with a contact or lead. All emails sent from the system are added to the communication table.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Support > Communication`
+</Callout>
+
+
+### Price List
+A price list is a place where different rate plans can be stored. It’s a name you give to a set of item prices stored under a particular list.
+
+<Callout type="info" emoji="ℹ️">
+  - `Selling > Price List`
+  - `Buying > Price List`
+</Callout>
+
+
+## Accounting Concepts
+
+### Fiscal Year
+Represents a financial year or accounting year. You can operate multiple fiscal years simultaneously. Each fiscal year has a start date and an end date, and transactions can only be recorded within this period. When you close a fiscal year, its balances are transferred as “opening” balances for the next fiscal year.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Setup > Company > Fiscal Year`
+</Callout>
+
+
+### Cost Center
+A cost center is like an account, but its structure represents your business more closely than accounts. In your chart of accounts, you can separate your expenses by type (i.e., travel, marketing, etc.), while in your chart of cost centers, you can separate them by product line or business group (e.g., online sales, retail sales, etc.).
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Accounting > Chart of Cost Centers`
+</Callout>
+
+
+### Journal Entry
+A document that contains general ledger (GL) entries, where the sum of debits and credits is the same. In ERPZ, you can update payments, returns, etc., using journal entries.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Accounting > Journal Entry`
+</Callout>
+
+
+### Sales Invoice
+A bill sent to customers for the delivery of items (goods or services).
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Accounting > Sales Invoice`
+</Callout>
+
+
+### Purchase Invoice
+A bill sent by a supplier for the delivery of items (goods or services).
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Accounting > Purchase Invoice`
+</Callout>
+
+
+### Currency
+ERPZ allows you to book transactions in multiple currencies. However, there is only one currency for your book of accounts. When posting invoices with payments in different currencies, the amount is converted to the default currency using the specified conversion rate.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Setup > Currency`
+</Callout>
+
+
+## Selling Concepts
+
+### Customer Group
+A classification of customers, usually based on market segment.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Setup > Customer Group`
+</Callout>
+
+
+### Lead
+A person who could be a future source of business. A lead may generate opportunities.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `CRM > Lead`
+</Callout>
+
+
+### Opportunity
+A potential sale.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `CRM > Opportunity`
+</Callout>
+
+
+### Quotation
+A customer's request to price an item or service.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Quotation`
+</Callout>
+
+
+### Sales Order
+A note confirming the terms of delivery and price of an item (product or service) by the customer. Deliveries, work orders, and invoices are generated based on sales orders.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Sales Order`
+</Callout>
+
+
+### Territory
+A geographical area classification for sales management. You can set targets for territories, and each sale is linked to a territory.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Setup > Territory`
+</Callout>
+
+
+### Sales Partner
+A third-party distributor, dealer, affiliate, or commission agent who sells the company’s products, usually for a commission.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Setup > Sales Partner`
+</Callout>
+
+
+### Sales Person
+Someone who pitches to the customer and closes deals. You can set targets for salespersons and tag them in transactions.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Selling > Setup > Sales Person`
+</Callout>
+
+
+## Buying Concepts
+
+### Purchase Order
+A contract given to a supplier to deliver the specified items at the specified cost, quantity, dates, and other terms.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Buying > Purchase Order`
+</Callout>
+
+
+### Material Request
+A request made by a system user or automatically generated by ERPZ based on reorder level or projected quantity in the production plan for purchasing a set of items.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Buying > Material Request`
+</Callout>
+
+
+## Stock (Inventory) Concepts
+
+### Warehouse
+A logical warehouse against which stock entries are made.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Warehouse`
+</Callout>
+
+
+### Stock Entry
+Material transfer from one warehouse to another.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Stock Entry`
+</Callout>
+
+
+### Delivery Note
+A list of items with quantities for shipment. A delivery note will reduce the stock of items from the warehouse from which you ship. A delivery note is usually created against a sales order.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Delivery Note`
+</Callout>
+
+
+### Purchase Receipt
+A note stating that a particular set of items were received from the supplier, usually against a purchase order.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Purchase Receipt`
+</Callout>
+
+
+### Serial Number
+A unique number assigned to a specific unit of an item.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Serial Number`
+</Callout>
+
+
+### Batch
+A number assigned to a group of units of a particular item that may be purchased or manufactured together.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Batch`
+</Callout>
+
+### Stock Ledger Entry
+A unified table for all material movement from one warehouse to another. This table is updated when stock entries, delivery notes, purchase receipts, and sales invoices (POS) are created.
+
+### Stock Reconciliation
+Update the stock of multiple items from a spreadsheet (CSV) file.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Stock Reconciliation`
+</Callout>
+
+
+### Quality Inspection
+A note prepared to record specific parameters of an item at the time of receipt from a supplier or delivery to a customer.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Quality Inspection`
+</Callout>
+
+
+### Item Group
+A classification of items.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Stock > Setup > Item Group`
+</Callout>
+
+
+## Human Resource Management Concepts
+
+### Employee
+Record of a person who has been or is currently employed by the company.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Employee`
+</Callout>
+
+
+### Leave Application
+A record of an approved or rejected request for leave.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Leave Application`
+</Callout>
+
+
+### Leave Type
+A type of leave (e.g., Sick Leave, Maternity Leave, etc.).
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Leave and Attendance > Leave Type`
+</Callout>
+
+
+### Payroll Entry
+A tool for creating multiple salary slips for employees.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Payroll Entry`
+</Callout>
+
+
+### Salary Slip
+A record of the monthly salary given to an employee.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Salary Slip`
+</Callout>
+
+
+### Salary Structure
+A template identifying all the components of an employee's salary (earnings), taxes, and other social security deductions.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Salary and Payroll > Salary Structure`
+</Callout>
+
+
+### Appraisal
+A record of an employee's performance over a specified period based on certain parameters.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Appraisal`
+</Callout>
+
+
+### Appraisal Template
+A template recording the different parameters of an employee's performance and their weightage for a particular role.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Employee Setup > Appraisal Template`
+</Callout>
+
+
+### Attendance
+A record indicating the presence or absence of an employee on a particular day.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Human Resources > Attendance`
+</Callout>
+
+
+## Manufacturing Concepts
+
+### Bill of Materials (BOM)
+A list of operations and items with their quantities required to produce another item. A BOM is used for planning purchases and product costing.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Manufacturing > BOM`
+</Callout>
+
+
+### Workstation
+A location where a BOM operation takes place, useful for calculating the direct cost of the product.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Manufacturing > Workstation`
+</Callout>
+
+
+### Work Order
+A document signaling the production (manufacture) of a specific item with specified quantities.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Manufacturing > Work Order`
+</Callout>
+
+
+### Production Planning Tool
+A tool for the automatic creation of work orders and purchase requests based on open sales orders within a given period.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Manufacturing > Production Planning Tool`
+</Callout>
+
+
+## Website Concepts
+
+### Blog Post
+A short article that appears in the “Blog” section of the website generated from the ERPZ website module.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Website > Blog Post`
+</Callout>
+
+
+### Web Page
+A web page with a unique URL (web address) on the website generated from ERPZ.
+
+<Callout type="info" emoji="ℹ️">
+  **Path**: `Website`
+</Callout>
+
+
+
+
+<Pagination
+  pages={pages}
+/>

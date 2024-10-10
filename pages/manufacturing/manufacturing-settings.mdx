@@ -1,0 +1,93 @@
+import Pagination from '../../components/Pagination';
+import pages from '../../utils/order';
+import { Callout } from 'nextra/components';
+
+
+# Manufacturing Settings in ERPZ
+
+Manufacturing settings in ERPZ help configure production workflows, manage Bills of Materials (BOM), track work orders, and oversee inventory to streamline operations and ensure efficient production management.
+
+<Callout type="info" emoji="ℹ️">
+  **Path:** Home > Manufacturing > Settings > Manufacturing Settings
+</Callout>
+
+## Raw Materials Consumption
+
+### 1. Allow Continuous Material Consumption
+When enabled, materials can be consumed continuously without immediately producing finished goods within a single work order. This is useful for long-duration production processes where raw materials are consumed incrementally.
+
+Example: A product takes a month to manufacture, and raw materials are consumed daily. Continuous material consumption allows creating stock entries for Material Consumption without requiring a finished goods entry until later.
+
+### 2. Backflush Raw Materials Based On:
+You can choose the backflushing method:
+1. **Material Transferred for Manufacture**
+2. **BOM**
+
+### 3. Validate Components Quantities Per BOM
+When "Backflush Raw Materials Based On" is set to BOM, enabling this option validates component quantities as per BOM. If the quantity differs in the "Material Transfer for Manufacture" or "Manufacture" stock entry, an error will occur.
+
+### 4. Get Raw Materials Cost from Consumption Entry
+This option determines whether the cost of raw materials used should be derived from consumption entries. When enabled, ERPZ calculates costs based on actual materials consumed, ensuring accurate cost tracking.
+
+## Capacity Planning
+
+Capacity planning determines whether the organization has sufficient resources to accept new orders based on current work orders and available resources.
+
+### 1. Disable Capacity Planning
+If enabled, capacity planning will be disabled. Otherwise, capacity planning helps decide whether to accept new orders.
+
+### 2. Allow Overtime
+If enabled, work orders and job cards can be created outside regular working hours.
+
+### 3. Allow Production on Holidays
+If enabled, production activities can occur on holidays based on the organization’s holiday list.
+
+### 4. Capacity Planning For (Days)
+Defines the number of days in advance to start capacity planning activities for production.
+
+### 5. Time Between Operations (Mins)
+Specifies the time gap between two operations in minutes.
+
+## Default Warehouses for Production
+
+### 1. Default Work In Progress Warehouse
+Auto-updates the 'Work In Progress' warehouse field in work orders.
+
+### 2. Default Finished Goods Warehouse
+Auto-updates the 'Target Warehouse' field in work orders.
+
+### 3. Default Scrap Warehouse
+Auto-updates the 'Scrap Warehouse' field in work orders.
+
+## Overproduction for Sales and Work Orders
+
+### 1. Overproduction Percentage for Sales Order
+Specifies the allowable percentage by which production can exceed the sales order quantity.
+
+### 2. Overproduction Percentage for Work Order
+Defines the allowable percentage by which production can exceed the planned quantity in a work order.
+
+## Job Card
+
+### 1. Add Corrective Operation Cost in Finished Good Valuation
+If enabled, corrective operation costs will be included in the valuation of finished goods.
+
+### 2. Allow Excess Material Transfer
+If enabled, you can transfer excess raw materials if needed (e.g., to replace damaged raw materials during production).
+
+## Other Settings
+
+### 1. Update BOM Cost Automatically
+If enabled, BOM costs will be automatically updated based on the Valuation Rate, Price List Rate, or last purchase rate of raw materials.
+
+### 2. Set Operating Cost / Scrap Items from Sub-assemblies
+In multi-level BOMs, this option allows adding sub-assembly costs and scrap items to finished goods without using job cards.
+
+### 3. Make Serial No/Batch from Work Order
+If enabled, the system will automatically create serial numbers or batches for finished goods upon work order submission.
+
+
+
+<Pagination
+  pages={pages}
+/>

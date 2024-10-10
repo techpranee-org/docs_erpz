@@ -1,0 +1,72 @@
+import Pagination from '../../components/Pagination';
+import pages from '../../utils/order';
+import { Callout } from 'nextra/components';
+
+# Warehouse
+
+**A warehouse is a commercial building used for the storage of goods.** Warehouses are essential in industries such as manufacturing, importing, exporting, wholesale, transportation, and customs.
+
+They are typically large, plain buildings located in industrial areas of cities, towns, or villages. These warehouses often have loading docks to facilitate the loading and unloading of goods from trucks.
+
+In ERPZ, the concept of "Warehouse" extends beyond traditional storage spaces and can also represent various storage locations within your organization. You can create sub-Warehouses to represent more granular storage locations, such as a shelf within a larger room.
+
+This structure can form a hierarchical tree like the following:
+
+>*Warehouse > Room > Row > Shelf > Bin*
+
+To access the Warehouse list, navigate to:
+
+**Home > Stock > Settings > Warehouse**
+
+## 1. How to Create a Warehouse
+
+1. Go to the Warehouse list and click on **New**.
+2. Enter a name for the Warehouse.
+3. Select or set the **Parent Warehouse**. If you check the 'Is Group' option, you can create sub-Warehouses under this group Warehouse.
+4. Save the Warehouse.
+
+Warehouses are tagged with the abbreviations of their respective companies. This helps in quickly identifying which Warehouse belongs to which company.
+
+### 1.1 Additional Options When Creating a Warehouse
+
+- **Account**: You can assign a default account for all transactions related to this Warehouse. This setting helps to track transactions from the Warehouse in the Accounting Ledger.
+  
+- **Warehouse Type**: Warehouse Types allow you to classify your Warehouses, for example, as Supplier Warehouses, Stock Warehouses, WIP Warehouses, or Rooms. This classification is useful for generating reports and managing stock transactions.
+
+### Address and Contact Information
+
+You can add Billing, Shipping, and other types of addresses to the Warehouse, along with contact information such as the Warehouse Manager’s details.
+
+## 1.2 After Saving the Warehouse
+
+Once you've saved the Warehouse, you'll see the following options:
+
+- **Stock Balance**: Opens a report displaying the quantity, valuation, and balance of stock in the Warehouse.
+- **General Ledger**: Displays accounting transactions associated with the Warehouse.
+- **Non-Group to Group**: If this is a Non-Group Warehouse, this option allows you to convert it into a Group Warehouse, enabling you to add sub-Warehouses under it.
+
+## 2. Features of the Warehouse
+
+### 2.1 Tree View
+
+The Warehouse module offers a 'Tree' view that shows the hierarchical structure of group and sub-Warehouses.
+
+### 2.2 Warehouse Account
+
+In ERPZ, when **Perpetual Inventory** is enabled, each Warehouse must belong to a specific company to maintain stock balance on a company-by-company basis. Each Warehouse must be linked with an account in the Chart of Accounts, typically named after the Warehouse itself. This account tracks the value of the goods stored in that Warehouse.
+
+If you have a detailed Warehouse Tree, it’s generally a good idea to link sub-locations (like rooms or shelves) to the account of the root Warehouse in that tree. For example, if Warehouse A contains Room B and Shelf C, link both Room B and Shelf C to the account of Warehouse A, unless you require detailed accounting at lower levels.
+
+### Tip:
+
+<Callout type="info" emoji="ℹ️">
+  ERPZ maintains stock balance for every distinct combination of Item and Warehouse. This allows you to check stock balance for any specific item in any particular Warehouse at any time.
+</Callout>
+
+
+
+
+
+<Pagination
+  pages={pages}
+/>

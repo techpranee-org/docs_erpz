@@ -1,0 +1,145 @@
+import Pagination from '../../components/Pagination';
+import pages from '../../utils/order';
+import { fetchPageData } from '../../lib/api';
+import remarkGfm from 'remark-gfm'; 
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import {unified} from 'unified';
+import matter from 'gray-matter';
+import rehypeStringify from 'rehype-stringify';
+
+# Introduction
+
+## What is an ERP system? And why should businesses use it?
+
+If you're already convinced that you need an all-in-one enterprise solution for your organization, you can skip this page.
+
+In today’s world, small and medium-sized enterprises (SMEs) face challenges that are similar to large enterprises, especially in resource planning and management. Although SMEs operate with fewer resources, the complexity of managing their operations can be just as daunting.
+
+Much like large corporations, small businesses need to:
+
+- Manage accounts, sales, and purchases
+- File taxes accurately
+- Process employee payroll
+- Deliver products and services on time
+- Ensure high-quality offerings
+- Communicate effectively with customers and address their inquiries
+
+Large enterprises have long relied on costly, complex ERP systems like SAP to manage their global operations. These systems allow companies to consolidate data and streamline fundamental processes such as accounting, supply chain management, taxation, and payroll.
+
+However, for SMEs, such expensive systems have often been inaccessible, leaving them behind in the digital transformation wave of the past two decades. High costs and complex customizations make these solutions impractical for smaller businesses, which typically rely on spreadsheets, simple accounting software, and scattered tools. This siloed approach often prevents them from obtaining valuable insights and optimizing their processes.
+
+**ERPZ** addresses the key challenges SMEs face:
+
+- **Affordability**: ERPZ is cost-effective, making it accessible for small businesses.
+- **Comprehensive Features**: ERPZ provides all necessary modules to run a business efficiently.
+- **Customization**: ERPZ is easy to configure and can be tailored to fit specific business needs.
+- **Efficiency**: Its lower computing requirements make it cheaper to host and maintain.
+- **Unified System**: With ERPZ, you get a single platform where multiple users can record transactions and access data simultaneously.
+
+---
+
+## What is ERPZ?
+
+ERPZ is a complete enterprise resource planning (ERP) solution designed to help small and medium-sized businesses (SMEs) manage all their operations seamlessly. By consolidating your business activities into one platform, ERPZ enables data-driven decision-making, transparency, and operational control, helping you stay competitive.
+
+ERPZ can assist your business with:
+
+- **Financial Management**: Keep track of financial health through real-time data.
+- **Invoicing and Payments**: Track all invoices and payment statuses with ease.
+- **Inventory Management**: Monitor stock levels and availability.
+- **Key Performance Indicators (KPIs)**: Track performance metrics crucial to your business.
+- **Customer Relationship Management (CRM)**: Manage customer inquiries and resolve issues efficiently.
+- **Payroll**: Handle employee salaries and tax compliance effortlessly.
+- **Task Management**: Assign tasks and monitor their progress.
+- **Customer & Supplier Database**: Maintain an organized list of customers, suppliers, and contacts.
+- **Quotations & Pricing**: Prepare quotes and determine selling prices based on actual costs.
+- **Budgeting & Spending**: Track budgets and manage expenditures.
+- **Maintenance Reminders**: Get automatic reminders for equipment maintenance.
+- **Website Publishing**: Host and manage your company’s website.
+
+And much more.
+
+---
+
+## Is ERPZ Only for SMEs?
+
+While ERPZ is perfect for SMEs, it is also highly scalable and robust enough for large enterprises. Whether you're a startup or a large organization, ERPZ can grow with your business, providing comprehensive features to meet complex needs.
+
+Here’s how ERPZ benefits larger enterprises:
+
+- **Financial Performance**: Real-time insights into your company’s financial data for better decision-making.
+- **Operational Efficiency**: Automate routine tasks and free up your team for strategic initiatives.
+- **Supply Chain Automation**: ERPZ ensures smooth flow of materials and information across your supply chain.
+- **Informed Decision-Making**: Use real-time data to identify trends and optimize business operations.
+
+### Why Large Enterprises Choose ERPZ:
+
+- **Scalability**: ERPZ can handle an increasing number of users, devices, and transactions, making it ideal for large organizations.
+- **Customization**: With a variety of modules and features, ERPZ can be tailored to meet specific business requirements, whether it’s for manufacturing, accounting, or sales.
+- **Security**: ERPZ is equipped with state-of-the-art security features to ensure that your company’s data remains protected.
+- **Performance**: ERPZ can handle large volumes of transactions with minimal downtime, ensuring business continuity.
+- **Support**: Our extensive community and partners offer robust support and custom services for ERPZ, ensuring smooth implementation and operation.
+
+---
+
+## Topics to Explore
+
+In the ERPZ documentation, you can dive into the following topics:
+
+- [Do I Need an ERP?](#)
+- [Getting Started with ERPZ](#)
+- [ERPZ Implementation Strategy](#)
+- [Key Workflows](#)
+- [Concepts and Terms](#)
+
+Check out these sections to learn more about how ERPZ can transform your business operations and help you achieve success.
+
+
+
+
+<Pagination
+  pages={pages}
+/>
+
+
+export async function getStaticProps() {
+  const slug = 'introduction/introduction';
+  const page = await fetchPageData(slug); // Use the correct slug
+
+  if (!page || page.length === 0 || !page.content) {
+    return {
+      notFound: true, // Return 404 if content is missing
+    };
+  }
+
+  const processor = unified()
+                          .use(remarkParse)
+                          .use(remarkGfm)
+                          .use(remarkRehype)
+                          .use(rehypeStringify)
+
+  const { content, data } = matter(page.content);
+
+const htmlContent = (await processor.process(content)).toString();
+
+
+
+  return {
+    props: {
+      htmlContent,
+    },
+  };
+}
+
+
+export default function DocumentPage({ htmlContent }) {
+  return (
+    <>
+      <div className='prose dark:prose-h1:text-white' dangerouslySetInnerHTML={{__html: htmlContent}}></div>
+      <Pagination
+        pages={pages}
+      />
+    </>
+  );
+}  

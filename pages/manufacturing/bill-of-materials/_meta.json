@@ -1,0 +1,18 @@
+{
+    "introduction": "Basics of BOM",
+    "work-station": "Work Station",
+    "work-station-type": "Work Station Type",
+    "bill-of-materials": "Bill Of Materials",
+    "managing-multi-level-bom": "Managing Multi Level Bom",
+    "multi-level-bom-creator": "Multi Level BOM Creator",
+    "bom-update-tool": "BOM Update Tool",
+    "bom-explorer": "BOM Explorer",
+    "bom-comparison-tool": "BOM Comparison Tool",
+    "bom-costing-different-currency": "BOM Costing Different Currency",
+    "bom-search": "BOM Search",
+    "bom-stock-report": "BOM Stock Report",
+    "operation": "Operation",
+    "bom-operations-time": "BOM Operations Time",
+    "routing": "Routing"
+
+}
