@@ -1,16 +1,116 @@
-import Pagination from '../../components/Pagination';
-import pages from '../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Stock Settings"
+description: "Learn about default settings for stock-related transactions in ERPZ, including item naming, valuation methods, and auto-insert options."
+---
 
+# Stock Settings in ERPZ
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+You can configure default settings for stock-related transactions through the **Stock Settings** page in ERPZ.
 
+---
 
+## 1. Item Naming By
+By default, the Item Name is set according to the Item Code entered. If you want Items to follow a set naming series, choose the **Naming Series** option.
 
+---
 
+## 2. Defaults
 
-<Pagination
-  pages={pages}
-/>
+### 2.1 Default Item Group
+This defines the default item group assigned to a newly created item. Item groups help classify items and set properties for the entire group. To learn more, visit the **Item Group** page.
+
+### 2.2 Default Stock UOM
+The default unit of measure (UOM) for stock is set to numbers (Nos) but can be changed here.
+
+### 2.3 Default Warehouse
+Set the default warehouse from which stock transactions are processed. This value will be automatically fetched into the **Item Master** when creating new items.
+
+### 2.4 Sample Retention Warehouse
+This setting defines the warehouse where sample retentions are stored.
+
+### 2.5 Default Valuation Method
+Choose between **FIFO (First In, First Out)** and **Moving Average** for item valuation. The default method is FIFO. Once an item is created, its valuation method cannot be changed.
+
+---
+
+## 3. Limit Percent
+This is the percentage that allows over-receiving or over-delivering items beyond the ordered quantity. For instance, if you ordered 100 units, with a 10% limit, you are allowed to receive 110 units. By default, this is set to 0.
+
+---
+
+## 4. Role Allowed to Over Deliver/Receive
+Users with specific roles are permitted to over-deliver or over-receive items beyond the allowed percentage limit.
+
+---
+
+## 5. Show Barcode Field
+A field to enter barcode details for an item. If unticked, this field will not appear in the Item form.
+
+---
+
+## 6. Convert Item Description to Clean HTML
+Enabling this option will clean up any embedded styles in item descriptions that may affect the print view of documents. Uncheck this option if you wish to allow custom HTML in descriptions.
+
+---
+
+## 7. Auto Insert
+
+### 7.1 Auto Insert Price List Rate if Missing
+When enabled, the system will automatically insert an item price into the price list based on the first transaction with that item. This applies only to the first transaction if no price list is already present.
+
+### 7.2 Automatically Set Serial Nos based on FIFO
+Serial numbers for stock items will be automatically set in transactions based on FIFO (First In, First Out). This applies to transactions like purchase receipts and delivery notes.
+
+---
+
+## 8. Allow Negative Stock
+This option enables stock to be shown in negative values. This can be useful for businesses where stock entries are recorded at the end of the week or month. Negative stock will not apply to serial or batch items starting from ERPZ version 15.
+
+---
+
+## 9. Set Quantity in Transactions based on Serial No Input
+The quantity of items will automatically be set based on the serial numbers entered in a transaction. For example, if serial numbers like A001, A002, and A003 are added, the system will set the quantity to 3.
+
+---
+
+## 10. Automatic Material Request
+
+### 10.1 Raise Material Request when Stock Reaches Re-order Level
+This option ensures a constant supply of materials by automatically generating a Material Request when the stock level reaches the re-order point.
+
+### 10.2 Notify by Email on the Creation of Automatic Material Request
+An email will be sent to notify users with the **Purchase Manager** role when a Material Request is automatically created.
+
+---
+
+## 11. Inter-Warehouse Transfer Settings
+
+### 11.1 Enable Customer Warehouse for Material Transfer
+This allows material transfers to be managed via **Delivery Notes** when transferring materials to a customer’s warehouse.
+
+### 11.2 Enable Supplier Warehouse for Material Transfer
+This allows material transfers to be presented as **Purchase Receipts** when dealing with supplier warehouses.
+
+---
+
+## 12. Freeze Stock Entries
+You can freeze stock entries for a specific period by setting a **Stock Frozen Upto** date. You can also freeze stock entries older than a set number of days. A role must be assigned to allow editing of frozen stock entries.
+
+---
+
+## 13. Batch Identification
+This allows you to set a global naming series for batch identification. You can override this at the item level.
+
+---
+
+## 14. Allow to Edit Stock Quantity
+Enable the option to **Allow to Edit Stock UOM Qty for Sales/Purchase Documents** to manually adjust the quantity of stock units in the documents.
+
+---
+
+## 15. Why to Edit Stock Quantity (Multi-UOM Scenario)
+If you are using multiple units of measure and your **Stock UOM** is a whole number, the system might require you to set a non-decimal **Stock UOM**. In such cases, users can edit the stock quantity, and the system will calculate the conversion factor automatically.
+
+---
+
+This guide provides the complete configuration for managing **Stock Settings** in ERPZ. By properly configuring these settings, businesses can streamline their inventory and stock-related processes.

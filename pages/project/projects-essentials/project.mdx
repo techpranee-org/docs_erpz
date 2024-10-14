@@ -1,0 +1,106 @@
+---
+title: "Project"
+description: "Learn how to manage and track projects in ERPZ."
+---
+
+# Project
+
+**A Project in ERPZ is a planned piece of work aimed at achieving specific objectives, such as producing new outcomes, gathering information, or improving existing processes.**
+
+In ERPZ, project management is task-driven. You can create a project and divide it into multiple tasks for better tracking and management.
+
+A Project generally has a broad scope and can be broken down into smaller, manageable tasks. For example, launching a new product could be a project, with tasks like design, development, testing, and delivery under it.
+
+## Accessing Projects
+
+To access Projects in ERPZ:
+
+**Navigate to:**
+
+`Home > Projects > Projects > Project`
+
+## 1. How to Create a Project
+
+1. Go to the **Project** list and click on **New**.
+2. Add the following details:
+   - **Project Name**: Title of the Project.
+   - **Status**: Default status is set to 'Open' and can be changed to 'Completed' or 'Cancelled' as needed.
+   - **Expected End Date**: Set the deadline for the project.
+3. Click **Save**.
+
+### 1.1 Additional Options when Creating a Project
+
+- **From Template**: You can use an existing Project Template to quickly create a new project.
+- **Expected Start Date**: Set the expected start date if you have a fixed timeline.
+- **Project Type**: Classify your projects as Internal or External.
+- **Priority**: Set priority levels based on the importance of the project.
+- **Department**: If the project belongs to a specific department, you can specify it here.
+- **Is Active**: A Yes/No toggle to change the active status of the project at any time.
+- **Completion Method**: Choose how to track the completion percentage of the project using methods like **Manual**, **Task Completion**, **Task Progress**, or **Task Weight**.
+
+### Example for Completion Calculation:
+
+| Project | Activity  | % Progress | Weight | Status    |
+|---------|-----------|------------|--------|-----------|
+| SC001   | Build     | 100        | 0.4    | Completed |
+| SC001   | Operate   | 100        | 0.2    | Completed |
+| SC001   | Transfer  | 50         | 0.2    | Open      |
+
+#### Completion Methods:
+
+- **Manual**: Track progress manually.
+- **Task Completion**: Based on the number of tasks completed vs. total tasks.
+- **Task Progress**: Average progress across all tasks.
+- **Task Weight**: Based on the weighted percentage completion of each task.
+
+---
+
+## 2. Features
+
+### 2.1 Customer Details, Users, and Notes
+
+- **Customer**: If the project is being executed for a customer, enter the details here.
+- **Sales Order**: Link a project to a Sales Order to keep the customer updated on progress.
+- **Users**: Add relevant users (e.g., employees, contractors, or customers) to give them access to the project.
+- **Notes**: Add any additional notes for the project.
+
+### 2.2 Start and End Dates
+
+- **Actual Start Date**: Automatically recorded when the project starts, based on Timesheet tracking.
+- **Actual End Date**: Automatically recorded when the project ends, based on the last Timesheet update.
+
+### 2.3 Costing and Billing
+
+- **Estimated Cost**: Enter the estimated project cost.
+- **Total Sales Amount**: Auto-populated from linked Sales Orders.
+- **Total Costing Amount**: Auto-populated from linked Timesheets.
+- **Total Billable Amount**: Fetched from all billable timesheets.
+- **Total Expense Claim**: Total expenses claimed by employees working on the project.
+- **Total Billed Amount**: Auto-populated from linked Sales Invoices.
+- **Total Purchase Cost**: Fetched from linked Purchase Invoices.
+- **Total Consumed Material Cost**: Calculated from the materials consumed in the project.
+
+### 2.4 Margin Calculation
+
+- **Gross Margin**: Calculates the difference between the total sales and total costs.
+
+    **Gross Margin = (Total Sales + Billable Amount - Costing Amount + Expenses + Purchase Cost + Material Cost)**
+
+- **Gross %**: Represents the percentage of total billing compared to costs.
+
+    **Gross % = (Gross Margin / Total Sales Amount) * 100**
+
+### 2.5 Monitoring Progress
+
+Enable progress tracking by checking the 'Collect Progress' option, allowing stakeholders to receive updates on the project’s progress.
+
+- **Holiday List**: Specify a holiday list for reporting only on working days.
+- **Frequency**: Set report frequency to hourly, daily, or weekly.
+
+---
+
+## 3. Related Topics
+
+- [Task](/project/projects-essentials/tasks)
+- [Project Type](/project/projects-essentials/project-type)
+- [Project Template](/project/projects-essentials/project-template)

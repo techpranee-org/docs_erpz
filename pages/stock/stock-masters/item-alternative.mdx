@@ -1,16 +1,59 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Item Alternative"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+# Item Alternative
 
+An **Item Alternative** is an item similar to the original one that can be used as a substitute during the manufacturing process. This is particularly useful when the raw material defined in the Bill of Materials (BOM) is unavailable during production. In such cases, the alternative item can be used to complete the process seamlessly.
 
+To enable an **Item Alternative**, you must first configure the setting in the Item form by checking the **Allow Alternative Item** option.
 
+To access the Item Alternative list, go to:
+> **Home > Stock > Items and Pricing > Item Alternative**
 
+Alternatively, you can also add Item Alternatives directly from the **Item Master** dashboard by clicking the plus sign next to 'Item Alternative'. Additionally, you can configure **Two-Way Replacement** between items if both can serve as alternatives for each other.
 
-<Pagination
-  pages={pages}
-/>
+---
+
+## 1. Prerequisites
+
+Before setting up and using Item Alternatives, ensure that you have the following:
+
+- **Item**: The items for which alternatives will be created need to be set up first.
+
+---
+
+## 2. Item Alternative for Work Order
+
+Item Alternatives can be used in **Work Orders** and **BOMs** to provide flexibility during the manufacturing process. Here's how to set it up:
+
+---
+
+### 2.1 Enabling Item Alternatives in BOM
+
+In the **BOM**, you can enable the **Allow Alternative Item** option. Once enabled, you can select an available alternative item when creating a **Stock Entry** or during production.
+
+---
+
+### 2.2 Enabling Item Alternatives in Work Orders
+
+To allow the use of alternative items in a **Work Order**, tick the **Allow Alternative Item** checkbox. Once enabled, a button labeled **Alternate Item** will appear. Clicking this button will let you set an item alternative for the Work Order.
+
+- If the **Allow Alternative Item** checkbox in the item table is disabled, you will not be able to assign an alternative item for this item.
+
+---
+
+### 2.3 Using Item Alternatives in Subcontracting
+
+In subcontracting scenarios, where raw materials are sent to a subcontractor for processing, you can use **Item Alternatives** if the primary raw material is unavailable. This option can be enabled during the **Stock Entry** process.
+
+After setting up the alternative item, the system will show the alternative material when generating a **Purchase Receipt** from the Work Order.
+
+---
+
+## 3. Related Topics
+
+- [Bill of Materials](/manufacturing/bill-of-materials/introduction)
+- [Work Order]()

@@ -1,0 +1,66 @@
+---
+title: "Batch Management"
+description: "Learn how to manage batch-wise inventory in ERPZ, including batch creation, splitting, and transactions."
+---
+
+# Batch Management
+
+In ERPZ, the Batch feature allows you to group multiple units of an item and assign them a unique identifier called the Batch Number. This is particularly useful for managing items that have expiry dates or need to be moved together in batches between different warehouses.
+
+To enable batch tracking for an item, you must activate the **Has Batch No** option in the Item master. Once enabled, every stock transaction for the item will require a Batch Number. Batch Numbers can be created manually or automatically.
+
+> **Note:** Starting from version 15, ERPZ no longer allows negative stock transactions for serial or batch items, even if the "Allow Negative Stock" setting is enabled in the Stock Settings.
+
+To access the Batch Number list, navigate to: **Home > Stock > Serial No and Batch > Batch**.
+
+## 1. Prerequisites
+
+Before creating and using batches, ensure that you have:
+
+- Created the item in the Item master.
+- Enabled the 'Has Batch No' field in the Item master.
+
+## 2. How to Create a New Batch
+
+To set an item as a batch item, check the **Has Batch No** field in the Item master. If you do not select the **Automatically Create New Batch** option during item creation, you will need to manually create batches as needed.
+
+To create a new Batch Number for an item:
+
+1. Go to the Batch list and click on **New**.
+2. Set the Batch ID.
+3. Select the item.
+4. Note that once a transaction has been made with an item, the batch cannot be modified.
+5. Save the batch.
+
+If batches are enabled for an item, you also have the option to retain sample stock from the batch.
+
+### 2.1 Batch Auto-Creation
+
+To automatically create a batch during a Purchase Receipt, enable the **Automatically Create New Batch** option in the Item master.
+
+![Item Setup for Batches]()
+
+## 3. Features
+
+### 3.1 Splitting and Moving Batches
+
+When you open a batch, you can view all quantities that belong to that batch.
+
+- To move the batch to another warehouse, click the **Move** button.
+- To split the batch into smaller batches, click the **Split** button. This will create a new Batch ID and divide the quantities between the original and new batches.
+
+> **Note:** If an expiry date is set for the batch, the status will show as 'Not Expired' until the date is reached, after which it will show 'Expired'. If no expiry date is set, the status will display as 'Not Set'.
+
+### 3.2 Transacting Items with Batches
+
+A Batch master must be created before creating a Purchase Receipt or Work Order for a batch item. When transacting batch items, you will need to select the Batch Number in the Purchase Order or Stock Entry.
+
+During any stock transaction (Purchase Receipt, Delivery Note, Invoice) involving a batch item, you will need to provide the item's Batch Number.
+
+> **Note:** Batch IDs will be filtered based on the Item Code, Warehouse, Batch Expiry Date (compared with the posting date of the transaction), and Actual Quantity in the Warehouse. If the Warehouse field is left empty, the Actual Quantity filter will not be applied.
+
+## Related Topics
+
+- [Serial Number](/stock/serial-and-batch/serial-number)
+- [Opening Stock Balance for Serialized and Batch Items]()
+- [Managing Batch-wise Inventory]()

@@ -1,0 +1,107 @@
+---
+title: Purchase Receipt
+description: Purchase Receipts are made when you accept Items from your Supplier usually against a Purchase Order.
+---
+
+# Purchase Receipt
+
+**Purchase Receipts are made when you accept Items from your Supplier usually against a Purchase Order.**
+
+You can also accept Purchase Receipts directly without the need for a Purchase Order. To do this, set *Purchase Order Required* as “No” in Buying Settings.
+
+### Accessing Purchase Receipt List
+Go to:
+
+`Home > Stock > Stock Transactions > Purchase Receipt`
+
+
+---
+
+## Purchase Receipt Flow
+
+### 1. Prerequisites
+Before creating and using a Purchase Receipt, it is advised that you create the following first:
+
+- [Purchase Order]()
+
+> **Note**: From version-13 onwards, we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions. Learn more [here](/path-to-immutable-ledger).
+
+### 2. How to create a Purchase Receipt
+A Purchase Receipt is usually created from a Purchase Order. In the Purchase Order, click on **Create > Purchase Receipt**.
+
+To create a Purchase Receipt manually (not recommended), follow these steps:
+
+1. Go to the Purchase Receipt list and click on **New**.
+2. The Supplier name and the Items can be fetched from the Purchase Order by clicking on *Get Items from > Purchase Order*.
+3. Set the *Accepted Warehouse* for all items in this Purchase Receipt.
+4. In case any Items are defective, set the *Rejected Warehouse* where those Items will be stored.
+5. Select the Item and enter the quantity in the Items table.
+6. The rate will be fetched and the amount will be calculated automatically.
+7. You can expand the item row to change the Accepted Warehouse for an Item.
+8. Save and submit.
+
+#### 2.1 Statuses
+
+The different statuses a Purchase Receipt can be in:
+
+- **Draft**: A draft is saved but yet to be submitted to the system.
+- **To Bill**: Yet to be billed using a Purchase Invoice.
+- **Completed**: Submitted and received all the Items.
+- **Return Issued**: All the Items have been returned.
+- **Cancelled**: Cancelled the Purchase Receipt.
+- **Closed**: Closing the Purchase Receipt at a different quantity than ordered.
+
+---
+
+## Features
+
+### 3.1 Currency and Price List
+The currency of the Purchase Receipt is fetched from the Purchase Order. You can update the Currency Conversion Rate if applicable.
+
+### 3.2 Warehouse Details
+
+- **Accepted Warehouse**: This is where the incoming Items will be stored.
+- **Rejected Warehouse**: This is where defective or non-quality Items are stored.
+
+### 3.3 Items Table
+
+- **Barcode**: Track Items using barcodes.
+- **Received and Accepted**: Set received, accepted, and rejected quantities.
+
+You can also set Serial Numbers, Batch Numbers, and BOMs if applicable. For more details, refer to the [Item Management](/path-to-item-management) section.
+
+---
+
+### 3.4 Tracking Quality Inspection
+If certain Items require quality inspection, ensure you update the “Quality Inspection” field before submitting.
+
+### 3.5 Raw Materials Consumed
+In subcontracting scenarios, raw materials consumed by the supplier will be listed in the *Consumed Items* table.
+
+### 3.6 Taxes and Valuation
+Taxes and charges are fetched from the Purchase Order. For more information on handling taxes, visit the [Tax Management](/path-to-tax-management) section.
+
+---
+
+## Additional Features
+
+### 3.7 Additional Discount
+Any additional discounts can be set in this section. Read [Applying Discounts](/path-to-discount-management) for more details.
+
+### 3.8 After Submitting
+After submitting the Purchase Receipt, a Stock Ledger Entry is created. You can also create a **Purchase Return**, **Stock Entry**, or **Purchase Invoice**.
+
+---
+
+## Related Topics
+
+- [Delivery Note](/stock/stock-transactions/delivery-note)
+- [Purchase Order]()
+- [Purchase Invoice]()
+- [Supplier]()
+- [Landed Cost Voucher]()
+
+---
+
+## Skipping Purchase Receipt
+If you don’t want to create a Purchase Receipt after a Purchase Order, enable the feature in **Buying Settings** to directly create a Purchase Invoice.

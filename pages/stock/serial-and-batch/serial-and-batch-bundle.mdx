@@ -1,0 +1,84 @@
+---
+title: Serial and Batch Bundle in ERPZ
+description: Learn how to manage Serial and Batch Bundles in ERPZ for stock transactions, including auto and manual creation processes.
+---
+
+# Serial and Batch Bundle in ERPZ
+
+In ERPZ, the Serial and Batch Bundle feature enables users to manage and link serial numbers and batch numbers in stock transactions efficiently. This bundle helps prevent data integrity issues, especially when dealing with multiple serial or batch items in a single transaction.
+
+## Key Notes:
+- A separate **Serial and Batch Bundle** must be created for each stock transaction. The same bundle cannot be reused across multiple transactions.
+- As of version 15, **Allow Negative Stock** for serial and batch items has been removed. This means users cannot process negative stock transactions for such items, even if "Allow Negative Stock" is enabled in the stock settings.
+
+---
+
+## 1. Auto Creation of Serial and Batch Bundle for Inward Entry
+
+If the user wants to auto-create a **Serial and Batch Bundle** when receiving stock (for instance, during Purchase Receipts or Material Receipt), the following configurations must be set in the **Item Master**:
+
+- **Serial Number Series** must be configured for serial items.
+- **Automatically Create New Batch** must be enabled for batch items, along with configuring a **Batch Number Series**.
+
+Once configured, the system will automatically generate a **Serial and Batch Bundle** for inward transactions when stock entries are submitted.
+
+---
+
+## 2. Auto Creation of Serial and Batch Bundle for Outward Entry
+
+For outward stock transactions (e.g., Delivery Notes, Material Issues), users can enable automatic creation of the **Serial and Batch Bundle** by checking the option **Auto Create Serial and Batch Bundle for Outward** in **Stock Settings**. Users can also choose how serial/batch numbers should be selected by configuring the **Pick Serial / Batch Based On** field to **FIFO / LIFO / Expiry**.
+
+On submission of an outward transaction, the system will automatically create the required bundle.
+
+---
+
+## 3. Manual Creation of Serial and Batch Bundle
+
+Users can also manually create a **Serial and Batch Bundle** for both inward and outward transactions:
+
+- **Inward Entry**: Serial and batch numbers must be created beforehand. Users can use the **CSV Import** feature to add serial and batch numbers into the system.
+- **Outward Entry**: Serial and batch numbers can be manually selected using the **Serial and Batch Selector**, which allows users to pick numbers based on FIFO, LIFO, or expiry dates.
+
+---
+
+## 4. Serial and Batch Selector
+
+The **Serial and Batch Selector** is a tool used to select or create serial and batch numbers during stock transactions. This selector can be disabled in the **Stock Settings** if users prefer not to use the popup interface.
+
+---
+
+## 5. Old Serial and Batch Fields
+
+For users who prefer the old method of entering serial and batch numbers directly into fields (instead of using the bundle system), ERPZ retains the option to enable **Old Serial / Batch Fields** in **Stock Settings**. This option allows the system to handle serial and batch data in a more familiar format for users.
+
+---
+
+## 6. Serial and Batch Ledger
+
+ERPZ provides a **Serial No Ledger** report to track the history of serial numbers across all transactions. This report helps users trace serial number movements, providing insights into stock management over time.
+
+---
+
+## 7. Updating Serial and Batch on Auto Bundle Creation
+
+In cases where users want to automatically update the Serial and Batch fields upon the creation of an auto-generated bundle, this feature can be controlled through the **Stock Settings**. By enabling or disabling the option **Do Not Update Serial / Batch on Creation of Auto Bundle**, users can determine whether or not to populate these fields during automatic bundle creation.
+
+---
+
+## 8. Case Study Example
+
+Here’s an example of how the **Serial and Batch Bundle** works in ERPZ:
+
+1. A user has enabled **Use Serial / Batch Fields** in the stock settings.
+2. The user creates a purchase receipt for an item that has automatic batch creation enabled.
+3. Upon submission, ERPZ creates the batch and the **Serial and Batch Bundle** automatically.
+4. The batch column remains empty if the user has disabled updating the batch on creation of the auto bundle.
+
+This flow allows efficient handling of stock transactions without manually updating batch details, while ensuring that serial and batch numbers are bundled correctly.
+
+---
+
+## 9. Related Topics:
+- [How to Manage Batches in ERPZ]()
+- [Serial Number Ledger Report]()
+- [Stock Settings Configuration for Serial and Batch]()

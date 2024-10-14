@@ -1,16 +1,36 @@
-import Pagination from '../../components/Pagination';
-import pages from '../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Stock Reposting Settings"
+description: "Configure and manage Stock Reposting Settings in ERPZ to ensure accurate inventory levels with optimized reposting processes."
+---
 
+# Stock Reposting Settings
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+The **Stock Reposting Settings** in ERPZ allow users to manage the reposting of stock transactions, ensuring accuracy in inventory levels even when there are backdated transactions. You can configure various settings to optimize the reposting process according to your business needs.
 
+## 1. Limit Timeslot for Stock Reposting
 
+If you want to control when stock reposting happens, you can enable the **Limit timeslot for Stock Reposting** option. This ensures that reposting is restricted to specific times, helping to avoid potential deadlock issues that may arise during busy hours.
 
+- **Why use it?** It prevents conflicts and improves system performance during high-traffic times by scheduling reposting during off-peak hours.
 
+## 2. Limits Don’t Apply On
 
-<Pagination
-  pages={pages}
-/>
+This setting allows you to bypass the time limit for reposting. If your business operates with weekly offs or wants to run reposting continuously, enabling this option ensures that reposting can run throughout the day, without any time-based restrictions.
+
+## 3. Use Item-Based Reposting
+
+The **Item-Based Reposting** option helps improve the speed of the reposting process by skipping redundant reposting for the same items and warehouses.
+
+- **Why use it?** When your inventory has multiple transactions for the same item or warehouse, skipping duplicate reposting reduces the system load and speeds up the overall process.
+
+## 4. Do Reposting for Each Stock Transaction
+
+This feature ensures that reposting records are generated for every backdated transaction, regardless of whether future transactions exist for the same item and warehouse. 
+
+- **Why use it?** Sometimes, reposting entries are not created due to concurrency issues, especially if future transactions haven't been made. This option forces reposting for audit purposes, ensuring that all stock movements are correctly accounted for.
+
+## 5. Notify Reposting Errors to Role
+
+In case of reposting errors, you can configure ERPZ to notify users with a specific role. By default, the system sends error notifications to the system managers, but with this setting, you can choose a custom role for error notifications.
+
+- **Why use it?** This ensures that the right team or department is informed about any reposting issues, allowing for quick resolution without overloading system managers with all error notifications.

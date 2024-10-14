@@ -1,0 +1,131 @@
+---
+title: "Stock Entry"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+
+# Stock Entry
+
+A **Stock Entry** in ERPZ allows you to record the movement of items between warehouses. It helps in tracking stock transfers, material issues, receipts, and manufacturing processes.
+
+---
+
+## How to Access Stock Entry
+
+To access the Stock Entry list, navigate to:
+
+> Home > Stock > Stock Transactions > Stock Entry
+
+
+---
+
+## Stock Entry Purposes
+
+Stock entries in ERPZ can be created for several purposes:
+
+- **Material Issue**: When materials are issued out of the company or for internal use (outgoing material). The items are deducted from the Source Warehouse.
+- **Material Receipt**: When materials are received into the warehouse (incoming material). The items are added to the Target Warehouse.
+- **Material Transfer**: When materials are moved between internal warehouses.
+- **Material Transfer for Manufacturing**: Raw materials are transferred for manufacturing, typically against a Work Order or Job Card.
+- **Material Consumption for Manufacture**: Multiple consumption stock entries can be created against a manufacturing Work Order.
+- **Manufacture**: When finished goods are received from a manufacturing operation.
+- **Repack**: When materials are repacked into new items.
+- **Send to Subcontractor**: When materials are issued for a subcontracting activity, linked to a Purchase Order.
+
+For more details about each stock entry purpose, refer to the [Stock Entry Purposes](./stock-entry-purpose.mdx) page.
+
+---
+
+## 1. Prerequisites
+
+Before creating a Stock Entry, make sure to complete the following:
+
+- **Create Warehouses**: Set up your warehouses for stock management.
+- **Create Items**: Ensure that the items being transferred are defined in the system.
+
+---
+
+## 2. How to Create a Stock Entry
+
+Stock entries for manufacturing are typically created from a Work Order. For other purposes, follow these steps:
+
+1. Go to the **Stock Entry** list and click on **New**.
+2. Select the **Stock Entry Purpose** (Material Issue, Material Receipt, etc.).
+3. Source and Target Warehouses will automatically fill based on the entry purpose.
+4. Add items to the entry and specify the quantity.
+5. The basic rate is fetched, and the total amount is calculated automatically.
+6. Save and submit the stock entry.
+
+---
+
+### 2.1 Additional Options When Creating a Stock Entry
+
+- **Work Order**: If it’s a manufacturing entry, the Work Order will appear here.
+- **Edit Posting Date and Time**: Modify the date and time for the stock entry.
+- **Inspection Required**: Mark if a quality inspection is needed before finalizing the entry.
+- **From BOM**: For manufacturing, the Bill of Materials (BOM) for the product will be displayed.
+
+---
+
+## 3. Features
+
+### 3.1 The Items Table
+
+In the items table, you can enter details such as item code, quantity, rate, and amount. Additional options include:
+
+- **Allow Zero Valuation Rate**: Allows submission of the stock entry even if the valuation rate is 0.
+- **Different Source/Target Warehouses**: Set unique warehouses for different items in a single entry.
+
+### 3.2 Scrap and Process Loss
+
+- **Scrap Item**: Scrap items, which are by-products of the manufacturing process, can be assigned a valuation rate and moved to a scrap warehouse.
+- **Process Loss**: Represents lost items during production. The cost of the lost quantity is distributed among the finished goods produced.
+
+### 3.3 Additional Costs
+
+For incoming stock entries (Material Receipt), you can add additional costs like shipping charges, customs duties, and other operational costs. These additional costs are distributed proportionally across the items received and added to the basic rate for valuation.
+
+- **Expense Account**: Select the account to record the additional costs.
+- **Description and Amount**: Enter the cost details in the **Additional Costs** table.
+
+### 3.4 Accounting Dimensions
+
+ERPZ allows you to tag transactions with accounting dimensions such as **Projects**. This helps track costs for specific projects or cost centers. For more on accounting dimensions, refer to the [Accounting Dimensions](./accounting-dimensions.mdx) page.
+
+### 3.5 Printing Settings
+
+- **Letterhead**: Print stock entries on the company's letterhead.
+- **Print Headings**: Customize print headings for the stock entry. 
+
+### 3.6 More Information
+
+- **Is Opening**: Mark this entry as an opening stock entry.
+- **Remarks**: Add any remarks related to the stock entry.
+- **Percentage Transferred**: Track how much stock has been transferred.
+- **Total Amount**: The total value of items in the stock entry.
+
+### 3.7 Perpetual Inventory
+
+If perpetual inventory is enabled, any additional costs will be booked in the corresponding expense account.
+
+### 3.8 After Submitting
+
+Once a stock entry is submitted, it will be reflected in the stock ledger or accounting ledger.
+
+---
+
+## 4. Add to Transit
+
+To transfer materials between warehouses with two separate entries, use the **Add to Transit** feature:
+
+1. Create a **Material Transfer** stock entry, select **Add to Transit**, and select the source and target (transit) warehouses.
+2. After reaching the destination warehouse, create another stock entry and click **End Transit** or fetch items from the original entry by selecting **Get Items From > Transit Stock Entry**.
+
+---
+
+For more details, you can also explore:
+
+- [Stock Reconciliation]()
+- [Opening Stock](/stock/stock-transactions/opening-stock)
+- [Work Order]()

@@ -1,16 +1,104 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Item"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+# Item
 
+An Item is a product or a service offered by your company.
 
+The term Item is also applicable to raw materials or components of products yet to be produced (before they can be sold to customers). ERPZ allows you to manage all sorts of items like raw-materials, sub-assemblies, finished goods, item variants, and service items.
 
+ERPZ is optimized for itemized management of your sales and purchase. If you are in services, you can create an Item for each service that you offer. Completing the Item Master is very essential for the successful implementation of ERPZ.
 
+To access the Item list, go to: 
+> **Home > Stock > Items and Pricing > Item**
 
-<Pagination
-  pages={pages}
-/>
+## 1. Prerequisites
+
+Before creating and using an Item, it is advised that you create the following first:
+
+- [Item Group](/stock/stock-masters/item-group)
+- [Warehouse]()
+- [Unit of Measure]()
+
+## 2. How to create an Item
+
+1. Go to the Item list, click on "New".
+2. Enter an Item Code. The name will be auto-filled the same as Item Code on clicking inside the Item Name field.
+3. Select an Item Group.
+4. Enter the opening stock units and standard selling rate.
+5. Click **Save**.
+
+### 2.1 Item Properties
+
+- **Item Name**: Actual name of your product or service.
+- **Item Code**: A short-form to denote your Item. You can use the same value as the Item Name for simplicity or codify it for easier recognition. Check out [Item Codification]() for more details.
+- **Item Group**: Category to which the Item belongs (e.g., products, raw materials, services). Pre-select your default groups under **Setup > Item Group**.
+- **Default Unit of Measure (UOM)**: The measuring unit for the product (Nos, Kgs, Meters, etc.). Learn more on the [Unit of Measure page]().
+  
+### 2.2 Options when creating an item
+
+- **Disabled**: Disable an item to prevent it from being selected in transactions.
+- **Allow Alternative Item**: Enable this to create and select an alternative item when the original item is unavailable.
+- **Maintain Stock**: Enable this to track the stock in your inventory.
+- **Include Item in Manufacturing**: Enable for raw materials used to create finished goods.
+- **Valuation Rate**: Choose the valuation method (FIFO or Moving Average).
+- **Standard Selling Rate**: Automatically create an Item Price when creating the Item.
+- **Is Fixed Asset**: Mark as company asset if applicable.
+- **Auto Create Assets on Purchase**: Automatically create assets when purchasing this item.
+- **Allowance Percentage**: Define the allowed percentage for over-billing or over-delivery.
+
+## 3. Features
+
+### 3.1 Brand and Description
+
+- **Brand**: Save brands under **Selling > Brand** and select them when creating new items.
+- **Description**: Add a description of the item. By default, the Item Code will be used.
+
+### 3.2 Barcodes
+
+You can associate barcodes with items for quick transactions. ERPNext supports the following types of barcodes:
+- **EAN**: A 13-digit barcode commonly used internationally.
+- **UPC**: A 12-digit barcode mainly used in the USA and Canada.
+
+### 3.3 Inventory
+
+- **Shelf Life in Days**: Number of days after which the item batch will be unusable.
+- **End of Life**: The date when the item will become unusable.
+- **Warranty**: You can track the warranty period using serialized items. 
+
+### 3.4 Automatic Reordering
+
+Automatic reordering can be set up based on stock levels. When stock dips below the set quantity, a Material Request is automatically created.
+
+- **Re-order Level**: The minimum quantity that triggers reordering.
+- **Re-order Qty**: The quantity to reorder when the stock dips below the reorder level.
+  
+### 3.5 Multiple Units of Measure
+
+You can add alternate UOMs for an item. For example, if you sell in Nos but receive in Kilos, set an alternate UOM with a conversion factor.
+
+### 3.6 Serial Numbers and Batches
+
+You can track individual items with serial numbers or manage batches for tracking purposes. Negative stock is not allowed for serialized or batched items from version 15 onwards.
+
+- **Has Batch No**: Enable this for batch management. Batch numbers can be generated automatically or manually.
+- **Has Serial No**: Enable serial number tracking for individual items.
+
+### 3.7 Variants
+
+Item variants are different versions of an item. Learn more about managing item variants [here]().
+
+### 3.8 Item Defaults
+
+Define company-wide transaction defaults such as:
+
+- **Default Warehouse**
+- **Default Price List**
+- **Supplier**
+
+---
+
+Visit [ERPZ Documentation](/documentation) for more details on managing your inventory items.

@@ -1,16 +1,73 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Item Attribute"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
 
-<Pagination
-  pages={pages}
-/>
+# Item Attribute
+
+**Item Attributes** are the characteristics that define an item’s physical appearance, specifications, or capabilities. These attributes are crucial for creating Item Variants in ERPZ, as they allow for combinations of various characteristics like size, color, or material to create different product versions.
+
+By defining Item Attributes properly, you can generate multiple Item Variants based on the same template, making inventory management much more efficient.
+
+---
+
+## 1. Accessing the Item Attribute List
+
+To view or create Item Attributes, navigate to:
+
+**Home > Stock > Settings > Item Attribute**
+
+---
+
+## 2. How to Create an Item Attribute
+
+Follow these steps to create a new Item Attribute in ERPZ:
+
+1. Go to the **Item Attribute** list and click on **Add Item Attribute**.
+2. Enter a name for the attribute (e.g., Size, Color).
+3. In the **Attribute Values** table, enter the possible values for the attribute.
+
+For example:
+- **Size**: Small, Medium, Large
+- **Color**: Red, Blue, Green
+
+4. Save the attribute.
+
+Attributes can either be **Numeric** or **Non-Numeric**, as explained below.
+
+---
+
+### 2.1 Non-Numeric Attributes
+
+For **Non-Numeric Attributes**, specify the values and their abbreviations in the **Attribute Values** table. For example, for the attribute **Color**, you can add values like Red, Blue, and Green along with their abbreviations.
+
+```md
+| Attribute Value | Abbreviation |
+|-----------------|--------------|
+| Red             | R            |
+| Blue            | B            |
+| Green           | G            |
+```
+
+### 2.2 Numeric Attributes
+
+If your attribute is Numeric, you will need to specify a range and increment. This allows the system to automatically generate the respective variants.
+
+For example, if you are defining an attribute like Cable Length, you can specify a range from 1 to 5 with an increment of 1. The system will then generate variants with lengths 1, 2, 3, 4, and 5.
+
+```md
+| Attribute Name  | Range Start | Range End | Increment |
+|-----------------|-------------|-----------|-----------|
+| Cable Length    | 1           | 5         | 1         |
+```
+
+
+## 3. Related Topics
+
+- [Item Variants](/stock/stock-masters/item-variants)
+- [Item Group](/stock/stock-masters/item-group)
+- [Item Price]()

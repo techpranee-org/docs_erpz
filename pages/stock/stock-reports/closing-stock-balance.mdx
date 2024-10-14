@@ -1,0 +1,37 @@
+---
+title: "Closing Stock Balance"
+description: "An overview of the Closing Stock Balance feature in ERPZ for efficient inventory management."
+---
+
+# Closing Stock Balance
+
+The **Closing Stock Balance** is an essential component of inventory management, providing businesses with an accurate picture of their stock levels. This feature enhances the performance of the Stock Balance report, ensuring timely and efficient data retrieval.
+
+## 1. How the Stock Balance Report is Prepared
+
+The Stock Balance report consists of four primary columns:
+
+- **Opening Stock**
+- **In Stock**
+- **Out Stock**
+- **Balance Stock**: Calculated using the formula:  `Balance Stock = Opening Stock + In Stock - Out Stock`
+
+### 1.1 Key Challenges in Preparing the Stock Balance Report
+
+One of the main challenges in generating the Stock Balance report is accurately calculating the Opening Stock. This involves reading all entries in the Stock Ledger Entry table before the specified **From Date** filter. However, if no filters are applied for item code or warehouse, and the Stock Ledger Entry table contains a large volume of records, this can lead to significant performance issues.
+
+## 2. Closing Stock Balance Feature
+
+To address these challenges, the **Closing Stock Balance** feature was introduced. This functionality allows the system to calculate and store Opening Stock in advance, improving the efficiency of Stock Balance report generation.
+
+### 2.1 Steps to Effectively Use the Closing Stock Balance Feature
+
+1. **Closing Stock Balance Creation**: After the financial year ends and all necessary audits are completed (e.g., for the financial year 2022-2023), create the Closing Stock Balance for the specified end date of that year.
+   
+2. **Data Preparation**: Once the Closing Stock Balance is submitted, the system will take time to prepare the data. During this phase, the Opening Stock values are calculated and stored for future reference.
+
+3. **Utilizing Closing Stock Balance**: With the Closing Stock data prepared, the system can efficiently generate the Stock Balance report. When a user accesses the report, the system retrieves the necessary data from the Closing Stock Balance for the Opening Stock values.
+
+4. **Annual Closing Stock Balance**: It is crucial to create a Closing Stock Balance every year after the financial year's closure to ensure that Opening Stock values are accurate and up-to-date for each reporting period.
+
+By implementing the **Closing Stock Balance** feature and following these steps, businesses can significantly enhance the performance and efficiency of their Stock Balance reports, even when dealing with a substantial amount of data in the Stock Ledger Entry table.

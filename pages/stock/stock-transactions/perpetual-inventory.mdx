@@ -1,0 +1,204 @@
+---
+title: "Perpetual Inventory"
+description: "Understand the perpetual inventory system in ERPZ, including activation, transactions, and related concepts."
+---
+
+# Perpetual Inventory
+As per the perpetual inventory system, accounting entry is done for every stock transaction. Otherwise, entries are made in larger intervals, such as monthly or quarterly. Each warehouse is linked with a corresponding account head.
+
+On receipt of items in a particular warehouse, the balance in the Warehouse Account will increase. Similarly, when items are delivered from the Warehouse, an expense will be booked, and the balance in the Warehouse Account will reduce.
+
+## 1. How to Activate Perpetual Inventory
+To activate Perpetual Inventory:
+
+1. Go to 
+`Home > Accounting > Company > Enable Perpetual Inventory`.
+
+2. Note that if you disable perpetual inventory, users will have to manage the account entries manually.
+
+Set up the following default accounts for each Company if not set. These accounts are created automatically in the new ERPZ accounts:
+- Default Inventory Account (Asset)
+- Stock Received But Not Billed (Liability)
+- Stock Adjustment Account (Expense)
+- Expenses Included In Valuation (Expense)
+- Cost Center
+
+If you want to set an individual account for each warehouse, create account heads for each account by navigating to:
+`Accounts > Chart of Accounts > Company > Application of Funds (Assets) > Current Asset > Stock Assets > *Create a new account with the same name as Warehouse`
+
+Now, go to a warehouse and link this account to the warehouse. This helps in filtering and viewing statements warehouse-wise.
+
+For stock transactions, general ledger entries are made against the Account Head set on the warehouse. If the user has not set the account for the warehouse, the system will get the account head from the parent warehouse. If an account was not set for the parent warehouse, the system retrieves the account (Default Inventory Account) from the company master.
+
+## 2. Example
+Consider the following Chart of Accounts and Warehouse setup for your company:
+
+**Chart of Accounts**:
+- Assets (Dr)
+  - Current Assets
+  - Accounts Receivable
+  - Debtors
+  - Stock Assets
+    - Stores
+    - Finished Goods
+    - Work In Progress
+  - Tax Assets
+    - VAT
+- Liabilities (Cr)
+  - Current Liabilities
+  - Accounts Payable
+  - Creditors
+  - Stock Liabilities
+  - Stock Received But Not Billed
+  - Tax Liabilities
+    - Service Tax
+- Income (Cr)
+  - Direct Income
+  - Sales Account
+- Expenses (Dr)
+  - Direct Expenses
+  - Stock Expenses
+  - Cost of Goods Sold
+  - Expenses Included In Valuation
+  - Stock Adjustment
+  - Indirect Expenses
+  - Shipping Charges
+  - Customs Duty
+
+### 2.1 Warehouse - Account Configuration
+- Stores
+- Work In Progress
+- Finished Goods
+
+### 2.2 Purchase Receipt
+Suppose you have purchased **10 nos** of item "RM0001" at **$200** from supplier "Arcu Vel Quam Fabricators." Following are the details of the Purchase Receipt:
+
+**Supplier:** Arcu Vel Quam Fabricators
+
+**Items:**
+
+| Item   | Warehouse | Qty | Rate | Amount | Valuation Amount |
+|--------|-----------|-----|------|--------|------------------|
+| RM0001 | Stores    | 10  | 200  | 2000   | 2250             |
+
+**Taxes:**
+
+| Account               | Amount | Category                   |
+|----------------------|--------|----------------------------|
+| Shipping Charges     | 100    | Total and Valuation        |
+| VAT (10%)            | 200    | Total                      |
+| Customs Duty         | 150    | Valuation                  |
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+As stock balance increases through Purchase Receipt, the "Stores" accounts are debited, and a temporary account "Stock Received But Not Billed" account is credited to maintain a double-entry accounting system. At the same time, a negative expense is booked in the account head categorized as "Valuation" or "Total and Valuation" in the taxes and charges table for the amount added for valuation purposes, to avoid double expense booking.
+
+### 2.3 Purchase Invoice
+Upon receiving the bill from the supplier for the above Purchase Receipt, you will make a Purchase Invoice for the same. The general ledger entries are as follows:
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+Here, the "Stock Received But Not Billed" account is debited, nullifying the effect of the Purchase Receipt.
+
+### 2.4 Delivery Note
+Let's say you have an order from "Utah Automation Services" to deliver **5 nos** of item "RM0001" at **$300**. Following are the details of the Delivery Note:
+
+**Customer:** Utah Automation Services
+
+**Items:**
+
+| Item   | Warehouse | Qty | Rate | Amount |
+|--------|-----------|-----|------|--------|
+| RM0001 | Stores    | 5   | 300  | 1500   |
+
+**Taxes:**
+
+| Account         | Amount |
+|----------------|--------|
+| Service Tax    | 150    |
+| VAT            | 100    |
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+As an item is delivered from the "Stores" warehouse, the "Stores" account is credited, and an equal amount is debited to the expense account "Cost of Goods Sold." The debit/credit amount is equal to the total valuation amount (buying cost) of the selling items. The valuation amount is calculated based on your preferred valuation method (FIFO / Moving Average) or the actual cost of serialized items.
+
+In this example, we have considered the valuation method as FIFO. 
+
+**Valuation Rate** = Purchase Rate + Charges Included in Valuation = 200 + (250 / 10) = 225  
+**Total Valuation Amount** = 220 * 5 = 1125
+
+### 2.5 Sales Invoice with Update Stock
+Let's say you did not make a Delivery Note against the above order and instead, you made a Sales Invoice directly, with the "Update Stock" options. The details of the Sales Invoice are the same as the above Delivery Note.
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+Here, apart from normal account entries for an invoice, the "Stores" and "Cost of Goods Sold" accounts are also affected based on the valuation amount.
+
+### 2.6 Stock Entry (Material Receipt)
+**Items:**
+
+| Item   | Target Warehouse | Qty | Rate | Amount |
+|--------|------------------|-----|------|--------|
+| RM0001 | Stores           | 50  | 220  | 11000  |
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+### 2.7 Stock Entry (Material Issue)
+**Items:**
+
+| Item   | Source Warehouse | Qty | Rate | Amount |
+|--------|------------------|-----|------|--------|
+| RM0001 | Stores           | 10  | 220  | 2200   |
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+### 2.8 Stock Entry (Material Transfer)
+**Items:**
+
+| Item   | Source Warehouse | Target Warehouse | Qty | Rate | Amount |
+|--------|------------------|------------------|-----|------|--------|
+| RM0001 | Stores           | Work In Progress  | 10  | 220  | 2200   |
+
+**Stock Ledger**
+
+_Perpetual Inventory_
+
+**General Ledger**
+
+_Perpetual Inventory_
+
+## 3. Related Topics
+- [Accounting Of Inventory Stock](/stock/stock-transactions/accounting-of-inventory-stock)
+- [Migrate to Perpetual Inventory]()

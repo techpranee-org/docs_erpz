@@ -1,17 +1,35 @@
-import Pagination from '../../components/Pagination';
-import pages from '../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Disassembly Order in ERPZ"
+description: "Learn how to use Disassembly Orders in ERPZ to dismantle finished goods and return the components to the store."
+---
 
+# Disassembly Order in ERPZ
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+In ERPZ, a **Disassembly Order** is used to dismantle finished goods and return the components that are in good condition back to the store. This process allows users to adjust the valuation rate of the components when they are added back to the store.
 
+---
 
+## 1. Creating a Disassembly Order
 
+To create a **Disassembly Order**, open a **Work Order** that is either in a **Completed** or **Closed** state. Click on the **Create** button and select **Disassembly Order**.
 
+![Work Order to Disassembly Order]()
 
+---
 
-<Pagination
-  pages={pages}
-/>
+## 2. Stock Entry for Disassembly
+
+After clicking on the **Disassembly Order** button, the system will automatically generate a **Stock Entry** with the type set to **Disassemble**.
+
+![Stock Entry Disassembly]()
+
+---
+
+## 3. Manual Adjustments for Items
+
+Users have the flexibility to manually remove items that are not in good condition. The system will automatically fetch the basic rate based on previous transactions, but users can edit the basic rate for the raw materials if necessary.
+
+---
+
+By following these steps, users can efficiently dismantle finished goods and manage the return of reusable components to inventory.
+

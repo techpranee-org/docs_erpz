@@ -1,0 +1,53 @@
+---
+title: "Serial Number Naming"
+description: "Learn how to assign and manage serial numbers for inventory items in ERPZ."
+---
+
+# Serial Number Naming
+
+In ERPZ, Serial Numbers are unique values assigned to each unit of an item. Serial numbers help track an item’s warranty, expiry details, and its lifecycle. Typically, high-value items such as machines, computers, and costly equipment are serialized.
+
+To serialize an item, go to the Item master and enable **Has Serial No**.
+
+There are two ways Serial Numbers can be generated in ERPZ:
+
+## 1. Serializing Purchased Items
+
+If the purchased items come with Serial Numbers applied by the OEM (Original Equipment Manufacturer), you can follow the same Serial Numbers in ERPZ. During the creation of a Purchase Receipt, you can scan or manually enter the Serial Numbers for an item. Upon submitting the Purchase Receipt, the Serial Numbers will be generated in the backend as per the Serial Numbers provided for the item. 
+
+> **Note:** If you are using the OEM’s Serial Number, do not mention a prefix for serialization in the Item master. The Prefix field should be left blank in this scenario.
+
+### 1.1 Barcoded Serial Numbers
+If the received items have a barcoded Serial Number, you can simply scan the barcode to enter the Serial Number in the Purchase Receipt.
+
+Once the Purchase Receipt or Stock Entry for the serialized item is submitted, the Serial Numbers will be auto-generated.
+
+![Serial Numbers Entry]()
+
+Generated Serial Numbers will be updated for each item as follows:
+
+![Serial Nos Created]()
+
+## 2. Serializing Manufactured Items
+
+For manufactured items, you can define a Serial Number series directly in the Item master. When a production entry is made, ERPZ will automatically create Serial Numbers for the item based on the defined series.
+
+### 2.1 Serial Number Series
+
+When an item is set as serialized, you can specify the Serial Number series in the Item master.
+
+![Serial Nos Created]()
+
+### 2.2 Production Entry for Serialized Items
+
+Upon submission of the production entry for a serialized item, ERPZ will automatically generate Serial Numbers following the series specified in the Item master.
+
+![Serial Nos Created]()
+
+---
+
+## Related Topics
+
+- [Item Codification](#)
+- [Managing Serialized Items](#)
+- [Tracking Warranty and Expiry](#)

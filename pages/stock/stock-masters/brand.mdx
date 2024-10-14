@@ -1,16 +1,67 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Brand"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
+# Brand
 
+A **Brand** identifies items with a specific name.
 
-<Pagination
-  pages={pages}
-/>
+Typically, a Brand refers to the manufacturer or packer of a product. For example, **Apple** is a brand that manufactures laptops. However, a Brand is not necessarily the same as the Manufacturer; it is simply the name under which a product is sold. For instance, if you manufacture plastic cups, you may license them to a larger brand to be sold under their name.
+
+In ERPZ, Brands can be assigned to Items for identification and to apply specific defaults.
+
+To access the Brand list, navigate to:
+> **Home > Selling > Sales > Brand**
+
+## 1. How to Create a Brand
+
+1. Go to the **Brand** list and click **New**.
+2. Enter a Brand name and add a description, if needed.
+3. Click **Save**.
+
+Once created, this Brand can now be associated with different Items.
+
+---
+
+## 2. Features
+
+### 2.1 Setting Defaults for Items of this Brand
+
+When assigning a Brand to an Item, the following defaults can be applied. These defaults will automatically populate when performing Sales or Purchase transactions for items associated with this Brand.
+
+#### **Default Warehouse**
+The Warehouse from which the Item will be sourced or stored, depending on the transaction.
+
+#### **Default Price List**
+The Price List specified here will be used for Purchase or Sales transactions involving items of this Brand.
+
+### Purchase Defaults
+
+During Purchase transactions like **Purchase Order**, **Purchase Receipt**, or **Purchase Invoice**, the defaults specified here will be fetched when selecting an Item of this Brand.
+
+- **Default Buying Cost Center**
+- **Default Supplier**
+- **Default Expense Account**
+
+### Sales Defaults
+
+During Sales transactions like **Sales Order**, **Delivery Note**, or **Sales Invoice**, the defaults set here will be applied when selecting an Item of this Brand.
+
+- **Default Selling Cost Center**
+- **Default Income Account**
+
+---
+
+## 3. Related Topics
+
+For more detailed information, refer to the following:
+
+- [Purchase Order]()
+- [Sales Order]()
+- [Purchase Receipt]()
+- [Delivery Note]()
+- [Sales Invoice]()
+- [Purchase Invoice]()

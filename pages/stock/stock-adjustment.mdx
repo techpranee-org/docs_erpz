@@ -1,16 +1,51 @@
-import Pagination from '../../components/Pagination';
-import pages from '../../utils/order';
-import { Callout } from 'nextra/components';
+---
+title: "Stock Adjustment / COGS with Negative Stock"
+description: "Understanding stock adjustments caused by negative stock entries in ERPZ."
+---
 
+# Stock Adjustment / COGS with Negative Stock
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+In this section, we will explore how negative stock entries can lead to stock adjustments in ERPZ. Many users enable the **Allow Negative Stock** feature in Stock Settings, allowing them to create delivery notes without sufficient stock on hand. This feature is often used when dispatching materials to customers. However, to rectify negative stock levels, users typically create purchase receipt entries after issuing delivery notes, resulting in stock adjustment entries.
 
+## 1. Example Scenario
 
+Let's consider an item named **Testing Item Stock Adj**, for which no stock exists. The user creates a delivery note but encounters an error stating that the valuation rate is mandatory. Consequently, the user inputs a random valuation rate of **100** for the item.
 
+### 1.1 Item Master
+- **Item Name**: Testing Item Stock Adj
+- **Valuation Rate**: 100
 
+### 1.2 Delivery Note
+Since stock does not exist, the system applies the valuation rate of **100** and reflects the stock in hand as follows:
 
-<Pagination
-  pages={pages}
-/>
+![GL Entry Negative Stock]()
+
+## 2. Adjusting Negative Stock
+
+To address the negative stock situation, the user must create a purchase receipt entry with a purchase rate of **300**. 
+
+### 2.1 Purchase Receipt Entry
+- **Purchase Rate**: 300
+
+However, this purchase receipt is created after the delivery note, leading to a mismatch in valuation rates:
+- **Delivery Note Valuation Rate**: 100
+- **Purchase Receipt Valuation Rate**: 300
+
+Since the stock is negative, the system retains the valuation rate of **100** for the purchase receipt. If it had used the valuation rate of **300**, the stock balance would be zero, but the stock balance value would inaccurately reflect a value of **200**. Therefore, the system records the difference of **200** in the stock expense account (Stock Adjustment/COGS) as follows:
+
+![COGS Stock Adjustment]()
+
+## 3. How to Solve the Problem
+
+To avoid stock adjustment entries due to negative stock, consider the following solutions:
+
+1. **Disable Negative Stock Feature**: Do not use the negative stock feature to prevent such scenarios from occurring.
+  
+2. **Create Backdated Purchase Entries**: Ensure that purchase entries are created before dispatching items. This ensures that the system applies the correct valuation rate to the delivery note, negating the need for any stock adjustments.
+
+### 3.1 Backdated Purchase Receipt
+When a backdated purchase entry is submitted, the system generates a reposting entry that corrects the valuation rate of the delivery note. After the reposting, the delivery note's valuation rate changes from **100** to **300**, resulting in an updated **Stock In Hand** value.
+
+![Stock In Hand After Repost]()
+
+By following these guidelines, users can effectively manage stock adjustments and maintain accurate inventory records in ERPZ.

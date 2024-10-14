@@ -1,16 +1,76 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Item Group"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
+# Item Group
 
+An **Item Group** is a way to classify items based on types.
 
-<Pagination
-  pages={pages}
-/>
+Depending on the type of product, you can categorize an item under its respective field. For example:
+- If the product is service-oriented, assign it under the Item Group - *Service*.
+- If the product is used as a raw material, assign it under the *Raw Material* category.
+- For items used only in trading, you can categorize them under an Item Group called *Trading*.
+
+To access the Item Group list, navigate to: 
+> **Home > Stock > Items and Pricing > Item Group**
+
+This is what the Item Group tree looks like: **Item Group Tree**
+
+## 1. How to create an Item Group
+
+1. Go to the **Item Group** list and click **New**.
+2. Select a group node under which you wish to create the Item Group. The default root is *All Item Groups*.
+3. Select **Add Child** or click on the **New** button.
+4. To make this child a category/group node, enable the **Group Node** option.
+5. Click **Create New**.
+
+> **Note**: 
+> - Nodes in different parts of the tree cannot have the same name.
+> - Child nodes are automatically arranged alphabetically.
+
+### 1.2 Delete an Item Group
+
+1. Select the Item Group you want to delete.
+2. Click on **Delete**.
+3. Confirm by clicking **Yes**.
+
+---
+
+## 2. Features
+
+To access the following options, click on an Item Group and then click **Edit**.
+
+### 2.1 Parent Item Group
+
+You can change the parent Item Group by selecting another one under **General Settings**.
+
+### 2.2 Defaults
+
+- **Default Price List**: Determines the item prices for all items within this Item Group.
+- **Default Warehouse**: Sets a default warehouse for transactions involving items from this group.
+- **Default Buying/Selling Cost Center**: The default cost center for buying/selling transactions for items in this group.
+- **Default Expense/Income Account**: The default accounts for income and expenses related to items in this group.
+- **Default Supplier**: Sets a supplier that will automatically be selected in purchase transactions for items in this group.
+
+### 2.3 Item Tax
+
+A default item tax template can be applied to all items in this group. Additionally, you can select a **Tax Category** for these items. For more details, refer to the [Quotation](#) page for information on Tax Categories.
+
+### 2.4 Website Settings
+
+- **Show in Website**: Items in this group will be shown on your website under the Item Group.
+- **Weightage**: Defines the display order of Item Groups. Groups with higher weights are shown first.
+- **Slideshow**: Add a slideshow for the Item Group, similar to how you can for individual items. Learn more in the [Homepage](#) section of the Website module.
+- **Description**: This appears on the Item Group page on your website.
+- **Website Specifications**: Add custom labels and descriptions for items in this group, visible on your website.
+
+---
+
+## 3. Related Topics
+
+For more detailed documentation, refer to the following:
+
+- [Item](/stock/stock-masters/item)

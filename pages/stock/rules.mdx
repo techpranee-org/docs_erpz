@@ -1,16 +1,76 @@
-import Pagination from '../../components/Pagination';
-import pages from '../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Rules"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
+# Rules
 
-<Pagination
-  pages={pages}
-/>
+Shipping and Pricing Rules are essential features in ERPZ's Stock module that streamline the management of shipping costs and pricing strategies.
+
+---
+
+## 1. Shipping Rule
+
+Shipping Rules allow businesses to define various parameters for calculating shipping charges based on factors such as weight, volume, destination, or shipping method. These rules help automate the calculation of shipping costs during sales transactions, ensuring accurate and consistent charges based on predefined criteria.
+
+### 1.1 How to Create a Shipping Rule
+
+1. Navigate to:
+
+> Stock > Setup > Shipping Rule > New
+
+2. **Enter Rule Name:** Add a name for the Shipping Rule.
+3. **Select Conditions:**
+- **Based on Weight/Volume:** Set shipping rates based on weight or volume of the items.
+- **Destination:** Set different rates for domestic or international shipments.
+- **Shipping Method:** Define charges based on the selected shipping method (e.g., air, sea, ground).
+4. **Enter Shipping Rates:** Define the shipping charges based on the criteria set above.
+5. **Enable:** Ensure the rule is enabled to apply in transactions.
+
+Once the Shipping Rule is created, it will automatically apply during sales transactions whenever the conditions are met, ensuring consistent and accurate shipping costs.
+
+---
+
+## 2. Pricing Rule
+
+Pricing Rules in ERPZ empower businesses to create dynamic pricing strategies based on specific conditions or criteria. This includes setting discounts, promotions, bulk pricing, or special pricing for different customer segments, items, or sales channels.
+
+### 2.1 How to Create a Pricing Rule
+
+1. Navigate to:
+> Selling/Buying > Setup > Pricing Rule > New
+
+
+2. **Enter Rule Name:** Provide a name for the Pricing Rule.
+3. **Apply On:** Choose whether the rule applies to Sales, Purchases, or both.
+4. **Set Conditions:**
+- **Customer Segment/Group:** Apply different pricing strategies for specific customer groups.
+- **Item or Item Group:** Set special prices for selected items or groups of items.
+- **Transaction Type:** Apply the rule to quotations, sales orders, or invoices.
+5. **Define Pricing Strategy:**
+- **Discount Percentage:** Offer a percentage discount on the listed price.
+- **Fixed Amount Discount:** Provide a fixed discount on the price.
+- **Bulk Pricing:** Set special pricing based on quantity purchased (e.g., Buy 10, Get 5% Off).
+6. **Enable:** Ensure the Pricing Rule is enabled to apply during transactions.
+
+---
+
+### 2.2 Use Cases for Pricing Rules
+
+- **Seasonal Discounts:** Apply discounts during specific periods (e.g., festive sales).
+- **Bulk Discounts:** Set up rules for bulk orders where the unit price decreases as the quantity increases.
+- **Customer-Specific Pricing:** Offer premium customers or loyal clients special pricing based on their customer group.
+
+---
+
+## 3. Related Topics
+
+- [Price List](stock/pricing/price-lists)
+- [Item](/stock/stock-masters/item)
+
+
+
+

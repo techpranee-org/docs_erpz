@@ -1,0 +1,19 @@
+{
+    "stock-transactions": "Stock Transaction",
+    "material-request": "Material Request",
+    "auto-creation-of-material-request": "Auto Creation of Material Request",
+    "opening-stock": "Opening Stock",
+    "stock-entry": "Stock Entry",
+    "accounting-of-inventory-stock": "Accounting of Inventory Stock",
+    "shipment": "Shipment",
+    "delivery-note": "Delivery Note",
+    "pick-list": "Pick List",
+    "purchase-receipt": "Purchase Receipt",
+    "delivery-trip": "Delivery Trip",
+    "packing-slip": "Packing Slip",
+    "putaway-rule": "Putaway Rule",
+    "stock-reconciliation": "Stock Reconciliation",
+    "stock-reservation": "Stock Reservation",
+    "perpetual-inventory": "Perpetual Inventory",
+    "landed-cost-voucher": "Landed Cost Voucher"
+}

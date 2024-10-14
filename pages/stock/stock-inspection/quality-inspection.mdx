@@ -1,0 +1,118 @@
+---
+title: "Quality Inspection"
+description: "Learn how to perform Quality Inspections for incoming and outgoing products in ERPZ to ensure compliance with quality standards."
+---
+
+
+# Quality Inspection
+
+In ERPZ, you can mark your incoming or outgoing products for Quality Inspection to ensure they meet the required standards before they are processed further.
+
+To access this feature, navigate to:
+
+`Home > Stock > Tools > Quality Inspection`
+
+## 1. Prerequisites
+
+Before creating and utilizing a Quality Inspection, it is recommended that you complete the following steps:
+
+- **Create an Item.**
+- **Enable Quality Inspection Criteria** in the Item master. Once either checkbox is enabled, submission of a stock delivery or receipt document will only be allowed after a Quality Inspection has been performed against it.
+
+  **Enable Quality Inspection**
+
+- **(Optional) Create a Quality Inspection Template.** You can define inspection parameters and acceptance criteria in the template, which can be easily referenced in any Quality Inspection. After saving the template, you can associate it with the Item Master.
+
+  **Quality Inspection Template**
+
+## 2. How to Create a New Quality Inspection
+
+From a Draft Purchase/Subcontracting Receipt or Delivery Note, follow these steps:
+
+1. Go to the Item table's Quality Inspection field and click on **Create a New Quality Inspection**.
+2. You can also create a Quality Inspection for Job Card to monitor the quality of in-process items. In this scenario, create a Quality Inspection for the Production Item in the Job Card.
+3. Select the inspection type: **Incoming (Purchase)**, **Outgoing (Sales)**, or **In Process (Manufacturing)**.
+4. Choose the **Reference Document Type**: Purchase Receipt, Purchase Invoice, Delivery Note, Sales Invoice, Stock Entry, or Job Card.
+5. Select the Item and set the sample size for inspection. Only Items with Inspection Criteria enabled in the Item master will be listed.
+6. The Quality Inspection Template set in the Item master will be retrieved automatically.
+7. Modify the **Inspected By** and **Verified By** fields if necessary.
+8. Add any additional remarks regarding the Inspection.
+9. Save your changes. Set the **Status** and **Submit**.
+
+## 3. Features
+
+A single Quality Inspection can include multiple Quality Checks (Parameters). Each check may be Numeric, Non-numeric, or Formula Based.
+
+### 3.1 Numeric Quality Checks
+
+Numeric Quality Checks involve evaluations that require numerical readings and acceptance criteria.
+
+**Example:** Checking if a reading is within a specific range.
+
+- By default, checks are numeric. Two fields, **Minimum Value** and **Maximum Value**, define the range that each reading must fall within. These can be established in the Quality Inspection Template and fetched into the Quality Inspection.
+
+If any readings fall outside this range, the row status will automatically be set to **Rejected** upon saving.
+
+### 3.2 Non-numeric (Value-Based) Quality Checks
+
+Non-numeric Quality Checks require alphabetical values or do not involve any mathematical calculations.
+
+**Example:** Verifying if the color is white in a color quality check, or confirming Yes/No responses for certain parameters.
+
+- For Non-numeric checks, enable the **Non-numeric** checkbox. The fields **Acceptance Criteria Value** and **Value-Based Inspection** will become visible.
+
+- Enter the **Reading Value**. The **Acceptance Criteria Value** can be established in the Quality Inspection Template and subsequently retrieved into the Quality Inspection.
+
+If the Reading Value does not match the Acceptance Criteria Value, the row status will automatically be set to **Rejected** upon saving.
+
+### 3.3 Formula-Based Quality Checks
+
+Formula-Based Quality Checks address more complex scenarios where simple range or acceptance value definitions are insufficient.
+
+**Example:** Evaluating if a material grade is A/B/C, or checking if the mean of certain readings falls within a specified range.
+
+- Enable the **Formula Based Criteria** checkbox to initiate a Formula-Based Quality Check. The **Acceptance Criteria Formula** field will appear, allowing you to define a formula that determines if a check is Accepted or Rejected. This formula can be set in the Quality Inspection Template and retrieved into the Quality Inspection.
+
+**Acceptance Criteria Formula**
+
+Formulas depend on the various Reading fields in the Readings table.
+
+- For Numeric readings, use variables like `reading_1`, `reading_2`, etc.
+- For Non-numeric readings, only `reading_value` is applicable.
+
+**Examples of Formulas:**
+
+```plaintext
+# Numeric
+(reading_1 + reading_2) < 10               # Sum of both readings is less than 10
+(reading_1 + reading_2) <= 10              # Sum is less than or equal to 10
+mean < 15                                   # Mean of non-empty numeric readings is less than 15
+(reading_1 * 2) < 20                        # Reading 1 multiplied by 2 is less than 20
+(reading_1) / 2 < 20                        # Reading 1 divided by 2 is less than 20
+
+# Non-numeric
+reading_value in ("A", "B", "C")           # Reading Value is either A, B, or C
+reading_value != "Red"                      # Reading Value is not equal to Red
+```
+
+Update the readings and save. The Status field in the Readings table rows will be set automatically based on the acceptance formula.
+
+### 3.4 Manual Inspection
+In real-world scenarios, certain checks may be automatically rejected but still accepted due to tolerance levels.
+
+To accommodate this, enable the Manual Inspection checkbox. This allows you to set the row-level status manually, preventing system interference during saves.
+
+Example: If Reading 1 is outside the defined range but close to an acceptable threshold, you may accept it manually.
+
+The overall status for the Quality Inspection can then be determined by the user.
+
+## 4. Video
+Include a link or embed a video tutorial on how to perform Quality Inspections in ERPZ.
+
+## 5. Related Topics
+- [Purchase Receipt](/stock/stock-transactions/purchase-receipt)
+- [Delivery Note](/stock/stock-transactions/delivery-note)
+- [Stock Entry](/stock/stock-transactions/stock-entry)
+- [Sales Invoice]()
+- [Purchase Invoice]()
+- [Job Card]()

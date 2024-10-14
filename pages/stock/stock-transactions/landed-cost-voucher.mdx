@@ -1,0 +1,70 @@
+---
+title: "Landed Cost Voucher"
+description: "Understanding Landed Cost and how to create a Landed Cost Voucher in ERPZ."
+---
+
+
+# Landed Cost Voucher
+
+**Landed Cost** refers to the total cost of acquiring a product, including all expenses incurred to bring the product to the buyer’s location. This encompasses the original cost of the item, shipping fees, customs duties, taxes, insurance, currency conversion fees, and any other relevant charges. Understanding the full landed cost is essential for businesses, as it influences pricing strategies and overall profitability.
+
+## What is Landed Cost?
+
+To illustrate the concept of landed cost, consider this everyday scenario: when you plan to purchase a new washing machine, you research prices to find the best deal. You may discover a cheaper option at a store far from your home. However, when you factor in shipping costs, the total expense might exceed the price offered by a local retailer. Thus, the local store becomes the more economical choice, demonstrating the significance of landed cost in decision-making.
+
+In the business context, accurately calculating the landed cost of a product is vital for determining its selling price and ensuring profitability. All applicable landed cost charges should be integrated into the item's valuation rate.
+
+According to recent studies, only 45% of companies effectively utilize landed cost calculations. The main barriers include:
+
+- Lack of necessary data (49%)
+- Inadequate tools for implementation (48%)
+- Insufficient time to analyze costs (31%)
+- Uncertainty about how to apply landed costs (27%)
+
+To access the **Landed Cost Voucher** list, navigate to:
+
+`Home > Stock > Tools > Landed Cost Voucher`
+
+## 1. Prerequisites
+
+Before creating and using a Landed Cost Voucher, ensure the following:
+
+- A **Purchase Receipt** or **Purchase Invoice** with "Update Stock" enabled to serve as your original receipt of goods.
+- A **Purchase Invoice** for additional landed costs (e.g., freight, insurance, etc.).
+
+Using the Landed Cost Voucher allows you to adjust the recorded costs from the second Purchase Invoice while increasing the stock value accordingly.
+
+## 2. How to Create a Landed Cost Voucher
+
+1. Navigate to the **Landed Cost Voucher** list and click on **New**.
+2. Select the **Receipt Document Type**, either Purchase Invoice or Receipt, and you may select multiple documents.
+3. Choose the specific Invoice or Receipt. The supplier name and Grand Total will be fetched automatically.
+4. Click on **Get Items from Purchase Receipts** to import item details from the selected documents.
+5. Specify whether to **Distribute Charges Based On** quantity or amount.
+6. Fill in the **Expense Account** and **Amount** for additional costs in the **Taxes and Charges** table. The costs will be allocated proportionally based on your selected distribution method.
+7. Save and submit the voucher.
+
+In this document, you can select multiple Purchase Receipts or Invoices and retrieve all items from them. You can add applicable charges in the "Taxes and Charges" table and easily remove any items if charges do not apply.
+
+The added charges are distributed among all items based on either the total amount or quantity, depending on your selection. If you select based on the amount, items with higher amounts will bear a larger share of the charges. Conversely, if you select based on quantity, items with greater quantities will receive a larger allocation.
+
+## 3. Related Actions
+
+### 3.1 Adding Landed Cost in the Purchase Receipt
+
+In ERPZ, you can also include landed cost charges in the **Taxes and Charges** table while creating a **Purchase Receipt (PR)**. When adding charges, ensure to categorize them correctly: charges payable to the supplier should be tagged as “Total and Valuation,” while those payable to third parties should be tagged as “Valuation.” Once the Purchase Receipt is submitted, the system calculates the landed cost for all items, affecting the item’s Valuation Rate based on the FIFO or Moving Average method.
+
+However, it's common that some charges may not be known at the time of creating the Purchase Receipt. For instance, transportation invoices might arrive weeks later, or customs duties may be billed after a significant delay. In such cases, the **Landed Cost Voucher** becomes useful for adjusting landed costs at a later date.
+
+### 3.2 What Happens on Submission?
+
+Upon submitting the Landed Cost Voucher:
+
+- The **Valuation Rate** of items is recalculated based on the updated landed cost.
+- If using a **Perpetual Inventory** system, the system will post general ledger entries to correct the Stock-in-Hand balance by debiting (increasing) the corresponding warehouse account and crediting (decreasing) the specified Expense Account from the Taxes and Charges table.
+- If items have already been delivered, the Cost of Goods Sold (CoGS) value will be adjusted according to the new valuation rate, ensuring accurate financial reporting.
+
+## 4. Related Topics
+
+- [Delivery Trip](/stock/stock-transactions/delivery-trip)
+- [Purchase Receipt](/stock/stock-transactions/purchase-receipt)

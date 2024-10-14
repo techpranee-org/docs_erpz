@@ -1,16 +1,83 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Product Bundle"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
+# Product Bundle
 
+A **Product Bundle** allows you to combine existing items that are sold together as a set. This is useful when you sell a main product and need to ensure that accompanying items, like accessories, are delivered along with it and have their stock levels updated accordingly.
 
-<Pagination
-  pages={pages}
-/>
+For example, when selling a **smartphone**, you may want to bundle it with a **charger**, **cable**, and **sim ejector pin**. A **Product Bundle** will enable you to deliver these items together and keep track of their stock.
+
+A **Product Bundle** can be viewed as the "Bill-of-Materials" (BOM) equivalent on the sales side.
+
+To access the Product Bundle list, go to:
+> **Home > Selling > Items and Pricing > Product Bundle**
+
+---
+
+## 1. Prerequisites
+
+Before creating and using a Product Bundle, it is recommended to first create the following:
+
+- **Item**: The main and child items need to be created in the Item list.
+
+---
+
+## 2. How to Create a Product Bundle
+
+1. Navigate to the **Product Bundle** list and click on **Add Product Bundle**.
+2. Select a **Parent Item**. If it's not created yet, you can create one. Ensure that "Maintain Stock" is unchecked when creating the Parent Item (e.g., **Dinner Set**).
+3. Enter a price for the Parent Item. This price will be fetched during sales transactions.
+4. Optionally, add a description for internal reference.
+5. Add the products that will be bundled under the **Items** table, specifying their quantities.
+6. Click **Save**.
+
+---
+
+### 2.1 Selecting Parent Item
+
+In the **Product Bundle** master, there are two key sections: **Parent Item** and the list of **Child Items**.
+
+- **Parent Item**: The Parent Item serves as a virtual container and should not be a physical product. To ensure this, uncheck the **Maintain Stock** option in the Item Form. Stock is maintained only for the Child Items.
+  
+If you want to maintain stock for the Parent Item, consider creating a regular **Bill of Material (BOM)** and handle packaging through Stock Entry Transactions.
+
+---
+
+### 2.2 Selecting Child Items
+
+In the **Items** table, you need to list all the Child Items for which stock is maintained. These are the items that will be delivered to the customer. 
+
+**Note**: The Parent Item is virtual, meaning it should also be included in the Child Items list (e.g., the **smartphone** in our earlier example).
+
+---
+
+## 3. Features
+
+### 3.1 Product Bundle in Sales Transactions
+
+When performing a sales transaction (e.g., Sales Invoice, Sales Order, Delivery Note), the **Parent Item** will be selected in the main item table.
+
+Upon selecting a Parent Item in the main item table, the associated Child Items will automatically appear in the **Packing List** table of the transaction. If any Child Item is serialized, you can specify its **Serial Number** directly in the Packing List.
+
+Once the transaction is submitted, stock levels for the Child Items will be reduced based on the warehouse specified in the Packing List.
+
+---
+
+### 3.2 Using Product Bundle for Offers/Schemes
+
+Product Bundles can also be used to manage promotional offers such as **"Buy One Get One Free"**.
+
+For example, a customer in the nutrition industry wanted a feature to handle such promotions. They created a **non-stock Parent Item** for the offer. In the item's description, they included the details of the offer and an image. In the **Package Items**, they set the quantity of the sellable product to two. This way, whenever the Parent Item was sold, two quantities of the product were deducted from the warehouse.
+
+---
+
+## 4. Related Topics
+
+- [Item](/stock/stock-masters/item)
+- [Sales Order]()
+- [Sales Invoice]()
+- [Delivery Note]()

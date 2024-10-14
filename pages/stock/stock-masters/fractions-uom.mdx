@@ -1,16 +1,57 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Fractions UoM"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
 
-<Pagination
-  pages={pages}
-/>
+
+# Managing Fractions in UoM
+
+**UoM** stands for **Unit of Measurement**. Common examples of UoMs include:
+- Numbers (Nos)
+- Kilograms (Kg)
+- Liters (L)
+- Meters (m)
+- Box
+- Carton
+
+Some UoMs cannot have values with decimal places. For instance, when dealing with items like televisions, where the UoM is defined as **Nos**, you cannot have quantities such as 1.5 Nos of televisions or 3.7 Nos of computer sets. The quantity for these items must always be a whole number.
+
+---
+
+## 1. Configuring UoM for Whole Numbers
+
+You can configure whether a particular UoM can have decimal values or not. By default, ERPZ allows decimal values for all UoMs. If you wish to restrict decimal places or fractions for a specific UoM, follow these steps:
+
+### 1.1 Accessing the UoM List
+
+1. Navigate to: **Stock > Setup > UoM**.
+2. From the list of UoMs, select the UoM for which you want to restrict decimal values. For example, let's assume the UoM is **Nos**.
+
+### 1.2 Configuring the UoM
+
+1. In the **UoM Master**, look for the field labeled **Must be Whole Number**.
+2. Check this field to restrict users from entering decimal values in the quantity field for items assigned this UoM.
+
+UoM Must be Whole Number
+
+---
+
+## 2. Validation of Decimal Values
+
+Once you have configured the UoM to restrict decimal values, ERPZ will validate the quantity during transactions. If you attempt to enter a fractional quantity for an item with a UoM that has the **Must be Whole Number** option checked, you will receive an error message, stating:
+
+
+This validation ensures that all quantities conform to the whole number requirement, thereby maintaining consistency in inventory management and transactions.
+
+---
+
+## 3. Related Topics
+
+- [Unit of Measure (UoM)](/stock/stock-masters/uom)
+- [Item Management]()
+- [Stock Management]()
+

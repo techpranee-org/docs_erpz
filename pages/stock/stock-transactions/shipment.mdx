@@ -1,0 +1,77 @@
+---
+title: "Shipment"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+# Shipment
+
+A **Shipment** is a document that tracks real-world shipments created against a **Delivery Note** or independently in ERPZ.
+
+**Introduced in version 13**
+
+Shipments are useful for shippers who want to track information such as **AWB Number**, **Shipment Status**, **Carrier**, and more.
+
+To access the Shipment list, go to:
+
+**Home > Stock > Stock Transactions > Shipment**
+
+## 1. Prerequisites
+
+Before creating and using a Shipment, the following should be set up:
+
+- Company and Customer Address with Postal Code, Email Address, and Phone Number.
+- Customer Contact.
+
+## 2. How to create a Shipment
+
+Shipments can be created manually or from a **Delivery Note**.
+
+### 2.1 Manual Shipment
+
+To create a Shipment manually:
+
+1. Navigate to the Shipment list and click **New**.
+2. Select an option in the **Pickup from** field:
+   - If you select 'Company', you need to select an Address and a **Pickup Contact Person** from your organization in ERPZ. Make sure to provide the Last Name, Email Address, and Phone Number for this user.
+3. Fill in the **Delivery To** section with appropriate details.
+4. Add parcel information in the **Shipment Parcel** table.
+5. Enter the value of goods and select a **Pickup Date**.
+6. Add a description of the contents in the Shipment.
+7. Optionally, fill in the **Shipment Information** section to track the shipment manually.
+8. Click **Save** and then **Submit**.
+
+### 2.2 Shipment from Delivery Note
+
+To create a Shipment from a Delivery Note:
+
+1. Open the **Delivery Note** and click **Create > Shipment**.
+2. Fill out the form as described in the manual shipment process.
+
+## 3. Features
+
+### 3.1 Shipment Parcel
+
+You can specify the **length**, **width**, **height**, and **weight** of each parcel. If there are multiple parcels with identical dimensions, the **count** field can be set accordingly.
+
+A **Parcel Template** can be created and set in the **Parcel Template** field to automatically fetch commonly used dimensions. After adding the template, click **Add Template**.
+
+### 3.2 Shipment Information / Details
+
+The **Shipment Information** section is optional and used for manually tracking shipment details:
+
+- **Service Provider**: A third-party service that provides shipping services from various carriers.
+- **Shipment ID**: The unique Shipment ID from your shipping platform.
+- **Shipment Amount**: Total cost incurred for the shipment.
+- **Carrier**: The carrier responsible for delivering your shipment.
+- **Carrier Service** (optional): The type of service provided, e.g., Economy or Express.
+- **AWB Number**: The unique Air Waybill number used to track international air cargo.
+- **Incoterm**: International rules defining responsibilities of buyers and sellers.
+
+### 3.3 Automation
+
+You can automate processes like rate comparison, label generation, and shipment tracking using **Shipping Integration**.
+
+## 4. Related Topics
+
+- [Delivery Note](#)
+- [Packing Slip](#)

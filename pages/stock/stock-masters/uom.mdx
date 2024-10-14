@@ -1,16 +1,82 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "UoM"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
+# Unit of Measure (UoM)
 
-<Pagination
-  pages={pages}
-/>
+**A Unit of Measure (UoM)** is a standardized unit used to quantify an item in ERPZ. It defines how an item is measured in inventory, sales, and purchasing transactions.
+
+By default, ERPZ provides a list of common UoMs, but you can add more UoMs based on your specific business needs.
+
+---
+
+## 1. UoM Settings
+
+In the UoM settings, there is an option labeled **Must be Whole Number**. If this option is checked, you will only be able to use whole numbers for this UoM, meaning fractional quantities will not be allowed.
+
+For example:
+- If **Must be Whole Number** is checked for "Piece," you can only order items in quantities like 1, 2, or 3 Pieces, but not 1.5 Pieces.
+
+To learn more about using fractional UoMs, please refer to [UoM Fractions](./uom-fractions.mdx).
+
+---
+
+## 2. UoM Conversion Factor
+
+While the UoM list stores only the unit name (e.g., Kilogram, Pound, Liter), the **UoM Conversion Factor** document stores the actual conversion rates between different UoMs.
+
+For example, if 1 Kilogram (Kg) is approximately equal to 2.2 Pounds (Lb), the conversion factor between Kg and Lb will be recorded in the **UoM Conversion Factor** document.
+
+It is important to define conversion factors if you plan to use custom UoMs that will be converted to other units in transactions. For example:
+- **1 Kg = 2.20462 Lb**
+- **1 Meter = 100 Centimeters**
+
+By defining these conversion factors, ERPZ can automatically handle conversions during transactions, ensuring consistency across sales, purchases, and stock management.
+
+---
+
+## 3. How to Create a New UoM
+
+To create a new UoM in ERPZ, follow these steps:
+
+1. Go to the **UoM List**: **Home > Stock > Settings > UoM**.
+2. Click on **Add UoM**.
+3. Enter the name of the UoM (e.g., Box, Dozen, Carton).
+4. If required, check the box for **Must be Whole Number**.
+5. Save the UoM.
+
+---
+
+## 4. How to Set UoM Conversion Factor
+
+Once the UoM is created, you can set the conversion factor by following these steps:
+
+1. Go to **Home > Stock > Settings > UoM Conversion Factor**.
+2. Click on **New**.
+3. Select the item for which the conversion applies.
+4. Enter the **From UoM** (e.g., Kg) and **To UoM** (e.g., Lb).
+5. Specify the conversion factor (e.g., 1 Kg = 2.20462 Lb).
+6. Save the conversion factor.
+
+---
+
+## 5. Example
+
+If you have an item measured in **Kilograms (Kg)** and you want to convert it to **Pounds (Lb)**, set the conversion factor as follows:
+
+```md
+| From UoM | To UoM | Conversion Factor |
+|----------|--------|-------------------|
+| Kilogram | Pound  | 2.20462           |
+```
+
+
+## 6. Related Topics
+
+- [Fractions UOM](/stock/stock-masters/fractions-uom)
+- [Item](/stock/stock-masters/item)
+- [Stock]()

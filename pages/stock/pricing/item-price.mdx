@@ -1,16 +1,104 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Item Price"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
+# Item Price
 
-<Pagination
-  pages={pages}
-/>
+**Item Price** is the record where you can log the selling and buying rate of an item.
+
+---
+
+## 1. How to Create Item Price
+
+There are two ways to access the **New Item Price** form:
+
+1. Navigate to:
+
+>Selling/Buying/Stock > Items and Pricing > Item Price > New
+
+Or
+
+2. Go to:
+
+>Stock > Item > Click on "+" next to Item Price
+
+
+### 1.1 Steps to Create Item Price
+
+1. **Select the Item:** The name, UoM, and description will be fetched automatically.
+2. **Select the Price List:** Choose whether it’s a Selling, Buying price, or any other Price List you may have created.
+3. **Enter the Rate:** Input the actual rate in the **Rate** field.
+4. **Save:** Click save to record the Item Price.
+
+---
+
+## 2. Selecting the Price List
+
+You can create multiple Price Lists for one item in ERPZ to track Selling and Buying prices separately. If the item's selling prices change based on territory or other criteria, you can create multiple Selling Price Lists for it.
+
+Upon selecting a Price List, its currency and applicability (whether for selling, buying, or both) will be fetched automatically. To ensure the Item Price is available in sales or purchase transactions, you should select the 'Price List' in the transaction under Currency and Price List.
+
+To check all Item Prices together, go to:
+
+>Stock > Stock Reports > Item Price Stock
+
+
+Visit the Price Lists page to learn more.
+
+---
+
+## 3. Features
+
+### 3.1 Unit of Measurement (UoM)
+
+A price is always specific to a certain UoM. For example, **$1 per KG** or **$80 per hour**. By default, the Item Price will fetch the item's Default Unit of Measure. You can change it to any UoM from the item's UoM table.
+
+For instance, if **Rice** is sold in **1 KG** and **500 grams** packets, you can mention the UoM ("KG" or "grams") in the Item Price, and the correct price will be applied based on the UoM selected in the transaction.
+
+### 3.2 Packing Unit
+
+This refers to the quantity that must be bought or sold per unit of measure. For example, if the Packing Unit is **two** and the UoM is **one**, two items in quantity will be transacted. The default value is **0**. You can use non-integer UoMs like **1.5 Kg** Oats for **1 Packing Unit**. If you leave it as **0**, it won't affect any transactions.
+
+### 3.3 Minimum Quantity
+
+This is the minimum quantity of items that must be transacted for this price to be applicable and updated in the Item Price list.
+
+### 3.4 Applying Price List to a Specific Customer/Supplier
+
+If you select a Selling Price List, a customer field will appear, allowing you to assign this Item Price to a specific customer. Similarly, if you select a Buying Price List, a Supplier field will appear for selecting a specific supplier.
+
+### 3.5 Applying Price List to a Specific Batch
+
+You can also link a specific batch to an Item Price, and upon selecting that batch in a transaction, the item price for that specific batch will be applied.
+
+### 3.6 Validity
+
+Two fields are available here: **'Valid From'** and **'Valid Upto'**. The **Valid From** date is set to the date you created the Item Price. You can also set the **Valid Upto** date on which the Item Price will expire.
+
+### 3.7 Lead Time in Days
+
+This refers to the approximate number of days it takes for the product to reach the warehouse. You can set different Item Prices based on how much time the same product will take to reach you from different vendors.
+
+### 3.8 Note
+
+You can add any additional notes about the Item Price in this field.
+
+---
+
+## 4. Video
+
+[Watch Video on Item Price Creation](#)
+
+---
+
+## 5. Related Topics
+
+- [Item](/stock/stock-masters/item)
+- [Applying Discount]()
+- [Unit of Measure (UoM)](/stock/stock-masters/uom)
+
+

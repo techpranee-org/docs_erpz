@@ -1,0 +1,113 @@
+---
+title: "Delivery Note"
+description: "Learn how to create and manage Delivery Notes in ERPZ."
+---
+
+
+# Delivery Note
+
+A **Delivery Note** is made when a shipment is shipped from the company’s Warehouse to the customer.
+
+A copy of the Delivery Note is usually sent with the transporter. The Delivery Note contains the list of Items that are sent in the shipment and updates the inventory. The Delivery Note is an optional step and a Sales Invoice can be created directly from a Sales Order.
+
+To access the Delivery Note list, go to:
+
+`Home > Stock > Stock Transactions > Delivery Note`
+
+## Delivery Note Flow
+
+### 1. Prerequisites
+
+Before creating and using a Delivery Note, it is advised that you create the following first:
+
+- **Sales Order**
+
+> **Note:** From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in ERPZ.
+
+### 2. How to Create a Delivery Note
+
+The entry of the Delivery Note is very similar to a Purchase Receipt. It is usually created from a “Submitted” Sales Order (that is not shipped) by clicking on `Create > Delivery`.
+
+To create a Delivery Note **manually** (not recommended), follow these steps:
+
+1. Go to the Delivery Note list, click on **New**.
+2. The Customer and Item details can be fetched by clicking on `Get Items from > Sales Order`.
+3. The UOM and Rates will be fetched automatically.
+4. Save and Submit.
+
+#### Fetching Items from a Sales Order
+
+To fetch Items from a Sales Order, click on `Get Items from > Sales Order`. This will open a popup where you can search for Sales Orders and select one.
+
+You will notice that all the information about unshipped Items and other details are carried over from your Sales Order if you create the Delivery Note from there.
+
+You can also edit the posting date and time. The current date and time are set when you create the Delivery Note.
+
+#### 2.1 Statuses
+
+These are the statuses a Delivery Note can be in:
+
+- **Draft**: A draft is saved but yet to be submitted to the system.
+- **To Bill**: Yet to be billed using a Sales Invoice.
+- **Completed**: Submitted and sent all the Items.
+- **Return Issued**: All the Items have been returned.
+- **Cancelled**: Cancelled the Delivery Note.
+- **Closed**: The purpose of the Close is to manage short-closing (e.g., Customer ordered 20 qty but closed at 15 qty).
+
+#### 2.2 Partial Deliveries
+
+When you create a Delivery Note from a Sales Order, the quantities can be changed. For example, if the Sales Order contains 10 Items and you're delivering only 5 this week, you can create 2 Delivery Notes.
+
+#### 2.3 From Pick List
+
+You can create Delivery Notes in bulk from Pick Lists. From a submitted Pick List, click on `Create -> Delivery Note`.
+
+### 3. Related Actions
+
+#### 3.1 Customer Purchase Order Details
+
+You can enter the Customer's Purchase Order number here for Reference.
+
+#### 3.2 Address and Contact
+
+- **Shipping Address**: The Customer's address where the Items will be shipped.
+- **Contact Person**: Add the Contact person if the Customer is an organization.
+
+_For India, GST-related fields such as GSTIN, Place of Supply, etc., can also be added._
+
+#### 3.3 Currency and Price List
+
+Set the currency and pricing list for the Delivery Note. You can also ignore the pricing rule if required.
+
+#### 3.4 Warehouses
+
+- **Set Source Warehouse**: Where the Items will be sourced from.
+- **To Warehouse**: If retaining samples, you can set a "To Warehouse" as well.
+
+#### 3.5 Items Table
+
+You can track Items using barcodes, apply discounts, manage taxes, and add batch/serial numbers for the items.
+
+#### 3.6 Tracking Quality Inspection
+
+If quality inspection is mandatory, record it before submitting the Delivery Note.
+
+#### 3.7 Taxes and Charges
+
+The Taxes and Charges will be fetched from the Sales Order. Ensure all taxes are marked correctly.
+
+#### 3.8 Additional Discount
+
+You can apply additional discounts on the order based on the Grand Total or Net Total.
+
+#### 3.9 Terms and Conditions
+
+Add any relevant terms and conditions for the transaction.
+
+#### 3.10 Transporter Information
+
+If outsourcing the transport, add details such as the Transporter and Driver information.
+
+---
+
+This structure is a high-level overview of the content formatted in Nextra for ERPZ documentation. You can continue adding details for each section, ensuring proper formatting and links for cross-references where necessary.

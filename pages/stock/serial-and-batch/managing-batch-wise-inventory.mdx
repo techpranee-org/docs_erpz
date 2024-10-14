@@ -1,0 +1,51 @@
+---
+title: Managing Batch wise Inventory in ERPZ
+description: Learn how to manage inventory batch-wise in ERPZ to track manufacturing and expiry dates for items grouped in batches.
+---
+
+# Managing Batch wise Inventory in ERPZ
+
+In ERPZ, a **Batch** refers to a group of items that share the same properties or attributes. This is particularly useful for industries like pharmaceuticals, where it's important to track manufacturing and expiry dates for each batch of products.
+
+To manage batches for an item, make sure to set **Has Batch No** to **Yes** in the Item Master.
+
+![Batch Item Example]()
+
+---
+
+## Creating a New Batch
+
+To create a new batch in ERPZ, go to:
+
+`Stock > Documents > Batch > New`
+
+You can also read more about stock batches in the documentation.
+
+For items that are tracked batch-wise, updating the **Batch No.** in stock transactions like **Purchase Receipt** and **Delivery Note** is mandatory.
+
+---
+
+## 1. Purchase Receipt
+
+When creating a **Purchase Receipt**, you need to either create a new batch or select an existing one from the **Batch** master. Note that each batch is associated with only one batch item.
+
+![Batch in Purchase Receipt]()
+
+---
+
+## 2. Delivery Note
+
+In the **Delivery Note**, define the **Batch** in the Item table. If the batch item is included in a **Product Bundle**, you can update its **Batch No.** in the **Packing List** table as well.
+
+![Batch in Delivery Note]()
+
+---
+
+## 3. Batch-wise Stock Balance Report
+
+To check a batch-wise stock balance report in ERPZ, navigate to:
+
+`Stock > Standard Reports > Batch-wise Balance History`
+
+![Batch-wise Stock Balance Report]()
+

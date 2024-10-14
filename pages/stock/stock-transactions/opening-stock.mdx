@@ -1,0 +1,62 @@
+---
+title: "Opening Stock"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+
+
+# Opening Stock
+
+**Opening Stock** refers to the quantity and value of materials available for sale or use at the beginning of an accounting period. It serves as a starting point for inventory management in a new period. The **Closing Stock** of the previous accounting period automatically becomes the Opening Stock for the current accounting period.
+
+---
+
+## 1. Prerequisites
+
+Before posting Opening Stock in ERPZ, ensure the following steps are completed:
+
+- **Create Warehouses**: Ensure that your warehouses are set up.
+- **Link Warehouses to Accounting Ledgers**: Each warehouse must be linked to the correct accounting ledgers for accurate stock valuation and reporting.
+
+---
+
+## 2. Opening Stock for Non-Serialized Items
+
+For non-serialized items, posting the opening stock is straightforward. To do this:
+
+1. Navigate to:
+> Stock > Stock Transactions > Stock Reconciliation
+
+2. Enter the details of the stock items and their quantities.
+3. Save and submit the stock reconciliation.
+
+---
+
+## 3. Opening Stock for Serialized and Batched Items
+
+For serialized and batched items, you need to create **Batch** and **Serial Number** records in advance. To post opening stock for these items, follow these steps:
+
+1. Navigate to:
+> Stock > Stock Transactions > Stock Entry > New
+
+2. In **Stock Entry Type**, select **Material Receipt**.
+3. Choose the relevant **Warehouse** in the **Default Target Warehouse** field.
+4. In the **Items** table, select the **Item Code**, enter the quantity, and the basic rate of each item.
+- For **Batched Items**: Select the **Batch Number**.
+- For **Serialized Items**: Select the **Serial Number**.
+5. Save and submit the stock entry.
+
+---
+
+## 4. Related Topics
+
+To gain a deeper understanding of how opening stock ties into other inventory management activities in ERPZ, explore the following topics:
+
+- [Accounting of Inventory Stock]()
+- [Stock Entry]()
+- [Stock Reconciliation]()
+
+---
+
+For more detailed steps on managing stock, you can refer to the ERPZ stock documentation or watch our instructional videos.

@@ -1,0 +1,47 @@
+---
+title: "Accounting of Inventory Stock"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+# Accounting of Inventory Stock
+
+The value of available inventory in ERPZ is treated as a **Current Asset** in the company's Chart of Accounts. To prepare a Balance Sheet, accounting entries for those assets must be made. There are two different methods of accounting for inventory in ERPZ:
+
+## 1. Auto/Perpetual Inventory
+
+In this method, ERPZ automatically posts relevant accounting entries for each stock transaction, ensuring that the stock balance is synchronized with the accounting balance. This is the default method in ERPZ for new accounts.
+
+When items are purchased and received, they are booked as the company’s assets (stock-in-hand). When these items are sold and delivered, an expense (Cost of Goods Sold) is recorded, equal to the landed cost of the items. **General Ledger (GL)** entries are automatically created after every stock transaction. As a result, the value in the **Stock Ledger** remains aligned with the relevant account balance, ensuring accurate financial statements like the **Balance Sheet** and **Profit and Loss** statement.
+
+Refer to the **Perpetual Inventory** documentation for detailed accounting entries for specific stock transactions.
+
+### 1.1 Advantages of Perpetual Inventory
+
+Using the **Perpetual Inventory** method ensures that asset and expense values are always accurate. Stock balances are automatically synchronized with their respective account balances, eliminating the need for manual periodic entries.
+
+For backdated stock transactions or cancellations/amendments of an existing transaction, ERPZ will automatically recalculate future **Stock Ledger** and **GL Entries** for all items involved. The same recalculations will happen if costs are added later to a submitted Purchase Receipt via a **Landed Cost Voucher**.
+
+**Note:** Since Perpetual Inventory relies heavily on item valuation rates, ensure accurate valuation rates are entered for any incoming stock transactions like **Purchase Receipts**, **Material Receipts**, or **Manufacturing/Repack** entries.
+
+## 2. Periodic Inventory
+
+In the **Periodic Inventory** method, users must manually create accounting entries to synchronize the stock balance with the corresponding account balance. ERPZ does not create automatic entries for stock assets when items are purchased or sold.
+
+During an accounting period, when items are purchased and received, they are booked as an expense in the accounting system. Some of these items are then sold and delivered.
+
+At the end of the accounting period, the total value of unsold items must be recorded as company assets, also known as **stock-in-hand**. The difference between the stock-in-hand value at the beginning of the period and at the end can be positive or negative.
+
+- If positive, this value is subtracted from **Cost of Goods Sold (COGS)** and added to the **assets** (stock-in-hand).
+- If negative, the opposite entry is passed.
+
+This process is referred to as **Periodic Inventory**.
+
+## 3. Migrating from Periodic Inventory to Perpetual Inventory
+
+If you are currently using **Periodic Inventory** in ERPZ and want to switch to **Perpetual Inventory**, follow the migration steps in the documentation to ensure a smooth transition.
+
+## 4. Related Topics
+
+- [Perpetual Inventory](#)
+- [Migrate to Perpetual Inventory](#)

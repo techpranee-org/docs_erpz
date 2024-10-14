@@ -1,57 +1,38 @@
-import Pagination from '../components/Pagination';
-import pages from '../utils/order';
-import { fetchPageData } from '../lib/api';
-import remarkGfm from 'remark-gfm'; 
-import remarkParse from 'remark-parse';
-import remarkRehype from 'remark-rehype';
-import {unified} from 'unified';
-import matter from 'gray-matter';
-import rehypeStringify from 'rehype-stringify';
+---
+title: "Welcome to ERPZ Documentation"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+import { Callout } from 'nextra/components';
+
+
+
+
+# Welcome to ERPZ Documentation
+
+>Unlock the full potential of your business with **ERPZ**, a comprehensive ERP solution designed to streamline operations, enhance productivity, and drive growth.
+
+Whether you're managing finances, overseeing projects, or handling customer relationships, ERPZ empowers businesses of all sizes to operate more efficiently.
+
+## What You Can Expect from This Documentation
+
+In this guide, you'll discover detailed insights into the wide range of services ERPZ offers:
+
+- **Accounting**: Simplify financial management with accurate tracking and reporting.
+- **Buying & Selling**: Streamline procurement and sales processes for better control.
+- **Stock Management**: Monitor and manage your inventory seamlessly.
+- **Manufacturing**: Enhance production efficiency with optimized workflows.
+- **Project Management**: Plan, execute, and track projects effectively.
+- **CRM**: Build stronger customer relationships and drive engagement.
+- **Planning**: Forecast demand, plan resources, and stay ahead of the curve.
+- **Human Resources**: Manage employee data, payroll, and recruitment effortlessly.
 
 
 
 
 
-export async function getStaticProps() {
-  const slug = 'documentation';
-  const page = await fetchPageData(slug); // Use the correct slug
 
-  if (!page || page.length === 0 || !page.content) {
-    return {
-      notFound: true, // Return 404 if content is missing
-    };
-  }
-
-  const processor = unified()
-                          .use(remarkParse)
-                          .use(remarkGfm)
-                          .use(remarkRehype)
-                          .use(rehypeStringify)
-
-  const { content } = matter(page.content);
-
-const htmlContent = (await processor.process(content)).toString();
-
-
-
-  return {
-    props: {
-      htmlContent,
-    },
-  };
-}
- 
-
-export default function DocumentPage({ htmlContent }) {
-  return (
-    <div className='w-full'>
-      <div className='prose dark:prose-invert' dangerouslySetInnerHTML={{__html: htmlContent}}></div>
-      <Pagination
-        pages={pages}
-      />
-    </div>
-  );
-}  
-
-
-
+<Callout type="info">
+  >  Get started with ERPZ today to experience its full power!
+</Callout>

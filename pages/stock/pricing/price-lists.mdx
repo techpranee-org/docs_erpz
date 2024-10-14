@@ -1,16 +1,60 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Price Lists"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
+# Price Lists
 
-<Pagination
-  pages={pages}
-/>
+A **Price List** is a collection of **Item Prices**, which can be either **Selling**, **Buying**, or both.
+
+ERPZ allows you to maintain multiple Selling and Buying Item Prices through Price Lists. This is particularly useful in scenarios where you have different prices based on various factors such as shipping costs, currencies, or customer groups. An item can have multiple prices that can be organized into different rate plans based on customer, currency, region, or shipping costs.
+
+In ERPZ, all Item Prices are stored separately. The Buying Price for an item is different from its Selling Price, and they are thus stored in distinct records.
+
+---
+
+## 1. Accessing a Price List
+
+To access a Price List, navigate to:
+
+>Home > Selling/Buying/Stock > Items and Pricing > Price List
+
+
+---
+
+## 2. How to Use a Price List
+
+### 2.1 Tracking Item Prices
+
+Price Lists are utilized when creating Item Prices to track the selling or buying price of an item. You can also assign specific countries to a Price List.
+
+### 2.2 Enabling/Disabling Price Lists
+
+To disable a specific Price List, simply untick the **Enabled** checkbox. A disabled Price List will not be available for selection in Sales and Purchase transactions.
+
+### 2.3 Price Not UoM Dependent
+
+Consider an item, **Tomatoes**, which you buy in **Boxes** and sell in **Kilos**. 
+
+- If **1 Box = 10 Kilos** and the **Buying Price for 1 Kilo is 10 Rs**, then:
+  - If the **Price Not UoM Dependent** option is unchecked and you select **1 Box** in your transaction, the price will show up only for **1 Kilo**, since that's the only Item Price saved.
+  
+- If you tick this checkbox and make a transaction with **1 Box of Tomatoes**, then the price will be automatically set to **100 Rs**, as the price for **1 Box (10 Kilos)** is **100 Rs**.
+
+### 2.4 Default Price Lists
+
+*Standard Buying and Selling Price Lists are created by default.*
+
+**Note:** If you have multiple Price Lists, you can select a Price List or tag it to a Customer, so that it is auto-selected during transactions. Your Item Prices will automatically be updated from the selected Price List.
+
+---
+
+## 3. Related Topics
+
+- [Item Price](/stock/pricing/item-price)
+- [Unit of Measure (UoM)](/stock/stock-masters/uom)
+- [Item Management]()
+

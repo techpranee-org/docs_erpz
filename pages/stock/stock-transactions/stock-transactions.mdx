@@ -1,0 +1,93 @@
+---
+title: "Stock Transactions"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+# Stock Transactions
+
+Stock transactions in ERPZ encompass a wide range of activities related to managing inventory movements within an organization. These transactions include stock transfers between warehouses, stock adjustments to correct inventory discrepancies, stock reconciliation to ensure accurate stock levels, and stock entries for recording stock movements such as purchases, sales, production, and consumption.
+
+These transactions are essential for maintaining accurate stock levels, tracking stock movements, analyzing inventory performance, and making informed decisions related to procurement, sales, and production planning.
+
+---
+
+## 1. Key Stock Transactions
+
+### 1.1 Material Request
+A **Material Request** is created when stock is required for production, sales, or internal purposes. This helps in planning stock movements and procurement. The material request can be auto-generated based on reorder levels.
+
+- Navigate to:
+> Stock > Material Request > New
+
+
+### 1.2 Auto Creation of Material Request
+Material Requests can be automatically created based on reorder levels or production needs. Auto-creation helps streamline stock management by ensuring timely requests for necessary materials.
+
+- Set up automatic requests in:
+> Stock > Setup > Auto Material Request
+
+
+### 1.3 Opening Stock
+To add **Opening Stock** for newly created items or when starting to use ERPZ, an **Opening Stock Entry** must be made. This is essential for proper tracking of initial inventory.
+
+- Navigate to:
+> Stock > Stock Entry > New
+
+
+### 1.4 Stock Entry
+A **Stock Entry** is used to record stock movements, whether it's incoming, outgoing, or transfers between warehouses. This transaction type covers scenarios such as purchases, sales, production, and consumption.
+
+- Stock entries can be categorized into:
+- **Material Receipt:** For incoming goods.
+- **Material Issue:** For outgoing goods.
+- **Material Transfer:** For moving goods between warehouses.
+- **Manufacture Entry:** For recording production.
+
+### 1.5 Accounting of Inventory Stock
+ERPZ automatically handles the accounting of inventory stock, linking all stock transactions to financial entries. Stock valuation methods (FIFO, Moving Average) are supported, and appropriate entries are posted in the General Ledger.
+
+---
+
+## 2. Additional Stock Transactions
+
+### 2.1 Shipment
+Record and track outgoing shipments of goods. The **Shipment** transaction ensures that shipping is logged in the system and tied to the relevant sales orders.
+
+### 2.2 Delivery Note
+A **Delivery Note** is issued when goods are delivered to a customer. It reflects the stock movement and updates the inventory accordingly.
+
+### 2.3 Pick List
+The **Pick List** is used to select items for a delivery or shipment. It helps warehouse staff efficiently locate and prepare items for dispatch.
+
+### 2.4 Purchase Receipt
+A **Purchase Receipt** is generated when goods are received from a supplier. This updates inventory and is linked to the purchase order.
+
+### 2.5 Delivery Trip
+The **Delivery Trip** records multiple deliveries planned on a single trip, ensuring tracking and optimization of delivery routes.
+
+### 2.6 Packing Slip
+The **Packing Slip** details the contents of a shipment and is linked to the delivery note for a customer order.
+
+### 2.7 Putaway Rule
+**Putaway Rules** define how and where items are stored in the warehouse, helping optimize storage space and inventory organization.
+
+### 2.8 Stock Reconciliation
+**Stock Reconciliation** is used to correct discrepancies between actual and recorded stock. It allows adjustments to match physical inventory with system records.
+
+### 2.9 Stock Reservation
+Reserve stock for specific sales orders, production orders, or customers to ensure availability when needed.
+
+### 2.10 Perpetual Inventory
+ERPZ supports **Perpetual Inventory** accounting, where every stock transaction updates the inventory and financial accounts in real-time, providing accurate stock and valuation reports.
+
+### 2.11 Landed Stock Voucher
+A **Landed Stock Voucher** captures additional costs incurred on inventory after purchase, such as shipping or customs fees. These costs are added to the item's valuation.
+
+---
+
+## 3. Related Topics
+
+- [Material Request]()
+- [Stock Entry]()
+- [Delivery Note]()

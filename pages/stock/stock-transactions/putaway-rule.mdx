@@ -1,0 +1,99 @@
+---
+title: Putaway Rule
+description: A Putaway Rule defines a Warehouse Assignment Strategy for incoming stock in ERPZ.
+---
+
+# Putaway Rule
+
+**A Putaway Rule defines a Warehouse Assignment Strategy for incoming stock.**
+
+A Putaway Rule is uniquely defined for an Item-Warehouse combination in a Company. It takes Warehouse Capacity and Priority into consideration.
+
+In **Purchase Receipts** and **Stock Entries** (Material Receipt & Material Transfer), the Putaway Rules are applied, and items are **auto-assigned** to Warehouses based on the given strategy. This is particularly useful for capacity management in large Warehouses with multiple locations.
+
+To access a Putaway Rule, go to:
+
+`Home > Stock > Stock Transactions > Putaway Rule`
+
+
+---
+
+## 1. Prerequisites 
+
+Before creating and using a Putaway Rule, it is advised that you create the following first:
+
+- Stock Item
+- Warehouse
+
+---
+
+## 2. How to create a Putaway Rule 
+
+1. Go to the Putaway Rule list and click on **New**.
+2. Set the **Company** and select an **Item**.
+3. Select the **Warehouse** on which this rule is applicable.
+4. Set the **Capacity**. You can also select a UOM if you want to set the Capacity in a different UOM. The Capacity in Stock UOM will be set automatically.
+5. Set the **Priority**. This can begin from 1 onwards, with 1 being the highest priority.
+6. Save.
+
+You can additionally disable a Putaway Rule as well. The rule is unique to each Item-Warehouse combination.
+
+---
+
+## 3. How Putaway is strategized 
+
+The strategy is purely based on **Capacity** and **Priority**. Warehouses will be auto-assigned until they reach full capacity. 
+
+- **Priority** will be considered first, followed by free space. 
+- If two rules have the same priority, the rule with more free space available will be assigned.
+- If you are running at full capacity (no free space in any Warehouse), ERPZ will notify you.
+
+---
+
+## 4. How it works 
+
+As mentioned before, the Putaway Rules are applied on **Purchase Receipts** and **Stock Entries** (Material Receipt & Material Transfer).
+
+A checkbox called **Apply Putaway Rule** will allocate items to Warehouses based on the Putaway Rules. 
+
+- Putaway Rules are applied on checking this checkbox and are also re-applied on save if this checkbox is enabled.
+
+### Example:
+
+Here is a Purchase Order with a requirement of 5 Cartons (60 Nos) of Mineral Water.
+
+- Two active Putaway Rules have been created below with a capacity of 4 Cartons (48 Nos) each. One has a higher priority than the other.
+
+When a Purchase Receipt is created from this Purchase Order and the **Apply Putaway Rule** checkbox is checked, one row of 5 Cartons is split and assigned according to the rules. 
+
+- First, 4 out of 5 Cartons are accommodated in the 'Finished Goods - UPI' Warehouse. Once this Warehouse is at capacity, the rest (1 Carton) is assigned to the 'Stores - UPI' Warehouse.
+
+---
+
+## 5. Warehouse Capacity Summary 
+
+The **Warehouse Capacity Summary** report shows Warehouse capacities and their respective stock levels. 
+
+- Only Warehouses having Putaway Rules will be listed here.
+- The **Edit Capacity** button provides the option to edit the Putaway Rule capacity.
+
+---
+
+## 6. Types of Putaway Application 
+
+### 6.1 Direct Putaway 
+
+The previous example explains **Direct Putaway**, which essentially involves directly assigning incoming stock to certain Warehouses based on a strategy. This can easily be exercised via a Purchase Receipt.
+
+### 6.2 Indirect (Combined) Putaway 
+
+Stock is often received into **temporary** or **staging** Warehouses first. From here, it is placed into appropriate locations within the Warehouse. 
+
+This is called **Indirect or Combined Putaway**. To simulate this within ERPZ, a simple Purchase Receipt can be created into the temporary Warehouse, without Putaway applied. From here, a Stock Entry (Material Transfer) can be done, where Putaway Rules can be applied similarly to Purchase Receipts.
+
+---
+
+## 7. Related Topics 
+
+- [Purchase Receipt](/stock/stock-transactions/purchase-receipt)
+- [Stock Entry](/stock/stock-transactions/stock-entry)

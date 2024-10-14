@@ -1,0 +1,106 @@
+---
+title: Pick List
+description: Learn how to create and manage Pick Lists in ERPZ.
+---
+
+# Pick List
+
+A **Pick List** is a document that indicates which items should be taken from your inventory to fulfill orders.
+
+This is particularly useful for businesses with a large amount of inventory, a high volume of orders, or customers ordering many Stock Keeping Units (SKUs). The Pick List selects the Warehouse where an Item is available on a **FIFO (First-In-First-Out)** basis. For batched items, the Warehouse with the batch nearest to its expiry will be selected.
+
+To access Pick List, go to:
+
+`Home > Stock > Stock Transactions > Pick List`
+
+## 1. Prerequisites
+
+Before creating and using a Pick List, ensure the following are created:
+
+- **Stock Item**
+- **Warehouse**
+
+## 2. How to create Pick List
+
+1. Go to the Pick List list and click on **New**.
+2. Set the **Company**.
+3. Select the **Purpose** of the Pick List. These are the options:
+   - **Delivery**: Add items from a Sales Order for delivery. After submitting the Pick List, you can create a Delivery Note based on the Warehouse from which items were picked.
+   - **Material Transfer for Manufacture**: Select a Work Order to pick raw materials for manufacturing. After picking, create a Stock Entry for the raw materials.
+   - **Material Transfer**: Select a Material Request to pick items for. After picking, create a Stock Entry for the picked items.
+
+4. Add the items and quantities to be picked in the **Item Locations** table. Click on **Get Item Locations** to fetch the Warehouse and other details for each item.
+   - **Parent Warehouse**: If selected, Warehouses under that parent Warehouse will be suggested.
+   - **Get Item Locations**: Useful when adding items manually or changing quantities in the Item Locations table.
+
+5. **Item Locations** will include details like the Warehouse, Serial Number (for serialized items), and Batch Number (for batched items).
+   - If Serial Numbers are involved, the Item row will appear as follows:
+
+
+
+6. Save and Submit the Pick List once the stock-picking process is complete.
+
+### 2.1 Create Pick List from a Sales Order
+
+1. Go to a **Sales Order**.
+2. Click on the **Create** button at the top-right and select **Pick List**.
+3. All required data for the Pick List will be fetched from the Sales Order.
+4. Alternatively, create a new Pick List and click on **Get Items** to select pending Sales Orders.
+
+Ensure that the **Item Locations Table** displays the selected Warehouse for each item. Once stock-picking is complete, submit the document.
+
+> **Note:**
+> - Pick Lists can only be created for Sales Orders with "% picked" < 100%.
+> - A Delivery Note can be created only if the Pick List is submitted.
+
+### 2.2 Create Pick List from a Work Order
+
+1. Go to a **Work Order**.
+2. Click on **Create Pick List**.
+3. Enter the quantity of Finished Goods to calculate the required raw materials.
+
+The **Item Locations** table will display the selected Warehouse for each raw material. Once the picking process is complete, submit the document.
+
+> **Note:**
+> - Pick Lists can only be created for Work Orders in the 'Not Started' or 'In Progress' state.
+> - A Stock Entry can be created only after the Pick List is submitted.
+
+### 2.3 Create Pick List from Material Request
+
+1. Go to a **Material Request**.
+2. Click on the **Create** button and select **Pick List**.
+3. The **Item Locations** table will display the Warehouse for each item.
+
+Once stock-picking is complete, submit the document.
+
+> **Note:**
+> - Only Material Requests with the type "Material Transfer" can be used for Pick List creation.
+> - A Stock Entry of type "Material Transfer" can be created after the Pick List is submitted.
+
+## 3. Features
+
+### 3.1 Update Current Stock
+
+If a Pick List is outdated and stock availability changes, click **Update Current Stock** to refresh the quantities and Warehouses in the **Item Locations** table.
+
+> **Note:** This button is visible only if no Delivery Notes or Stock Entries have been created against the Pick List.
+
+### 3.2 Barcode Scanning
+
+The Pick List supports barcode scanning with two features: **Scan Mode** and **Prompt Qty**.
+
+- **Scan Mode**: Users can scan barcodes to confirm the correct items are being picked.
+- **Prompt Qty**: When enabled, a dialog prompts the user to enter the quantity to be incremented.
+
+## 4. Pick Manually
+
+When manually selecting batches, the system may override changes upon saving. To prevent this, enable the **Pick Manually** checkbox. This will preserve manual changes made to the Pick List.
+
+
+## 5. Related Topics
+
+- [Sales Order]()
+- [Work Order]()
+- [Material Request]()
+
+

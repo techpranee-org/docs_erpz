@@ -1,16 +1,56 @@
-import Pagination from '../../../components/Pagination';
-import pages from '../../../utils/order';
-import { Callout } from 'nextra/components';
-
-
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+---
+title: "Manufacturer"
+description: "Comprehensive documentation for the ERPZ project."
+---
 
 
 
 
 
-<Pagination
-  pages={pages}
-/>
+
+# Manufacturer
+
+A **Manufacturer** is the entity that produces or creates an item. The Manufacturer may not necessarily be the entity that sells the item under a specific brand. For example, **Unico Plastics** can be the Manufacturer of plastic brushes, but these brushes might be sold under the brand **Super Brushes**.
+
+In ERPZ, a Manufacturer can also be associated with specific part numbers for identifying items.
+
+To access the **Manufacturer** list, go to:
+> **Home > Stock > Manufacturer**
+
+---
+
+## 1. How to Create a Manufacturer
+
+To create a Manufacturer, follow these steps:
+
+1. Navigate to the **Manufacturer** list and click on **New**.
+2. Enter the **Manufacturer** name and, if necessary, provide a description.
+3. Click **Save**.
+
+Once the Manufacturer is created, it can be linked to an Item via the **Manufacturer Part Number** for easy identification.
+
+---
+
+### 1.1 Additional Details
+
+The following details can also be configured for a Manufacturer:
+
+- **Website**: You can add the Manufacturer's official website.
+- **Country**: Specify the country where the Manufacturer is located.
+- **Logo**: Upload a logo for visual identification.
+
+---
+
+## 2. Features
+
+### 2.1 Address and Contacts
+
+You can also configure an **Address** and **Contact Information** for each Manufacturer. This allows you to maintain accurate contact details for communication.
+
+---
+
+## 3. Related Topics
+
+- [Item](/stock/stock-masters/item)
+- [Supplier]()
+- [Brand](/stock/stock-masters/brand)

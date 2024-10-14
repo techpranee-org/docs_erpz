@@ -1,0 +1,71 @@
+---
+title: "Auto Creation of Material Request"
+description: "Comprehensive documentation for the ERPZ project."
+---
+
+
+
+
+
+# Auto Creation of Material Request
+
+To avoid stockouts and ensure a smooth supply chain, ERPZ provides the option to track an item's reorder level. When the stock level of an item drops below its reorder level, the Purchase Manager is notified to initiate the purchase process or transfer the item from another warehouse.
+
+In ERPZ, you can define an item's **Reorder Level** and **Reorder Quantity** in the Item Master. If the same item has different reorder levels for different warehouses, you can also specify warehouse-specific reorder levels and quantities.
+
+---
+
+## 1. Reorder Level and Next Actions
+
+Along with defining the **Reorder Level**, you can set the next action, which could be either:
+
+- **New Purchase**: Initiate a new purchase for the item.
+- **Warehouse Transfer**: Transfer the item from another warehouse if stock is available.
+
+Based on these settings in the Item Master, the appropriate **Purpose** will be updated in the automatically generated Material Request.
+
+---
+
+## 2. Automatic Creation of Material Request
+
+When an item's stock level reaches its reorder level, ERPZ can automatically create a **Material Request**. To enable this feature, follow these steps:
+
+Navigate to:
+
+> Stock > Setup > Stock Settings
+
+
+In the Stock Settings, enable **Auto Creation of Material Request**.
+
+---
+
+## 3. How It Works
+
+- A separate **Material Request** will be generated for each item that reaches its reorder level.
+- Users with the **Purchase Manager** role will receive an email notification about the automatically generated Material Requests.
+  
+---
+
+## 4. Error Handling
+
+If there is an issue with the auto-creation of a Material Request, the system will notify the user with the Purchase Manager role. A common error is:
+
+An error occurred for certain items while creating Material Requests based on Re-order level. Date 01-04-2016 not in any Fiscal Year.
+
+
+This error often occurs due to an incorrect **Fiscal Year** setting. Ensure that the fiscal year is properly configured to avoid such errors. To learn more about setting the fiscal year, [click here](#fiscal-year-settings).
+
+---
+
+## 5. Important Note:
+
+- The system checks the **Projected Quantity** of the item in the **Group Warehouse** against the reorder level. If a group warehouse is not set, the system will compare the projected quantity of the item in the **Request for Warehouse**.
+- If the **Projected Quantity** exceeds the reorder level, the item will not be added to the Material Request.
+
+---
+
+For more details on how to manage stock efficiently and set up reorder levels, refer to the following topics:
+
+- [Stock Settings]()
+- [Material Request](/stock/stock-transactions/material-request)
+

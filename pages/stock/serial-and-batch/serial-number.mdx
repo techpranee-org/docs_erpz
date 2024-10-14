@@ -1,0 +1,72 @@
+---
+title: "Serial Number Management"
+description: "Learn how to manage serial numbers in ERPZ for effective inventory tracking and compliance."
+---
+
+# Serial Number Management
+
+## Overview
+
+With the introduction of ERPZ version 15, the option to allow negative stock transactions for serial and batch items has been removed. Users will not be able to make negative stock transactions for these items, even if the 'Allow Negative Stock' setting is enabled in the Stock Settings.
+
+When an item is serialized, a Serial Number (Serial No) record is maintained for each quantity of that item. This information helps track the location of the Serial No, its warranty, and end-of-life (expiry) information.
+
+You can also trace the Supplier from whom you purchased the Serial No and the Customer to whom you sold it. The Serial No status indicates its current inventory status.
+
+If your item is serialized, you must enter the Serial Nos in the related column, with each Serial No on a new line. You can maintain single units of serialized items using the Serial Number feature.
+
+To access the Serial Number list, navigate to:
+`Home > Stock > Serial No and Batch > Serial No`
+
+## 1. Prerequisites
+
+Before creating and using a Serial Number, ensure that you have completed the following steps:
+
+- **Create an Item:** The item you wish to serialize must be created first.
+- **Enable 'Has Serial No':** This option should be enabled in the Item master for Serial No tracking.
+
+## 2. How to Create a Serial Number
+
+Serial Numbers are typically auto-created when transactions are made against a serialized item, provided that 'Has Serial No' is enabled and a series is set in the Item master.
+
+### Example:
+If a series is defined for the item as `PB2L.#####`, then a Stock Entry submitted to receive the item will result in the corresponding Serial Numbers being created automatically.
+
+### Manual Creation of Serial Numbers:
+If you need to create a Serial No manually, follow these steps:
+
+1. **Go to the Serial Number List:** Click on **New**.
+2. **Enter a Serial Number:** Specify the Serial Number you wish to create.
+3. **Enter the Item Code:** Details will be fetched automatically.
+4. **Save the Serial Number:** Note that if any transaction has occurred with the item, the Serial No cannot be set or unset.
+
+> **Important:** The inventory of an item can only be affected if the Serial No is transacted through a Stock transaction (Stock Entry, Purchase Receipt, Delivery Note, Sales Invoice). When a new Serial No is created directly, its Warehouse cannot be set.
+
+## 3. Notes About Serial Numbers
+
+- The **Status** is determined based on Stock Entry.
+- Only Serial Numbers with the status 'Available' can be delivered.
+- Serial Nos can automatically be created from a Stock Entry or Purchase Receipt. If you mention Serial No in the Serial Nos column, it will automatically create those serial Nos.
+- If the Serial No Series is specified in the Item Master, you can leave the Serial No column blank in a Stock Entry / Purchase Receipt. Serial Nos will be automatically populated from that series.
+
+## 4. Features
+
+### 4.1 Purchase/Manufacture Details
+The document from which the Serial No was created will be shown. If you purchased it from a Supplier, it will be linked here.
+
+### 4.2 Delivery Details
+If the Serial No was generated from a Sales Order, the corresponding Customer will be linked here.
+
+### 4.3 Warranty/AMC Details
+If the item is under warranty or an Annual Maintenance Contract (AMC), you can set the expiry dates for these contracts.
+
+### 4.4 More Information
+Any additional information about this specific item unit can be set under 'Serial No Details'.
+
+## 5. Video
+[Insert video link here if applicable]
+
+## 6. Related Topics
+- [Item Codification]()
+- [Item Variants]()
+- [Serial Number Naming]()

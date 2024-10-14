@@ -1,0 +1,48 @@
+---
+title: "Stock Ledger"
+description: "Detailed tracking of stock movements for informed inventory management in ERPZ."
+---
+
+# Stock Ledger Report
+
+**A Stock Ledger Report is a detailed record that keeps track of stock movements for a company.** It provides comprehensive insights into the inward and outward transactions related to manufacturing, purchasing, selling, and stock transfers.
+
+This report reflects the quantity and value of stock **issued, received, or transferred**, along with the details of the stock item and its warehouse. It is particularly useful when the **Perpetual Inventory** system is enabled, as it provides a complete history of all stock transactions, presenting a more granular view of stock movements.
+
+## 1. Stock Ledger Report Attributes
+
+- **Incoming Rate**: This reflects the actual value of the stock when it was added to your inventory. It corresponds to the value entered in the *Rate* field of the relevant document.
+
+- **Balance Value**: This represents the total value of the remaining stock in inventory. It is calculated as the product of the Valuation Rate and the Balance Quantity of a stock item.
+
+- **Valuation Rate**: This is determined based on the selected valuation method for the item.
+
+### 1.1 Example of Stock Ledger Report
+
+Here is an example of how the Stock Ledger Report represents a **Stock Entry** of type *Material Receipt*:
+
+- **Item**: Chair
+- **Quantity**: 1000 units
+- **Incoming Rate (Basic Rate)**: Rs. 3000
+- **Warehouse**: Stores - L
+
+The report will also calculate the Valuation Rate and Balance Value for the item.
+
+You can click on **Voucher #** to open the document from which this transaction was created.
+
+## 2. Sources of Stock Ledger Generation
+
+Stock Ledgers are generated from the following transactions:
+
+- [Sales Invoice (with *Update Stock* checked)]()
+- [Purchase Invoice]()
+- [Delivery Note]()
+- [Purchase Receipt]()
+- [Stock Entry]()
+- [Stock Reconciliation]()
+
+You can customize the report by adding fields from the mentioned document types by navigating to **Menu > Add Column**.
+
+## 3. Conclusion
+
+The Stock Ledger Report is an essential tool in ERPZ for effective inventory management, providing critical insights into stock movements and helping businesses make informed decisions regarding their inventory.

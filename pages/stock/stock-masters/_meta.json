@@ -8,6 +8,6 @@
     "manufacturer": "Manufacturer",
     "item-variants": "Item Variants",
     "item-attribute": "Item Attribute",
-    "uom": "UOM",
+    "uom": "UoM",
     "fractions-uom": "Fractions UOM"
 }
