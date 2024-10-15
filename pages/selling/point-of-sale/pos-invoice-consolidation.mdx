@@ -1,0 +1,44 @@
+---
+title: "POS Invoice Consolidation"
+description: "Learn how the POS Invoice Consolidation works in ERPZ, its impact on stock and accounting ledgers, and how transactions are consolidated for better performance."
+---
+
+
+# POS Invoice Consolidation
+
+In ERPZ, the **POS Invoice Consolidation** feature helps improve the efficiency and speed of the Point of Sale system by deferring stock and accounting updates until the end of a POS session. Here's how it works:
+
+## 1. Key Points of POS Consolidation
+
+- **Intermediate Invoices**: Each transaction during a POS session creates an intermediate invoice, also called a **POS Invoice**, which does not immediately affect stock and accounting ledgers. This helps maintain speed during the transaction.
+  
+- **Sub-Ledger System**: The POS uses a sub-ledger, separate from the general ledger, to manage the transactions. This keeps the system scalable by reducing the load on the main accounting system.
+  
+- **End-of-Day Consolidation**: At the end of a POS session, when a **POS Closing Voucher** is submitted, all intermediate invoices are merged into a single consolidated **Sales Invoice**. This invoice updates the stock and accounting ledgers.
+
+## 2. Impact on Stock and Accounting
+
+With POS Invoice Consolidation, the system reduces the number of ledger entries. Instead of creating multiple entries for each transaction, a single consolidated sales invoice will be created, minimizing the workload on the general ledger. This improves the speed and performance of the system.
+
+For example, in older systems, **n x 3 ledger entries** were created, where `n` is the number of transactions. In ERPZ, the consolidated invoice only creates a few entries, significantly reducing the strain on the ledger.
+
+## 3. Tracking Stock During Active POS Sessions
+
+While stock entries aren’t immediately updated in the **Stock Ledger**, the system tracks reserved quantities in real time through the **Stock Projected Quantity Report**:
+
+- `Stock > Stock Reports > Stock Projected Quantity`
+
+In the report, the **Actual Qty** column represents the stock ledger value, while the **Reserved for POS Transactions** column shows the quantities reserved for active POS sessions. The **Projected Qty** shows the available stock after subtracting reserved quantities from the actual stock.
+
+For example, if there is an open order for 100 units, the system will reflect the order in the **Projected Qty**, but the **Actual Qty** will remain unchanged until the stock is received.
+
+## 4. Available Quantity at the Warehouse
+
+When processing transactions in the POS, the system ensures that sufficient stock is available. If stock is insufficient (as shown in the **Available Qty at Warehouse** field), the transaction will not be permitted. This applies to all active POS sessions across the organization, ensuring that stock levels are accurate across multiple locations.
+
+In cases where an item is unavailable, the POS will block the transaction until enough stock is added to the warehouse.
+
+## 5. Related Topics
+- [POS Closing Voucher]()
+- [Sales Invoice]()
+- [Stock Ledger]()

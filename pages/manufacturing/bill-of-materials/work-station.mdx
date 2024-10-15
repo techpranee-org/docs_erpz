@@ -1,6 +1,68 @@
-import { Callout } from 'nextra/components';
+---
+title: "Workstation"
+description: "Information regarding workstation operations, including operational costs and management."
+---
 
+# Workstation
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+**A Workstation stores information regarding the place where the workstation operations are carried out.**
+
+Data regarding the operation costs, rent, and electricity can be stored here.
+
+**Note:** An operation can take place at multiple Workstations.
+
+An Operation takes place at a Workstation. The Operation is the work performed, and the Workstation is the place/machine where it is performed. For example, melting is an Operation that can be done at 10 different Workstations.
+
+To access the Workstation list, go to:
+
+`Home > Manufacturing > Bill of Materials > Workstation`
+
+## 1. How to Create a Workstation 
+
+To create a Workstation, follow these steps:
+
+1. Go to the Workstation list and click on **New**.
+2. Enter a name for the Workstation.
+3. Under **Operating Costs**, enter the following as applicable:
+   - Electricity Cost
+   - Rent Cost
+   - Consumable Cost
+   - Wages
+4. Save.
+
+Optionally, you can enter a description for the Workstation.
+
+![Workstation]()
+
+You can add the hours when the Workstation will be operational. By adding a holiday list, the days listed as holidays won't be counted as working for the Workstation.
+
+![Workstation Hours]()
+
+After saving the Workstation, the following actions can be performed against it:
+
+![Workstation submit]()
+
+## 2. Features 
+
+### 2.1 Production Capacity 
+Production Capacity is the total number of jobs that can be executed simultaneously in the respective Workstation.
+
+![Work Order]()
+
+### 2.2 Working Hours 
+In the Working Hours table, you can add start and end times for a Workstation. For example, a Workstation may be active from 9 AM to 1 PM, then from 2 PM to 5 PM. You can also specify the working hours based on shifts. While scheduling a Work Order, the system will check for the availability of the Workstation based on the working hours specified.
+
+### 2.3 Holiday List 
+A Holiday List can be added to exclude these days from being counted as working days for the Workstation. 
+
+**Note:** You can enable overtime for a Workstation in Manufacturing Settings.
+
+## 3. Video 
+
+![Video]()
+
+## 4. Related Topics 
+- [Bill Of Materials](/manufacturing/bill-of-materials/bill-of-materials)
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Job Card](/manufacturing/production-and-material-planning/job-card)
+

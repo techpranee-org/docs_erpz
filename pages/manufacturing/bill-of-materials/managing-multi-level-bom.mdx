@@ -1,6 +1,57 @@
-import { Callout } from 'nextra/components';
+---
+title: "Managing Multi-level BOM"
+description: "Learn how to manage multi-level Bills of Materials (BOM) in ERPZ for complex manufacturing processes involving sub-assemblies."
+---
 
+# Managing Multi-level BOM
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+When your manufacturing process involves producing sub-assembly items before creating the final product, it is essential to manage the Bill of Materials (BOM) properly to account for these sub-assemblies.
+
+## 1. How to Manage Multi-level BOM
+
+First, create BOMs for each sub-assembly required in the manufacturing process. Then, link these sub-assembly BOMs to the BOM of the final product. This process allows for a detailed breakdown of materials at each stage of production.
+
+In the following example, the BOM for **Brush Bristles** (sub-assembly) is linked to the BOM of the **Shaving Brush** (final product). In the *Materials* table, the sub-assembly BOMs are displayed, while the *Materials Required (Exploded)* table shows all the raw materials necessary to manufacture the final product.
+
+### Example
+
+Here's an example of how the multi-level BOM appears in ERPZ:
+
+- **Final Product**: Shaving Brush
+  - **Sub-assembly**: Brush Bristles
+
+In the exploded view, only the raw materials are shown.
+
+### Using Multi-level BOM in a Work Order
+
+To utilize a multi-level BOM in a Work Order, enable the *Use Multi-Level BOM* option. This is enabled by default in ERPZ. If you want to plan for materials needed for the sub-assemblies of the item you are manufacturing, leave this option enabled. However, if the sub-assemblies are planned and manufactured separately, you can disable this checkbox.
+
+### Example: Assembling a Computer
+
+Consider a more complex example involving the assembly of a personal computer, where sub-assemblies like the **hard disk** and **DVD drive** are also manufactured in-house.
+
+- **Final Product**: Personal Computer (PC-001)
+  - **Sub-assembly 1**: Hard Disk (HDD-001)
+    - Item A
+    - Item B
+    - Item C
+  - **Sub-assembly 2**: DVD Drive (DVD-001)
+    - Item X
+    - Item Y
+    - Item Z
+
+The multi-level or nested BOM structure helps in managing both sub-assemblies and final product components, ensuring accurate planning and material consumption.
+
+## 2. Caution: Updating Sub-assemblies
+
+Be cautious when updating the BOM of a sub-assembly, as changes can have a ripple effect throughout the BOM structure. If the BOM for a sub-assembly is updated, all BOMs that reference the sub-assembly must also be updated.
+
+### Example: Updating a Sub-assembly
+
+In the computer assembly example above, let's say **Item C** in the hard disk assembly is replaced with **Item D**. This change requires updating the BOM for the hard disk (BOM-HDD-002). However, the BOM for the personal computer (BOM-PC-001) still references the old version of the hard disk (BOM-HDD-001).
+
+To ensure consistency, a new BOM for the personal computer (BOM-PC-002) must be created to reference the updated BOM for the hard disk.
+
+---
+
+By carefully managing and updating your multi-level BOMs in ERPZ, you can maintain accurate records of materials, avoid errors, and ensure smooth production planning.

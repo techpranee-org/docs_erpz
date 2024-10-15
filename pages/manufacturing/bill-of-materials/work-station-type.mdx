@@ -1,6 +1,59 @@
-import { Callout } from 'nextra/components';
+---
+title: "Workstation Type"
+description: "Manage multiple Workstations by auto-assigning jobs based on Workstation Type in ERPZ."
+---
 
+# Workstation Type
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+If users have the same types of multiple Workstations (machines) and they want to auto-assign jobs to the available Workstation based on the Workstation Type, this feature is highly useful.
+
+## 1. How to Create a Workstation Type
+
+To create a Workstation Type, follow these steps:
+
+1. Go to `Home > Manufacturing > Workstation Type`.
+2. Click on **New**.
+3. Enter the name for the Workstation Type.
+4. Save.
+
+![Workstation Type]()
+
+After adding the Workstation Type, users need to assign the Workstation Type to the respective Workstations and set the Workstation Type for the respective Operation in the Bill of Materials (BOM).
+
+## 2. Assigning Workstation Type to a Workstation
+
+To assign a Workstation Type to a Workstation:
+
+1. Go to `Home > Manufacturing > Workstation`.
+2. Click on **Add Workstation**.
+3. Select the **Workstation Type** from the dropdown.
+4. Save the Workstation.
+
+![Assign Workstation Type]()
+
+## 3. Setting Workstation Type in Bill of Materials (BOM)
+
+To set a Workstation Type in the Bill of Materials:
+
+1. Go to `Home > Manufacturing > Bill of Materials (BOM)`.
+2. Click on **Add BOM**.
+3. Select the **Workstation Type** for each Operation in the BOM.
+
+![Set Workstation Type in BOM]()
+
+## 4. Auto-Assigning Jobs Based on Workstation Type
+
+After setting up the Workstation Type:
+
+- When a user creates a **Work Order** with Operations, the system will automatically create **Job Cards** for the Operations.
+- The system will then assign the available Workstation based on the **Workstation Type** set in the BOM.
+
+This feature ensures that job assignments are optimized based on Workstation availability and type, reducing manual effort in selecting Workstations.
+
+## 5. Related Topics
+
+- [Workstation](/manufacturing/bill-of-materials/work-station)
+- [Bill of Materials (BOM)](/manufacturing/bill-of-materials/bill-of-materials)
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Job Card](/manufacturing/production-and-material-planning/job-card)
+

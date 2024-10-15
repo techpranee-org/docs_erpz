@@ -1,0 +1,38 @@
+---
+title: "Drop Ship"
+description: "Learn how to manage drop shipping in ERPZ, a supply chain method where goods are shipped directly from supplier to customer."
+---
+
+# Drop Ship
+
+**Drop shipping** is a supply chain management method in which the retailer does not keep goods in stock. Instead, customer orders and shipment details are transferred to the manufacturer, another retailer, or a wholesaler, who then ships the goods directly to the customer.
+
+Drop shipping can also be used by small retailers who typically sell in small quantities but receive large orders. In such cases, the goods are shipped directly to the customer from the manufacturer or distributor. Drop shipping is common for expensive products as no inventory is maintained by the retailer, who simply acts as a middleman.
+
+In this article, we will see how ERPZ provides a seamless drop-shipping experience.
+
+### Example Scenario:
+
+Consider a business dealing with Computer Monitors. The retailer has received an order from a customer, ABC Inc., for 1000 DELL 24-Inch Monitors. Here's how drop shipping works in ERPZ:
+
+## 1. Item Configuration
+
+1. Set up the Item with all mandatory information, ensuring that **Maintain Stock** is disabled since there will be no physical stocking of this item.
+2. Enable the **Delivered By Supplier (Drop Ship)** option.
+3. Assign the Supplier who will fulfill the Purchase Order for this drop shipping order.
+
+## 2. Sales Cycle
+
+1. Create a **Sales Order** with the necessary details including **Customer**, **Item**, **Quantity**, **Rate**, and applicable **Taxes**.
+2. The system will handle all subsequent tracking of the order fulfillment.
+
+## 3. Order Fulfillment
+
+From the **Sales Order** document itself, you can create a **Purchase Order** for the drop-shipped items, track the delivery status, and generate the **Sales Invoice** to bill the customer once the order is fulfilled.
+
+ERPZ helps streamline this process by connecting the Sales Order and Purchase Order seamlessly, ensuring that drop shipping is efficient and transparent.
+
+## 4. Related Topics
+
+- [Sales Order]()
+- [Purchase Order]()

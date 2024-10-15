@@ -1,0 +1,90 @@
+---
+title: "Point of Sale Profile"
+description: "Learn how to set up and configure the POS Profile in ERPZ for efficient retail operations."
+---
+
+# Point of Sale Profile
+
+In ERPZ, a **POS Profile** enables the use of the Point of Sale (POS) feature. POS integrates various functions like inventory management, CRM, financials, and warehousing into a single system. Before modern POS, these tasks were managed separately, requiring manual input, which increased the risk of errors.
+
+For streamlined retail operations, you can create a dedicated POS Profile for each user, ensuring the process is quick and efficient.
+
+To access the POS Profile list, navigate to:
+
+**Home > Retail > Retail Operations > Point-of-Sale Profile**
+
+## 1. How to Create a POS Profile
+
+1. Navigate to the **Point-of-Sale Profile** and click **New**.
+2. Enter a name for the profile.
+3. Set the **Write Off Account** and **Write Off Cost Center** where transactions will be recorded.
+4. Add payment modes in the table. If no payment mode is set, the default will be cash. Only the payment methods listed here will be available for POS transactions. Mark one as the default method by checking the box.
+5. Set the default amounts for payment methods (recommended: 0).
+6. Save the profile.
+
+POS Profile Example:
+
+### 1.1 Additional Options When Creating a POS Profile
+
+- **Customer**: Define specific customer groups or item groups for targeted POS sales.
+- **Warehouse**: Specify the warehouse from which stock will be affected for transactions made with this POS Profile.
+- **Campaign**: Link a sales campaign to track performance.
+- **Company Address**: Assign an address if the POS counter is linked to a specific company branch.
+- **Update Stock**: When enabled, stock levels are updated in real-time after each transaction, eliminating the need for a separate delivery note.
+- **Ignore Pricing Rule**: Ignores any active pricing rules for this POS Profile.
+- **Allow Delete**: Allows users to delete cached sales invoices in the draft stage in offline POS.
+- **Allow User to Edit Rate**: Users can modify the item rate in the POS transaction.
+- **Allow User to Edit Discount**: Users can apply or modify discounts during transactions.
+- **Allow Print Before Pay**: Users can print the invoice before completing payment.
+- **Display Items In Stock**: Shows the available stock in the selected warehouse to the POS user.
+
+## 2. Features
+
+### 2.1 Applicable for Users
+
+By default, all sales users can access POS Profiles. However, if you want only specific users to access certain profiles, add them to the profile. Once you specify a user, only that user can use the profile for retail transactions.
+
+To set a POS Profile as the default for a user, check the **Default** checkbox. This will apply the profile automatically the next time the user logs into the system.
+
+POS User Example:
+
+> **Note**: If the user field is left blank, the settings apply to all users.
+
+### 2.2 Setting Item Group and Customer Group
+
+Define **Item Groups** and **Customer Groups** in the POS Profile to automate the selection during transactions. This speeds up the process by automatically filtering items or customers based on the profile settings.
+
+### 2.3 Print Settings
+
+- **Print Format for Online**: Choose a print format for POS invoices. This layout defines how the printed document appears.
+- **Letterhead**: Print your invoices on a company letterhead.
+- **Print Headings**: Customize invoice headings, e.g., 'Invoice' or 'Bill'. To create new print headings, go to **Home > Settings > Printing > Print Heading**.
+- **Terms and Conditions**: Add any terms or conditions specific to the items sold.
+
+### 2.4 Accounting Settings
+
+- **Price List**: Select a price list to automatically fetch item prices during transactions.
+- **Currency**: Set the currency for transactions (default is the company's base currency).
+- **Taxes and Charges**: Automatically apply tax templates to the transaction.
+- **Apply Discount On**: Choose whether the discount is applied to the pre-tax (Grand Total) or post-tax (Net Total) amount.
+- **Tax Category**: Apply tax rules based on the selected category.
+
+The following accounts can be configured for proper ledger management:
+
+- **Account for Change Amount**
+- **Write Off Account**
+- **Write Off Cost Center**
+- **Income Account**
+- **Expense Account**
+
+### 2.5 Accounting Dimensions
+
+**Accounting Dimensions** help tag transactions for specific criteria, such as territory, branch, or customer. This feature enables businesses to view financial statements based on the selected dimension. Learn more on the [Accounting Dimensions](#) page.
+
+> **Note**: Cost Center is treated as a dimension by default.
+
+## 3. Related Topics
+
+- [Sales Invoice]()
+- [Purchase Invoice]()
+- [Point of Sale](/selling/point-of-sale/point-of-sale)

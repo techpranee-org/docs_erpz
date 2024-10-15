@@ -1,0 +1,115 @@
+---
+title: "Selling Settings"
+description: "Learn how to configure selling settings in ERPZ for managing sales cycles and customer transactions."
+---
+
+
+# Selling Settings
+
+In ERPZ, **Selling Settings** allows you to define properties and validations for managing sales cycles and customer transactions. These settings help in configuring default values, validations, and sales process control, ensuring consistency in your sales operations.
+
+To access Selling Settings, navigate to:
+
+**Home > Selling > Settings > Selling Settings**
+
+---
+
+## 1. Customer Defaults
+
+### 1.1 Customer Naming By
+When a customer is created, a unique **Customer ID** is automatically generated. By default, this ID is based on the customer's name. However, if you'd like to use a custom naming series, you can set the **Customer Naming Series** field to "Naming Series."
+
+For example, customer IDs will follow the format: `CUST00001`, `CUST00002`, etc.
+
+### 1.2 Default Customer Group
+Set a default **Customer Group** which will automatically apply when creating new customers.
+
+- When converting a **Quotation** to a **Sales Order** for a lead, the system converts the lead into a customer and assigns the default customer group from the Selling Settings.
+- If no default value is set, a validation message will prompt you to select a customer group.
+
+### 1.3 Default Territory
+Similar to customer groups, you can set a default **Territory** for new customers.
+
+- When converting leads to customers, the default territory will automatically be applied.
+- If no default territory is set, you will receive a validation message to input a territory manually.
+
+---
+
+## 2. Item Price Settings
+
+### 2.1 Default Price List
+Specify a default **Price List** for sales transactions like Quotations, Sales Orders, Delivery Notes, and Sales Invoices. This price list will automatically be applied in transactions.
+
+### 2.2 Maintain Same Rate Throughout Sales Cycle
+Enable this option to ensure that the item price remains the same throughout the sales cycle. ERPZ will validate if an item's price changes in any transaction (e.g., Delivery Note or Sales Invoice) generated from a Sales Order.
+
+### 2.3 Action if Same Rate is Not Maintained
+Configure the action ERPZ should take if the price changes during the sales cycle:
+
+- **Stop**: Prevent any price changes by showing a validation error.
+- **Warn**: Allow price changes but display a warning message.
+  
+This option is visible only when the "Maintain Same Rate" setting is enabled.
+
+### 2.4 Role Allowed to Override Stop Action
+You can assign specific user roles to override the "Stop" action for price changes during the sales cycle. This option is only available when "Maintain Same Rate" is enabled and the "Action if Same Rate is Not Maintained" is set to Stop.
+
+### 2.5 Allow User to Edit Price List Rate in Transactions
+By default, the **Price List Rate** field in the sales transaction item table is non-editable. If you want users to edit the item price fetched from the price list, uncheck this option.
+
+### 2.6 Validate Selling Price Against Purchase or Valuation Rate
+This option ensures that the selling price is validated against the item's purchase or valuation rate, helping to prevent losses. If the selling price is lower than the buying price, the system will alert you.
+
+### 2.7 Calculate Product Bundle Price Based on Child Items
+If this option is enabled:
+
+- The **Rate** field for items in a product bundle becomes editable.
+- The bundle's price will automatically adjust based on the rates of the child items.
+
+If the rate is updated manually, it will reset to the child item rates upon saving.
+
+### 2.8 Allow Negative Rate for Items
+Enable this setting to allow negative item rates in sales transactions, useful for applying discounts, handling returns, or managing special pricing promotions.
+
+---
+
+## 3. Transaction Settings
+
+### 3.1 Sales Order Required for Sales Invoice & Delivery Note
+To make the creation of **Sales Orders** mandatory before generating a **Sales Invoice** or **Delivery Note**, set this option to 'Yes'. This can be overridden per customer by enabling the "Allow Sales Invoice Creation Without Sales Order" option in the customer master.
+
+### 3.2 Delivery Note Required for Sales Invoice
+To enforce the creation of a **Delivery Note** before generating a **Sales Invoice**, set this option to 'Yes'. This setting can also be overridden at the customer level.
+
+### 3.3 Sales Update Frequency
+This setting controls how frequently ERPZ updates project progress and company sales transaction details. You can set it to update for **Each Transaction**, **Daily**, or **Monthly**.
+
+### 3.4 Blanket Order Allowance (%)
+This field sets the allowable percentage beyond the original **Blanket Order** quantity that can be sold.
+
+### 3.5 Allow Item to be Added Multiple Times in a Transaction
+If unchecked, ERPZ will prevent the same item from being added multiple times in a transaction. Check this option if you need to add the same item more than once.
+
+### 3.6 Allow Multiple Sales Orders Against a Customer's Purchase Order
+If enabled, you can create multiple sales orders against the same purchase order from a customer.
+
+### 3.7 Allow Sales Order Creation for Expired Quotation
+This setting allows sales orders to be created from expired quotations, providing flexibility for handling outdated quotes.
+
+### 3.8 Don't Reserve Sales Order Quantity on Sales Return
+Enabling this option will prevent ERPZ from reserving stock quantities from sales orders when processing sales returns.
+
+### 3.9 Hide Customer's Tax ID from Sales Transactions
+If you don't need the customer's **Tax ID** to be fetched in sales transactions, you can hide this information by enabling this option.
+
+### 3.10 Enable Discount Accounting for Selling
+When this option is enabled, additional ledger entries will be created to account for discounts in a separate **Discount Account**.
+
+---
+
+## 4. Related Topics
+
+- [Customer]()
+- [Item Price]()
+- [Sales Order]()
+- [Quotation]()

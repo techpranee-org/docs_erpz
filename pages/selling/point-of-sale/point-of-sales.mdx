@@ -1,0 +1,121 @@
+---
+title: "Point of Sale"
+description: "Learn how to use the Point of Sale (POS) system in ERPZ for handling retail transactions, customer management, and accounting."
+---
+
+
+# Point of Sale (POS)
+
+**The Point of Sale (POS) in ERPZ allows retail businesses to streamline their sales transactions, inventory management, and customer interactions.** It ensures that the sale, payment, and inventory updates happen seamlessly during a retail transaction.
+
+To access the POS feature, navigate to:
+
+`Home > Retail > Retail Operations > Point-of-Sale (POS)`
+
+## 1. Prerequisites
+
+Before using the Point of Sale feature, make sure the following are set up:
+
+- POS Profile
+- Price Lists
+- Warehouses with stock availability
+
+---
+
+## 2. Creating a POS Invoice
+
+Once the POS profile is configured, you can start processing sales at the POS counter. Here's how to create a POS Invoice:
+
+### 2.1 Steps:
+
+1. Go to **POS** and select a **Customer**.
+2. Add **Items** to the cart by selecting them from the displayed list.
+3. Verify the **Selling Price** of the items from the Price List.
+4. Adjust the **Quantities** and optionally modify the **Rate** or **Discount** if enabled in the POS Profile.
+5. Ensure that a **Warehouse** is selected. If set in both the POS Profile and the Item, the one in the POS Profile will be prioritized.
+6. After verifying the **Net** and **Grand Total**, proceed with payment.
+7. Select the appropriate **Payment Mode** and click **Complete Order** to generate the invoice.
+8. You can print the invoice or email it to the customer directly after the invoice is submitted.
+
+---
+
+### 2.2 Adding Items to the Cart
+
+You can add items in two ways:
+
+- **Item Image Selection**: Click on an item to add it to the cart.
+- **Barcode/Serial Number**: Scan the barcode to automatically add the item to the cart.
+
+> **Tip**: Adjust quantities by clicking the plus or minus buttons in the cart.
+
+---
+
+### 2.3 Removing Items from the Cart
+
+To remove an item from the cart:
+
+- Set the **Quantity** to zero using the minus button or manually set the quantity to zero.
+
+---
+
+### 2.4 Managing Change Amount
+
+ERPZ POS automatically calculates the **change amount** if the customer pays extra. Ensure that the **Change Account** is configured in the POS Profile to handle these transactions.
+
+---
+
+## 3. Features
+
+### 3.1 Adding a New Customer
+
+You can add new customers directly from the POS screen, even in offline mode. The customer information, including their contact details, will sync with the server once the internet connection is restored.
+
+### 3.2 POS Accounting Entries
+
+Here’s an overview of the accounting entries for a POS transaction:
+
+**Debits:**
+
+- Customer (grand total)
+- Bank/Cash (payment)
+
+**Credits:**
+
+- Income (net total)
+- Taxes (government liabilities)
+- Customer (payment)
+- Write Off (optional)
+- Change Amount Account (optional)
+
+You can review accounting entries via the **View Ledger** option after submitting the Sales Invoice.
+
+---
+
+### 3.3 Emailing Receipts
+
+POS invoices can be sent directly to the customer’s email after the order is completed.
+
+---
+
+### 3.4 Creating Return Credit Notes
+
+In case of returns, follow these steps:
+
+1. Open the **Recent Orders** section from the menu.
+2. Search and select the invoice to be returned.
+3. Click **Return** to create a return credit note.
+4. Complete the process by clicking **Complete Order**.
+
+---
+
+### 3.5 POS Closing Voucher
+
+At the end of the day, the cashier can close the POS session by creating a **POS Closing Voucher**. This will consolidate all transactions for the day into one final Sales Invoice. The status of all POS invoices will change from **Paid** to **Consolidated**.
+
+---
+
+## 4. Related Topics
+
+- [Sales Invoice]()
+- [Purchase Order]()
+- [Payment Request]()

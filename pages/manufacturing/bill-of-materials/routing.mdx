@@ -1,6 +1,55 @@
-import { Callout } from 'nextra/components';
+---
+title: Routing
+description: Learn how to create and use Routing templates for BOM Operations in ERPZ.
+---
 
+# Routing
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+**Routing** is a template that defines the sequence and details of operations involved in manufacturing an item. It stores information about various operations such as description, hourly rate, operation time, and batch size. Creating a Routing helps when similar operations are used across multiple Bill of Materials (BOMs).
+
+## Accessing the Routing List
+
+To access the **Routing** list in ERPZ, go to:
+
+`Home > Manufacturing > Bill of Materials > Routing`
+
+## 1. Prerequisites
+
+Before creating a Routing, ensure you have the following prerequisites:
+
+- **Operation**: Define the operations that will be used.
+- **Workstation**: Assign default workstations where the operations will take place.
+
+## 2. How to Create a Routing
+
+Follow these steps to create a Routing in ERPZ:
+
+1. Navigate to the **Routing** list and click on **New**.
+2. Enter a name for the Routing.
+3. In the **BOM Operation** table, add the necessary operations:
+   - **Select the Operation**: Choose the operation to be performed.
+   - **Workstation**: The default workstation will be automatically fetched.
+   - **Hourly Rate**: Specify the cost per hour for the operation.
+   - **Operation Time**: Enter the time (in minutes) required to complete the operation.
+   - **Batch Size**: Define the number of units processed in a single batch for this operation.
+4. The **Operating Cost** will be automatically calculated based on the hourly rate and operation time.
+5. Once all details are filled, click **Save**.
+
+![Routing]()
+
+## 3. Using Routing in a BOM
+
+After creating a Routing, it can be selected in a Bill of Materials (BOM) to automatically fetch all operations defined in the Routing.
+
+![Routing in BOM]()
+
+## 4. Sequence ID in Routing
+
+The **Sequence ID** in Routing enforces the completion of operations in a defined order. Users must follow the sequence when completing operations via the Job Card. If an operation is attempted out of sequence, the system will throw a validation error.
+
+## 5. Related Topics
+
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Bill of Materials](/manufacturing/bill-of-materials/bill-of-materials)
+
+---

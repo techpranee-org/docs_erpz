@@ -1,6 +1,85 @@
-import { Callout } from 'nextra/components';
+---
+title: BOM Update Tool
+description: Learn how to update sub-assembly BOMs and costs efficiently using the BOM Update Tool in ERPZ.
+---
 
+# BOM Update Tool
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+The **BOM Update Tool** in ERPZ allows users to replace a sub-assembly BOM and update the costs of all parent BOMs with ease. This tool is particularly useful when you need to update the BOM of a sub-assembly item that is linked to a larger parent BOM.
+
+## Why Use the BOM Update Tool?
+
+In cases where a sub-assembly undergoes changes—like adding or replacing items—you'll need to update the parent BOMs where that sub-assembly is used. Instead of manually updating each parent BOM, the **BOM Update Tool** streamlines this process by automatically replacing the old BOM with the new one across all relevant parent BOMs.
+
+## 1. How to Use the BOM Update Tool
+
+To access the BOM Update Tool, go to:
+
+`Home > Manufacturing > Tools > BOM Update Tool`
+
+### 1.1 Example Scenario
+
+Let’s take a look at an example to better understand how the tool works.
+
+A company manufactures computers, and the Bill of Materials (BOM) for the computer includes the following components:
+
+- Monitor
+- Keyboard
+- Mouse
+- CPU
+
+The **CPU** is a sub-assembly with its own BOM, which consists of the following items:
+
+- 250 GB Hard Disk
+- Motherboard
+- Processor
+- SMTP
+- DVD Player
+
+Now, suppose the company needs to update the CPU's BOM by replacing the **250 GB Hard Disk** with a **950 GB Hard Disk**. Here’s how you can use the BOM Update Tool:
+
+### 1.2 Steps to Update a Sub-assembly BOM
+
+1. Create the new BOM for the CPU, reflecting the updated parts (in this case, replacing the hard disk).
+   
+   **New CPU BOM:**
+   - 950 GB Hard Disk
+   - Motherboard
+   - Processor
+   - SMTP
+   - DVD Player
+
+2. Open the **BOM Update Tool**.
+   
+3. Select the current BOM of the sub-assembly (CPU) and the new BOM you’ve created.
+
+4. Click the **Replace** button to update the parent BOM (Computer). The system will automatically replace the old CPU BOM with the new one in all parent BOMs where the CPU is used.
+
+![BOM Update Tool]()
+
+### 1.3 Will the BOM Replace Tool Work for Replacing Exploded Items?
+
+No, exploded items without their own BOMs cannot be replaced using this tool. For instance, if the **Monitor** does not have a sub-assembly and needs updating, you cannot use the BOM Update Tool. In such cases, you should either cancel and amend the current BOM or create a new BOM for the finished item.
+
+---
+
+## 2. Update BOM Cost
+
+In addition to replacing sub-assemblies, you can also update the costs of all BOMs based on the latest prices. This can be done using the **Update latest price in all BOMs** button.
+
+- The system will automatically update the BOM costs based on the most recent purchase price, price list rate, or valuation rate of raw materials.
+- This process is performed in the background, as it may take several minutes depending on the number of BOMs in your system.
+
+![Update BOM Costs]()
+
+### 2.1 Automating BOM Cost Updates
+
+You can set the system to update BOM costs automatically on a daily basis. To enable this, go to:
+
+**Home > Manufacturing > Settings > Update BOM Cost Automatically**
+
+This setting ensures that all BOM costs are kept up-to-date without manual intervention.
+
+---
+
+By using the **BOM Update Tool**, you can efficiently manage sub-assembly replacements and ensure that BOM costs are always accurate in ERPZ.

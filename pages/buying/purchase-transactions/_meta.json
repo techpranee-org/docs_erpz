@@ -1,0 +1,11 @@
+{
+    "purchase-transactions": "Purchase Transactions",
+    "material-request": "Material Request",
+    "purchase-order": "Purchase Order",
+    "purchase-invoice": "Purchase Invoice",
+    "debit-note": "Debit Note",
+    "request-for-quotation": "Request for Quotation",
+    "supplier-quotation": "Supplier Quotation",
+    "supplier-quotation-through-supplier-portal": "Supplier Quotation through Supplier Portal",
+    "purchase-return": "Purchase Return"
+}

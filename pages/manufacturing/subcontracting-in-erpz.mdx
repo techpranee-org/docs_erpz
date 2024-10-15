@@ -1,0 +1,69 @@
+---
+title: "Subcontracting in ERPZ"
+description: "Learn how to manage subcontracting in ERPZ with raw material supply, production, and labor tracking."
+---
+
+# Subcontracting in ERPZ
+
+Subcontracting in ERPZ allows businesses to outsource specific processes to third-party suppliers while managing raw materials, production, and labor tracking. This is a common practice in various industries, especially in manufacturing, where complex components can be produced by external vendors and later assembled in-house. ERPZ makes it easier to track subcontracting workflows, including managing raw material supply and receiving the finished goods.
+
+For example, if a manufacturer produces uncolored flowers and sends them to an external vendor for coloring, ERPZ helps you manage this process efficiently.
+
+## Subcontracting Workflow in ERPZ
+
+Let’s take an example of a manufacturer that produces raw flowers, sends them for coloring to an external vendor, and later receives them as finished products. Follow the steps below to manage this in ERPZ:
+
+### 1. **Item Master Setup for Subcontracted Items**
+
+In the **Item Master** for the subcontracted item, make sure to enable the option “Supply Raw Materials for Purchase.” This setting ensures that the raw materials for this product will be provided by your company and sent to the subcontractor. In our example, the item is **RM-111-Colored Flower**.
+
+### 2. **Creating a Bill of Materials (BOM)**
+
+You’ll need to create a **Bill of Materials (BOM)** for the subcontracted item, which lists the raw materials to be supplied. The BOM for subcontracted items doesn’t include operations since the manufacturing activities are performed by an external vendor.
+
+Example BOM for **RM-111-Colored Flower**:
+
+- **Item Name**: RM-111-Colored Flower
+- **Raw Materials**: Uncolored flowers (1000 units/carton)
+
+### 3. **Creating a Purchase Order**
+
+Once the BOM is set, create a **Purchase Order (PO)** to procure the subcontracted item from the vendor. Ensure the **Supply Raw Materials** option is set to "Yes" and choose the warehouse from which the raw materials will be transferred to the vendor. You can use a virtual warehouse to represent the vendor’s location.
+
+For our example:
+
+- **Purchase Order**: 1000 units of RM-111-Colored Flower
+- **Supply Raw Materials**: Yes
+- **Source Warehouse**: Raw Material Warehouse
+- **Vendor Warehouse**: Virtual Warehouse (external vendor)
+
+In the PO, the **Service Cost** reflects the labor cost charged by the vendor for coloring the flowers.
+
+### 4. **Transferring Raw Materials to the Vendor**
+
+After submitting the Purchase Order, you can transfer raw materials to the vendor by clicking the **Transfer** button in the Purchase Order. This creates a **Stock Entry** that moves raw materials from your warehouse to the vendor’s virtual warehouse.
+
+Once the stock is transferred, the Purchase Order will update to reflect the quantity of materials that have been supplied to the vendor.
+
+### 5. **Receiving Finished Goods**
+
+Once the subcontractor has completed the work, you will need to create a **Purchase Receipt** against the Purchase Order to receive the finished goods back into your inventory. This updates your stock and completes the subcontracting process.
+
+### 6. **Invoicing**
+
+After receiving the finished or semi-finished goods, you can proceed with the standard invoicing process:
+
+- `Purchase Order → Purchase Receipt → Purchase Invoice`
+
+In the **Purchase Invoice**, you can review and finalize the service costs related to the subcontracted operation.
+
+## Subcontracting Summary
+
+- **Step 1**: Create an Item with the "Supply Raw Materials for Purchase" option enabled.
+- **Step 2**: Set up a Bill of Materials (BOM) for the subcontracted item.
+- **Step 3**: Create a Purchase Order to track the subcontracted process.
+- **Step 4**: Transfer raw materials to the vendor using Stock Entries.
+- **Step 5**: Receive finished goods and record them with a Purchase Receipt.
+- **Step 6**: Complete invoicing as per the standard buying cycle.
+
+By following these steps, you can manage subcontracting processes smoothly in ERPZ and track the movement of raw materials, semi-finished, and finished goods.

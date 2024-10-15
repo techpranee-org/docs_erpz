@@ -1,0 +1,125 @@
+---
+title: "Request for Quotation"
+description: "Learn how to create and manage Requests for Quotation in ERPZ."
+---
+
+# Request for Quotation
+
+A Request for Quotation (RFQ) is a document that an organization sends to one or more suppliers, requesting a quotation for items.
+
+## Buying Flow
+
+To access the Request for Quotation, open the "Buying" workspace and, under "Reports & Masters" > "Buying", click on "Request for Quotation".
+
+## 1. Prerequisites
+
+Before creating and using a Request for Quotation, it is advisable to create the following:
+
+- **Supplier**
+- **Item**
+
+## 2. How to Create a Request for Quotation
+
+1. Go to the Request for Quotation list and click on **+ Add Request for Quotation**.
+2. Enter the **Required Date** by which you'll need the requested materials.
+3. Fill the **Suppliers** list with potential suppliers.
+   - If you set a **Contact** and **Email ID**, those can later be used for sending the Request for Quotation via email and granting access to the supplier portal.
+4. In the next table, enter the required items along with **UOM** (Unit of Measure) and **quantity**, as well as the **target warehouse**.
+   - The warehouse can be left blank if **Maintain Stock** is not enabled for the item.
+5. If you want to send the Request for Quotation to your suppliers via email, you can create an **Email Template** and select it here. In the template, you can use special variables for supplier-specific data:
+   - `{{ update_password_link }}`: A link where your supplier can set a new password to log into your portal.
+   - `{{ portal_link }}`: A link to this RFQ in your supplier portal.
+   - `{{ supplier_name }}`: The company name of your supplier.
+   - `{{ contact.salutation }} {{ contact.last_name }}`: The contact person of your supplier.
+   - `{{ user_fullname }}`: Your full name.
+   - You can also access all values in this RFQ, like `{{ message_for_supplier }}` or `{{ terms }}`.
+6. You can check how the email will look for a specific supplier by using the **Preview Email** button.
+7. If you want to send additional attachments to your suppliers, enable the checkbox **Send Attached Files**. This will add each file attached to the Request for Quotation as an attachment to each supplier email.
+8. Once you're done, save the Request for Quotation as a draft.
+9. When you're ready, submit the Request for Quotation. This will trigger an email to each supplier that has **Send Email** enabled.
+
+![Create RFQ]()
+
+### Creating RFQ from Material Request
+
+A Request for Quotation (RFQ) can also be created from a submitted Material Request. Once an RFQ is created, you can print and send suppliers the PDF, which will have all the details you entered relevant to the RFQ. You can also receive their reply (Supplier Quotation) in ERPZ itself. 
+
+## 3. Features
+
+### 3.1 Get Items From
+
+The items in the items table can be fetched from other documents, including:
+- **Material Request**: Items will be fetched from a submitted Material Request that you select. You can search for a Material Request with matching words and filter by date range.
+- **Opportunity**: Items will be fetched from a saved Opportunity. A date range can also be selected.
+- **Possible Supplier**: Select a possible supplier, and if you have any submitted Material Requests against this supplier, items can be fetched from that.
+
+![RFQ Get Items]()
+
+### 3.2 Get Suppliers
+
+Instead of entering suppliers manually, you can fetch them using the **Get Suppliers** button. When you click on **Tools > Get Suppliers**, you will see the field **Get Suppliers By** with two options:
+- **By Tag**: Go to **Tag Category** via the search bar. You must have created tags and assigned them to suppliers in the Buying module. Select **By Tag** to fetch matching suppliers.
+- **By Group**: Select **Supplier Group** to choose a group of suppliers. For example, selecting **Hardware** will add all your hardware suppliers.
+
+![RFQ Get Suppliers]()
+
+### 3.3 Link to Material Requests
+
+Click on **Tools > Link to Material Requests** to link the Request for Quotation to available Material Requests. The items should match between the Request for Quotation and the Material Request.
+
+![Link to Material Request]()
+
+### 3.4 Terms and Conditions
+
+In Sales/Purchase transactions, there may be certain Terms and Conditions based on which the Supplier provides goods or services. You can apply these Terms and Conditions to transactions, and they will appear when printing the document. [Learn more about Terms and Conditions]()
+
+### 3.5 Print Settings
+
+- **Letterhead**: You can print your RFQ/Purchase Order on your company's letterhead. [Learn more here]()
+- **Group Same Items**: Group the same items added multiple times in the items table for printing.
+- **Print Headings**: Change the titles of your documents. [Learn more here]()
+
+### 3.6 Special Properties
+
+When printing an RFQ via the **Tools > Download PDF** button, you are prompted to select the specific supplier you want to address. In the print format for RFQ, this information can be accessed via special properties:
+- `{{ doc.vendor }}` holds the selected supplier ID.
+- `{{ doc.items[i].supplier_part_no }}` holds the Supplier Part Number of a requested line item.
+
+## 4. Creating a Supplier Quotation After RFQ
+
+After creating a Request for Quotation, there are two ways to generate a Supplier Quotation from it:
+
+### 4.1 Supplier Quotation by User
+
+Open the Request for Quotation and click on **Supplier Quotation > Create**. Select the supplier, then click on the supplier name again. A new Supplier Quotation page will open where you can enter the quantity, rate, and submit it.
+
+![Supplier Quotation from RFQ]()
+
+### 4.2 Supplier Quotation from Supplier
+
+If a Contact is created for the supplier with an associated email address, those details will be fetched upon selecting the supplier. Click on **Tools > Send Emails to Suppliers**.
+- If the supplier's account is not present, the system will create the supplier's account and send details to them. They must click on the password update link in the email to access their portal.
+- If the supplier's account is present, the system will send a Request for Quotation link, and they must log in to view the RFQ form.
+
+![Supplier Email if Account Not Present]()
+![Supplier Email if Account Present]()
+
+The supplier will see the following screen upon logging in, where they can send you a quotation:
+
+![Supplier Quotation Screen]() 
+
+The supplier must enter the amount and notes (payment terms) on the form and click **Submit**. On submission, ERPZ will create a draft Supplier Quotation against the supplier. The user must review and submit it. When all items from the Request for Quotation have been quoted, the quote status is updated to **Received** in the Suppliers table of the Request for Quotation.
+
+![RFQ Status After Supplier Quote]()
+
+## 5. Video
+
+[Watch the Video Tutorial]() 
+
+## 6. Related Topics
+
+- [Purchase Order]()
+- [Supplier]() 
+- [Supplier Quotation]() 
+- [Quotation]() 
+- [Material Request]()

@@ -1,0 +1,136 @@
+---
+title: "Sales Order"
+description: "Guide to Sales Orders in ERPZ."
+---
+
+# Sales Order
+
+**A Sales Order is a confirmation of an order from your customer.**
+
+It is usually a binding contract with your customer. Once your customer confirms the Quotation, you can convert your Quotation into a Sales Order.
+
+## Sales Flow
+
+To access Sales Order, go to:
+
+`Home > Selling > Sales > Sales Order`
+
+### 1. Prerequisites
+
+Before creating and using a Sales Order, it is advised that you create the following first:
+
+- Customer
+- Item
+
+### 2. How to create a Sales Order
+
+1. Go to the Sales Order list, click on New.
+2. Select the Customer.
+3. Set the 'Delivery Date' - applied to the whole order.
+4. With Order Type, you can set whether it's a Sales order, Maintenance order, or from the online Shopping Cart of your website. By default, this value is set to "Sales".
+5. In the "Customer's Purchase Order" field, enter the Customers Purchase Order No. or other useful reference details.
+6. Enter the items and quantities to be delivered in the Item table. If Item Prices are set for the items, the Rate field will be populated automatically. If not, enter the item Rate manually.
+7. Click **Save** to save a draft of the Sales Order.
+8. **Submit** to submit the Sales Order to the System.
+
+#### 2.1 Other ways to create a Sales Order
+
+You can also create a Sales Order from a submitted Quotation via the Create button on the top right.
+
+- Make Sales Order from Quotation.
+- Or create a new Sales Order and pull details from a Quotation.
+
+To allow for per-Customer, per-Item Pricing Rules, ("Customer A" pays $1.00 for "Item 1" but "Customer B" pays $1.25 for "Item 1"), enable 'Allow User to Edit Price List Rate in Transaction' in Selling Settings.
+
+### 3. Features
+
+#### 3.1 Currency and Price List
+
+You can set the currency for the sales order. If a Pricing List is set, item prices will be fetched from that list. Ticking 'Ignore Pricing Rule' will ignore Pricing Rules.
+
+#### 3.2 Set Source Warehouse
+
+If stock is available in multiple warehouses, setting a warehouse here will fetch items from this warehouse. This will override the 'Default Warehouse' in the Item master.
+
+#### 3.3 The Items Table
+
+- **Delivery Date against each item**: Entering a delivery date in the first row will copy it to other blank rows.
+- **Delivery Warehouse**: The warehouse from where stock will be picked to deliver to the customer.
+- **Drop Ship**: If enabled, items will be delivered directly to the customer from a distributor.
+- **Planning**: Fields related to projected quantity under planning.
+
+#### 3.4 Packing List
+
+If the transaction involves a product bundle, the Packing List will be automatically updated when you save the Sales Order. 
+
+#### 3.5 Taxes and Charges
+
+To add taxes to your Sales Order, select a Sales Taxes and Charges Template or add the taxes manually. Use the 'Tax Breakup' feature to view detailed components and amounts.
+
+#### 3.6 Additional Discount
+
+Add a discount to the whole sales order, either based on the Grand Total or Net Total.
+
+#### 3.7 Payment Terms
+
+Add a Payment Terms template or set manual terms if payment is split across multiple stages.
+
+#### 3.8 Terms and Conditions
+
+Terms and Conditions can be applied to sales/purchase transactions. These will appear when printing the document.
+
+#### 3.9 Print Settings
+
+- **Letterhead**: Print your sales order on your company's letterhead.
+- **Print Headings**: Quotations can be titled as "Proforma Invoice" or "Proposal."
+
+#### 3.10 More Information
+
+- **Campaign**: Associate the sales order with a Sales Campaign.
+- **Source**: Link a lead source type if quoting to a lead.
+- **Inter Company Order Reference**: Link a Purchase Order to this Sales Order in case of inter-company orders.
+- **Project**: If the Sales Order is part of a project, link it here.
+
+#### 3.11 Billing and Delivery Status
+
+- **Status**: The current status of the Sales Order, such as Draft, On Hold, or Completed.
+- **Amount Billed and Delivered percent**: Track the percentage of amount billed and items delivered.
+
+#### 3.12 Commission
+
+Add commission details if the sale was done through a Sales Partner. The commission amount will be calculated automatically.
+
+#### 3.13 Sales Team
+
+Add multiple Sales Persons involved in the deal and track their contributions.
+
+#### 3.14 Auto Repeat Section
+
+Auto-repeating Sales Orders is like a subscription. Set the start and end date for auto-repeat.
+
+#### 3.15 After Submitting
+
+Once you submit your Sales Order, you can create:
+
+- [Delivery Note](/stock/stock-transactions/delivery-note)
+- Work Order
+- Sales Invoice
+- Material Request
+- Payment Request
+
+### 4. Sales Order with Order Type 'Maintenance'
+
+For Sales Orders with 'Maintenance' type:
+
+- After submission, create Maintenance Visit or Maintenance Schedule via the Create button.
+  
+**Note 1**: Clicking on 'Maintenance Visit' will fetch the Sales Order details directly into the form.  
+**Note 2**: Clicking on 'Maintenance Schedule' will fetch the Sales Order details directly into the schedule form.  
+**Note 3**: Clicking on the 'Invoice' button will generate an invoice for the services.
+
+### Related Topics
+
+- [Quotation](/selling/selling-transactions/quotation)
+- [Close Sales Order]()
+- [Amending Sales Order After Submit]()
+- [Pick List]()

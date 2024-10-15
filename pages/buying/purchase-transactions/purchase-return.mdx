@@ -1,0 +1,51 @@
+---
+title: "Purchase Return"
+description: "Guide on how to process purchase returns in ERPZ."
+---
+
+# Purchase Return
+
+A purchased item being returned is known as a **Purchase Return**. 
+
+With the Purchase Return feature in ERPZ, you can return products to the Supplier for various reasons, such as defects in goods, quality not matching expectations, or the buyer no longer needing the stock.
+
+## 1. Prerequisites
+
+Before creating and using a Purchase Return, it is advised that you first create the following:
+
+- **Item**
+- **Purchase Invoice** or **Purchase Receipt**
+
+## 2. How to Create a Purchase Return
+
+1. Open the original Purchase Receipt against which the supplier delivered the items.
+
+   ![Original Purchase Receipt]()
+
+2. Click on **Create > Return**. This action will open a new Purchase Receipt with **Is Return** checked. The items, rates, and taxes will be displayed as negative numbers.
+
+   ![Return Against Purchase Receipt]()
+
+3. Upon submission of the Purchase Return, the system will decrease the item quantity from the specified Warehouse. To maintain correct stock valuation, the stock balance will increase according to the original purchase rate of the returned items.
+
+   ![Return Stock Ledger]()
+
+4. In the Accounting Ledger, the **Stock In Hand** account will be credited, and the **Stock Received but Not Billed** account will be debited.
+
+   ![Return Stock Ledger]()
+
+5. If Perpetual Inventory is enabled, the system will also post an accounting entry against the warehouse account to sync the warehouse account balance with the stock balance as per the Stock Ledger.
+
+## 3. Impact on Stock Return via Purchase Receipt
+
+When creating a Purchase Return against a Purchase Receipt:
+
+- The **Returned Quantity** in the original Purchase Receipt, along with any linked Purchase Orders, is updated.
+- The status of the original Purchase Receipt is changed to **Return Issued** if 100% of the items are returned.
+
+   ![Return Issued]()
+
+## 4. Related Topics
+
+- [Sales Return]()
+- [Perpetual Inventory]()

@@ -127,13 +127,11 @@ export default {
     darkMode: true,
 
     // Navigation links
-    navigation: [
-        { title: 'Home', path: '/' },
-        { title: 'Getting Started', path: '/getting-started' },
-        { title: 'API Reference', path: '/api' },
-        { title: 'FAQ', path: '/faq' },
-        { title: 'Contact', path: '/contact' },
-    ],
+    navigation: {
+        prev: true,
+        next: true
+    },
+
 
     // Internationalization (i18n) configuration
     i18n: [
@@ -185,10 +183,7 @@ export default {
         auto: 'Auto (System)',
     },
 
-    navigation: {
-        prev: true,
-        next: true
-    },
+    
 
 
     // Additional configuration options can be added here

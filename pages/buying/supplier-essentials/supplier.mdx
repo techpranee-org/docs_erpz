@@ -1,0 +1,124 @@
+---
+title: "Supplier"
+description: "Learn how to create and manage suppliers in ERPZ for efficient procurement and supplier management."
+---
+
+# Supplier
+
+**Suppliers are companies or individuals who provide you with products or services.**
+
+To access the Supplier list, navigate to:
+
+`Home > Buying > Supplier > Supplier`
+
+
+## 1. How to Create a Supplier
+
+Follow these steps to create a Supplier:
+
+1. Go to the Supplier list and click on **New**.
+2. Enter a name for the supplier.
+3. Select the supplier group (e.g., Pharmaceutical, Hardware, etc.).
+4. Click **Save**.
+
+### 1.1 Supplier Master
+
+Once you create a Supplier Scorecard and transactions are made, options to warn RFQs, POs, and prevent RFQs, POs will become available.
+
+## 2. Features
+
+The fields in future transactions will be auto-populated if default fields such as **Default Bank Account**, **Default Payment Terms Template**, etc., are set in the Supplier record.
+
+### 2.1 Tax Details
+
+- **Country**: If the supplier is from another country, you can change it here.
+- **Tax ID**: The tax identification number of the supplier.
+- **Tax Category**: This links to the Tax Rule. If a Tax Category is set here, the corresponding Purchase Tax and Charges template will be applied when selecting this supplier. This template is linked to the Tax Rule, which is in turn linked with a Tax Category. Tax Categories can be used to group suppliers to whom the same tax applies, such as Government or Commercial.
+- **Print Language**: The language in which documents will be printed.
+- **Tax Withholding Category**: For India, the TDS category for the supplier. This category will be fetched into the Purchase Invoice. For more information, visit the Tax Withholding Category page.
+- **Disabled**: Disables the Supplier, and they won't appear in the Supplier List.
+- **Is Transporter**: If the supplier provides transport services, tick this box. The 'GST Transporter ID' field will be visible if this field is checked.
+- **Internal Supplier**: If the supplier is from a sister or parent/child company, tick this field and select the company they represent.
+
+#### For India:
+
+- **GST Category**: Select the GST Category for the supplier.
+- **PAN**: For India, provide the PAN (Permanent Account Number) details of the Supplier.
+
+### 2.2 Allow Creation of Purchase Invoice without Purchase Order and Purchase Receipt
+
+If the "Purchase Order Required" or "Purchase Receipt Required" option is set to "Yes" in Buying Settings, it can be overridden for a particular supplier by enabling the "Allow Purchase Invoice Creation Without Purchase Order" or "Allow Purchase Invoice Creation Without Purchase Receipt" in the Supplier Master.
+
+### 2.3 Currency and Price List
+
+- **Billing Currency**: The supplier's currency can differ from your company currency. If you select JPY for a supplier, the currency will be recorded as JPY, along with the exchange rate for future purchase transactions.
+
+### Supplier Currency
+
+Each Supplier can have a default Price List so that when you buy an item from this supplier at different prices, the price list associated with the supplier will be updated. You can view item prices in:
+
+`Buying > Items and Pricing > Item Price`
+
+
+When you select a specific supplier, the associated Price List will be fetched in Purchase transactions.
+
+### 2.4 Payment Terms and Block Supplier
+
+- **Default Payment Terms Template**: If a Payment Terms template is set here, it will automatically be selected for future purchase transactions.
+- **Block Supplier**: You can block invoices, payments, or both from a supplier until a specific date. Choose a 'Hold Type'; if none is selected, ERPZ will default to "All". When a supplier is blocked, their status will be shown as 'On Hold'. The hold types include:
+
+  - **Invoices**: ERPZ will prevent the creation of Purchase Invoices or Purchase Orders for the supplier.
+  - **Payments**: ERPZ will prevent the creation of Payment Entries for the Supplier.
+  - **All**: ERPZ will apply both hold types above.
+
+If you do not set a release date, ERPZ will hold the Supplier **indefinitely**.
+
+### 2.5 Default Payable Accounts
+
+Add the default account from which invoices against this supplier will be paid. You can add additional rows for more companies, but only one account can be selected per company.
+
+You can integrate a supplier with an account. For all Suppliers, the "Creditor" account is set as the default payable account. When a Purchase Invoice is created, the payable amount towards the supplier is booked against the "Creditors" account.
+
+If you want to customize the payable account for the Supplier, first add a payable Account in the Chart of Accounts, then select that Payable Account in the Supplier Master.
+
+If you prefer to use the default payable account "Creditor," do not update any value in the Default Supplier Account table.
+
+**Tip**: The Default Payable Account is set in the Company master. To set another account as the default for payables instead of the Creditors Account, go to the Company master and designate that account as "Default Payable Account."
+
+Depending on your plan, you can add multiple companies in your ERPZ instance. One Supplier can be used across multiple companies, in which case you should define Company-wise Payable Accounts for the Supplier in the "Default Payable Accounts" table.
+
+### 2.6 More Information
+
+You can add the supplier's website and any additional details in this section. If you freeze a supplier using the 'Is Frozen' option, accounting entries for that supplier will be frozen. Only users assigned to the role in 'Role Allowed to Set Frozen Accounts & Edit Frozen Entries' in Accounting > Settings > Accounts Settings can surpass this freeze. This is useful when amending the supplier's name or bank details.
+
+### 2.7 Address and Contacts
+
+In ERPZ, Contacts and Addresses are stored separately, allowing you to create multiple Contacts and Addresses for a single Supplier. After saving a Supplier, you will find options to create Contact and Address records for that Supplier.
+
+**Tip**: When you select a Supplier in any transaction, the Contact marked with the "Is Primary" field will auto-fetch with the Supplier details.
+
+### 2.8 After Saving
+
+Once all necessary details are filled, save the document. After saving, the following options will be available in the Dashboard:
+
+- **Request for Quotation**: Create an RFQ against this supplier.
+- **Supplier Quotation**: View any quotations received from the supplier.
+- **Purchase Order**: View Purchase Orders made against this supplier.
+- **Purchase Receipt**: View purchase receipts provided by this supplier.
+- **Purchase Invoice**: View Purchase Invoices created against this supplier.
+- **Payment Entry**: View Payment Entries for Purchase Invoices against this supplier.
+- **Pricing Rule**: View any Pricing Rules linked with this supplier. (See section 2.3 for Currency and Price List.)
+
+By clicking on the **View** button, you can access the Accounting Ledger or Accounts Payable directly for this supplier.
+
+There is also an option to **Send GST Update Reminder** to the supplier, provided you have a default email account set up first.
+
+## 3. Video
+
+*(Add link to a video tutorial if available)*
+
+## 4. Related Topics
+
+- Supplier Quotation
+- Supplier Scorecard
+

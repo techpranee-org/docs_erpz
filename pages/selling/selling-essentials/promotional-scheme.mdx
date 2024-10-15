@@ -1,0 +1,124 @@
+---
+title: "Promotional Scheme"
+description: "Learn how to configure and manage promotional schemes in ERPZ. Apply discounts and product promotions to boost your sales, using price slabs, mixed conditions, cumulative discounts, and more."
+---
+
+# Promotional Scheme
+
+**A Promotional Scheme is a temporary discount on one or more products.**
+
+Promotional schemes are a powerful tool in ERPZ to drive business success by offering lower prices for a limited time, attracting more customers. Promotional schemes in ERPZ are linked to pricing rules and are easy to configure. A single promotional scheme can generate multiple pricing rules depending on the conditions set.
+
+To access the Promotional Scheme list, go to:
+
+`ERPZ > Selling > Items and Pricing > Promotional Scheme`
+
+## 1. Prerequisites
+
+Before creating a Promotional Scheme, ensure that the following are created:
+
+- [Item](/stock/stock-masters/item)
+- [Item Group](/stock/stock-masters/item-group)
+- [Customer](/selling/selling-essentials/customer)
+- Supplier
+
+## 2. How to Create a Promotional Scheme
+
+1. Navigate to the Promotional Scheme list and click on **New**.
+2. Enter a title for the rule.
+3. Select the **Apply On** condition: `Item Code`, `Item Group`, `Brand`, or `Transaction`. If you select Transaction, the scheme applies to the total amount of the transaction.
+4. Depending on your selection, the system will allow you to choose the applicable Item Code, Item Group, or Brand.
+5. Set the **Party** details.
+6. In the **Price Discount Slabs** table, configure the price or product discounts as required.
+7. Optionally, apply the discount to other items by using the **Apply Rule On Other** field.
+8. Save the promotional scheme, and ERPZ will automatically generate a corresponding Pricing Rule.
+
+## 2.1 Additional Fields for a Promotional Scheme
+
+### Mixed Conditions
+
+Select two or more items and set the Min and Max Quantity. The scheme will apply only if the total quantity matches the specified conditions.
+
+### Cumulative Scheme
+
+Enable **Is Cumulative** to apply the scheme cumulatively. For example, if the Min Amount is 1,500 and the Max Amount is 2,000, a cumulative amount of multiple transactions can trigger the scheme.
+
+## 3. Features
+
+### 3.1 Apply Scheme On Other Items
+
+This feature allows you to check conditions on one item but apply the discount or rule on another item.
+
+For example, you can set Item1 and Item2 in the "Apply Rule On" table and select Item3 in "Apply Rule On Other". If all three items are part of the transaction, the scheme applies to Item3.
+
+### 3.2 Party Information
+
+You can set applicability for:
+
+- Customer
+- Customer Group
+- Territory
+- Supplier
+- Sales Partner
+- Campaign
+
+### 3.3 Validity Period
+
+You can set a specific validity period for the promotional scheme. If no dates are entered, the scheme will not have a time limit.
+
+### 3.4 Price Discount Slabs
+
+Specify minimum quantity, maximum quantity, minimum amount, or maximum amount for when the scheme should be applied. The scheme will apply only if these conditions are met.
+
+#### Types of Discounts:
+
+- **Rate**: Define a specific rate for an item during the promotion.
+- **Discount Percentage**: Apply a percentage-based discount.
+- **Discount Amount**: Apply a fixed discount amount.
+
+### 3.5 Product Discount Slabs
+
+Offer free items based on the purchase of other items.
+
+#### Example Fields:
+
+- **Same Item**: Enable to give the same item as a free gift.
+- **Apply Multiple Pricing Rules**: Allows combining multiple pricing rules for a cumulative discount.
+- **Unit of Measure (UoM)**: The scheme applies only if the UoM matches.
+
+## 4. Promotional Scheme Types
+
+### 4.1 Price Discount
+
+Set discount percentages or amounts based on minimum and maximum quantities or amounts.
+
+### 4.2 Product Discount
+
+Offer free items based on conditions like minimum and maximum quantity or amount.
+
+## 5. How to Configure a Promotional Scheme (Examples)
+
+### 5.1 Mixed Condition Scheme
+
+Customer A buys 10 units of Product X and 5 units of Product Y. You want to give a 10% discount if the total purchase quantity is 15.
+
+1. Set **Apply On** to `Item Code`.
+2. Set the item codes for Product X and Y.
+3. Enable **Mixed Conditions**.
+4. In the discount table, set Min Quantity to 15 and apply a 10% discount.
+
+### 5.2 Discount on Other Items
+
+Customer A buys 30 units of Product X and 2 units of Product Z. You want to apply a flat rate of $12 for Product Z if the customer buys 30 units of Product X.
+
+1. Set **Apply On** to `Item Code`.
+2. Set the item code for Product X.
+3. Apply Rule On Other as Product Z.
+4. Set the flat rate of $12 for Product Z.
+
+## 6. Related Topics
+
+- [Pricing Rule](/stock/rules)
+- [Customer](/selling/selling-essentials/customer)
+- [Supplier]()
+- [Item](/stock/stock-masters/item)

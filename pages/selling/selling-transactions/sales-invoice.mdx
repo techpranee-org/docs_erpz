@@ -1,0 +1,159 @@
+---
+title: "Sales Invoice"
+description: "A guide to creating and managing Sales Invoices in ERPZ."
+---
+
+# Sales Invoice
+
+A Sales Invoice is a bill that you send to your Customers against which the Customer makes the payment.
+
+Sales Invoice is an accounting transaction. On submission of Sales Invoice, the system updates the receivable and books income against a Customer Account.
+
+To access the Sales Invoice list, go to: `> Home > Accounting > Accounts Receivable > Sales Invoice`
+
+## SO Flow
+
+### 1. Prerequisites
+Before creating and using a Sales Invoice, it is advised to create the following first:
+
+- Item
+- Customer
+
+Optional:
+- Sales Order
+- Delivery Note
+
+### 2. How to create a Sales Invoice
+A Sales Invoice is usually created from a Sales Order or a Delivery Note. The Customer's Item details will be fetched into the Sales Invoice. However, you can also create a Sales Invoice directly, for example, a POS invoice.
+
+To fetch the details automatically in a Sales Invoice, click on the _Get Items from_. The details can be fetched from a Sales Order, Delivery Note, or a Quotation.
+
+For manual creation, follow these steps:
+
+1. Go to the Sales Invoice list and click on **New**.
+2. Select the Customer.
+3. Set the Payment Due Date.
+4. In the Items table, select the Items and set the quantities.
+5. The prices will be fetched automatically if Item Price is added, else add a price in the table.
+6. The posting date and time will be set to current. You can edit after you tick the checkbox below Posting Time to make a backdated entry.
+7. Save and Submit.
+
+#### 2.1 Additional options when creating a Sales Invoice
+- **Include Payment (POS)**: If this invoice is for retail sales/Point of Sale. Know more [here](#).
+- **Is Return Credit Note**: Tick this if the customer has returned the Items. Visit the Credit Note page for details.
+
+For India:
+- **e-Way Bill No**: According to GST rules, transporters need to carry an e-Way Bill. Visit this [page](#) to learn more.
+
+#### 2.2 Statuses
+These are the statuses that are auto-assigned to Sales Invoices:
+
+- **Draft**: A draft is saved but yet to be submitted.
+- **Submitted**: The invoice is submitted to the system, and the general ledger has been updated.
+- **Paid**: Customer has made the payment and a Payment Entry has been submitted.
+- **Unpaid**: Invoice is generated but payment is pending within the payment due date.
+- **Overdue**: Payment is pending beyond the payment due date.
+- **Canceled**: The Sales Invoice is canceled. Once canceled, its impact on Account and Stock is undone.
+- **Credit Note Issued**: The Item is returned by the Customer and a Credit Note is created.
+- **Return**: Assigned to Credit Notes created against the original Sales Invoice.
+- **Unpaid and Discounted**: Payment is pending, and any ongoing subscription has been discounted.
+- **Overdue and Discounted**: Payment is overdue, and the subscription has been discounted.
+
+### 3. Features
+
+#### 3.1 Dates
+- **Posting Date**: The date on which the Sales Invoice will affect your books of accounts (General Ledger).
+- **Due Date**: The date on which the payment is due (if sold on credit). Set from the Customer master.
+
+#### 3.2 Accounting Dimensions
+Tag transactions based on specific dimensions (Territory, Branch, Customer, etc.). Helps in viewing accounting statements based on these dimensions.
+
+#### 3.3 Customer PO Details
+- **Customer's Purchase Order**: Track customer's PO No. to prevent duplicate Sales Orders or Invoices.
+- **Customer's Purchase Order Date**: The date on which the Customer placed the Purchase Order.
+
+#### 3.4 Address and Contact
+- **Customer Address**: Billing address of the Customer.
+- **Contact Person**: If the Customer is a company, this field contains the contact person.
+- **Territory**: Region the Customer belongs to, fetched from the Customer form.
+
+For India:
+- **Billing Address GSTIN**
+- **Customer GSTIN**
+- **Place of Supply**
+- **Company GSTIN**
+
+#### 3.5 Currency
+- Set the currency for the Sales Invoice. Can be fetched from the Customer master or preceding transactions like Sales Order.
+  
+#### 3.6 Price List
+- If you select a Price List, item prices will be fetched from it. 'Ignore Pricing Rule' will ignore set pricing rules.
+
+#### 3.7 The Items table
+- **Update Stock**: Tick this to update the Stock Ledger on submitting the Sales Invoice.
+- **Scan Barcode**: Add items to the table using a barcode scanner.
+- **Grant Commission**: Grant a commission to Sales Person or Sales Partner.
+
+For serialized/batched items, the **Batch No** and **Serial No** must be entered.
+
+#### 3.8 Timesheet
+Bill employees working on projects using their timesheets.
+
+#### 3.9 Taxes and Charges
+The Taxes and Charges will be fetched from the Sales Order or Delivery Note.
+
+### 3.10 Loyalty Points Redemption
+If the Customer is enrolled in a Loyalty Program, they can choose to redeem points here.
+
+### 3.11 Additional Discount
+Apply discounts to the whole Invoice. This discount can be pre- or post-tax.
+
+### 3.12 Advance Payment
+Fetch advance payments made for high-value items by clicking the Get Advances Received button.
+
+### 3.13 Payment Terms
+If set in the Sales Order, the payment may be made in parts based on terms agreed with the Supplier.
+
+### 3.14 Write Off
+Write off happens when the Customer pays an amount less than the invoice amount.
+
+### 3.15 Terms and Conditions
+Terms and conditions related to the sale can be added here.
+
+### 3.16 Transporter Information
+Details related to the transporter handling the delivery of items can be recorded.
+
+#### 3.17 Printing Settings
+- **Letterhead**: Print the Sales Invoice on your company's letterhead.
+- Group same items when printing the document.
+
+#### 3.18 GST Details (for India)
+Set GST-related details such as GST Category, Invoice Copy, and Reverse Charge.
+
+#### 3.19 More Information
+- **Campaign**: Link a sales campaign to the invoice.
+- **Source**: Tag a Lead Source to know the source of sales.
+
+#### 3.20 Accounting Details
+- **Debit To**: The account where the receivable will be booked for this Customer.
+- **Is Opening Entry**: Select 'Yes' if this is an opening entry affecting accounts (e.g., migration from another ERP).
+
+#### 3.21 Commission
+Commission details can be added if the sale involved a Sales Partner.
+
+#### 3.22 Sales Team
+Multiple Sales Persons can be added to the deal.
+
+#### 3.23 Automatically Fetching Item Batch Numbers
+ERPNext will automatically fetch a batch number for Items from a Batch.
+
+---
+
+This content has been structured in Nextra format with frontmatter for use in your documentation app. Let me know if you need further adjustments!
+
+
+## Related Topics 
+
+- [Purchase Receipt](/stock/stock-transactions/purchase-receipt)
+- [Quotation](/selling/selling-transactions/quotation)
+- [Delivery Note](/stock/stock-transactions/delivery-note)

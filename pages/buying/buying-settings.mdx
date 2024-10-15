@@ -1,0 +1,94 @@
+---
+title: "Buying Settings"
+description: "Configure settings to streamline and automate purchasing workflow in ERPZ."
+---
+
+# Buying Settings
+
+ERPZ allows you to configure various settings that help streamline and automate the purchasing workflow.
+
+## 1. Naming Series and Price Defaults
+
+![Naming Series and Price Defaults]()
+
+1. **Supplier Naming By**  
+   When a Supplier is saved, the system generates a unique identity or name for that Supplier, which can be used to refer to the Supplier in various Buying transactions.  
+   If not configured otherwise, ERPZ uses the Supplier's Name as the unique name. If you want to identify Suppliers using names like SUPP-00001, SUPP-00002, etc., select the value of Supplier Naming By as **Naming Series**.
+
+2. **Default Supplier Group**  
+   Configure the default value of the Supplier Group when creating a new Supplier. For instance, if most of your suppliers provide hardware, set the default as **Hardware**.
+
+3. **Default Buying Price List**  
+   Configure the default Price List when creating a new Buying transaction. The default is set as **Standard Buying**. Item prices will be fetched from this Price List. You can modify the 'Price List' by using the arrow at the right end of the field to change the currency and country.
+
+4. **Action if Same Rate is Not Mentioned**  
+   This defines the action that should take place when a purchase order, material request, or any other buying transaction encounters an item rate that is not specified.  
+   - **Stop**: The system will halt the transaction, preventing the user from proceeding without specifying a rate.  
+   - **Warn**: The system will allow the transaction to proceed but will display a warning message to alert the user that the same rate has not been mentioned.
+
+5. **Role Allowed to Override Stop Action**  
+   This setting specifies which user roles have permission to override the **Stop** action in buying transactions due to discrepancies in the rate.
+
+## 2. Transaction Settings
+
+![Transaction Settings]()
+
+1. **Is Purchase Order Required for Purchase Invoice & Receipt Creation?**  
+   If configured to **Yes**, ERPZ will prevent you from creating a Purchase Invoice or Purchase Receipt directly without first creating a Purchase Order.  
+   In retail transactions where the order happens offline, Purchase Orders can be skipped. If you’re accepting sample Items, you can directly create a Purchase Receipt to receive the Items into your Warehouse.  
+   This configuration can be overridden for a particular supplier by enabling the **Allow Purchase Invoice Creation Without Purchase Order** checkbox in the supplier master.
+
+2. **Is Purchase Receipt Required for Purchase Invoice Creation?**  
+   If configured to **Yes**, ERPZ will prevent you from creating a Purchase Invoice without first creating a Purchase Receipt. For service items, a receipt is not required, allowing you to directly create an Invoice.  
+   This can also be overridden for specific suppliers by enabling the **Allow Purchase Invoice Creation Without Purchase Receipt** checkbox in the supplier master.
+
+3. **Blanket Order Allowance (%)**  
+   Set the percentage allowed to order more against the Blanket Order Quantity. For instance, if you have a Blanket Order of 100 units and your Allowance is 10%, you can order up to 110 units.
+
+4. **Update Frequency of Project**  
+   Indicates how often the project should be updated with the Total Purchase Cost.
+
+5. **Maintain Same Rate Throughout Purchase Cycle**  
+   If enabled, ERPZ will validate whether an Item's price is changing in a Purchase Invoice or Purchase Receipt created from a Purchase Order. This ensures consistency in pricing throughout the purchase cycle.  
+   You can configure the action that the system should take if the same rate is not maintained in the **Action If Same Rate is Not Maintained** field:  
+   - **Stop**: ERPZ will prevent changing the price by throwing a validation error.  
+   - **Warn**: The system will allow saving the transaction but will warn with a message if the rate has changed.  
+   *Note: This field will only be visible if the option to maintain the same rate is enabled.*
+
+6. **Allow Item to be Added Multiple Times in a Transaction**  
+   When unchecked, an item cannot be added multiple times in the same Purchase Order. However, you can still explicitly change the quantity. This validation checkbox prevents accidental purchases of the same item. It can be checked for specific cases where there are multiple sources for the same material, for example, in manufacturing.
+
+7. **Bill for Rejected Quantity in Purchase Invoice**  
+   If checked, the Rejected Quantity will be included when generating a Purchase Invoice from a Purchase Receipt.
+
+8. **Set Landed Cost Based on Purchase Invoice Rate**  
+   If the option to maintain the same rate is disabled, this field appears in the buying settings. If the user wants to adjust the product valuation based on the purchase invoice cost, this option needs to be enabled.  
+   *Example Workflow:*  
+   - Created Purchase Receipt for item A at a rate of 100.  
+   - System books Stock In Hand at a rate of 100.  
+   - After 2 days, the user creates a purchase invoice against the above receipt, but the invoice rate changes to 150 due to a change in exchange rate.  
+   - If you want to adjust the Stock In Hand with the Purchase invoice rate (150), enable **Set Landed Cost Based on Purchase Invoice Rate**.  
+   *Note: Upon submission of the purchase invoice, the system creates a repost item valuation record to update the cost of the purchase receipt. Users must wait for the repost item valuation to complete to see the impact of the invoice cost on stock in hand.*
+
+9. **Disable Last Purchase Rate**  
+   This setting prevents the system from automatically using the rate from the last purchase transaction when creating new purchase orders or transactions.
+
+10. **Use Transaction Date Exchange Rate**  
+    When creating a Purchase Invoice from a Purchase Order, this option uses the Exchange Rate on the Invoice's transaction date instead of inheriting it from the Purchase Order. This applies only for Purchase Invoices.
+
+## 3. Subcontracting Settings
+
+![Subcontracting Settings]()
+
+1. **Backflush Raw Materials of Subcontract Based On**  
+   - **BOM**: The system will consume raw materials in the subcontracting receipt based on the Finished Goods Bill of Materials (BOM).  
+   - **Material Transferred for Subcontract**: The system will consume raw materials based on the materials transferred against the Subcontracting Order. If no stock is transferred, no materials will be consumed at the time of Subcontracting Receipt.
+
+2. **Auto Create Subcontracting Order**  
+   The system will auto-create the subcontracting order in a Draft state upon submission of the purchase order that has **Is Subcontracted** enabled.
+
+3. **Auto Create Purchase Receipt**  
+   The system will auto-create the purchase receipt for service items in a Draft state upon submission of the subcontracting receipt.
+
+4. **Over Transfer Allowance (%)**  
+   This is the percentage allowed to transfer more against the quantity ordered. For instance, if you ordered 100 units and your Allowance is 10%, you are allowed to transfer up to 110 units.

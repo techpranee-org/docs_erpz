@@ -1,0 +1,66 @@
+---
+title: "Loyalty Points Redemption in POS"
+description: "Learn how to redeem loyalty points in the ERPZ POS system."
+---
+
+
+# Loyalty Points Redemption in POS
+
+In ERPZ, you can set up your POS system to automatically generate invoices while allowing customers to redeem loyalty points. Follow these steps to configure loyalty points redemption in the POS module.
+
+## 1. Create a Loyalty Program
+
+First, create a **Loyalty Program** in the **Loyalty Program** doctype:
+
+- You can choose between a **Single Tier** or **Multi-Tier** program based on your business's purchase slabs.
+- Configure the loyalty rules (e.g., collection factor, conversion factor, etc.) as per the Loyalty Program setup.
+
+For more details on creating a loyalty program, refer to the [Loyalty Program](./loyalty-program) documentation.
+
+## 2. Link the Loyalty Program to a Customer
+
+Once the Loyalty Program is set up, create or edit a **Customer** and link the program to the customer.
+
+- Navigate to the **Customer** doctype and assign the relevant **Loyalty Program**.
+
+This will allow the customer to earn and redeem points during transactions.
+
+## 3. POS Profile Setup
+
+If you haven't set up your POS profile yet, do the following:
+
+1. Go to **Retail > POS > POS Profile**.
+2. Configure your **POS Profile** settings including users, warehouse, and payment modes.
+3. Ensure the **Loyalty Program** is linked to the customers using the POS system.
+
+Once your POS profile is configured, you can begin processing transactions with loyalty points.
+
+## 4. Processing a POS Transaction with Loyalty Points
+
+To redeem loyalty points during a POS transaction, follow these steps:
+
+1. Open the **POS** interface and create a new transaction.
+2. **Select the Customer** who is linked to a Loyalty Program.
+3. **Add Items** to the cart.
+4. Proceed to the **Payment** section.
+5. Check the option to **Redeem Loyalty Points**.
+
+When you select **Redeem Loyalty Points**, the system will apply the available loyalty points to the transaction, reducing the total amount according to the program's **Conversion Factor**.
+
+> **Note**: Ensure that the customer has sufficient loyalty points to redeem. If they attempt to redeem more points than available, an error will be shown.
+
+## 5. Invoices in POS
+
+The POS system in ERPZ automatically generates invoices for each transaction. When loyalty points are redeemed, the invoice will reflect the loyalty points applied and the final payable amount after redemption.
+
+After the transaction, a **Loyalty Point Entry** will be created, showing the loyalty points earned or redeemed for that specific invoice.
+
+For additional details on loyalty points tracking, visit the [Loyalty Point Entry]() section.
+
+---
+
+## 6. Related Topics
+
+- [Loyalty Program]()
+- [POS Setup]()
+- [Customer]()

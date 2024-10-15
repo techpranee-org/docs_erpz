@@ -1,6 +1,73 @@
-import { Callout } from 'nextra/components';
+---
+title: "Job Card"
+description: "Manage production information and track manufacturing processes with Job Cards in ERPZ."
+---
 
+# Job Card
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+**A Job Card stores actual production information about a particular operation performed on a particular workstation.**
+
+A Job Card is created from the Work Order and assigned to each of the workstations on the manufacturing floor to initiate the production of an item with a specified quantity for each operation defined in the Work Order.
+
+### Key Features of Job Card
+
+- **Material Requests**: Each Job Card allows the workstation to issue a “Material Request” and “Stock Transfer to Manufacture” for the raw materials required against a Job Card.
+- **Production Tracking**: Job Card completion updates the production status in the Work Order, enabling tracking of the completion of production progress for each operation defined in the Work Order.
+
+## 1. Accessing Job Card
+
+To access the Job Card list, navigate to:  
+`Home > Manufacturing > Production > Job Card`
+
+## 2. Prerequisites
+
+Before creating and using a Job Card, it is advised that you create the following:
+
+- **Bill of Materials (BOM)**
+- **Operation**
+- **Workstation**
+- **Work Order**
+
+## 3. How to Create a Job Card
+
+A Job Card for operations is automatically created when a Work Order is submitted.
+
+### Steps to Use a Job Card
+
+1. Click on the **Start Job** button, then on **Complete Job** when you're finished.
+2. Alternatively, fill in the **From Time** and **To Time** in the Time Logs table.
+3. Select the **Employee** to whom the Job Card was assigned.
+4. Enter the **Completed Quantity**—the number of items on which the operation was performed during the selected time interval.
+5. Add more rows in the Time Logs table and record time using the **Start/Complete** buttons.
+6. Click on **Submit**.
+
+In a Work Order, operations and workstations are fetched from the BOM of an item. For ease of use, ensure that the routing is configured in the BOM.
+
+### Job Card Details
+
+- Each Job Card created will have workstation and operations assigned.
+- The raw material required from each source warehouse will be calculated based on the quantity needed for production.
+- On submitting a Work Order, Job Cards will be auto-created based on the values in the operations table.
+
+### Material Request Against Job Card
+
+A Material Request will be raised from the Job Card to prepare the raw materials required for the manufacturing process. This request will reference the original Job Card number.
+
+## 4. Tracking Manufacturing Progress
+
+Job Card completion enables tracking of manufacturing progress within the Work Order by monitoring the completion of each operation related to the Work Order.
+
+### Scrap Items
+
+During operations, some scrap materials may be produced. Users can add details of scrap items to the Job Card, including defective or broken materials in the scrap items table.
+
+## 5. Features
+
+### Tracking Quality Inspection (Introduced in Version 13)
+
+For production orders, the quality of in-process (semi-finished) goods needs to be tracked. This is defined by the processes (operations) performed on it, which are outlined in the Job Card. In-process tests differ from incoming and outgoing material tests. Monitoring quality during manufacturing ensures that the finished product meets desired quality standards. You can create a Quality Inspection for the production item against the Job Card.
+
+![Quality Inspection Against Job Card]()
+
+For more details, refer to the [Quality Inspection page]().
+

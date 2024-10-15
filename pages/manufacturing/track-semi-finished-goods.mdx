@@ -1,6 +1,99 @@
-import { Callout } from 'nextra/components';
+---
+title: "Tracking Semi-Finished Goods"
+description: "Learn how to track semi-finished goods and manage operations in ERPZ's manufacturing module."
+---
 
+# Tracking Semi-Finished Goods
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+**Semi-finished goods** are materials that result from the completion of one operation and are used as raw materials in the production of final products or other semi-finished goods.
+
+In ERPZ, if you want to track semi-finished goods, you need to create an item for each semi-finished good and maintain an active Bill of Materials (BOM) for each one.
+
+## 1. Overview
+
+ERPZ offers a flexible way to define semi-finished goods alongside the operations and raw materials involved in manufacturing. When an operation is completed, semi-finished goods are produced, and raw materials are consumed. After the final operation, the finished goods are produced, and all semi-finished goods are consumed.
+
+To track **Semi-Finished Goods** in ERPZ, follow these steps:
+
+- Create a BOM for each semi-finished and finished good.
+- Assign the BOMs to operations in the final BOM, or manually select the raw materials required for each operation.
+  
+While this process may seem lengthy, the **BOM Creator** in ERPZ simplifies the task. Users can create multi-level BOMs for the final product as well as semi-finished goods with associated operations.
+
+![BOM Creator]()
+
+## 2. Steps to Track Semi-Finished Goods
+
+To track **Semi-Finished Goods**, you must enable both **Track Operations** and **Track Semi-Finished Goods** when creating a BOM.
+
+While setting up the BOM:
+
+1. Define the operation, operation time, workstation, and workstation type.
+2. Set default warehouses for raw materials, work-in-progress (WIP), and finished goods.
+3. For operations involving subcontracting, users can define subcontracted operations and generate subcontracted purchase orders against job cards.
+
+## 3. Work Order
+
+In the **Work Order**, you can see the finished and semi-finished goods along with raw materials for each operation. Upon submission of the work order, job cards will be automatically created. Users must manually complete these job cards either through the **Job Card View** or the **Workstation Dashboard**.
+
+### 3.1 Completing Job Cards
+
+Here are different scenarios for completing job cards based on material transfer settings:
+
+- **Scenario 1**: If **Skip Material Transfer to WIP** and **Backflush Materials from WIP Warehouse** are enabled, raw materials must be consumed from the WIP warehouse. Start the job by clicking the **Start Job** button, complete it by clicking the **Complete Job** button, and submit the job card to update the stock and add finished/semi-finished goods to the target warehouse.
+  
+- **Scenario 2**: If **Skip Material Transfer to WIP** is enabled but **Backflush Materials from WIP Warehouse** is disabled, materials must be consumed from the source warehouse.
+
+- **Scenario 3**: If **Skip Material Transfer to WIP** is disabled, raw materials must be transferred from the source warehouse to the WIP warehouse. Start the job as usual, and upon completion, submit the job card to create the stock entry.
+
+![Workstation Dashboard]()
+
+## 4. Workstation Dashboard
+
+From the **Workstation Dashboard**, users can manage job cards by starting, pausing, resuming, or completing them. It also allows users to transfer raw materials from the source warehouse to the WIP warehouse for operations that don't have **Skip Material Transfer** enabled.
+
+## 5. Transferring Materials
+
+For operations like **Brake Making**, where **Skip Material Transfer** is disabled, materials must be transferred manually from the **Source Warehouse** to the **WIP Warehouse**. For operations like **Chain Making**, where **Skip Material Transfer** is enabled, material transfers are unnecessary.
+
+![Transfer Materials]()
+
+## 6. Managing Jobs
+
+### 6.1 Start Job
+
+To start a job, click the **Start** button from the menu. The system will automatically fetch the employee details of the logged-in user.
+
+![Start Job]()
+
+### 6.2 Pause Job
+
+To pause a job, click the **Pause** button from the menu.
+
+![Pause Job]()
+
+### 6.3 Resume Job
+
+To resume a paused job, click the **Resume** button from the menu.
+
+![Resume Job]()
+
+### 6.4 Complete Job with Auto Stock Entry
+
+Click the **Complete** button to enter the quantity and complete the job. The system will automatically create a stock entry with the type **Manufacture**, consuming raw materials and adding finished/semi-finished goods.
+
+![Complete Job]()
+
+### 6.5 Start and Complete Jobs Using QR Code
+
+If QR codes are set up for job cards, you can scan the QR codes in the **Start Job** or **Complete Job** fields to begin or end the job.
+
+![Start and Complete Jobs with QR Code]()
+
+---
+
+For more details on managing semi-finished goods and operations, refer to the related topics:
+
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Bill of Materials](/manufacturing/bill-of-materials/bill-of-materials)
+- [Job Cards](/manufacturing/production-and-material-planning/job-card)

@@ -1,0 +1,192 @@
+---
+title: "Purchase Invoice"
+description: "A detailed guide on Purchase Invoices, including how to create, manage, and understand their impact on accounting."
+---
+
+
+## PI Flow
+
+## 1. Prerequisites
+
+Before creating and using a Purchase Invoice, it is advised to create the following first:
+
+- Item
+- Supplier
+- Purchase Order
+- Purchase Receipt (optional)
+
+## 2. How to Create a Purchase Invoice
+
+A Purchase Invoice is usually created from a Purchase Order or a Purchase Receipt. The Supplier's Item details will be fetched into the Purchase Invoice. However, you can also create a Purchase Invoice directly.
+
+To fetch the details automatically in a Purchase Invoice, click on the **Get Items from**. The details can be fetched from a Purchase Order or Purchase Receipt.
+
+### Manual Creation Steps:
+
+1. Go to the Purchase Invoice list, click on **New**.
+2. Select the Supplier.
+3. The posting date and time will be set to current; you can edit it after you tick the checkbox below Posting Time.
+4. Set the Due Date for payment.
+5. Add Items and quantities in the Items table.
+6. The Rate and Amount will be fetched.
+7. Save and Submit.
+
+### 2.1 Additional Options When Creating a Purchase Invoice
+
+- **Is Paid:** You can tick 'Is Paid' if the amount has already been paid via an Advance Payment Entry. This should be ticked if there is full or partial payment.
+- **Is Return (Debit Note):** Tick this if the customer has returned the Items. To know more details, visit the [Debit Note](#) page.
+- **Apply Tax Withholding Amount:** If the selected Supplier has a Tax Withholding Category set, this checkbox will be enabled. For more information, visit the [Tax Withholding Category](#) page.
+
+### 2.2 Statuses
+
+- **Draft:** A draft is saved but yet to be submitted to the system.
+- **Return:** The Items have been returned to the Supplier.
+- **Debit Note Issued:** The Items have been returned and a Debit Note has been issued against the invoice.
+- **Submitted:** The Purchase Invoice has been submitted to the system and the general ledger has been updated.
+- **Paid:** Supplier has been fully paid the invoice amount and the corresponding Payment Entries have been submitted.
+- **Partly Paid:** Supplier has been paid a part of the invoice amount and the corresponding Payment Entries have been submitted.
+- **Unpaid:** The Purchase Invoice is yet to be paid.
+- **Overdue:** The due date has passed for payment.
+- **Canceled:** The invoice has been canceled due to some reason.
+
+## 3. Features
+
+### 3.1 Accounting Dimensions
+
+Accounting Dimensions let you tag transactions based on a specific Territory, Branch, Customer, etc. This helps in viewing accounting statements separately based on the criteria selected. To know more, visit the [Accounting Dimensions](#) page.
+
+*Note: Project and Cost Center are treated as dimensions by default.*
+
+### 3.2 Holding the Invoice
+
+Sometimes you may need to hold an invoice from being submitted.
+
+- **Hold Invoice:** Enable this checkbox to put the Purchase Invoice on hold. This can be done only before submitting the invoice. Once 'Hold Invoice' is enabled and the Purchase Invoice is submitted, the status will change to 'Temporarily on Hold'.
+
+Once the purchase invoice gets submitted and you want to change 'Release Date', you can take the help of the 'Hold Invoice' button, which is available on the top right.
+
+If you want to hold a submitted purchase invoice, you can hold it using the **Block Invoice** option and if you want to unblock it again, then use the **Unblock Invoice** option.
+
+### 3.3 Supplier Invoice Details
+
+- **Supplier Invoice No:** The Supplier may identify this order with a number of his own. This is for reference.
+- **Supplier Invoice Date:** The date on which the Supplier placed/confirmed your order from his end.
+
+### 3.4 Address and Contact
+
+- **Supplier Address:** This is the Billing Address of the Supplier.
+- **Contact Person:** If the Supplier is a Company, the person to be contacted is fetched in this field if set in the Supplier form.
+- **Shipping Address:** Address where the items will be shipped to.
+
+For India, the following details can be recorded for GST purposes:
+
+- Supplier GSTIN
+- Place of Supply
+- Company GSTIN
+
+### 3.5 Currency and Price List
+
+You can set the currency in which the Purchase Invoice order is to be sent. This is fetched from the Purchase Order. If you set a Pricing List, then the item prices will be fetched from that list. Ticking on 'Ignore Pricing Rule' will ignore the Pricing Rules set in Accounts > Pricing Rule.
+
+### 3.6 Subcontracting or 'Supply Raw Materials'
+
+Setting 'Supply Raw Materials' option is useful for subcontracting where you provide the raw materials for manufacturing an Item. To know more, visit the [Subcontracting](#) page.
+
+### 3.7 Items Table
+
+- **Scan Barcode:** You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for tracking items using barcode to know more.
+- The Item Code, name, description, Image, and Manufacturer will be fetched from the Item master.
+
+*Additional Details for Items:*
+- Manufacturer: If the Item is manufactured by a specific manufacturer, it can be added here.
+- Quantity and Rate: When you select the Item code, its name, description, and UOM will be fetched. 
+- Discount on Price List Rate: You can apply a discount on individual Items percentage-wise or on the total amount of the Item.
+
+### 3.8 Taxes and Charges
+
+The Taxes and Charges will be fetched from the Purchase Order or Purchase Receipt. 
+
+Visit the [Purchase Taxes and Charges Template](#) page to know more about taxes.
+
+### 3.9 Additional Discount
+
+Any additional discounts to the whole Invoice can be set in this section. This discount could be based on the Grand Total i.e., post tax/charges or Net total i.e., pre tax/charges.
+
+### 3.10 Advance Payment
+
+For high-value Items, the seller can request an advance payment before processing the order. The **Get Advances Received** button opens a popup from where you can fetch the orders where advance payment was made.
+
+### 3.11 Payment Terms
+
+The payment for an invoice may be made in parts depending on your understanding with the Supplier. This is fetched if set in the Purchase Order.
+
+### 3.12 Write Off
+
+Write off happens when the Customer pays an amount less than the invoice amount. This may be a small difference like 0.50. 
+
+### 3.13 Terms and Conditions
+
+In Sales/Purchase transactions, there might be certain Terms and Conditions based on which the Supplier provides goods or services to the Customer.
+
+### 3.14 Printing Settings
+
+- **Letterhead:** You can print your Purchase Invoice on your Company's letterhead.
+- **Group same items:** This will group the same items added multiple times in the Items table.
+
+### 3.15 GST Details (for India)
+
+The following details can be set for GST:
+
+- GST Category
+- Invoice Copy
+- Reverse Charge
+- E-commerce GSTIN
+
+### 3.16 More Information
+
+- **Is Opening Entry:** If this is an opening entry to affect your accounts select 'Yes'.
+- **Remarks:** Any additional remarks about the Purchase Invoice can be added here.
+
+### 3.17 After Submitting
+
+On submitting a Purchase Invoice, the following documents can be created against it:
+
+- Journal Entry
+- Payment Entry
+- Payment Request
+- Landed Cost Voucher
+- Asset
+
+## 4. More
+
+### 4.1 Accounting Impact
+
+The Purchase Invoice will affect your accounts as follows:
+
+- **Debits:** Expense or Asset (net totals, excluding taxes), Taxes
+- **Credits:** Supplier, Purchase Invoice Ledger
+
+### 4.2 Accounting When Is Paid is Checked
+
+If Is Paid is checked, ERPNext will also make the following accounting entries:
+
+- **Debits:** Supplier
+- **Credits:** Bank/Cash Account
+
+### 4.3 Is Purchase an “Expense” or an “Asset”?
+
+If the Item is consumed immediately on purchase, or if it is a service, then the purchase becomes an “Expense”.
+
+### 4.4 Deducting Taxes at Source
+
+In many countries, the law may require you to deduct taxes while paying your suppliers. 
+
+### 4.5 Hold Payments For A Purchase Invoice
+
+There are two ways to put a purchase invoice on hold:
+
+- **Date Span Hold**
+- **Explicit Hold**
+
+**Explicit Hold** holds the purchase invoice indefinitely. To do it, in the "Hold Invoice" section of the purchase invoice form, simply check the "Hold Invoice" checkbox.
+

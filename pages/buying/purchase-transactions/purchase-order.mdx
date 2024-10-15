@@ -1,0 +1,134 @@
+---
+title: Purchase Order
+description: A Purchase Order is a binding contract with your Supplier to buy a set of items under given conditions.
+---
+
+# Purchase Order
+
+A Purchase Order is a binding contract with your Supplier that you promise to buy a set of items under given conditions.
+
+It is similar to a Sales Order but instead of sending it to an external party, you keep it for internal records.
+
+**Location in ERPZ**: Home > Buying > Purchasing > Purchase Order
+
+## Buying Flow
+
+### 1. Prerequisites
+
+Before creating and using a Purchase Order, it is advised that you create the following first:
+
+- Supplier
+- Item
+
+### 2. How to Create a Purchase Order
+
+A Purchase Order can be automatically created from a Material Request or Supplier Quotation.
+
+1. Go to the Purchase Order list, click on **New**.
+2. Select the Supplier, required by date.
+3. In the items table, select the item by code. You can change the required by date for each item.
+4. Set the quantity. The price will be fetched automatically if set in the Item master.
+5. Set taxes.
+6. Save and Submit.
+
+#### 2.1 Setting Warehouses
+
+You can set the default **Target Warehouse** where the purchased Items will be delivered. This will be fetched into the Item table rows.
+
+#### 2.2 Fetching Items from Open Material Requests
+
+Items can be fetched into the Purchase Order automatically from open Material Requests:
+
+1. Select a Supplier in the Purchase Order.
+2. Set the default Supplier in the Item form under Item Defaults.
+3. A Material Request needs to be present of type 'Purchase'.
+4. Click on the **Get Items from open Material Requests** button. This button is visible as long as the Items table is empty.
+5. A dialog will appear with Material Requests containing Items where the default Supplier matches the Purchase Order. Select and fetch the items.
+
+### 3. Features
+
+#### 3.1 Address and Contact
+
+- **Select Supplier Address**: The Supplier's billing address.
+- **Select Shipping Address**: The Supplier's shipping address.
+
+If saved in the Supplier master, the **Address**, **Shipping Address**, **Contact**, and **Contact Email** will be fetched.
+
+For India:
+
+- **Supplier and Company GSTIN**: The GST Identification Number of your Supplier and your company.
+- **Place of Supply**: This is required for GST and consists of the state's name and number.
+
+#### 3.2 Currency and Price List
+
+You can set the currency and Pricing List in the Purchase Order. Prices are fetched automatically from the Pricing List, and you can also choose to **Ignore Pricing Rules**.
+
+#### 3.3 Subcontracting or 'Supply Raw Materials'
+
+Set the **Supply Raw Materials** option for subcontracting, where you provide raw materials to manufacture an item.
+
+#### 3.4 The Items Table
+
+- **Barcode Scanning**: Add Items by scanning barcodes.
+- **Quantity and Rate**: Set quantity and rate. Rate is fetched from the item master, Price List, or previous orders.
+- **Item Tax Template**: You can apply specific tax rates using Item Tax Templates.
+- **Warehouse**: Set where items will be delivered.
+
+Additional options:
+
+- **Required By** date on each item.
+- **Allow Zero Valuation Rate**: Allows submitting a Purchase Receipt even if the Valuation Rate is 0.
+
+#### 3.5 Raw Materials Supplied
+
+This section appears if **Supply Raw Materials** is set to Yes. It displays the items supplied to the Supplier for subcontracting.
+
+- **Set Reserve Warehouse**: Raw materials can be reserved in a separate Warehouse.
+
+#### 3.6 Purchase UOM and Stock UOM Conversion
+
+You can specify different UOMs (Units of Measurement) for Purchase and Stock.
+
+Example:
+
+- Purchase raw material in UOM - Boxes.
+- Stock it in UOM - Nos.
+
+Mention the UOM conversion factor, and the stock quantity will update accordingly.
+
+#### 3.7 Taxes and Charges
+
+Add additional charges like shipping or insurance. Use the **Taxes and Charges Template** for accuracy in cost tracking.
+
+- Shipping Rule: Set the cost of shipping based on distance.
+- VAT: Track purchase and sales VAT accurately.
+
+#### 3.8 Additional Discount
+
+You can apply an additional discount to the entire Purchase Order based on Grand Total or Net Total.
+
+#### 3.9 Payment Terms
+
+Define multiple payment terms based on your agreement with the Supplier.
+
+#### 3.10 Terms and Conditions
+
+Add standard terms and conditions to the Purchase Order.
+
+#### 3.11 Print Settings
+
+- Print your Purchase Order on the company's letterhead.
+- Group the same items to avoid repetition when printing.
+
+#### 3.12 More Information
+
+- **Status**: Check the status of the Purchase Order (submitted, on hold, closed).
+- **Progress**: View the percentage of items received and billed.
+- **Create from Purchase Order**: You can create a Purchase Receipt, Invoice, Payment Entry, or Journal Entry from a submitted Purchase Order.
+
+### 4. Related Topics
+
+- [Request For Quotation]()
+- [Purchase Taxes and Charges Template]()
+- [Purchasing in Different Unit]()
+- [Amending Purchase Order After Submission]()

@@ -1,0 +1,76 @@
+---
+title: "Supplier Quotation"
+description: "A detailed overview of the Supplier Quotation process in ERPZ."
+---
+
+# Supplier Quotation
+
+**A Supplier Quotation is a document issued by a potential supplier detailing the cost of goods or services they will provide within a specified timeframe.**
+
+A Supplier Quotation may also include terms of sale, payment conditions, and warranties. Acceptance of the quotation by the buyer constitutes a binding agreement for both parties.
+
+## Buying Flow
+
+To access the Supplier Quotation, navigate to:
+
+`Home > Buying > Purchasing > Supplier Quotation`
+
+
+## 1. Prerequisites 
+
+Before creating and utilizing a Supplier Quotation, ensure you have set up the following:
+
+- **Supplier**
+- **Item**
+
+## 2. How to Create a Supplier Quotation 
+
+### 2.1 Supplier Quotation from Material Request 
+
+You can create a Supplier Quotation directly from a Material Request. Alternatively, it can also be generated from the Supplier master or submitted by the supplier via the ERPZ platform. For more details, refer to the Request for Quotation section.
+
+### 2.2 Creating a Supplier Quotation Manually 
+
+To create a Supplier Quotation manually, follow these steps:
+
+1. Go to **Buying > Purchasing > Supplier Quotation > New**.
+2. Select the Supplier providing the quotation. The Address and Contact details will auto-populate if previously saved in the Supplier master.
+3. Enter the Item code and select the quantity. The rate will automatically fetch if a Standard Buying rate is established for the item in the Item Price settings.
+
+Supplier Quotations are often used when sending Requests for Quotation to multiple suppliers for the same item. This approach allows for:
+
+- Easy comparison of prices
+- Auditing to ensure all suppliers had the opportunity to quote
+
+> **Note:** Supplier Quotations may not be necessary for all businesses. Consider the value of this process, especially for high-value items.
+
+## 3. Features 
+
+### 3.1 Taxes and Charges 
+
+If your supplier imposes additional costs, such as taxes or shipping charges, you can add these directly in the Supplier Quotation. This helps maintain accurate cost tracking. For more details on setting up taxes, see the **Purchase Taxes and Charges Template**.
+
+### 3.2 Additional Information 
+
+The Supplier Quotation includes fields for Tax Category, Shipping Rules, Purchase Taxes and Charges Template, Discounts, Terms and Conditions, Quotation Numbers, and Printing Settings. Completing these fields enhances record-keeping and tracking accuracy. Key points include:
+
+- **Tax Category:** Automatically fetched from the supplier master if set.
+- **Print Settings:** Adjust the print format of the Supplier Quotation.
+- **Terms and Conditions:** Specific to the supplier and essential for accurate tracking.
+
+You can link the Supplier Quotation to a Material Request using the **Link to Material Requests** button.
+
+### 3.3 Post-Submission Actions 
+
+After submitting a Supplier Quotation, the following records may be created:
+
+- **Purchase Order:** Generated if you agree with the supplier's terms.
+- **Customer Quotation:** To present to your customers.
+- **Auto Repeat:** Set to automatically generate supplier quotations at specified intervals.
+
+## 4. Related Topics 
+
+- [Supplier](/buying/supplier-essentials/supplier)
+- [Supplier Group](/buying/supplier-essentials/supplier-group)
+- [Purchase Order](/buying/purchase-transactions/purchase-order)
+- [Request for Quotation](/buying/purchase-transactions/request-for-quotation)

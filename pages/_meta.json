@@ -2,7 +2,10 @@
     "documentation": "Home",
     "introduction": "Introduction",
     "settings": "Settings",
+    "buying": "Buying",
+    "selling": "Selling",
     "stock": "Stock",
     "manufacturing": "Manufacturing",
-    "project": "Project"
+    "project": "Project",
+    "quality": "Quality"
 }

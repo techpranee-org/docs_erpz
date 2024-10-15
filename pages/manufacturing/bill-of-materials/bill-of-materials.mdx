@@ -1,0 +1,103 @@
+---
+title: "Bill Of Materials"
+description: "A Bill of Materials (BOM) is a list of items and sub-assemblies with quantities required to manufacture an item in ERPZ."
+---
+
+# Bill Of Materials
+
+**A Bill of Materials is a list of items and sub-assemblies with quantities required to manufacture an Item.**
+
+A BOM may also contain the manufacturing operations required to manufacture the Item.
+
+A **Bill of Materials** (BOM) is central to the Manufacturing system and helps create other document types like Work Orders and Job Cards. ERPZ supports multi-level BOMs.
+
+The **BOM** is a list of all materials (either bought or made) and operations that go into manufacturing a finished product or sub-assembly. In ERPZ, each item (sub-assembly) can have its own BOM, forming a tree of Items with multiple levels.
+
+### Work Order
+
+To make accurate Purchase Requests, you must always maintain correct BOMs.
+
+To access the BOM list, go to:
+
+`Home > Manufacturing > Bill of Materials > Bill of Materials`
+
+Once a BOM is submitted, it cannot be edited. You can only cancel the existing, duplicate it, and submit another one. Since a BOM is linked to multiple places in the Manufacturing module, changing it can be time-consuming. It's a good practice to carefully think and fill out the BOMs before submitting.
+
+## 1. Prerequisites
+Before creating and using a BOM, it is recommended that you create the following first:
+
+- Item
+- Operation
+- Workstation
+- Routing
+
+## 2. How to create a Bill of Materials
+
+1. Go to the Bill of Materials list, click on **New**.
+2. Select the Item to be manufactured. The Item name, UoM, company, and currency will be fetched automatically.
+3. Enter the quantity of the Item that will be manufactured from this Bill of Materials.
+4. Under the **Items** table, select the raw materials (Items) required to manufacture the Item. Then proceed to:
+
+   - Select the quantity of Raw Material used.
+   - Set an Item operation to be fetched in Work Orders later.
+   - If this Item is a sub-assembly, the default BOM for it will be fetched.
+   - Select the **Source Warehouse** to track inventory.
+   - Enter the scrap percentage that will remain after this raw material is used.
+
+   Save and Submit.
+
+5. In the **Items** table, tick the **Include Item in Manufacturing** checkbox for Raw Materials. If there are services or operations to include in the BOM that are not necessarily an Item, uncheck this checkbox. For example, a chemical treatment on plastic that incurs cost but isn’t an Item.
+
+## 2.1 Bill of Materials with Operations
+
+To add Operations, tick the **With Operations** checkbox. Now, an **Operations** table will appear. This option tracks the cost of Operations during manufacturing. Operations can be added by setting a template in the **Routing** master.
+
+In the **Operations** table, add the operations needed to manufacture the Item:
+
+- Select the Workstation where the Operation will be performed.
+- Enter the Operating Hourly Rate, Operation Time (in minutes), and the Batch Size produced.
+- The Operating Cost will be calculated based on these values.
+
+Materials can be transferred against a Work Order in bulk or through individual Job Cards depending on various factors, such as time to manufacture and the skill level of labor.
+
+## 2.2 Additional options when creating a Bill of Materials
+
+- **Is Active**: Uncheck to disable this BOM if an alternative set of materials/operations is to be used.
+- **Is Default**: This BOM will be selected by default in Work Orders when the Item is selected.
+- **Inspection Required**: Make **Quality Inspection** mandatory for raw materials and finished goods. Select the Quality Inspection Template after ticking this checkbox.
+- **Allow Alternative Item**: This allows alternative items to be used if specific materials are unavailable.
+- **Allow Same Item Multiple Times**: Sometimes, the same item needs to be added more than once. This option allows the same item to appear multiple times in the BOM.
+- **Set rate of sub-assembly item based on BOM**: Set sub-assembly item rates based on their BOM.
+
+## 3. Features
+
+### 3.1 BOM Costing
+
+The Costing section in a BOM provides an approximate cost of manufacturing the Item. The costing is based on the Valuation Rate of the raw materials/sub-assemblies and the Operation costs. Costs can be updated via the **Update Cost** button.
+
+### 3.2 Materials Required (Exploded)
+
+The **Materials Required (Exploded)** table lists all raw materials required to manufacture an Item, including sub-assemblies. Use the **Do Not Explode** option if you do not wish to explode sub-assembly items.
+
+For example, when manufacturing a laptop, a company might keep the motherboard in stock. To avoid exploding the motherboard’s BOM, use the **Do Not Explode** option.
+
+### 3.3 Project and Website
+
+The BOM can be linked to a Project for tracking progress and costs. It can also be shown on the website for open-source hardware products.
+
+### 3.4 BOM Template
+
+A BOM template allows for the creation of BOMs for template items. The template BOM is used as the default BOM when making Work Orders against a template item’s variants.
+
+### 3.5 After Submitting
+
+Once the BOM is submitted, you can create the following document types against the BOM:
+
+- Work Orders
+- Job Cards
+
+---
+
+## 4. Related Topics:
+- [BoM Explorer]()
+- [BoM Search]()

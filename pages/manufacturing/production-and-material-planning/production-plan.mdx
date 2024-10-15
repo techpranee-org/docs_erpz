@@ -1,6 +1,95 @@
-import { Callout } from 'nextra/components';
+---
+title: "Production Plan"
+description: "A comprehensive guide on creating and utilizing the Production Plan in ERPZ for efficient manufacturing and material planning."
+---
 
+# Production Plan
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+A Production Plan assists in production and material planning for items designated for manufacturing. These production items can be committed via **Sales Orders** (to customers) or **Material Requests** (internally).
+
+The Production Plan helps users plan production against multiple Sales Orders or Material Requests. Additionally, it aids in material procurement planning for raw materials based on the quantities of finished products to be manufactured.
+
+To access the Production Plan list, go to:
+
+**Home > Manufacturing > Production > Production Plan**
+
+## 1. Prerequisites
+
+Before creating and utilizing a Production Plan, ensure you have created the following:
+
+- [Item](/stock/stock-masters/item)
+- [Material Request](/stock/stock-transactions/material-request)
+- [Sales Order]()
+- [Bill of Materials](/manufacturing/bill-of-materials/bill-of-materials)
+
+## 2. How to Create a Production Plan
+
+As mentioned earlier, a Production Plan can be used for planning the manufacture of items against Sales Orders or Material Requests. The common steps are:
+
+1. Go to the Production Plan list and click on **New**.
+2. Select whether to source items from a **Sales Order** or a **Material Request**.
+3. A Production Plan can also be created manually by selecting the items to manufacture.
+
+### 2.1 Production Against Sales Orders
+
+1. Select **Sales Order** from the "Get Items From" drop-down list. The system will display filters to help you pull relevant Sales Orders. You don't need to use all filters if you have only a few Sales Orders in a particular timeframe.
+2. Click on **Get Sales Orders** to fetch Sales Orders based on the selected filters.
+3. Click on **Get Items for Work Order** to fetch items from the selected Sales Orders. Only items for which a BOM is present will be fetched.
+4. By expanding a row in the **Items to Manufacture** table, you will see an option to **Include Exploded Items**. Ticking this option will include raw materials of sub-assembly items in the production process.
+5. If **Consolidate Items** is ticked and saved, items with the same BOM will be combined into a single item with the total planned quantity.
+
+### 2.2 Production Against Material Requests
+
+1. Select **Material Request** from the "Get Items From" drop-down list. The system will show filters to pull relevant Material Requests for production.
+2. Click on **Get Material Request** to fetch Material Requests based on the selected filters.
+3. Click on **Get Items for Work Order** to fetch the items from the selected Material Requests.
+
+### 2.3 Fetching Sub Assembly Items
+
+1. Click on **Get Sub Assembly Items** to fetch Sub Assembly Items from the BOM of the finished goods in the table above.
+
+#### 2.3.1 Sub Assembly Items
+
+Users will have the option to create an **In House (Work Order)**, **Sub-contract Purchase Order**, or **Material Request for Purchase** against the Sub-assembly items using the Manufacturing Type.
+
+If users want to create a Material Request for their Sub-assembly items and their final raw materials, they should select the Manufacturing Type as **Material Request** for Sub-assembly items and click on **Get Raw Materials for Purchase** to fetch Sub-assembly items in the Material Request Plan Item table.
+
+#### 2.3.2 Combining Sub Assembly Items
+
+If there are finished goods that share the same Sub Assembly Item, the Sub Assembly Items can be combined. The criteria for combination include having the same Item, Warehouse, BOM, and Manufacturing Type.
+
+#### 2.3.3 Skip Available Sub Assembly Items
+
+If Sub Assembly Items are available in stock or will be available in the future through open Purchase Orders or Work Orders and you don't want to manufacture them, you can enable the **Skip Available Sub Assembly Items** checkbox. With this option, raw materials used to manufacture sub-assembly items won't be considered when making the material requests.
+
+### 2.4 Planning for Material Requests
+
+Clicking on the **Get Raw Materials for Purchase** button will fetch the required raw material items in the Material Request Plan table. For example, to manufacture 200 plastic canes, if you need 100 raw plastic units but have only 20 in your warehouse, clicking this button will add a row with 80 in the Required Quantity column.
+
+### 2.4.1 Download Material Request Plan
+
+Clicking on **Download Material Request Plan** will generate an Excel sheet with the raw materials needed to complete the Production Plan. Users can select the Warehouse to check the available quantity in the respective warehouse. A popup will appear for warehouse selection; if you want to run the plan for multiple warehouses, you can select them in the popup to download the plan in Excel format.
+
+### 2.5 After Submitting
+
+Once the Production Plan is submitted, users have the option to create Work Orders for the production items and Material Requests for the raw materials. Users can also set the status to **Closed** in the Production Plan.
+
+#### 2.5.1 Closing a Production Plan
+
+There may be instances where a Production Plan is partially complete and is going to be discontinued due to various reasons, such as:
+
+- An item was independently produced outside the Production Plan.
+- A change in plans occurred, and pending items will not be produced.
+
+In such cases, users can set the Production Plan status to **Closed** so that no new Work Orders or Material Requests are created against it. The plan can be reopened if necessary.
+
+### 2.6 Making Work Orders for Sub-assembly Items
+
+Users can create Work Orders, Sub-contract Purchase Orders, or Material Requests for Purchase against the Sub-assembly items using the Manufacturing Type. To create a Work Order for sub-assembly items, select the Manufacturing Type as **In House** and submit. After submission, click on the button **Create -> Work Order / Subcontract PO**.
+
+## 3. Related Topics
+
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Job Card](/manufacturing/production-and-material-planning/job-card)
+
+---

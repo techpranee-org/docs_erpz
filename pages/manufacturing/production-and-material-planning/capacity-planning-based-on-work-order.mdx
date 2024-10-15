@@ -1,0 +1,56 @@
+---
+title: "Capacity Planning Based on Work Order"
+description: "Track production jobs allocated on each Workstation with the Capacity Planning functionality in ERPZ."
+---
+
+# Capacity Planning Based on Work Order
+
+The **Capacity Planning** functionality in ERPZ assists you in tracking production jobs allocated to each Workstation effectively.
+
+## Steps to Use Capacity Planning Feature in ERPZ
+
+### **1. Operations**
+
+To add operations, navigate to:  
+**Manufacturing > Bill of Materials > Operations**
+
+### **2. Workstation**
+
+Add each Workstation in your ERPZ account by going to:  
+**Manufacturing > Bill of Materials > Workstation**
+
+In the Workstation master, you can define the following:
+- Operations that will be performed on it
+- Costs associated with it
+- Working hours of that Workstation
+
+### **3. Bill of Materials (BOM)**
+
+In a BOM, alongside the list of raw materials required for manufacturing, you can also specify:
+- Operations
+- Workstations through which those raw materials will be processed
+
+### **4. Work Order**
+
+Upon submission of the Work Order, a Timesheet for Operations is generated. This feature allows you to allocate production jobs to each Workstation and update the actual time taken for each Operation.
+
+---
+
+## Error Due to Capacity Planning
+
+**Question:** Upon submission of the Work Order, I receive the following error message.
+
+**Answer:** Please check if you have updated the Working Hours in the Workstation master. If not, update it and then attempt to submit the Work Order again. When you submit a Work Order, Operations (as added in the BOM) are allocated to the Workstations. Each operation should ideally start and end on the same day. If the system cannot schedule that operation within a single day, it will prompt you to divide that Project so that it can allocate smaller operations throughout the day.
+
+If you have updated the Working Hours in the Workstation but still encounter this issue, it may be because one of your operations takes too long and cannot be completed within a day. In such cases, please divide that operation into smaller tasks, ensuring they can be allocated to the Workstation and completed on the same day.
+
+---
+
+## Avoiding Working Hours of Workstation
+
+If you want to ignore the above validation and allow scheduling of production jobs beyond the working hours of the Workstation, enable **Overtime** in the Manufacturing Settings.
+
+If you wish to completely disable the Capacity Planning feature, check the field **Disable Capacity Planning and Time Tracking** in the Manufacturing Settings.
+
+![Work Order Error]()
+

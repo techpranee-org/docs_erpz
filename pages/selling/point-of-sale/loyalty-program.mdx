@@ -1,0 +1,92 @@
+---
+title: "Loyalty Program"
+description: "Learn how to implement and manage a Loyalty Program in ERPZ to incentivize repeat customers and enhance customer retention."
+---
+
+
+# Loyalty Program
+
+A **Loyalty Program** in ERPZ allows customers to earn points by spending a certain amount, which they can redeem for future purchases.
+
+A **Customer Loyalty Program** is a structured marketing initiative designed to incentivize repeat customers. These programs motivate customers to make frequent purchases, helping businesses retain customers and boost loyalty.
+
+To access the Loyalty Program list, navigate to:
+
+`Home > Retail > Retail Operations > Loyalty Program`
+
+## 1. Prerequisites
+
+Before creating a Loyalty Program, ensure the following are created:
+
+- **Customer**
+- **Sales Invoice**
+
+## 2. How to Create a Loyalty Program
+
+To create a new Loyalty Program, follow these steps:
+
+1. Navigate to the Loyalty Program list and click **New**.
+2. Enter a **Name** for the program.
+3. Select whether the program is **Single Tiered** or **Multi-Tiered** (e.g., Gold, Silver).
+4. Set a **Start Date** and **End Date** for the program.
+5. Choose the **Customer Group** and **Territory** to which the program applies. By default, it applies to all.
+6. Enable **Auto Opt-In (For all customers)** to include all customers automatically. If not selected, you can assign the program through the Customer master.
+7. In the table, specify:
+   - **Tier Name**: The name of the tier based on customer eligibility.
+   - **Collection Factor**: The amount a customer needs to spend to earn 1 Loyalty Point.
+   - **Minimum Amount**: The minimum amount required to qualify for a tier.
+   - Set the **Conversion Factor**, e.g., 10 USD = 1 point.
+
+Click **Save** to create the Loyalty Program.
+
+### 2.1 Redemption Section
+
+In the redemption section, configure the following settings:
+
+- **Conversion Factor**: Determines the value of 1 Loyalty Point when redeemed. For example, 1 Loyalty Point = 1 USD.
+- **Expense Account**: Specify the Expense Account to track the loyalty points redeemed by customers.
+- **Expiry Duration (in days)**: Set the number of days after which the collected loyalty points will expire.
+
+### 2.2 Assigning a Loyalty Program to a Customer
+
+To assign a Loyalty Program to a customer:
+
+1. Go to the **Customer Master** and select a **Loyalty Program** for the customer.
+2. The earned loyalty points will be visible in the customer’s dashboard.
+
+### 2.3 Loyalty Point Entry
+
+To view customer loyalty points:
+
+- Navigate to **Accounts > Retail Operations > Loyalty Point Entry** to see how many points each customer has earned and the corresponding sales invoice.
+
+## 3. How Does a Loyalty Program Work?
+
+### 3.1 Earning Points
+
+To set up a Loyalty Program and earn points:
+
+1. Create a **Loyalty Program** as outlined above.
+2. Assign the program to a **Customer**.
+3. When a Sales Invoice is created for the customer, loyalty points will be awarded according to the program rules. For instance, for an invoice total of 3,000 INR, if the **Collection Factor** is set to 1 point per 300 INR, the customer will earn 15 points.
+4. Upon submitting the invoice, a **Loyalty Point Entry** will be generated.
+
+### 3.2 Redeeming Points
+
+To redeem points:
+
+1. Create a new Sales Invoice for the same customer.
+2. In the **Loyalty Points** section, enable the **Redeem Loyalty Points** option.
+3. The fields for **Loyalty Point**, **Redemption Account**, and **Redemption Cost Center** will become visible, fetched from the assigned Loyalty Program.
+4. Enter the number of points to redeem. If the customer attempts to redeem more points than available, an error will occur.
+5. Submit the invoice to finalize the redemption. Two **Loyalty Point Entries** will be created: one for the points redeemed and one for the current invoice.
+
+> **Note**: If a return invoice is created for an invoice on which points were earned, the original Loyalty Point Entry will be adjusted, and a new one will be created to reflect the return.
+
+## 4. Related Topics
+
+- [Cost Center]()
+- [Sales Invoice]()
+- [Customer]()
+- [Customer Group]()
+

@@ -1,6 +1,49 @@
-import { Callout } from 'nextra/components';
+---
+title: BOM Costing in Different Currency
+description: Learn how to calculate BOM costing in various currencies in ERPZ.
+---
 
+# BOM Costing in Different Currency
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+In ERPZ, you can calculate the Bill of Materials (BOM) costing in different currencies based on your needs. This feature is especially useful for businesses dealing with international suppliers or customers, as it allows you to view manufacturing costs in a specific currency. The system calculates the costing based on the selected Price List currency before submitting the BOM.
+
+## Why Use BOM Costing in Different Currencies?
+
+Consider a scenario where you import raw materials from another country, and the transactions are in a foreign currency. While your company operates in one base currency, you may want to calculate the BOM costing in the supplier’s currency. ERPZ makes it easy to switch the currency for BOM costing.
+
+## 1. How to Use BOM Costing in a Different Currency
+
+1. In the BOM form, select the **Currency** field before submitting the BOM.  
+2. The system will automatically calculate the costing based on the rates in the selected currency.
+3. Choose the method to calculate the rate of raw materials by selecting the option for **Rate Of Materials Based On**.
+
+### 1.1 Rate Of Materials Based On
+
+You can set the material rates in the BOM based on different options:
+
+- **Price List:** If your raw materials have a buying price set in a particular currency, you can select that Price List. For example, if you import plastic from Japan and want to calculate the BOM cost in Yen, select the buying Price List for Japan, such as "Import Japan." The system will fetch rates from the selected Price List in Yen.
+- **Valuation Rate:** If you choose this option, the rate will be fetched from the **Item master** based on the Valuation Rate, which is entered in your company's currency. The system will then convert it to the currency you selected for the BOM.
+- **Last Purchase Rate:** This option fetches the rate based on the last purchase recorded in the system, from the **Sales Invoice** or purchase record, and applies it in your currency.
+
+![BOM Currency]()
+
+### 1.2 Example Scenario
+
+Let’s say your company operates in INR but imports plastic from Japan, and the supplier provides invoices in Yen. To calculate the BOM in Yen:
+1. Set the **Currency** in the BOM to **Yen**.
+2. Set the **Rate Of Materials Based On** to **Price List** and select your Japan-specific Price List ("Import Japan") to fetch the prices in Yen.
+   
+This setup ensures that all raw materials, such as plastic, will have their rates in Yen, and the BOM costing will be calculated in Yen accordingly.
+
+### 1.3 Important Considerations
+
+- If you choose **Valuation Rate** or **Last Purchase Rate**, the rates will be fetched in your company's base currency and converted to the BOM currency.
+- Ensure that the selected currency is valid for your business’s operations and price lists to avoid discrepancies in costing.
+
+## 2. Conclusion
+
+Using the BOM costing feature in different currencies in ERPZ ensures accurate and transparent manufacturing cost calculations for international transactions. This flexibility allows you to manage costs in line with global suppliers while still aligning with your financial reporting needs.
+
+---
+
+This feature is particularly beneficial for companies working with multiple currencies, giving them greater control and insight into their manufacturing costs in various currencies.

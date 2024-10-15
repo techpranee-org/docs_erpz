@@ -1,0 +1,104 @@
+---
+title: "Material Request"
+description: "Understand how to create and manage Material Requests in ERPZ."
+---
+
+# Material Request in ERPZ
+
+A Material Request is a simple document identifying a requirement for a set of items (products or services) for a particular reason. ERPZ facilitates the creation and management of Material Requests to streamline procurement and inventory management.
+
+## Purposes of a Material Request
+
+A Material Request can have the following purposes:
+
+- **Purchase**: To acquire materials through purchase.
+- **Material Transfer**: To shift materials from one warehouse to another.
+- **Material Issue**: To issue materials for purposes such as manufacturing.
+- **Manufacture**: To request materials for production.
+- **Customer Provided**: To specify materials that will be provided by a customer. For more information, visit the [Customer Provided Item](#) page.
+
+## Accessing Material Requests
+
+To access the Material Request list, navigate to:
+
+**Home > Stock > Stock Transactions > Material Request**
+
+## 1. How to Create a Material Request
+
+1. Go to the Material Request list and click on **Add Material Request**.
+2. Enter the **Required By** date.
+3. Select the appropriate purpose from the list.
+4. Fetch items from a Bill of Materials (BOM), Sales Order, or Product Bundle.
+5. Select the item and set the quantity.
+6. Select the warehouse for which items are required.
+7. Optionally, change the Required By date for individual items in the table.
+8. Save and Submit the request.
+
+### 1.1 Alternate Ways of Creating a Material Request
+
+Material Requests can be generated automatically:
+
+- **From a Sales Order**: While creating a Material Request, users can choose to ignore or include Projected Quantity, fetching relevant items from Sales Orders.
+- **When Projected Quantity Reaches a Level**: Automatically create requests when stock levels dip below a predefined threshold.
+- **From a Production Plan**: Generate Material Requests based on planned manufacturing activities.
+
+> **Info**: Material Requests are not mandatory but are ideal for centralized buying, allowing collection of procurement information from various departments.
+
+### 1.2 Statuses of a Material Request
+
+A Material Request can be in the following statuses:
+
+- **Draft**: Saved but not submitted.
+- **Submitted**: Document is submitted for processing.
+- **Stopped**: No further materials are needed; the request is halted.
+- **Canceled**: Materials are not required, and the request is canceled.
+- **Pending**: Awaiting completion of Purchase/Manufacture.
+- **Partially Ordered**: Some items have been ordered, while others remain pending.
+- **Ordered**: All items in the request have been ordered via Purchase Orders.
+- **Issued**: Materials issued through a Material Issue Stock Entry.
+- **Transferred**: Materials transferred from one warehouse to another.
+- **Received**: Materials ordered have been received at the designated warehouse.
+
+## 2. Features
+
+### 2.1 Items Table
+
+- **Barcode**: Track items using barcodes.
+- Automatically fetch the Item Code, name, description, image, and manufacturer from the item master.
+- Use a barcode scanner to add items to the Items table.
+- The UoM, Conversion Factor, and Amount are automatically populated. You can change the warehouse for which the material is requested.
+- Set accounting details like Expense Account and Accounting Dimensions for the items.
+- Add page breaks for printed documents.
+
+### 2.2 Setting Warehouses
+
+- **Set Warehouse**: Optionally specify the warehouse where the requested items will arrive. This information will populate the 'For Warehouse' fields in the Items table.
+
+### 2.3 More Information
+
+- In the 'Job Card' and 'Work Order' fields, reference the source from where the Material Request was generated.
+
+### 2.4 Printing Details
+
+- **Letterhead**: Print Material Requests on your company's letterhead.
+- **Print Headings**: Change the headings used when printing the document. Create new print headings through **Home > Settings > Printing > Print Heading**.
+
+### 2.5 Terms and Conditions
+
+- Apply terms and conditions relevant to the supplier's goods or services. These terms will be included when printing the document. 
+
+### 2.6 After Submitting
+
+You can create the following documents after submitting a Material Request:
+
+- Request For Quotation
+- Purchase Order
+- Supplier Quotation
+
+### 2.7 Automatically Generate Material Requests
+
+Enable settings in Stock Settings and set reorder levels in the Item form to automatically generate Material Requests when stock levels dip below a certain quantity.
+
+---
+
+ERPZ enhances procurement efficiency through well-structured Material Requests, allowing businesses to manage their inventory effectively and respond promptly to operational needs.

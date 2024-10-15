@@ -1,6 +1,56 @@
-import { Callout } from 'nextra/components';
+---
+title: Operation
+description: Learn how to create and manage Operations in ERPZ to streamline your manufacturing process.
+---
 
+# Operation
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+An **Operation** in ERPZ refers to any manufacturing activity or task performed on raw materials as part of the production process. Operations play a critical role in transforming raw materials into finished goods.
+
+The **Operation Master** stores details of each manufacturing operation, including its name, description, and the default workstation where the operation is performed.
+
+## Accessing the Operation List
+
+To access the Operation list in ERPZ, follow this path:
+
+**Home > Manufacturing > Bill of Materials > Operation**
+
+## 1. Prerequisites
+
+Before creating and using an Operation in ERPZ, ensure that the following is set up:
+
+- **Workstation**: This defines where the operation will be performed.
+
+## 2. How to Create an Operation
+
+Follow these steps to create a new Operation:
+
+1. **Go to the Operation List**: Navigate to the Operation list by following the path mentioned above, then click on **New**.
+2. **Enter Operation Details**:
+   - **Operation Name**: Provide a name for the operation (e.g., "Cutting").
+   - **Default Workstation**: Select the default workstation where this operation will be performed. This information will automatically be fetched in Bill of Materials (BOM) and Work Orders.
+   - **Quality Inspection Template**: In the **Job Card** section, you can select a Quality Inspection Template for this operation. This will be fetched in the Job Card when creating Work Orders. When a new Quality Inspection is generated from the Job Card, the template will be automatically applied.
+   - **Description**: Optionally, add a description to explain what the operation entails.
+3. **Save**: Once all details are entered, click **Save** to store the operation.
+
+Once saved, the operation can be linked to various manufacturing tasks like BOMs, Work Orders, and Job Cards.
+
+![Operation Master]()
+
+## 3. Related Features
+
+After creating an operation, the following can be associated with it:
+
+- **Routing**: The operation can be added to a routing, which defines the sequence of manufacturing operations for a product.
+- **Job Card**: A job card is generated for each operation when a Work Order is created, allowing operators to track the progress of the operation.
+
+## 4. Related Topics
+
+- **[Routing](/manufacturing/bill-of-materials/routing)**
+- **[Job Card](/manufacturing/production-and-material-planning/job-card)**
+
+## Conclusion
+
+Managing operations efficiently is crucial for streamlining your production process. By setting up operations in ERPZ, you can standardize tasks, improve quality control, and track progress in your manufacturing workflow.
+
+---

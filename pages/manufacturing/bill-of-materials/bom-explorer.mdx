@@ -1,6 +1,38 @@
-import { Callout } from 'nextra/components';
+---
+title: "BOM Explorer"
+description: "Understand how to view a complete hierarchy of Bill of Materials with BOM Explorer in ERPZ."
+---
 
+# BOM Explorer
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+The **BOM Explorer** in ERPZ provides a comprehensive hierarchical view of the Bill of Materials (BOM) and its associated raw materials in a tree structure. This tool allows users to explore both assemblies and sub-assemblies (exploded items) and view the quantities of raw materials and scraps required for manufacturing an item.
+
+## Why Use BOM Explorer?
+
+The BOM Explorer helps manufacturers and production managers visualize the entire BOM structure, including all sub-assemblies and raw materials, without navigating through separate BOM records. This provides a clear picture of the total material requirements, making it easier to plan production processes.
+
+## 1. How to Use BOM Explorer
+
+To access the BOM Explorer, follow these steps:
+
+1. Go to `Home > Manufacturing > Reports > BOM Explorer`.
+2. Select the desired **BOM** from the filter.
+
+Once a BOM is selected, the report will display the complete tree view of the item, showing all assemblies, sub-assemblies, and their respective quantities of raw materials and scraps. This exploded view helps users analyze the entire structure at a glance.
+
+![BOM Explorer]()
+
+### 1.1 What Does BOM Explorer Show?
+
+- **Assemblies and Sub-Assemblies:** All levels of BOM, including parent assemblies and any sub-assemblies, are displayed in a nested tree format.
+- **Raw Materials:** The report lists all raw materials required to manufacture the item, along with their quantities.
+- **Scraps:** The quantities of scraps generated at each level of the BOM are also shown, helping you estimate material wastage.
+- **Reorder Levels:** This view can also assist in checking whether the quantities of certain raw materials are nearing their reorder levels.
+
+---
+
+## 2. Printing the BOM Explorer Report
+
+Users can print the BOM Explorer report directly from the system, making it easier to share and review with team members. The printout will include the complete BOM hierarchy, showing the quantities of raw materials and scraps for all exploded items.
+
+By using the **BOM Explorer**, manufacturers can have a better understanding of material requirements, optimize production planning, and ensure that they have all necessary resources on hand for manufacturing.

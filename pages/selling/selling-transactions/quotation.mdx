@@ -1,0 +1,122 @@
+---
+title: "Quotation"
+description: "Learn how to create and manage quotations in ERPZ, including setting prices, taxes, discounts, and conditions for sales. Understand the step-by-step process of generating quotations for customers and leads."
+---
+
+# Quotation
+
+A **quotation** is an estimated cost of the products/services you're selling to your future or present customer.
+
+During a sale, a customer may request a note about the products or services you are planning to offer, along with the prices and other terms of engagement. This document is commonly referred to as a **Proposal**, **Estimate**, **Pro Forma Invoice**, or **Quotation**.
+
+To access the Quotation list in ERPZ, navigate to:
+
+> **Home > Selling > Sales > Quotation**
+
+A typical sales flow starts with making a quotation from an opportunity.
+
+## What a Quotation Contains
+
+A quotation in ERPZ includes the following details:
+
+- The recipient of the Quotation
+- The Items and quantities offered
+- The rates at which the items are offered
+- Applicable taxes
+- Other charges (like shipping, insurance) if applicable
+- The validity of the contract
+- The time of delivery
+- Other terms and conditions
+
+> **Tip:** Images enhance the presentation of your quotations. Make sure your items have an image attached.
+
+## 1. Prerequisites
+
+Before creating and using a quotation in ERPZ, ensure the following records are already created:
+
+- **Customer**
+- **Lead**
+- **Item**
+
+## 2. How to Create a Quotation
+
+Follow these steps to create a new quotation:
+
+1. Go to the Quotation list and click **New**.
+2. Select whether the quotation is for a **Customer** or a **Lead**.
+3. Enter the **Customer/Lead** name.
+4. Set a **Valid till** date, after which the quotation will be invalid.
+5. Choose the **Order Type** (Sales, Maintenance, or Shopping Cart).
+6. Add the items and quantities to the items table. Prices will be fetched from the Item Price. You can also import items from an **Opportunity** using the **Get Items from > Opportunity** option.
+7. Add any additional taxes and charges.
+8. Click **Save** to create the quotation.
+
+You can also create a quotation directly from an opportunity.
+
+## 3. Features
+
+### 3.1 Address and Contact
+
+- **Customer Address**: The billing address of the customer.
+- **Shipping Address**: The address where the items will be shipped.
+- **Contact Person**: Add the contact person if your customer is an organization.
+- **Territory**: The region where the customer belongs. The default is "All Territories."
+
+### 3.2 Currency and Price List
+
+You can set the currency for the quotation. If a **Price List** is selected, item prices will be fetched from it. The **Ignore Pricing Rule** option allows you to override existing pricing rules.
+
+### 3.3 The Items Table
+
+The items table contains the following:
+
+- **Item Code**: When you select an item code, item name, description, image, and quantity are automatically fetched.
+- **Discounts and Margin**: You can adjust margins or discounts based on amounts or percentages.
+- **Item Weights**: Fetched if set in the item master.
+- **Warehouse and Reference**: The stock warehouse is fetched automatically.
+- **Planning**: Displays the projected and actual stock quantities.
+
+> **Tip:** You can export the items table as a CSV file and import it into other transactions.
+
+#### 3.3.1 Alternative Items
+
+You can add alternative items in the table by selecting the **Is Alternative** checkbox. Alternative items are not counted towards totals and taxes, and they must follow the main item row.
+
+### 3.4 Taxes and Charges
+
+To add taxes, select a **Sales Taxes and Charges Template** or manually enter taxes in the **Sales Taxes and Charges** table. Clicking on **Tax Breakup** will display the tax components.
+
+### 3.5 Additional Discount
+
+Additional discounts can be applied to the entire quotation. This discount can be based on the **Grand Total** (post-tax) or **Net Total** (pre-tax). You can apply the discount as a percentage or a fixed amount.
+
+### 3.6 Payment Terms
+
+In some cases, payment is made in multiple installments. You can set up a **Payment Terms Template** or manually add the payment terms.
+
+### 3.7 Terms and Conditions
+
+Add any specific terms and conditions applicable to the quotation. These will appear on the printed document.
+
+### 3.8 Print Settings
+
+You can print your quotation on your company letterhead. Also, you can use **Print Headings** to title the quotation as "Proforma Invoice" or "Proposal."
+
+### 3.9 More Information
+
+- **Campaign**: Link the quotation to a sales campaign.
+- **Source**: Link the lead source type (e.g., campaign, exhibition).
+- **Supplier Quotation**: Compare your current quotation with a supplier quotation.
+
+### 3.10 Submitting the Quotation
+
+Once you save the quotation, you can **Submit** it, which makes the quotation final. After submission, you can create a **Sales Order** or **Subscription** from the quotation.
+
+### 3.10.1 Selecting Alternatives
+
+If the quotation contains alternative items, you will be prompted to select one when converting the quotation into a sales order.
+
+## 4. Related Topics
+
+- [Customer](/selling/selling-essentials/customer)
+- [Item](/stock/stock-masters/item)

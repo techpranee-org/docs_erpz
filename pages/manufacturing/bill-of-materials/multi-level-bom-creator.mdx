@@ -1,6 +1,52 @@
-import { Callout } from 'nextra/components';
+---
+title: "Multi-level BOM Creator"
+description: "Learn how to use the BOM Creator in ERPZ to efficiently create multi-level BOMs in a single interface."
+---
 
+# Multi-level BOM Creator
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+The **BOM Creator** in ERPZ allows users to create multi-level Bills of Materials (BOMs) using a single screen, simplifying the process and reducing the need for multiple steps.
+
+## Why Use the BOM Creator?
+
+Users may wonder why a separate BOM Creator is needed when the standard BOM screen exists. The answer lies in efficiency and ease of use. 
+
+In the standard BOM screen, users must first create the sub-assembly BOMs, and then create the BOM for the final product, which often involves back-and-forth navigation between screens. Visualizing the full BOM hierarchy is also challenging in the standard format.
+
+The **BOM Creator** solves these problems by allowing users to construct a multi-level BOM using a tree structure, making it easier to manage complex manufacturing processes.
+
+## How to Use the BOM Creator
+
+The BOM Creator interface provides a streamlined way to build multi-level BOMs step by step.
+
+### 1. Select the Final Product
+
+Begin by selecting the **Final Product** for which you want to create the multi-level BOM. Once selected, save the record.
+
+![BOM Creator]()
+
+### 2. Add Raw Materials and Sub-assembly Items
+
+After saving the Final Product, you can start adding **Raw Materials** and **Sub-assembly** items. The tree component in the BOM Creator allows you to build a hierarchical structure for your multi-level BOM.
+
+![Toolbar for BOM Creator]()
+
+### 3. Convert Raw Materials to Sub-assemblies
+
+If you want to convert a raw material into a sub-assembly item, simply select the item and click the *Convert to Sub-Assembly* button.
+
+![Convert to Sub-Assembly]()
+
+### 4. Edit Quantities
+
+You can adjust the quantity of each item in the BOM as required for the manufacturing process.
+
+### 5. Submit the BOM
+
+Once the multi-level BOM structure is complete using the tree component, submit the BOM Creator. Upon submission, ERPZ will automatically generate the BOMs using background jobs.
+
+![Submit BOM]()
+
+---
+
+By using the **Multi-level BOM Creator** in ERPZ, users can efficiently manage complex BOMs, reducing manual work and improving accuracy in the production process.

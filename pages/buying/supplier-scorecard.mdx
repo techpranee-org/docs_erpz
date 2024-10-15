@@ -1,0 +1,101 @@
+---
+title: "Supplier Scorecard"
+description: "Guide on how to evaluate supplier performance using the Supplier Scorecard in ERPZ."
+---
+
+# Supplier Scorecard
+
+A **Supplier Scorecard** is an evaluation tool used to assess the performance of suppliers.
+
+Supplier scorecards help track item quality, delivery, and responsiveness of suppliers over extended periods. This data is crucial for making informed purchasing decisions. A Supplier Scorecard is manually created for each supplier.
+
+To access the Supplier Scorecard, navigate to:
+
+**Home > Buying > Supplier Scorecard > Supplier Scorecard**
+
+## 1. Prerequisites
+
+Before creating and using a Supplier Scorecard, ensure that you have created the following:
+
+- **Supplier**
+
+## 2. How to Create a Supplier Scorecard
+
+1. Go to the Supplier Scorecard list and click on **New**.
+2. Select a **Supplier** to score.
+3. Choose the **evaluating period** (weekly, monthly, or yearly).
+4. Set up the **scoring function** (details in the next section).
+
+A supplier scorecard is created for each supplier individually, and only one scorecard can be created per supplier.
+
+## 3. Features
+
+### 3.1 Scoring Setup
+
+The supplier scorecard includes a set evaluation period during which the supplier's performance is assessed. This period can be weekly, monthly, or yearly. The current score is calculated from each evaluation period's score based on a weighting function. The default formula is linearly weighted over the previous 12 scoring periods, but this formula is customizable.
+
+### 3.2 Supplier Standings
+
+Supplier standings are used to quickly sort suppliers based on performance and can be customized for each supplier.
+
+The scorecard standing can also restrict suppliers from being included in Request for Quotations (RFQs) or receiving Purchase Orders (POs). This can be viewed by expanding a row in the 'Scoring Standings' table.
+
+### 3.3 Criteria Setup
+
+Suppliers can be evaluated based on various individual criteria, including (but not limited to) quotation response time, delivered item quality, and delivery timeliness. These criteria are weighed to determine the final period score.
+
+To create a new criterion, navigate to:
+
+`Buying > Supplier Scorecard > Supplier Scorecard Criteria`
+
+> **Note:** Criteria weights for a scorecard should add up to 100.
+
+### 3.4 Supplier Scorecard Variables
+
+The method for calculating each criterion is determined through the **Criteria Formula** field, which can utilize several pre-established variables. The value of these variables is calculated over the scoring period for each supplier. Examples of such variables include:
+
+- The total number of items received from the supplier
+- The total number of accepted items from the supplier
+- The total number of rejected items from the supplier
+- The total number of deliveries from the supplier
+- The total amount (in dollars) received from a supplier
+
+![Supplier Scorecard Variable]()
+
+Variables are pre-set, but additional variables can be added through server-side customizations. Check the **Custom** checkbox if the variable you're creating is for a custom field.
+
+The criteria formula should be tailored to evaluate the suppliers in a way that aligns with the company's requirements.
+
+### 3.5 Evaluation Formulas
+
+The evaluation formula employs pre-established or custom variables to assess supplier performance over the scoring period. Formulas can use the following mathematical functions:
+
+- Addition: `+`
+- Subtraction: `-`
+- Multiplication: `*`
+- Division: `/`
+- Min: `min(x,y)`
+- Max: `max(x,y)`
+- If/Else: `(x) if (formula) else (y)`
+- Less than: `<`
+- Greater than: `>`
+- Variables: `{variable_name}`
+
+It is crucial that the formula be solvable for all variable values. This often presents issues if the value resolves to 0. For example:
+
+`{total_accepted_items} / {total_received_items}`
+
+
+This example may resolve to `0 / 0` in periods with no received items. Therefore, a check is necessary to protect against this case:
+
+`({total_accepted_items} / {total_received_items}) if {total_received_items} > 0 else 1.`
+
+
+### 3.5 Evaluating the Supplier
+
+An evaluation is generated for each Supplier Scorecard Period by clicking the **Generate Missing Scorecard Periods** button. The supplier's current score is displayed, along with a visual representation of the supplier's performance over time. Any actions against the supplier, including warnings when creating RFQs and POs, are also noted here.
+
+## 4. Related Topics
+
+- [Supplier](/buying/supplier-essentials/supplier)
+- [Supplier Quotation](/buying/purchase-transactions/supplier-quotation)

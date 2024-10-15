@@ -1,6 +1,135 @@
-import { Callout } from 'nextra/components';
+---
+title: "Stock Entry"
+description: "Record and manage item movements between warehouses in ERPZ."
+---
 
+# Stock Entry
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+A Stock Entry allows you to record item movements between warehouses.  
+
+To access the Stock Entry list, navigate to:  
+`Home > Stock > Stock Transactions > Stock Entry`
+
+## Stock Entry Purposes
+
+Stock Entries can be made for various purposes:
+
+- **Material Issue**: Issuing materials to individuals or entities outside the company (Outgoing Material). Items will be deducted from the Warehouse set under the Source Warehouse.
+- **Material Receipt**: Receiving materials (Incoming Material). Items will be added to the Warehouse set under the Target Warehouse.
+- **Material Transfer**: Moving materials from one internal Warehouse to another.
+- **Material Transfer for Manufacturing**: Transferring raw materials for manufacturing purposes, which can occur against a Work Order or a Job Card. For more information, refer to the Bill of Materials page.
+- **Material Consumption for Manufacture**: Multiple consumption stock entries can be made against a manufacturing Work Order. Refer to the relevant documentation for details.
+- **Manufacture**: Receiving materials from a Manufacturing or Production Operation.
+- **Repack**: Repacking original items into new items.
+- **Send to Subcontractor**: Issuing materials for subcontract activities, usually from a Purchase Order. For more information, refer to the subcontracting page.
+
+For detailed information about stock entry purposes, visit this page.
+
+## 1. Prerequisites 
+
+Before creating and using a Stock Entry, it is advisable to create the following first:
+
+- **Warehouse**
+- **Item**
+
+## 2. How to Create a Stock Entry 
+
+Stock Entries for manufacturing purposes are typically created from a Work Order. To create a Stock Entry manually for other purposes, follow these steps:
+
+1. Navigate to the Stock Entry list and click on **New**.
+2. Select the Stock Entry Purpose from the options listed above.
+3. If you have set Default Source or Target Warehouses, they will automatically populate the rows in the Items table.
+4. Select Source/Target Warehouses based on the Stock Entry Purpose you selected.
+5. Choose the Items and enter the quantity.
+6. The basic rate will be fetched, and the total amount will be calculated automatically.
+7. Save and Submit.
+
+### Additional Options When Creating a Stock Entry 
+
+- **Work Order**: If this is a Manufacturing entry, the relevant Work Order will be displayed in this field.
+- **Edit Posting Date and Time**: Allows you to edit the Stock Entry's date and time.
+- **Inspection Required**: Indicates if a Quality Inspection needs to be performed on the Items before submitting the Stock Entry.
+- **From BOM**: Displays the associated BOM for the item being manufactured if this is a Manufacturing entry.
+
+### Stock Entry Type 
+
+You can also create a Stock Entry Type where only the name differs, such as "Scrap Entry." The purpose will be Material Transfer, but the name will vary. This is useful for providing specific users with access to certain actions related to stock.
+
+## 3. Features 
+
+### 3.1 The Items Table 
+
+Details about the Item, Rate, Quantity, etc., will be displayed here.  
+
+- Ticking on **Allow Zero Valuation Rate** permits submission of the Purchase Receipt even if the Valuation Rate of the Item is 0. This is applicable for sample items or due to mutual agreements with your Supplier.
+- Different Source and Target Warehouses can be set for different Items.
+
+### 3.2 Scrap and Process Loss 
+
+- **Scrap Item**: Scrap items are by-products that can be treated as products. Scrap items will have a valuation rate and will be added to the scrap warehouse. Users can manually set the valuation rate for the scrap item in the Basic Rate field.
+  
+- **Process Loss**: Process Loss does not impact stock; it reduces the number of finished goods (FG) Items. For example, if a user plans to produce 100 FG Items but only produces 80 after the manufacturing process, the system marks the unproduced 20 as Process Loss Quantity. The cost of this process loss is accounted for in the produced FG Items.
+
+### 3.3 Additional Costs 
+
+For incoming stock entries (i.e., receiving items at a target warehouse), you can add related additional costs (e.g., Shipping Charges, Customs Duty, Operating Costs).  
+
+To add additional costs:
+
+1. Select the Expense Account where the expense from this Stock Entry will be recorded.
+2. Enter a description and amount of the cost in the Additional Costs table.
+
+The added additional costs will be distributed among the receiving items proportionately based on the Basic Amount of the items, which will be factored into the Valuation Rate.
+
+### 3.4 Accounting Dimensions 
+
+Tag different transactions based on various dimensions. By default, Projects can be used as a dimension to track costs for different projects. For more details, refer to the Accounting Dimensions documentation.
+
+### 3.5 Printing Settings 
+
+- **Letterhead**: You can print your Purchase Receipt on your company's letterhead.
+- **Print Headings**: Change Purchase Receipt headings when printing the document by selecting a Print Heading. To create new Print Headings, navigate to: Home > Settings > Printing > Print Heading.
+
+### 3.6 More Information 
+
+- **Is Opening**: Indicates if this entry is the opening stock entry for the Items.
+- **Remarks**: Any additional notes about the Item.
+- **Percentage Transferred**: The percentage of Items transferred based on the Stock Entry purpose.
+- **Total Amount**: The total amount of Items transferred.
+
+### 3.7 Perpetual Inventory 
+
+If the perpetual inventory system is enabled, additional costs will be booked in the Expense Account specified in the Additional Costs table.
+
+### 3.8 After Submitting 
+
+After submitting a Stock Entry, you can access the stock ledger or accounting ledger from the dashboard.
+
+## 4. Add to Transit 
+
+To transfer materials between warehouses and make two entries for that process, use the **Add to Transit** feature.
+
+1. Create a stock entry with the type set as **Material Transfer** and enable the **Add to Transit** checkbox.
+2. Select the source warehouse from which you want to issue the material and then select a warehouse of type **Transit** as the target warehouse. You can create a Transit warehouse in the Warehouse master by selecting the warehouse type as "Transit."
+3. Add items to the stock entry that needs to be transferred and submit it.
+
+### Making the Second Stock Entry 
+
+To create the second stock entry at the destination warehouse, you have two options:
+
+- Open the original stock entry and click on **End Transit**.
+- Create a new stock entry and click on **Get Items From** -> **Transit Stock Entry**. The system will fetch items from the original stock entry, using the source warehouse (Transit warehouse) as the target warehouse from the original entry. Set the target warehouse and save.
+
+## 5. Video 
+
+[Link to instructional video if available]
+
+## 6. Related Topics 
+
+- [Stock Entry](/stock/stock-transactions/stock-entry)
+- [Stock Reconciliation](/stock/stock-transactions/stock-reconciliation)
+- [Opening Stock](/stock/stock-transactions/opening-stock)
+- [Work Order](/manufacturing/production-and-material-planning/work-order)
+- [Production Plan](/manufacturing/production-and-material-planning/production-plan)
+- [Job Card](/manufacturing/production-and-material-planning/job-card)
+

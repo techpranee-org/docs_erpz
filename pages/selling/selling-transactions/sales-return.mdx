@@ -1,0 +1,57 @@
+---
+title: "Sales Return"
+description: "Learn how to manage a Sales Return in ERPZ when sold items are returned by customers."
+---
+
+# Sales Return
+
+**A sold Item being returned is known as a Sales Return.**
+
+Businesses often have to handle goods being returned after they are sold. This can happen due to various reasons, such as quality issues, failure to deliver on time, or other customer concerns.
+
+## 1. Prerequisites
+
+Before creating and using a Sales Return, it is advised that the following items be created:
+
+- **Item**
+- **Sales Invoice** or **Delivery Note**
+
+## 2. How to Create a Sales Return
+
+To create a Sales Return, follow these steps:
+
+1. Open the original **Delivery Note** or **Sales Invoice** against which the Customer is returning the Items.
+
+    ![Original Delivery Note]()
+
+2. Click on **Create > Sales Return**. This will open a new **Delivery Note** with the **Is Return** option checked. The Items, Rate, and taxes will all be represented as negative numbers.
+
+    ![Return Against Delivery Note]()
+
+3. You can also create a return entry against the original **Sales Invoice** to return stock along with issuing a **Credit Note**. Check the **Update Stock** option in the Return Sales Invoice.
+
+    ![Return Against Sales Invoice]()
+
+Upon submitting the Return Delivery Note or Return Sales Invoice, the system will increase the stock balance in the specified Warehouse. To maintain accurate stock valuation, the stock balance will be increased based on the original purchase rate of the returned items.
+
+    ![Return Stock Ledger]()
+
+In case of a **Return Sales Invoice**, the Customer's account will be credited, and the associated income and tax accounts will be debited, as seen in the **Accounting Ledger**.
+
+    ![Return Accounting Ledger]()
+
+If **Perpetual Inventory** is enabled, the system will also post an accounting entry against the Warehouse account, ensuring the Warehouse account balance matches the stock balance as per the **Stock Ledger**.
+
+## 3. Impact on Stock Return via Delivery Note
+
+When creating a Sales Return against a Delivery Note:
+
+- The **Returned Quantity** in the original Delivery Note, along with any linked Sales Order, will be updated.
+- The status of the original Delivery Note will change to **Return Issued** if 100% of the items have been returned.
+
+    ![Return Issued]()
+
+## 4. Related Topics
+
+- [Purchase Return]()
+- [Perpetual Inventory]()

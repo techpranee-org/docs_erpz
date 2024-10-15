@@ -1,0 +1,59 @@
+---
+title: "Credit Note"
+description: "A guide to creating and managing Credit Notes in ERPZ."
+---
+
+# Credit Note
+
+**A Credit Note is a document sent by a seller to the Customer, notifying that a credit has been made to their account against the goods returned by the buyer.**
+
+A Credit Note is issued for the value of goods returned by the Customer, and it may be less than or equal to the total amount of the order.
+
+## 1. How to make a Credit Note
+
+You can make a Credit Note against a Sales Invoice, or you can create a Credit Note directly from the Sales Invoice without a reference. Note that to create a Credit Note, the invoice must have been paid using a Payment Entry.
+
+To create a Credit Note:
+
+1. Go to the respective Sales Invoice.
+2. Click on **Create > Return / Credit Note**.
+
+The Customer and Item details will be fetched from the Sales Invoice.
+
+- If the Customer had paid partially or fully, you should make a Payment Entry against the original Sales Invoice.
+- Save and Submit.
+
+The Item quantity and Payment amount will be negative since it's a return.
+
+### 1.1 How does a Credit Note affect the ledger?
+
+Once a Payment Entry is created against the original Sales Invoice, the amount will be added to the Customer's account in negative. The next time they make a purchase, this amount will be adjusted against the new purchase.
+
+Here is how the ledger is affected after a payment entry against a returned invoice:
+
+Credit Note Ledger Example:
+
+- The amount credited will appear as a negative entry in the Customer's account, and it will be adjusted in future purchases.
+
+Refer to the [Sales Invoice](#) page for further details.
+
+### 1.2 No payment was made against the Sales Invoice
+
+If **no payment** was made against the original invoice, you can simply cancel the Sales Invoice. However, if only part of the Items (e.g., 5 out of 10) is being returned from an invoice, creating a Credit Note is useful for updating the ledger correctly.
+
+## 2. Example
+
+**Example:**
+
+Customer Rohan had purchased PVC pipes worth Rs 300 + taxes. At the time of delivery, Rohan found that the products were damaged. Rohan has returned the product, and a Credit Note will be issued.
+
+The Credit Note with a payment entry for the above example in ERPZ would look like this:
+
+1. Rohan's purchase will have a Sales Invoice for Rs 300.
+2. A Credit Note will be issued for the returned products, and the Payment Entry will reflect the negative adjustment.
+
+## 3. Related Topics
+
+- [Payment Entry]()
+- [Debit Note]()
+- [Sales Return]()

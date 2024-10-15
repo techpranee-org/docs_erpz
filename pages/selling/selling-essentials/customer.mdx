@@ -1,0 +1,101 @@
+---
+title: "Customer"
+description: "Learn about the customer management features in ERPZ's Selling Module."
+---
+
+## Customer
+
+A customer, often referred to as a client, buyer, or purchaser, is an individual or organization that receives goods, services, products, or ideas from a seller in exchange for monetary consideration.
+
+### 1. Creating a Customer
+
+Each customer must be assigned a unique ID. You can either use the customer name as the ID or set a naming series for IDs to be generated in the Selling Settings.
+
+To access the Customer list, navigate to:
+
+- `Home > CRM > Sales Pipeline`
+- `Home > Selling > Customers`
+
+### 2. How to Create a Customer
+
+1. Go to the Customer list and click on **New**.
+2. Enter the full name of the customer.
+3. Select **Individual** if the customer represents a person, or **Company** if it represents a business in the **Type** field.
+4. Choose a **Customer Group**. Default options include Individual, Commercial, Non-Profit, and Government. You can create additional groups if needed.
+5. Select the **Territory**.
+6. If creating the customer from a lead, select the lead in the **From Lead** field.
+7. Click **Save**.
+
+You can disable sales orders and sales invoices for a customer by clicking on **Disabled**.
+
+### 3. Advanced Tip
+If the customer represents one of your own companies, check the **Is Internal Customer** box. For more information, see **Inter Company Invoices**.
+
+You can also upload customer details using the **Data Import Tool**.
+
+### 4. Features
+
+#### General Flow of Transactions
+The general flow of transactions for a customer is as follows:
+
+```mermaid 
+flowchart TD
+    A[Customer] --> B[Opportunity]
+    A[Customer] --> C[Quotation]
+    B --> D[Sales Order]
+    C --> D[Sales Order]
+    D --> E[Delivery Note]
+    E --> F[Sales Invoice]
+    F --> G[Payment Entry]
+    ```
+
+**Note**: Customers are distinct from Contacts and Addresses. A customer can have multiple contacts and addresses.
+
+#### 1. Multiple Contacts and Addresses
+Contacts and addresses are stored separately, allowing you to attach multiple contacts or addresses to a customer.
+
+#### 2. Allow Creation of Sales Invoice Without Sales Order and Delivery Note
+If the "Delivery Note Required" or "Sales Order Required" option is set to "Yes" in Selling Settings, it can be overridden for a specific customer by enabling the "Allow Sales Invoice Creation Without Sales Order" or "Allow Sales Invoice Creation Without Delivery Note" option in the Customer Master.
+
+#### 3. Set Tax Withholding Category
+You can set the **Tax Withholding Category** to set up Tax Collected at Source (TCS) against eligible customers. For more details, visit the **Tax Withholding Category** page.
+
+#### 4. Default Currency and Price List
+ERPZ supports multiple currencies and price lists. You can select the default billing currency and price list for the customer in sales orders and invoices.
+
+#### 5. Integration with Accounts
+Unlike many accounting software, you do not need to create a separate accounting ledger for each customer. A unified ledger named **Debtors** is created by default. If a separate ledger is needed, create it under **Accounts Receivable** in the Chart of Accounts and add it in the **ACCOUNTING** section of the customer.
+
+**Advanced Tip**: ERPZ supports multi-company accounting. You can use the same customer records across multiple companies, but ensure to select the company and corresponding ledger if you require a separate accounting ledger.
+
+#### 6. Credit Limit and Payment Terms
+Set the credit limit by entering an amount in the **Credit Limit** field. You can also select the default payment terms to be applied in sales orders and invoices in the **Default Payment Terms Template** field.
+
+#### 7. Sales Team and Sales Partner
+You can add salespersons to manage sales to the customer in the **SALES TEAM** section. If multiple salespersons are involved, you can split the contribution among them, ensuring the total equals 100%.
+
+A **Sales Partner** is a third-party distributor or reseller. If products/services are sold to the customer through a sales partner, set it in the **Sales Partner** field and mention the **Commission Rate** for commission calculations.
+
+#### 8. Loyalty Program
+If you want to offer a loyalty program to the customer, select the appropriate program in the **Loyalty Program** field.
+
+#### 9. View Accounting Ledger and Accounts Receivable
+- Click on the **Accounting Ledger** button to view all accounting transactions with the customer.
+- Click on the **Accounts Receivable** button to view outstanding invoices.
+
+#### 10. Set Customer ID, Default Customer Group, Territory, and Price List
+You can set how a unique ID is generated for each customer in Selling Settings.
+
+- **Naming Series**: Choose 'Naming Series' if you want a unique ID generated based on the naming series.
+- **Customer Name**: Select 'Customer Name' if the customer name itself should be used as the ID. If duplicate names exist, a suffix will be added to differentiate.
+
+You can set the default customer group, territory, and price list in Selling Settings.
+
+You can also customize the **Customer** DocType using the **Customize Form** tool.
+
+### 5. Related Topics
+- Customer Group
+- Quotation
+- [Price Lists](/stock/pricing/price-lists)
+- Contact
+- Difference between Lead, Contact, and Customer

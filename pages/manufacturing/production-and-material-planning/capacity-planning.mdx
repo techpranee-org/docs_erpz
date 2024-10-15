@@ -1,6 +1,58 @@
-import { Callout } from 'nextra/components';
+---
+title: "Capacity Planning"
+description: "Overview of the Capacity Planning feature in ERPZ to manage work orders and resources."
+---
 
+# Capacity Planning
 
-<Callout type="info" emoji="ℹ️">
-  We are working on this page and it will be updated once it is done. Stay tuned!
-</Callout>
+**Capacity planning** is a critical process that helps organizations determine whether to accept new orders based on available resources and existing work orders.
+
+## Accessing Capacity Planning
+
+Capacity planning is enabled by default in your account. To learn more about the settings, navigate to:
+
+`Home > Manufacturing > Settings > Manufacturing Settings`
+
+## Work Order
+
+### 1. Prerequisites 
+
+Before creating and using a Work Order, ensure that you have set up the following:
+
+- **Bill of Materials**
+- **Operation**
+- **Workstation**
+- **Work Order**
+
+### 2. How Capacity Planning Works in ERPZ
+
+To effectively plan upcoming work orders, users must define the number of days in the "Capacity Planning For" field under manufacturing settings. For instance, if you set the Capacity Planning For 30 days and it takes 5 days to manufacture one finished good, you can only accept 6 work orders at the current date (30/5 = 6). You can take on additional Work Orders once your Workstation becomes available.
+
+#### 2.1 Create Work Order With Operations 
+
+Users must create Work Orders that include Operations so the system can track job card timings associated with each Work Order.
+
+Once submitted, the system generates a Job Card that includes available Workstation time details. If 'Allow Overtime' is disabled in the Manufacturing Settings, the system schedules the job according to the timings defined in the Workstation. Similarly, if "Allow Production on Holidays" is disabled, the system schedules jobs only on working days.
+
+#### 2.2 Workstation's Production Capacity 
+
+In the Workstation settings, users can specify the **Production Capacity**. This value indicates the number of Operations the system will allow on that Workstation simultaneously. For example, if a particular Workstation can handle 10 operations at once, set the Production Capacity to 10.
+
+#### 2.3 Job Card With Timing 
+
+The system automatically creates a Job Card with timings for each operation based on the required time and the availability of the Workstation. Users need to set the planned start date, and the system will calculate the planned end date based on the operation time.
+
+#### 2.4 Work Order Planned Start Date and End Date 
+
+By assessing the planned start and end dates, users can evaluate the capacity of their Workstations and track the status of the Work Order using the calendar feature.
+
+To view the calendar, navigate to:
+
+`Work Order List > Calendar > Default`
+
+#### 2.5 Capacity Planning Error 
+
+If the Production Capacity in days is less than the time required to complete the operation, the system will trigger a capacity planning error. In this scenario, users need to either increase the number of days in the "Production Capacity" field in Manufacturing Settings or decrease the number of finished goods according to the Workstation's capacity.
+
+![Capacity Planning Error]()
+
