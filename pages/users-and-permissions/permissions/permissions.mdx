@@ -1,0 +1,68 @@
+---
+title: "Permissions in ERPZ"
+description: "Overview of permissions in ERPZ, including user permissions, role-based permissions, and field-level permission management."
+---
+
+# Permissions in ERPZ
+
+Permissions in ERPZ refer to the access rights granted to users or roles within the system. These permissions control the actions users can perform across various modules and documents, ensuring that users only access data relevant to their roles.
+
+Permissions can be managed at multiple levels, from broad role-based access to specific field-level controls.
+
+---
+
+## 1.Types of Permissions
+
+### 1.1 **User Permissions**
+
+User Permissions in ERPZ allow you to assign permissions specific to individual users. These permissions control access to documents and modules based on the user's position or responsibility.
+
+- To manage User Permissions, go to **Home > Users and Permissions > User Permissions**.
+- You can assign document-specific permissions, ensuring a user only accesses the records linked to their user account (e.g., an employee can only view their own salary slips).
+
+### 1.2 **Role-Based Permissions**
+
+Role-Based Permissions determine what actions users can perform based on the roles assigned to them. A role defines whether a user can view, create, edit, or delete specific documents in ERPZ.
+
+- To manage role-based permissions, navigate to **Home > Users and Permissions > Role Permissions Manager**.
+- Each role has a predefined set of permissions that can be customized as per organizational needs.
+
+For example, a **Sales User** might have access to create and view Quotations but may not have permission to delete them.
+
+### 1.3 **Role Permissions for Page and Report**
+
+ERPZ allows administrators to set role permissions for specific pages and reports. This feature ensures that sensitive reports and modules are only visible to authorized roles.
+
+- To configure, go to **Home > Users and Permissions > Role Permissions Manager**, and set permissions for specific pages or reports.
+- You can allow access based on viewing, editing, or exporting capabilities, ensuring that sensitive data remains secure.
+
+---
+
+## 2. Managing Permission Levels
+
+ERPZ supports managing permissions at different levels within a document, also known as **Perm Levels**. Each document can have fields or sections with varying levels of permissions.
+
+- To manage permission levels, navigate to **Home > Users and Permissions > Role Permissions Manager**.
+- You can define which roles have access to specific levels of a document (e.g., level 0 for general fields, level 1 for confidential fields).
+
+This ensures that only users with the necessary permissions can access sensitive parts of a document.
+
+---
+
+## 3. Field Level Permission Management
+
+Field Level Permissions in ERPZ provide granular control over user access to individual fields within a document. This feature is useful for protecting sensitive information such as salary details or personal data.
+
+- To manage field-level permissions, go to **Home > Customization > Customize Form**.
+- From here, you can configure field-level access by setting field-specific permissions for different roles.
+
+For example, an HR Manager may have access to view and edit an employee's salary field, while a general employee may only view fields related to attendance.
+
+---
+
+## 4. Related Topics
+
+- [**User Permissions**](/users-and-permissions/permissions/user-permissions): Understand how to configure user-specific permissions.
+- [**Role-Based Permissions**](/users-and-permissions/permissions/role-based-permissions): Manage permissions for different roles and control access to documents and modules.
+- [**Field-Level Permissions**](): Learn how to protect specific fields within documents by assigning field-level permissions.
+

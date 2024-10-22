@@ -1,0 +1,53 @@
+---
+title: Role and Role Profile
+description: Understanding how to manage roles and role profiles in ERPZ to control user access to various documents and modules.
+category: User Management
+---
+
+# Role and Role Profile
+
+A **Role** in ERPZ defines the permissions for accessing various documents and modules. It sets specific permissions, determining what users can view, create, or edit within the system.
+
+ERPZ comes with a set of predefined roles, such as **Sales User**, which grants access to documents like Quotations and Sales Orders. However, if your organization requires additional roles, you can create custom roles to suit your specific needs.
+
+A **Role Profile** allows multiple roles to be grouped together and assigned to users at once. This simplifies the process of role assignment for users who need multiple roles, such as managers or supervisors.
+
+---
+
+## 1. Roles in ERPZ
+
+### 1.1 How to Add a Role
+
+To add a new Role in ERPZ, follow these steps:
+
+1. Navigate to **Home > Users and Permissions > Role**.
+2. Click on **New** to create a new role.
+3. Enter a name for the Role.
+4. Specify whether the Role has desk access. Desk access allows users to view and interact with ERPZ modules and documents. The level of access depends on the roles assigned.
+5. Save the Role.
+
+Additionally, you can enable **two-factor authentication** (2FA) for specific roles and restrict roles to particular domains. From here, you can navigate to the **Role Permission Manager** to set permissions across different document types (DocTypes).
+
+---
+
+## 2. Role Profiles in ERPZ
+
+A **Role Profile** is a template that stores multiple roles, allowing you to assign several roles to a user at once. This is particularly useful when onboarding multiple employees or configuring roles for specific positions, like managers or supervisors.
+
+### 2.1 How to Add a Role Profile
+
+1. Go to **Home > Users and Permissions > Permissions > Role Profile**.
+2. Click on **New** to create a new role profile.
+3. Enter a name for the profile.
+4. Select the roles you want to assign to this profile.
+5. Save the Role Profile.
+
+For example, a **Sales Supervisor** might have the following roles assigned: **Employee**, **Sales Manager**, **Sales User**, and **Sales Master Manager**. Instead of assigning these roles individually, you can group them under a single Role Profile and apply it to the supervisor.
+
+---
+
+## Related Topics
+
+- **Role-Based Permissions**: Understand how to manage permissions based on roles within the system.
+- **User Permissions**: Learn how to set individual user permissions in addition to role-based access.
+- **Role Permissions for Pages and Reports**: Discover how to manage access to specific pages and reports based on user roles.

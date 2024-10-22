@@ -1,0 +1,38 @@
+---
+title: "Immutable Ledger"
+description: "Understand the concept of Immutable Ledger introduced in ERPZ Version 13, including its impact on accounting and stock transactions."
+---
+
+# Immutable Ledger
+
+A significant change has been introduced in ERPZ, affecting the way the Accounting Ledger (General Ledger) and Stock Ledger function. The immutability of ledgers has several advantages, including:
+
+- **Reposting Future Entries**: Reposting backdated transactions is computationally expensive because all future entries must be reposted.
+- **Stock Ledger Valuation**: In the Stock Ledger, where valuations are based on the First-in-First-out (FIFO) method, any change may upset valuations and profits for subsequent transactions.
+- **Tax Adjustments**: Taxes paid for a given period may also change, impacting financial reporting.
+
+## 1. Impacts on Day-to-Day Transactions
+
+### 1.1 Reverse Entries on Cancellation of Transactions
+
+- **General Ledger**: When any transaction is canceled, instead of deleting the General Ledger entries associated with that transaction, reverse entries will be posted to negate the effect of the transaction on the cancellation date.
+
+- **Document Deletion**: Since General Ledger entries linked to a transaction will never be deleted, canceled transactions and their linked documents can no longer be removed.
+
+### 1.2 Restriction on Posting Backdated Stock Entries
+
+With the introduction of immutable ledgers, future transactions cannot be updated or reposted. Therefore, users will no longer be able to post backdated stock transactions.
+
+#### Example:
+
+Suppose a Stock Transaction has been made for **Item A** with a posting time of **19-06-2020 23:00:10**. After this transaction, it is not possible to post another transaction for **Item A** with a timestamp earlier than this.
+
+![Backdated Entry Restriction]()
+
+---
+
+## 2. Related Topics
+
+- [General Ledger]()
+- [Stock Ledger]()
+- [Transaction Management]()

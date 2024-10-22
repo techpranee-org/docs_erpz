@@ -1,0 +1,69 @@
+---
+title: "Lower Deduction Certificate"
+description: "Learn how to create and use Lower Deduction Certificate in ERPZ for managing tax deductions at source."
+---
+
+# Lower Deduction Certificate
+
+A **Lower Deduction Certificate** is a document issued to taxpayers who may not have taxable income for a fiscal year, allowing them to request a lower or NIL rate of **Tax Deducted at Source (TDS)**. This ensures that tax is not deducted unnecessarily at the standard rate defined in the **Tax Withholding Category**.
+
+The **Tax Withholding Category** mandates that the person responsible for making payments must deduct tax at source at prescribed rates. This system ensures that tax is collected upfront and deposited with the government, but may cause issues for some taxpayers who are not liable to pay tax in the current fiscal year.
+
+To resolve this, the government provides an option for such taxpayers to obtain a **Lower Deduction Certificate**. This certificate confirms either a lower rate or NIL rate of TDS, overriding the rate specified in the Tax Withholding Category.
+
+---
+
+## 1. Prerequisites
+
+Before creating and using a **Lower Deduction Certificate**, ensure that the following have been created:
+- **Supplier**
+- **Tax Withholding Category**
+
+---
+
+## 2. How to create a Lower Deduction Certificate
+
+Follow these steps to create a **Lower Deduction Certificate** in ERPZ:
+
+1. Go to the **Lower Deduction Certificate** list and click on **New**.
+2. Enter the **Certificate No.** (unique identification number for the certificate).
+3. Select the **Section Code** (e.g., Section 194D, 194C, etc.).
+4. Enter the relevant **Fiscal Year**.
+5. Select the **Supplier** having a valid PAN number. The PAN number will be auto-fetched on selecting the supplier.
+6. Enter the **Valid From** and **Valid Up To** dates (the validity period of the certificate).
+7. Enter the **Rate of TDS** as per the certificate and the **certificate limit** (maximum amount for lower TDS).
+8. Click on **Save**.
+
+---
+
+## 3. Using Lower Deduction Certificate
+
+### 3.1 Use in Purchase Invoice
+
+When creating a **Purchase Invoice**, you can use the Lower Deduction Certificate to apply a reduced TDS rate.
+
+In the following example, we have selected the TDS category as 'TDS - 194D - Individual,' which has a rate of 5%.
+
+1. Set the **Tax Withholding Category** for the supplier in the supplier master.
+2. When selecting the supplier for the Purchase Invoice, a checkbox will become visible to decide whether to apply tax or not, and the TDS category will be auto-fetched based on the supplier's settings.
+3. Let's create an invoice for ₹20,000. On saving the invoice, tax will be automatically calculated and added in the **Purchase Taxes and Charges** table.
+4. Although the TDS category assigned to the supplier has a tax rate of 5%, the actual tax rate is 1%, as specified in the **Lower Deduction Certificate**.
+
+#### Example:
+
+| **Field**                     | **Value**          |
+|-------------------------------|--------------------|
+| **Invoice Amount**             | ₹20,000            |
+| **Tax Withholding Category**   | TDS - 194D         |
+| **Standard TDS Rate**          | 5%                 |
+| **Lower Deduction Certificate**| Applicable         |
+| **Reduced TDS Rate**           | 1%                 |
+| **TDS Deducted**               | ₹200               |
+
+The reduced tax will now be reflected in the **Purchase Invoice** based on the Lower Deduction Certificate.
+
+---
+
+## 4. Related Topics
+
+- [Tax Withholding Category]()

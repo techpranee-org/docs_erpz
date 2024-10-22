@@ -21,6 +21,7 @@ export default function Layout({ children }) {
     <html lang="en">
       <head>
         <title>ERPZ Documentation</title>
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <ThemeProvider theme={LPtheme}>

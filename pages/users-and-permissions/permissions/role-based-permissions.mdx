@@ -1,0 +1,74 @@
+---
+title: "Role Based Permissions"
+description: "Learn how to configure Role-Based Permissions in ERPZ."
+---
+
+# Role Based Permissions
+
+In ERPZ, permissions to different documents are controlled using Role-Based Permissions. This system allows you to assign roles to users and configure permissions for each role, determining what actions (e.g., read, write, submit) can be performed on specific documents.
+
+The Role Permissions Manager in ERPZ enables fine-grained control over access to various documents, based on the roles assigned to users.
+
+## 1. How to Use the Role Permissions Manager
+
+To start managing role-based permissions, follow these steps:
+
+- Navigate to **Home > Users and Permissions > Role Permissions Manager**.
+- Use the Role Permissions Manager to manage Read, Write, Create, Submit, Amend, and other access rights for different roles.
+
+Permissions are based on the following factors:
+
+- **Roles**: Roles are assigned to users, and permission rules are applied to those roles. Examples of roles include Accounts Manager, Sales User, and HR Manager.
+- **Document Types**: Permissions can be assigned to specific document types like Sales Order, Purchase Order, Invoice, etc.
+- **Permission Levels**: Fields in a document can be grouped by permission levels, allowing different permission rules for each group. The default permission level is 0 for most fields.
+- **Document Stages**: Permissions can be applied at different stages of a document’s lifecycle—Creation, Submission, Cancellation, Amendment, etc.
+- **User Permissions**: These allow restrictions based on specific document values, such as limiting access to a certain customer or territory.
+
+### 1.1 Adding a New Permission Rule
+
+To add a new rule:
+
+1. Open the Role Permissions Manager and click **Add New Rule**.
+2. Select the **Role** and the **Permission Level**.
+3. Click **Add**, and a new row will be added to the table for configuring permissions.
+
+### 1.2 User Permissions
+
+In ERPZ, you can restrict user access to specific documents using User Permissions. For example, you can limit a sales user to view only documents related to a specific company or customer.
+
+To configure user permissions:
+
+- Go to **Home > Users and Permissions > User Permissions**.
+- Select the user and the document type (e.g., Sales Order).
+- Define the restrictions by setting values for fields like Customer, Company, or Territory.
+
+## 2. Role-Based Permissions in Action
+
+Here’s an example using **Leave Application** to demonstrate how role-based permissions work:
+
+1. An **Employee** role should have Read, Write, and Create permissions for their own leave applications.
+2. A **HR Manager** role should have access to all leave applications, with permissions to read, submit, and cancel.
+3. A **Leave Approver** role can view and update leave applications for employees under their supervision.
+4. To approve or reject leave applications, the **HR User** or **Leave Approver** roles can have elevated permissions for specific fields, such as the **Status** field, which may have a higher permission level (e.g., Level 1).
+
+Permissions can be fine-tuned based on specific document stages or fields, ensuring that sensitive information is protected and access is granted only to authorized users.
+
+## 3. Advanced Permissions
+
+ERPZ provides additional control through advanced permission settings:
+
+- **Permission Levels**: Control access to specific fields within a document.
+- **Document Stages**: Apply permissions based on the document’s stage, such as submission or cancellation.
+- **Set User Permissions**: This option allows users with certain roles (e.g., HR Manager) to delegate permissions to others for specific document types.
+
+For example, the **HR Manager** can delegate access to leave applications to subordinates by configuring user permissions for the **Leave Application** document.
+
+## 4. Troubleshooting Permissions Issues
+
+If users encounter permission-related errors, ensure that roles are correctly assigned and user permissions are properly configured. In case of conflicts, the **Role Permissions Manager** can be used to review and resolve permission issues.
+
+## 5. Related Topics
+
+- [User Permissions](/users-and-permissions/permissions/user-permissions)
+- [Role Permission for Pages and Reports]()
+- [System Settings for Strict Permissions]()

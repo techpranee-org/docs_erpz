@@ -1,0 +1,52 @@
+---
+title: "Role Permission for Page and Report"
+description: "Learn how to configure Role-Based Permissions for Pages and Reports in ERPZ."
+---
+
+# Role Permission for Page and Report
+
+In ERPZ, access to different pages and reports can be controlled using **Role Permission for Page and Report**. This allows you to define which roles can access specific pages and reports, ensuring that sensitive information is only accessible to authorized users.
+
+Document Types, such as Sales Orders, Customers, and Suppliers, represent multiple records of a certain type, while Pages (e.g., Selling Settings) are standalone. While you can create multiple Sales Orders, there is only one Selling Settings page.
+
+ERPZ enables users to create custom user interfaces using **Pages** and generate custom reports using the **Report Builder** or **Query Reports**. Role-based permissions allow you to restrict access to these pages and reports based on assigned roles.
+
+## 1. How to Use the Role Permission for Page and Report Tool
+
+To control access to Pages and Reports, navigate to:
+
+`Home > Users and Permissions > Role Permission for Page and Report`
+
+From here, you can manage permissions for various pages and reports by assigning roles.
+
+### 1.1 Reset to Defaults
+
+If you need to remove custom permissions and revert to default permissions, click the **Reset to Defaults** button. This action will remove all custom roles assigned to the page or report, and the default permissions will be restored.
+
+## 2. Setting Role Permissions as a Developer
+
+If you have **developer mode** enabled, you can assign roles directly within the Page and Report configuration. This will update the permission settings for the page or report and reflect the changes in the associated JSON file.
+
+### 2.1 Role Permissions for a Page
+
+To set role permissions for a specific page:
+
+1. Navigate to `Home > Developer > Page`.
+2. Add a new row, and select the roles that will have access to the page.
+
+This method allows you to manage page access in a detailed and organized manner, ensuring only the relevant roles can view or modify the page.
+
+### 2.2 Role Permissions for a Report
+
+To set role permissions for a report:
+
+1. Navigate to `Home > Developer > Report`.
+2. Add new rows to specify which roles can access the report.
+
+By assigning roles to reports, you can ensure that users only access the reports relevant to their job functions.
+
+## 3. Related Topics
+
+- [Role and Role Profile](/users-and-permissions/users/role-and-role-profile)
+- [Role Based Permissions](/users-and-permissions/permissions/role-based-permissions)
+- [User Permissions](/users-and-permissions/permissions/user-permissions)

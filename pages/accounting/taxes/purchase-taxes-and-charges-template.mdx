@@ -1,0 +1,57 @@
+---
+title: "Purchase Taxes and Charges Template"
+description: "Guide to setting up and using Purchase Taxes and Charges Templates in ERPZ."
+---
+
+# Purchase Taxes and Charges Template
+
+Purchase Taxes and Charges can be applied to any item you buy in ERPZ.
+
+The Purchase Taxes and Charges Template is similar to the Sales Taxes and Charges Template. The templates created from this form can be used in Purchase Orders and Purchase Invoices for internal records. For tax accounts used in these templates, the **Account Type** field must be set as 'Tax' for that particular account.
+
+To access the Purchase Taxes and Charges Template, go to:
+
+`Home > Buying > Settings > Purchase Taxes and Charges Template`
+
+
+## 1. How to Add Purchase Taxes/Charges via a Template
+
+Before creating a new template, note that templates for many commonly used taxes are already available.
+
+1. Click on **New**.
+2. Enter a title for the tax.
+3. Under **Type**, set how the tax will be calculated and the tax rate. The following options are available:
+   - **Actual**: On the actual amount of each item.
+   - **On Net Total**: On the grand total of all items.
+   - **On Previous Row Amount**: Use for compounding charges, such as cess on previously taxed amounts.
+   - **On Previous Row Total**: Similar to above but applied to the total bill instead of individual items.
+4. Select an **Account Head** with preset tax rates or create your own.
+5. Select **Default** to apply this template to new purchase transactions automatically.
+6. Click **Save**.
+
+> **Note:** For users in India, selecting 'Is Inter State' will adjust taxes based on the GST codes in the place of supply and supplier's shipping address.
+
+## 2. Features
+
+### 2.1 Purchase Taxes and Charges Table
+
+- **Consider Tax or Charge for**: 
+   - **Total** - Applies to the total of all items.
+   - **Valuation** - Applies to each item.
+   - **Valuation and Total** - Applies to both.
+   
+  [Learn more about the differences here]().
+
+- **Add or Deduct**: Choose whether to add or deduct the tax from the item price.
+- **Reference Row #**: If the tax is based on "Previous Row Total," select the row number used as a base (default is the previous row).
+- **Is this Tax Included in Basic Rate?**: When checked, the tax amount is considered included in the item price. The system calculates the net amount by deducting the tax amount first and then applying the tax on it.
+- **Account Head**: The ledger under which this tax will be recorded. Selecting preset heads like VAT will auto-fill the rate.
+- **Cost Center**: If the tax/charge represents income (e.g., shipping) or an expense, it must be booked against a cost center.
+- **Description**: This will be printed on invoices/quotes.
+- **Rate**: Set the tax rate (e.g., 14 = 14% tax).
+- **Amount**: The tax amount (e.g., 100.00 = ₹100 tax).
+
+## 3. Related Topics
+
+- [Purchase Order]()
+- [Buying Settings]()

@@ -1,0 +1,70 @@
+---
+title: "Dunning"
+description: "Learn how to manage dunning for overdue payments in ERPZ."
+---
+
+# Dunning
+
+A Dunning is a document used to send persistent demands for debt payment against an unpaid Sales Invoice.
+
+To access the Dunning list, navigate to:
+
+`Home > Accounting > Dunning`
+
+## 1. Prerequisites
+
+- **Sales Invoice:** A Dunning can only be created against an overdue Sales Invoice.
+
+- **Dunning Type:** A Dunning Type is utilized to pre-fill interest, fees, and text blocks in a new Dunning.
+
+## 2. How to Create a Dunning
+
+You can create a Dunning in two different ways:
+
+### a) Create a New Dunning
+
+1. Go to the Dunning list and click on **Add Dunning**.
+2. Select a Customer and click **Fetch Overdue Payments**. This will display a list of overdue Sales Invoices for this customer.
+3. Select the invoices you would like to include in this Dunning and click on **Get Items**.
+
+### b) Create a Dunning from an Overdue Sales Invoice
+
+1. Go to the Sales Invoice list and open any overdue Sales Invoice.
+2. Click on **Create > Dunning**. This will fetch all overdue payments from the invoice's payment schedule table into a new Dunning.
+3. Fill in the remaining fields. 
+   - Select a Dunning Type to automatically fill interest, dunning fees, and text blocks with predetermined values, or set these values manually.
+   - You can also set an Income Account (e.g., "Other interest and similar income") and Cost Center for the income generated from interest and dunning fees. These will be utilized once a Payment Entry is created from this Dunning.
+
+4. Save and submit the Dunning before sending it to the Customer.
+
+**Dunning Example:**
+
+## 2.1 What is a Dunning Type
+
+A Dunning Type stores default values for dunning fees, interest rates, and text blocks to be included. For instance, a Dunning Type "First Notice" will not have any fees, while a Dunning Type "Second Notice" will include a dunning fee and interest charged on the outstanding amount.
+
+**Dunning Type:**
+
+## 2.2 Statuses
+
+The following statuses are automatically assigned to Dunning:
+
+- **Draft:** A draft is saved but not yet submitted.
+- **Unresolved:** The Dunning is marked as unresolved when submitted but no payments have been received.
+- **Resolved:** The Dunning is resolved when the outstanding payment has been received.
+- **Cancelled:** A Dunning document that has been cancelled.
+
+## 3. Payment
+
+When you receive full payment, including interest and fees, open the unresolved Dunning and click on **Create > Payment**. This action will create a Payment Entry against the outstanding scheduled payments and record the interest and fees as "Payment Deductions or Loss". The Payment Entry will automatically update the Dunning's status to resolved.
+
+**Dunning Payment:**
+
+## 4. Related Topics
+
+- **Payment Entry**
+- **Sales Invoice**
+
+---
+
+This guide provides an overview of managing Dunning for overdue payments in ERPZ. Ensure to follow the steps and prerequisites to efficiently handle outstanding debts.

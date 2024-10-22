@@ -1,0 +1,80 @@
+---
+title: "Tax Rule"
+description: "Guide on setting up and using Tax Rules in ERPZ."
+---
+
+# Tax Rule
+
+A Tax Rule automatically applies taxes to transactions based on predefined conditions.
+
+You can specify which Tax Template should be applied to a Sales or Purchase transaction by setting up Tax Rules. These rules can consider various factors, such as Customer, Customer Group, Supplier, Supplier Group, Item, Item Group, or combinations thereof.
+
+## Accessing Tax Rules
+
+To view the Tax Rule list, navigate to:
+
+`Home > Accounting > Taxes > Tax Rule`
+
+
+## 1. Prerequisites 
+
+Before creating and utilizing a Tax Rule, ensure the following are set up:
+
+- **Sales Taxes and Charges Template**
+- **Purchase Taxes and Charges Template**
+
+## 2. Creating a Tax Rule 
+
+To create a new Tax Rule:
+
+1. Go to the Tax Rule list and click on **New**.
+2. Under **Tax Type**, choose whether the tax applies to Sales or Purchases.
+3. Select the **Tax Template** that should be applied.
+4. Click **Save**.
+
+> **Note:** Avoid using the Sales/Purchase Template selected here in the Item Tax Template, as it may lead to conflicts. If you wish to use the same tax rates for both Tax Rule and Item Tax Template, use distinct names for the Sales/Purchase Tax Templates.
+
+## 3. Features 
+
+### 3.1 Auto-apply Tax Rules Based on Customer/Supplier
+
+You can specify a Customer or Supplier if the tax is to be applied to a specific party. If left as **All Customer Groups** or **All Supplier Groups**, the Tax Rule will be applicable to every Customer or Supplier.
+
+When a Customer or Supplier is selected, their Billing and Shipping addresses will be automatically fetched from the master records.
+
+### 3.2 Auto-apply Tax Rules Based on Item/Item Group
+
+By setting an Item or Item Group in the Tax Rule, this rule will automatically apply to new transactions that include the selected Item/Item Group.
+
+### 3.3 Setting a Tax Category
+
+By establishing a Tax Category, you can apply multiple Tax Rules to a single transaction based on different criteria. For more details, visit the [Tax Category](#) page.
+
+### 3.4 Validity Period
+
+You can specify a **Start Date** and **End Date** for the Tax Rule to be applied only during a defined period. Leaving both dates blank results in the Tax Rule having no time restrictions.
+
+### 3.5 Priority
+
+Assign a priority number to determine the order in which Tax Rules are applied when multiple rules share similar criteria. A lower number indicates higher priority (e.g., '1' has the highest priority).
+
+## 4. How Tax Rule Works
+
+You can configure Tax Rules to ensure that the system automatically applies specific tax rates when particular conditions are met. For example, if the city in the customer’s billing address is "Malibu," a tax breakdown might look like this:
+
+- 6.25% State Tax
+- 1% County Tax
+- 2.25% District Tax
+
+1. First, create a Sales Taxes and Charges Template that outlines the required taxes.
+2. Then, establish a Tax Rule that specifies the conditions under which these taxes apply.
+
+When a customer with a billing address in "Malibu" is selected, the system automatically applies the corresponding taxes.
+
+## 5. Related Topics 
+
+- [Pricing Rule]()
+- [Item Tax Template]()
+- [Tax Category]()
+- [Customer]()
+- [Supplier]()

@@ -1,0 +1,37 @@
+---
+title: "Accounting Period"
+description: "Learn how to define and manage an Accounting Period in ERPZ to maintain accurate financial reports."
+---
+
+# Accounting Period
+
+An **Accounting Period** defines a specific timeframe during which financial transactions are recorded and financial statements are generated.
+
+In ERPZ, the **Accounting Period** ensures that certain submittable transactions (such as Sales/Purchase Invoices, Stock Entries, Payroll Entries, Journal Entries, etc.) can only be created within the defined time period. Outside of the set accounting period, these transactions cannot be submitted. This functionality helps maintain the accuracy and integrity of financial reports.
+
+## Why is an Accounting Period important?
+
+When transactions are submitted, they impact the ledgers, which in turn affect the financial reports generated from these ledgers. Problems can arise when financial reports need to be produced for audits or when closing the financial year. The **Accounting Period** feature ensures that once the accounting period has ended, no new transactions are submitted for that time period, preserving the consistency and accuracy of financial statements.
+
+## 1. How to Create an Accounting Period
+
+Follow these steps to define a new Accounting Period in ERPZ:
+
+1. **Name the Accounting Period** – Give the period a clear and identifiable name.
+2. **Set Start and End Dates** – Define the timeframe for the accounting period by entering the start and end dates.
+3. **Select Transactions to Restrict** – Add transactions (such as sales or purchase invoices) to the child table, indicating which transactions should be restricted after the period ends.
+4. **Mark Transactions as Closed** – For each transaction in the child table, you can enable the "Closed" option to restrict its submission after the accounting period ends.
+5. **Save and Submit** – Once the accounting period has been configured, save and submit it. Any restricted transaction submitted after the accounting period ends will result in a validation error.
+
+> **Note**: Even users with elevated roles, such as those with permission to modify frozen accounts, cannot save or submit transactions restricted by an Accounting Period.
+
+### 1.1 What is the "Closed" Option?
+
+In the child table, the "Closed" checkbox allows you to specify which types of transactions should be restricted once the accounting period has ended. Transactions marked as "Closed" will not be allowed for submission after the period closes.
+
+If the period ends and a transaction type in the table does not have "Closed" checked, that type of transaction will still be allowed after the accounting period ends.
+
+## 2. Related Topics
+
+- [How to Use Accounting Period for Closing Accounting Books]()
+- [Period Closing Voucher]()

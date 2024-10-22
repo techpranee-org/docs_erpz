@@ -1,0 +1,74 @@
+---
+title: "Limited User"
+description: "Limited Users in ERPZ have restricted access to specific modules and documents based on their roles. This document explains how to configure limited users using the User Type document."
+
+---
+
+# Limited User
+
+In ERPZ, a **Limited User** is a user who has restricted access to specific documents or modules within the system. These users are often employees or other stakeholders who do not need full access to all modules but only require access to specific functionalities. For example, employees who only need to manage their daily attendance or leave applications would fall under this category. Instead of granting full system access to all users, **Limited Users** are configured to access only the documents they need.
+
+## 1. Types of Limited Users
+
+ERPZ allows for two primary types of users:
+
+- **System User**: These users have full access to the desk and modules within the ERPZ system.
+- **Website User**: These users only have access to the website portal and are restricted from using modules available on the system desk.
+
+To manage **Limited Users**, ERPZ introduces the concept of **Employee Self-Service (ESS)**, which grants employees restricted access to documents that are relevant to them, such as attendance, leaves, and salary slips.
+
+---
+
+## 2. User Type
+
+In ERPZ, User Types can be configured based on the roles and permissions required for different users. By default, ERPZ provides two **standard** user types:
+
+- **System User**: Can access both the desk and the website portal.
+- **Website User**: Can only access the website portal and is restricted from desk features.
+
+These **standard user types** cannot be deleted or edited. However, custom user types can be created to handle specific cases where users need limited access to certain documents.
+
+### 2.1 How to Access User Type
+
+To access the **User Type** configuration:
+
+1. Navigate to **Users > User Type**.
+
+---
+
+## 3. Custom User Types
+
+Custom user types allow for granular control over which documents a limited user can access. These are often created for users who only need permission to view specific document types. For example, an employee who needs to view only their salary slips and attendance records but should not access other areas of the system.
+
+### 3.1 Steps for Custom User Types:
+
+1. **Define Custom Role**: Select a role and apply it to specific document types.
+2. **Apply User Permissions**: User permissions can be applied based on specific fields. For example, setting up permissions on the `Employee` document allows users to only view documents where their employee ID is linked.
+
+#### Example: Employee Self-Service (ESS)
+
+In the example of **Employee Self-Service**, the employee can view documents such as:
+
+- Salary slips linked to their employee ID
+- Attendance records
+- Leave applications
+
+This configuration ensures that employees can only access their own records and are restricted from viewing records of other employees.
+
+---
+
+## 4. Document Types & Permissions
+
+For each **custom user type**, the document types that the user can access must be defined. The document types a limited user can view or access are configured in the **User Type** settings.
+
+- **Document Types (View)**: This section specifies the types of documents the limited user can view. For example, an ESS user can view only their salary slips, attendance, and leave applications.
+  
+- **Select Permissions Only**: Define the specific document types the user has select access to. **Select permissions** allow the user to view the documents but restrict them from creating or modifying those records.
+
+There is no limit to the number of document types that can be added for select permissions. However, the user will not be able to create new records for these document types.
+
+---
+
+## 5. Role Permission Manager
+
+Unlike system users who are configured in the **Role Permission Manager**, limited users (such as **Employee Self-Service**) have their role permissions managed directly within the **User Type** document. This allows for specific customization based on the role or user type, ensuring that limited users have tailored access to the documents and features relevant to them.

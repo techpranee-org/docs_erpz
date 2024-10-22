@@ -1,0 +1,85 @@
+---
+title: "Loyalty Program"
+description: "Overview of the Loyalty Program in ERPZ, including setup and usage."
+---
+
+# Loyalty Program
+
+A **Loyalty Program** enables customers to earn points based on their purchases and allows them to redeem those points for discounts on future purchases. This structured marketing strategy is designed to incentivize repeat business, encourage customer retention, and increase customer loyalty.
+
+### Accessing the Loyalty Program
+
+To access the Loyalty Program list, navigate to:
+
+`Home > Retail > Retail Operations > Loyalty Program`
+
+## 1. Prerequisites
+
+Before setting up a Loyalty Program, ensure the following are created:
+
+- Customer Profiles
+- Sales Invoices
+
+## 2. How to Create a Loyalty Program
+
+1. Go to the Loyalty Program list and click on **New**.
+2. Enter a **Name** for the Loyalty Program.
+3. Choose between a **Single Tiered** or **Multi Tiered** program (e.g., Gold, Silver, etc.).
+4. Set a **Start Date** and **End Date** for the program.
+5. Select the **Customer Group** and **Territory** applicable for this program (default is all).
+6. If you want to opt in all customers by default, tick the **Auto Opt In (For all customers)** checkbox. Otherwise, you will need to assign the program from the Customer master.
+7. In the tier table, enter the following:
+   - **Tier Name**: The name assigned to a customer based on their eligibility.
+   - **Collection Factor**: The amount to be spent to earn 1 Loyalty Point.
+   - **Minimum Amount**: The minimum amount to be spent to qualify for the tier.
+   - **Conversion Factor**: For example, 10 USD = 1 Loyalty Point.
+8. Click **Save**.
+
+### 2.1 Redemption Section
+
+- **Conversion Factor**: This defines the monetary value of 1 Loyalty Point when redeeming. For instance, if a customer has 100 Loyalty Points and the conversion factor is 1 USD, the customer can redeem items worth up to 100 USD.
+- **Expense Account**: Set an account to track the benefits offered through the loyalty program.
+- **Expiry Duration (in days)**: Set the number of days after which collected loyalty points will expire.
+
+### 2.2 Assigning Loyalty Programs to Customers
+
+You can assign a Loyalty Program to a customer by updating the **Loyalty Program** section in the Customer master. Loyalty points earned can be viewed in the customer's dashboard.
+
+### 2.3 Loyalty Point Entry
+
+Navigate to:
+
+`Accounts > Retail Operations > Loyalty Point Entry`
+
+This acts as a log, providing an overview of how many points each customer has earned against which sales invoice.
+
+## 3. How Does a Loyalty Program Work?
+
+### 3.1 Earning Points
+
+1. Create a Loyalty Program following the steps in the previous section.
+2. Assign this Loyalty Program to a customer.
+3. Create a new Sales Invoice for the customer.
+   - For example, if an invoice totals 3,000 INR and the customer is eligible for the Silver Tier (where the collection factor is 1 point for every 300 INR spent), the customer will earn 15 loyalty points for this transaction.
+4. Upon invoice submission, a Loyalty Point Entry will be created.
+
+Note: The minimum amount in the Loyalty Program is based on the cumulative spending of invoices under that program, not just a single invoice.
+
+### 3.2 Redeeming Points
+
+When creating a new invoice for a customer who has loyalty points:
+
+1. Enable the checkbox for **Redeem Loyalty Points**.
+2. The fields for **Loyalty Points**, **Redemption Account**, and **Redemption Cost Center** will appear, populated from the customer’s Loyalty Program.
+3. If the customer has earned 15 points, they can redeem these points (up to their total available) against the current invoice.
+   - If a customer tries to redeem more points than they have, an error will be displayed.
+4. Upon redemption, loyalty points will be deducted according to the defined conversion factor, and two Loyalty Point Entries will be created: one for the redemption and one for the current invoice.
+
+**Note**: If a return invoice is created for an invoice on which points were earned, the original Loyalty Point Entry will be deleted, and a new entry will be created based on the updated amount.
+
+## 4. Related Topics
+
+- Cost Center
+- Sales Invoice
+- Customer
+- Customer Group

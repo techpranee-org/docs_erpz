@@ -1,0 +1,54 @@
+---
+title: "Tax Inclusive Accounting"
+description: "Learn how to configure tax-inclusive pricing in ERPZ to incorporate sales tax into the item's total price."
+---
+
+# Tax Inclusive Accounting
+
+**Use Case**: Tax-inclusive pricing incorporates the sales tax paid by your customer into the item’s total price, meaning the tax is already included in the final price that the customer sees.
+
+---
+
+### Example:
+
+If an item costs $100 and the tax rate is 10%, the customer still pays $100. In this case, the system will automatically calculate that $9.10 is the tax amount, and the remaining $90.90 is the item's base price.
+
+To configure tax-inclusive accounting in ERPZ, follow these steps:
+
+---
+
+## 1. Steps to Configure Tax-Inclusive Pricing
+
+1. **Go to the Sales Taxes and Charges section** in the relevant transaction.
+2. **Expand the row** of the tax you wish to configure by clicking on it.
+3. **Check the "Is this Tax included in Basic Rate?"** checkbox.
+
+This setting tells ERPZ that the tax amount is included in the basic price of the item. The system will back-calculate the tax from the total price entered.
+
+---
+
+## 2. How It Works
+
+When this option is enabled, ERPZ automatically performs the following:
+
+- **Back-calculates the tax amount** from the total price.
+- Adjusts the item's base price to reflect the price without tax.
+- Ensures that the customer is charged the flat amount you entered, with the tax included in that total.
+
+### Example Calculation:
+
+- **Total Price**: $100
+- **Tax Rate**: 10%
+
+ERPZ will calculate the base price and tax as follows:
+
+- **Base Price**: $90.90
+- **Tax Amount (10%)**: $9.10
+- **Total**: $100
+
+---
+
+## 3. Related Topics
+
+- [Sales Taxes and Charges Configuration]()
+- [Inclusive Pricing for Items in ERPZ]()

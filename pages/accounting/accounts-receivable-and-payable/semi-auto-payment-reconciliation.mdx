@@ -1,0 +1,43 @@
+---
+title: "Semi-Auto Payment Reconciliation"
+description: "Learn how to quickly reconcile multiple invoices using the Semi-Auto Payment Reconciliation feature in ERPZ."
+---
+
+# Semi-Auto Payment Reconciliation
+
+If you have a large number of invoices that need to be reconciled quickly without manual allocation, the **Process Payment Reconciliation** doctype can be utilized to streamline the process.
+
+## Steps to Enable and Use Semi-Auto Payment Reconciliation
+
+### 1. Enable Auto Reconcile Payments
+
+First, this feature must be enabled in the Accounts Settings:
+
+- Navigate to **Accounts Settings**.
+- Enable the **Auto Reconcile Payments** option.
+
+![Enable Auto Reconcile Payments]()
+
+### 2. Create a Process Payment Reconciliation Document
+
+1. Navigate to the **Process Payment Reconciliation** doctype.
+2. Select the **Company**, **Party**, and **Receivable/Payable Account** for which reconciliation is to be done.
+3. Save and submit the document. The status will be set to **Queued**.
+
+![Process Payment Reconciliation Document]()
+
+### 3. Background Job for Reconciliation
+
+A background job runs every 15 minutes to pick up queued documents and initiate reconciliation. If needed, you can also trigger the job immediately by using the **Start / Resume** button.
+
+This action will create a **Process Payment Reconciliation Log** record that details the total number of allocations that will be processed and the successfully reconciled entries.
+
+![Reconciliation Log]()
+
+## Related Topics
+
+- **Payment Reconciliation**
+
+---
+
+This guide provides an efficient method for reconciling multiple invoices in ERPZ, allowing users to manage their accounts receivable and payable seamlessly.

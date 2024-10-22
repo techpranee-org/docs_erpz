@@ -1,0 +1,70 @@
+---
+title: "Accounting Entries"
+description: "Learn how to book accounting entries for a business, using an example of a tea stall."
+---
+
+# Accounting Entries
+
+The concept of accounting is explained with an example below. We'll use a **Tea Stall** as a company and see how to book accounting entries for the business.
+
+Mama (the Tea-stall owner) invests Rs. 25000 to start the business.
+
+## 1. Investment
+
+Mama invested Rs. 25000 in the company, hoping to get some profit. In other words, the company is liable to pay Rs. 25000 to Mama in the future. So, the account "Mama" is a liability account and is credited. The company's cash balance increases due to the investment, and "Cash" is an asset, so it will be debited.
+
+| **Journal Entry**        | **Debit**   | **Credit**   |
+|--------------------------|-------------|--------------|
+| Cash                      | 25000       |              |
+| Mama's Liability Account   |             | 25000        |
+
+## 2. Assets
+
+The company needs equipment (stove, teapot, cups) and raw materials (tea, sugar, milk). Mama buys them from the local store "Super Bazaar" for Rs. 5000. He pays Rs. 2000 upfront and gets Rs. 3000 on credit. This transaction can be recorded using a **Payment Entry** in ERPNext.
+
+- Equipment is classified as **Fixed Assets** (long life).
+- Raw materials are classified as **Current Assets** (used for day-to-day business).
+
+| **Journal Entry**        | **Debit**   | **Credit**   |
+|--------------------------|-------------|--------------|
+| Equipment (Fixed Assets)  | 2800        |              |
+| Stock in Hand (Current Assets) | 2200    |              |
+| Cash                      |             | 2000         |
+| Super Bazaar (Liability)  |             | 3000         |
+
+## 3. Income
+
+At the end of the first day, the tea stall sells 325 cups of tea, generating Rs. 1625 in sales. Mama books the sales as follows:
+
+- Income is booked in the **Sales of Tea** account (credited).
+- Rs. 800 was the cost to produce the tea, booked in **Cost of Goods Sold**.
+
+| **Journal Entry**        | **Debit**   | **Credit**   |
+|--------------------------|-------------|--------------|
+| Cash                      | 1625        |              |
+| Sales of Tea (Income)      |             | 1625         |
+| Cost of Goods Sold (Expense) | 800      |              |
+| Stock in Hand (Current Assets) |         | 800          |
+
+## 4. Booking Profit
+
+At the end of the month, Mama pays Rs. 5000 for rent and Rs. 8000 as salary for one employee. He also needs to book the company's profit after a month of operations.
+
+To book profit, the profit and loss accounts must be reset. The company's net sales and expenses were Rs. 40000 and Rs. 20000 respectively, resulting in a Rs. 20000 profit. The profit is transferred to Mama's capital account using a **Period Closing Voucher**.
+
+| **Journal Entry**        | **Debit**   | **Credit**   |
+|--------------------------|-------------|--------------|
+| Profit or Loss            | 20000       |              |
+| Capital Account           |             | 20000        |
+
+After recording the profit, the company's net cash balance is Rs. 44000, and Rs. 1000 worth of raw materials are still in stock.
+
+## Related Topics
+
+- [Payment Entry]()
+- [Advance Payment Entry]()
+- [Freeze Accounting Entries]()
+- [Post Dated Cheque Entry]()
+- [Adjust Withheld Amount Payment Entry]()
+- [Bulk Payment Entry]()
+- [Difference Entry Button]()

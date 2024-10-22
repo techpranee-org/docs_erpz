@@ -1,0 +1,105 @@
+---
+title: "Tax Withholding Category"
+description: "Guide on setting up and using Tax Withholding Category in ERPZ"
+---
+
+# Tax Withholding Category
+
+The **Tax Withholding Category** is used to manage **Tax Deducted at Source (TDS)**. It is required when a person responsible for making payments must deduct tax at source at prescribed rates. This ensures tax is collected upfront and deposited with the government.
+
+To access the Tax Withholding Category in ERPZ, go to:
+`Home > Accounting > Taxes > Tax Withholding Category`
+
+---
+
+## 1. Prerequisites
+
+Before setting up a Tax Withholding Category in ERPZ, ensure that the following records have been created:
+- **Supplier**
+- **Customer**
+
+---
+
+## 2. Creating a Tax Withholding Category
+
+ERPZ comes with default Tax Withholding Categories, but you can create custom ones as needed.
+
+### Steps to create a Tax Withholding Category:
+1. Go to **Tax Withholding Category** and click on **New**.
+2. Enter a unique **Name** (e.g., Section 194C Individual).
+3. Add a **Category Name** (e.g., Dividends, Professional Fees, etc.).
+4. Enter the **Tax Withholding Rate** for the relevant **Fiscal Year**.
+5. Set a **Threshold** for single invoices or cumulative invoices.
+6. Select the **Account** to which tax will be credited.
+7. Add multiple companies and their accounts if needed.
+8. Click **Save**.
+
+Once saved, assign this category to the relevant **Suppliers**.
+
+---
+
+### 2.1 Assigning a Tax Withholding Category to a Supplier
+
+After creating the category, you can assign it to suppliers:
+- Navigate to the **Supplier** form and assign the appropriate Tax Withholding Category.
+
+---
+
+### 2.2 How does the threshold work?
+
+The threshold determines whether TDS will be applied based on invoice amounts. For instance:
+- **Single Threshold**: TDS will be applied when a single invoice crosses this limit.
+- **Cumulative Threshold**: TDS will be applied when the total value of all invoices within a period exceeds this threshold.
+
+**Example**: 
+- A 5% TDS rate applies if the invoice total exceeds ₹20,000 (Single Threshold) or if the total of multiple invoices exceeds ₹30,000 (Cumulative Threshold).
+
+---
+
+## 3. Using Tax Withholding in Transactions
+
+### 3.1 Applying TDS in Purchase Invoices
+
+When creating a Purchase Invoice:
+- Select the Supplier with the Tax Withholding Category applied.
+- Check the "Apply Tax Withholding" option in the invoice to calculate TDS automatically.
+
+### 3.2 Deducting TDS on Advances
+
+#### 3.2.1 TDS Deduction via Purchase Order:
+1. Set up the Tax Withholding Category against the supplier.
+2. Create a **Purchase Order**, but don't apply TDS at this stage.
+3. Make a **Payment Entry** against the Purchase Order, enabling the "Apply Tax Withholding" option.
+4. Create a **Purchase Invoice** linked to the Purchase Order. The TDS from the advance will be deducted automatically.
+
+#### 3.2.2 TDS Deduction on Advance Payment:
+1. In the **Payment Entry**, select "Pay" under **Payment Type**.
+2. Choose **Supplier** as the Party Type.
+3. Enter the **Paid Amount** (before TDS deduction).
+4. Enable the "Apply Tax Withholding" option, select the relevant Tax Withholding Category, and save the entry.
+
+---
+
+### 3.3 Setting Up Tax Collection at Source (TCS)
+
+For customers, you can set up TCS for eligible transactions:
+1. Create a **Tax Withholding Category** for **TCS - Section 20C(1H)**.
+2. Assign this category to customers expected to exceed the TCS threshold (₹50 Lakhs in sales).
+3. Create invoices for these customers. When the cumulative threshold is crossed, the TCS will be applied automatically.
+
+---
+
+### 3.4 Advanced Options for Tax Withholding
+
+ERPZ provides advanced features for handling TDS/TCS, including:
+- **Consider Entire Party Ledger Amount**: Calculates the cumulative threshold across all transactions for a specific party.
+- **Only Deduct Tax on Excess Amount**: Applies tax only to the amount exceeding the threshold.
+- **Round Off Tax Amount**: Rounds the calculated tax to the nearest integer.
+
+---
+
+## 4. Related Topics
+
+- **Tax Rule**
+- **Supplier**
+- **Customer**

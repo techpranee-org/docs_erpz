@@ -1,0 +1,95 @@
+---
+title: "Include Tax or Charge in Valuation or Total?"
+description: "Understand how to categorize taxes or charges in ERPZ purchase and sales transactions for accurate valuation and accounting."
+---
+
+# Include Tax or Charge in Valuation or Total?
+
+In ERPZ, the **Tax or Charge** field in the **Taxes and Charges** table for purchase or sales transactions has three possible values:
+
+1. **Total**
+2. **Valuation**
+3. **Total and Valuation**
+
+Let’s explore these options with an example to understand how each affects the transaction:
+
+### Scenario:
+
+We purchase 10 units of an item at a rate of ₹800 each. The total purchase amount is ₹8,000. This item has a 4% VAT applied, and an additional transportation charge of ₹100 was incurred.
+
+---
+
+## 1. Total
+
+If a tax or charge is categorized as **Total**, it will be included in the total of the purchase transaction but will not affect the valuation of the purchased item.
+
+**Example:**
+
+- VAT of 4% is applied to the item, amounting to ₹320 (4% of ₹8,000).
+- Since VAT is a consumption tax, it is added to the value of the **Purchase Order/Invoice** as an amount payable to the supplier. However, it does not increase the valuation of the item itself.
+
+When the **Purchase Invoice** is submitted, the general ledger will record the tax/charge categorized as **Total**, reflecting the VAT payable to the supplier.
+
+| **Field**     | **Amount** |
+|---------------|------------|
+| Item Value    | ₹8,000     |
+| VAT (4%)      | ₹320       |
+| **Total Payable** | **₹8,320** |
+
+*Note: VAT is added to the total payable amount but not to the valuation of the item.*
+
+---
+
+## 2. Valuation
+
+If a tax or charge is categorized as **Valuation**, it will be added to the valuation of the purchased item but not to the total of the purchase transaction.
+
+**Example:**
+
+- A transportation charge of ₹100 is categorized as **Valuation**. This increases the value of the purchased item from ₹8,000 to ₹8,100, as the transportation cost is considered part of the item's valuation.
+- However, this charge will not be included in the total payable to the supplier, as it is an internal expense.
+
+| **Field**     | **Amount** |
+|---------------|------------|
+| Item Value    | ₹8,000     |
+| Transportation (Valuation) | ₹100 |
+| **Valuation of Item** | **₹8,100** |
+
+*Note: Transportation costs affect the valuation but not the total payable to the supplier.*
+
+---
+
+## 3. Total and Valuation
+
+If a tax or charge is categorized as **Total and Valuation**, it will be included in both the item's valuation and the total of the purchase transaction.
+
+**Example:**
+
+- Suppose the supplier arranged for transportation, and you are required to pay ₹100 for transportation charges.
+- In this case, the transportation charge should be categorized as **Total and Valuation**. The transportation charge will increase the item’s value from ₹8,000 to ₹8,100, and the total payable will also increase to reflect this cost.
+
+| **Field**     | **Amount** |
+|---------------|------------|
+| Item Value    | ₹8,000     |
+| Transportation (Total & Valuation) | ₹100 |
+| **Valuation of Item** | **₹8,100** |
+| **Total Payable** | **₹8,100** |
+
+*Note: Transportation costs are included in both the item's valuation and the total payable to the supplier.*
+
+---
+
+## 4. General Ledger Impact
+
+Each type of tax or charge has a different impact on the general ledger:
+- **Total**: Affects the accounts payable and reflects the tax/charge that is paid to the supplier.
+- **Valuation**: Affects the item’s valuation and internal expenses, but not the total payable.
+- **Total and Valuation**: Affects both the item’s valuation and the total payable to the supplier.
+
+You can learn more about the general ledger postings for each tax or charge category in the relevant [ERPZ documentation]().
+
+---
+
+## 5. Related Topics
+
+- [Taxes and Charges in Purchase Transactions]()

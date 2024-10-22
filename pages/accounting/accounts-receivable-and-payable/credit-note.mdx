@@ -1,0 +1,50 @@
+---
+title: "Credit Note"
+description: "Learn how to create and manage Credit Notes in ERPZ."
+---
+
+## Credit Note
+
+A **Credit Note** is a document issued by a seller to the customer, notifying them that a credit has been made to their account against the goods returned by the buyer. It is issued for the value of goods returned, which may be less than or equal to the total amount of the order.
+
+### 1. How to Create a Credit Note
+
+Users can create a Credit Note against a Sales Invoice or directly from the Sales Invoice without reference. Please note that to create a Credit Note, the invoice must be paid using a Payment Entry.
+
+1. Navigate to the respective Sales Invoice.
+2. Click on **Create > Return / Credit Note**. This will create a Credit Note from the Invoice.
+3. The Customer and Item details will be automatically fetched as set in the Sales Invoice.
+4. If the Customer had made a partial or full payment, ensure to create a Payment Entry against the original Sales Invoice.
+5. Save and Submit the Credit Note.
+
+**Note:** The Item quantity and Payment amount will be represented as negative values since it involves a return.
+
+### 1.1 How Does Credit Note Affect the Ledger
+
+Once a Payment Entry is created against the original Sales Invoice, the amount will be added to the Customer's account as a negative balance. This means that the next time they make a purchase, this amount will be automatically adjusted.
+
+![Credit Note Ledger]()
+
+Refer to the Sales Invoice page for any other details regarding the credit note process.
+
+### 1.2 No Payment Made Against Sales Invoice
+
+If no payment was made against the original invoice, you can simply cancel the Sales Invoice. However, if only a portion of the items (for example, 5 out of 10) are being returned from an invoice, creating a Credit Note is useful for accurately updating the ledger.
+
+### 2. Example
+
+**Customer Rohan** purchased PVC pipes worth **Rs 300 + taxes**. At the time of delivery, Rohan found that the products were damaged and subsequently returned the product. In this case, a Credit Note will be issued.
+
+The Credit Note with payment entry for the above example would look like this:
+
+![Creating Credit Note]()
+
+### 3. Related Topics
+
+- [Payment Entry]()
+- [Debit Note]()
+- [Sales Return]()
+
+---
+
+For more information on managing Credit Notes and related processes, visit our comprehensive [ERPZ Documentation]().

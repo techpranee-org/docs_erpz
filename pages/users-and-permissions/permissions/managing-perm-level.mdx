@@ -1,0 +1,48 @@
+---
+title: "Managing Perm Level in Permission Manager"
+description: "Learn how to manage field-level permissions using Perm Level in ERPZ."
+---
+
+# Managing Perm Level in Permission Manager
+
+In ERPZ, **Perm Level** allows you to control the visibility and editability of specific fields or sections within a DocType for different user groups. While you can set general visibility or permissions for a DocType through the Permissions Rules, Perm Level provides a more granular control over individual fields or groups of fields.
+
+Each field in a document can be grouped into different levels, identified by a unique number (e.g., 0, 1, 2, 3, etc.). You can then apply a separate set of permissions to each of these levels. By default, all fields are assigned to **Perm Level 0**.
+
+To set the **Perm Level** for a field, you can do so in the **Customize Form** tool.
+
+## 1. Defining Perm Level for Fields
+
+**Perm Level** (short for **Permission Level**) is a way of assigning different permissions for specific fields to different user roles. Let’s walk through an example for better understanding.
+
+In the case of the **Delivery Note**, both **Stock Managers** and **Stock Users** need access to it. However, you might not want Stock Users to see certain fields, like the Amount field, but they should still have access to other fields just like the Stock Managers.
+
+To achieve this, you can assign a **Perm Level** of `2` to the fields you want to hide from the Stock Users. This means:
+
+- **Stock Managers** will have access to all fields, including those at **Perm Level 2**.
+- **Stock Users** will not have access to fields at **Perm Level 2** unless explicitly granted.
+
+Here’s how the permissions are set for this scenario:
+
+![Perm Level Rule]()
+
+## 2. Example: Restricting Edit Access for Certain Roles
+
+Using the same example of the **Delivery Note**, let’s say you want **Stock Users** to be able to view the fields at **Perm Level 2**, but not edit them. In this case, you would configure their permissions to allow **read** access, but not **write** access for **Perm Level 2** fields.
+
+This allows flexibility in defining the interaction each user role can have with various fields.
+
+![Perm Level Rule 2]()
+
+## 3. Understanding Perm Levels
+
+It is important to note that **Perm Levels** do not need to follow any specific order (e.g., 1, 2, 3 or 2, 1, 3). They do not represent a hierarchy. **Perm Levels** are simply used to group fields together for permission management. You can assign any **Perm Level** to a field and then configure permissions accordingly.
+
+### Applying Perm Levels to a Section
+
+If you want to apply the same permission settings to all fields within a section, you can set the **Perm Level** for the section field. This will automatically apply the same **Perm Level** to all fields within that section, simplifying permission management for larger forms.
+
+## 4. Related Topics
+
+- [Role Based Permissions](/users-and-permissions/permissions/role-based-permissions)
+- [User Permissions](/users-and-permissions/permissions/user-permissions)

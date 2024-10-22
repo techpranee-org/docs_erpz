@@ -1,0 +1,176 @@
+---
+title: "Sales Invoice"
+description: "A comprehensive guide on Sales Invoice in ERP systems."
+---
+
+## Sales Invoice
+
+A Sales Invoice is a bill that you send to your Customers against which the Customer makes the payment.
+
+Sales Invoice is an accounting transaction. On submission of Sales Invoice, the system updates the receivable and books income against a Customer Account.
+
+To access the Sales Invoice list, go to: **Home > Accounting > Accounts Receivable > Sales Invoice**
+
+## SO Flow
+
+### 1. Prerequisites 
+
+Before creating and using a Sales Invoice, it is advised to create the following first:
+
+- Item
+- Customer
+
+**Optional:**
+
+- Sales Order
+- Delivery Note
+
+### 2. How to create a Sales Invoice 
+
+A Sales Invoice is usually created from a Sales Order or a Delivery Note. The Customer's Item details will be fetched into the Sales Invoice. However, you can also create a Sales Invoice directly, for example, a POS invoice.
+
+To fetch the details automatically in a Sales Invoice, click on the **Get Items from**. The details can be fetched from a Sales Order, Delivery Note, or a Quotation.
+
+For manual creation, follow these steps:
+
+1. Go to the Sales Invoice list and click on **New**.
+2. Select the Customer.
+3. Set the Payment Due Date.
+4. In the Items table, select the Items and set the quantities.
+5. The prices will be fetched automatically if Item Price is added; else, add a price in the table.
+6. The posting date and time will be set to current; you can edit after you tick the checkbox below Posting Time to make a backdated entry.
+7. Save and Submit. New Sales Invoice.
+
+#### 2.1 Additional options when creating a Sales Invoice 
+
+- **Include Payment (POS)**: If this invoice is for retail sales / Point of Sale. Know more [here](#).
+- **Is Return Credit Note**: Tick this if the customer has returned the Items. To know more details, visit the Credit Note page.
+
+**For India:** e-Way Bill No: According to GST rules, transporters need to carry an e-Way Bill. To know how to generate an e-Way Bill, visit this page.
+
+#### 2.2 Statuses 
+
+These are the statuses that are auto-assigned to Sales Invoice:
+
+- **Draft**: A draft is saved but yet to be submitted.
+- **Submitted**: The invoice is submitted to the system and the general ledger has been updated.
+- **Paid**: Customer has made the payment and a Payment Entry has been submitted.
+- **Unpaid**: Invoice is generated but payment is pending but within the payment due date.
+- **Overdue**: Payment is pending beyond the payment due date.
+- **Canceled**: The Sales Invoice is canceled due to any reason. Once an invoice is canceled, its impact on Account and Stock is undone.
+- **Credit Note Issued**: The Item is returned by the Customer and a Credit Note is created against this invoice.
+- **Return**: It is assigned to Credit Note created against the original Sales Invoice. Though you can also create a standalone Credit Note.
+- **Unpaid and Discounted**: Payment is pending and any ongoing subscription has been discounted using Invoice Discounting.
+- **Overdue and Discounted**: Payment is pending beyond the payment due date and any ongoing subscription has been discounted using Invoice Discounting.
+
+## 3. Features 
+
+### 3.1 Dates 
+
+- **Posting Date**: The date on which the Sales Invoice will affect your books of accounts i.e., your General Ledger. This will affect all your balances in that accounting period.
+- **Due Date**: The date on which the payment is due (if you have sold on credit). The credit limit can be set from the Customer master.
+
+### 3.2 Accounting Dimensions 
+
+Accounting Dimensions lets you tag transactions based on a specific Territory, Branch, Customer, etc. This helps in viewing accounting statements separately based on the selected dimension(s). To know more, check help on Accounting Dimensions feature.
+
+*Note: Project and Cost Center are treated as dimensions by default.*
+
+### 3.3 Customer PO Details 
+
+- **Customer's Purchase Order**: Track customer's PO No. received, primarily to prevent the creation of duplicate Sales Order or Invoice for the same PO received from the Customer. You can do more configuration related to customer's PO No. validation in Selling Settings.
+- **Customer's Purchase Order Date**: The date on which the Customer placed the Purchase Order.
+
+### 3.4 Address and Contact 
+
+- **Customer Address**: This is the Billing Address of the Customer.
+- **Contact Person**: If the Customer is a company, the person to be contacted is fetched in this field if set in the Customer form.
+- **Territory**: A Territory is the region where the Customer belongs to, fetched from the Customer form. The default value is All Territories.
+- **Shipping Address**: Address where the items will be shipped to.
+
+**For India, the following details can be recorded for GST purposes**. You can capture these details in the Address and Customer master, which would be fetched in the Sales Invoice:
+
+- Billing Address GSTIN
+- Customer GSTIN
+- Place of Supply
+- Company GSTIN
+
+### 3.5 Currency 
+
+You can set the currency in which the Sales Invoice order is to be sent. This can be fetched from the Customer master or preceding transactions like Sales Order.
+
+- Wish to select Customer's currency just for the reference of the Customer, whereas accounts posting will be done in the Company's base currency only. Learn more [here](#).
+- Maintain separate receivable account in the Customer's currency. The Receivable for this invoice should be posted in that currency itself. Read Multi Currency Accounting to learn more.
+
+### 3.6 Price list 
+
+If you select a Price List, then the item prices will be fetched from that list. Ticking on **Ignore Pricing Rule** will ignore the Pricing Rules set in Accounts > Pricing Rule.
+
+Read Price List documentation to know more.
+
+### 3.7 The Items table 
+
+*Note: From version-13 onwards we have introduced immutable ledger which changes the rules for cancellation of stock entries and posting backdated stock transactions in ERPNext. Learn more here.*
+
+- **Update Stock**: Ticking this checkbox will update the Stock Ledger on submitting the Sales Invoice. If you've created a Delivery Note, the Stock Ledger will be changed. If you're skipping the creation of Delivery Note, tick this checkbox.
+- **Scan Barcode**: You can add Items in the Items table by scanning their barcodes if you have a barcode scanner. Read documentation for tracking items using barcode to know more.
+- **Grant Commission**: Grant a commission to Sales Person and Sales Partner on the net amount of this line item. If disabled, this line item will be ignored in the calculation of commission.
+
+The Item Code, name, description, Image, and Manufacturer will be fetched from the Item master.
+
+- **Discount and Margin**: You can apply a discount on individual Items percentage-wise or on the total amount of the Item. Read Applying Discount for more details.
+- **Rate**: The Rate is fetched if set in the Price List and the total Amount is calculated.
+- **Drop Ship**: Drop Shipping is when you make the sales transaction, but the Item is delivered by the Supplier. To know more, visit the Drop Shipping page.
+- **Accounting Details**: The Income and Expense accounts can be changed here if you wish to. If this Item is an Asset, it can be linked here. This is useful when you're selling an Asset.
+- **Deferred Revenue**: If the income for this Item will be billed over the coming months in parts, then tick on **Enable Deferred Revenue**. To know more, visit the Deferred Revenue page.
+- **Item Weight**: The Item Weight details per unit and Weight UOM are fetched if set in the Item master.
+- **Stock Details**: The following details will be fetched from the Item master:
+  - Warehouse: The Warehouse from where the stock will be sent.
+  - Available Qty at Warehouse: The quantity available in the selected Warehouse.
+  - Batch No and Serial No: If your Item is serialized or batched, you will have to enter Serial Number and Batch in the Items table. You are allowed to enter multiple Serial Numbers in one row (each on a separate line), and you must enter the same number of Serial Numbers as the quantity.
+  - **Item Tax Template**: You can set an Item Tax Template to apply a specific Tax amount to this particular Item. To know more, visit this page.
+  - **References**: If this Sales Invoice was created from a Sales Order/Delivery Note, it'll be referred here. Also, the Delivered Quantity will be shown.
+  - **Page Break**: will create a page break just before this Item when printing.
+
+### 3.8 Timesheet 
+
+If you want to bill Employees working on Projects on an hourly basis (contract-based), they can fill out Timesheets which consists of their billing rate. When you make a new Sales Invoice, select the Project for which the billing is to be made, and the corresponding Timesheet entries for that Project will be fetched.
+
+If your Company's Employees are working at a location and it needs to be billed, you can create an Invoice based on the Timesheet.
+
+To know more, visit this page.
+
+### 3.9 Taxes and Charges 
+
+The Taxes and Charges will be fetched from the Sales Order or Delivery Note.
+
+Visit the Sales Taxes and Charges Template page to know more about this.
+
+### 3.10 Attachments 
+
+In the Sales Invoice, you can also attach the following:
+
+- Attach any file: You can attach any file (for example, a photo of the Customer’s PO) to the Sales Invoice. 
+- Attach screenshots, tax documents, and any other important documents that need to be shared with the Customer.
+
+### 4. Sending a Sales Invoice 
+
+You can send the Sales Invoice via email. Once you submit the Sales Invoice, you'll see the email button on the Sales Invoice page. You can send a customized message along with the Invoice as well.
+
+### 5. Printing a Sales Invoice 
+
+You can also print the Sales Invoice. There is a **Print** button on the Sales Invoice page. You can choose your Print Format. If you want a customized Print Format, visit Print Format page.
+
+### 6. Payment against Sales Invoice 
+
+To record the Payment against a Sales Invoice, visit the Payment Entry page. You can record partial payments, and there are multiple Payment Entry modes you can choose from.
+
+### 7. Sales Invoice report 
+
+You can view the report of Sales Invoice by going to Reports > Sales Invoice. You can filter the details based on various criteria.
+
+### 8. Credit Note against Sales Invoice 
+
+In case you want to return the Items back to the Supplier or give a refund to the Customer, you can create a Credit Note against the Sales Invoice. 
+
+To create a Credit Note, visit the Credit Note page.

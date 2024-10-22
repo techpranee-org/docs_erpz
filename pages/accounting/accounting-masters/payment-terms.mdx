@@ -1,0 +1,78 @@
+---
+title: "Payment Terms"
+description: "Understand how to set up and manage Payment Terms in ERPZ for efficient payment scheduling."
+---
+
+# Payment Terms
+
+A **Payment Term** helps establish a schedule for when payments will be made.
+
+A Payment Term defines a specific payment slab. For instance, you might set a term for 50% payment on shipping and the remaining 50% upon delivery of the item. You can save your business's payment terms in ERPZ and include them in all relevant documents throughout the sales and purchase cycle. ERPZ will automatically make the necessary General Ledger entries accordingly.
+
+In ERPZ, the Payment Terms form primarily defines portion percentages. The actual payment schedule can be applied easily using the **Payment Terms Template**.
+
+## You can use Payment Terms in the following documents:
+
+- Sales Invoice
+- Purchase Invoice
+- Sales Order
+- Purchase Order
+- Quotation
+
+To access Payment Terms, go to:
+
+`Home > Accounting > Accounting Masters > Payment Term`
+
+## 1. How to Create a Payment Term 
+
+1. Go to the Payment Term list and click on **New**.
+2. Enter a name for the Payment Term (e.g., 50% post-shipment).
+3. Specify the **Invoice Portion**. For example, entering 50 means the portion will be 50 percent of the total invoice amount.
+4. Select a **Due Date Type**.
+5. Under **Credit Days**, enter the number of days after which the remaining amount is due.
+6. Save the Payment Term.
+
+### 1.1 Fields Explained:
+
+- **Payment Term Name**: The name for this Payment Term.
+- **Due Date Based On**: This determines how the due date for the Payment Term is calculated. There are three options:
+  - **Day(s) after invoice date**: The due date is calculated in days from the posting date of the invoice. For example, if you enter 7 on the 20th, the due date will be the 27th.
+  - **Day(s) after the end of the invoice month**: The due date is calculated in days from the last day of the month in which the invoice was created. For example, if you enter 7 in January, the due date will be the 7th of February.
+  - **Month(s) after the end of the invoice month**: The due date is calculated in months from the last day of the month in which the invoice was created. For instance, if you enter 3 on the 20th of January, the due date will be the 20th of April.
+- **Invoice Portion**: The percentage of the total invoice amount that this Payment Term will apply to. A value of 50 means 50% of the invoice or order's Grand Total.
+- **Credit Days (optional)**: The number of days or months credit allowed based on the selected option in the Due Date Based On field. A value of 0 means no credit is allowed.
+- **Description (optional)**: A brief description of the Payment Term.
+
+## 2. Setting Up Discounts on Early Payments 
+
+You can create discounted payment terms so that if payment is made within a specified period, a discount on the invoice value is applied. The following fields define the discount configuration:
+
+- **Discount Type**: Default is Percentage, but you can also set it to Amount.
+- **Discount**: Specify the discount as a Percentage or Amount (e.g., 10% or ₹5,000).
+- **Discount Validity Based On**: This field functions similarly to the Due Date Based On field.
+- **Discount Validity**: The number of days or months the discount is valid with respect to the invoice date (e.g., 10 days after the invoice date).
+
+### 2.1 Payment Terms with Discount
+
+You can link the Payment Terms with an Invoice, and when creating the payment against such an invoice, the discount will be applied automatically.
+
+**Note**: The discount applies only to Payment Entries made from an individual invoice. Independently made Payment Entries, where invoice references are fetched, will not have the early payment discount applied.
+
+## 3. Payment Terms in Converted Documents 
+
+When converting or copying documents in the sales/purchase cycle, the attached Payment Term(s) will also be copied. For instance, when creating a Sales Order from a Quotation, the Due Date in the Payment Terms will reflect the Quotation's due date, which needs to be updated.
+
+For ease of use, you can set a Payment Terms Template and simply reselect it.
+
+## 4. Adding Payment Terms to Documents 
+
+Once you've composed the Payment Terms Template, you can utilize it in sales and purchase transactions. Based on the defined Payment Terms and transaction value, the payment schedule will be created, along with a Due Date for each payment slab.
+
+### 4.1 Payment Schedule
+
+**Note**: The Payment Schedule can be displayed in the Print View using the Print Format Builder.
+
+## 5. Related Topics
+
+- [Sales Invoice]()
+- [Purchase Invoice]()

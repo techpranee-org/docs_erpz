@@ -1,0 +1,40 @@
+---
+title: "Common Party Accounting"
+description: "Learn how to manage unusual transactions through Common Party Accounting in ERPZ."
+---
+
+## Common Party Accounting
+
+**Common Party Accounting** in ERPZ enables users to manage unusual transactions, such as creating a Sales Invoice against a primary Supplier. This functionality allows for the adjustment of Sales Invoices against previous purchases from the same supplier.
+
+### Use Case Example
+
+Assume an ERPZ user who has been making Purchase Invoices against a Supplier wishes to create a Sales Invoice against the same supplier and adjust this Sales Invoice against one of their previous purchases.
+
+### 1. Steps to Enable Common Party Accounting
+
+1. **Enable Common Party Accounting**:
+   - Navigate to **Accounts Settings**.
+   - Enable the **Common Party Accounting** feature.
+
+2. **Create a Link Between Two Parties**:
+   - If the primary role of the party is **Supplier**:
+     - Go to the **Supplier Master**.
+     - Click on **Actions > Link with Customer**.
+   - If the primary role of the party is **Customer**:
+     - Go to the **Customer Master**.
+     - Click on **Actions > Link with Supplier**.
+
+3. **Create a Sales Invoice**:
+   - Create a **Sales Invoice** against the Customer that was set as the Secondary Party in the previous step.
+   - Upon submitting the Sales Invoice, a Journal Entry will be automatically posted, creating an advance balance against the linked Supplier.
+
+![Journal Entry]()
+
+### 2. Reconcile with Purchase Invoice
+
+Now, this Journal Entry advance can be used to reconcile against a Purchase Invoice. This process simplifies the accounting for unusual transactions while maintaining accurate financial records.
+
+---
+
+For more detailed guidance and information on accounting practices within ERPZ, please refer to our comprehensive [ERPZ Documentation]().

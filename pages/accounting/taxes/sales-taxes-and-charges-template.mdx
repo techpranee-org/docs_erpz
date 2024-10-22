@@ -1,0 +1,61 @@
+---
+title: "Sales Taxes and Charges Template"
+description: "Guide to setting up and using Sales Taxes and Charges Templates in ERPZ."
+---
+
+# Sales Taxes and Charges Template
+
+Sales Taxes and Charges can be applied to any item you sell in ERPZ.
+
+The templates created from this form can be used in Sales Orders and Sales Invoices. For tax accounts to be used in these templates, the **Account Type** field must be set as 'Tax' for the particular account. ERPZ allows you to configure other charges (like shipping, insurance, etc.) as part of the tax templates.
+
+To access the Sales Taxes and Charges Template, go to:
+
+`Home > Selling > Settings > Sales Taxes and Charges Template`
+
+
+For more information on setting up taxes, refer to the [Tax Setup page]().
+
+## 1. How to Add Sales Taxes/Charges via a Template
+
+Before creating a new template, note that templates for many common taxes are already available.
+
+1. Go to the Sales Taxes and Charges Template list, and click on **New**.
+2. Enter a title for the tax.
+3. Under **Type**, set how the tax will be calculated and the tax rate. The following options are available:
+   - **Actual**: Enter the amount directly for the expense.
+   - **On Net Total**: Calculate on the net total of all items.
+   - **On Previous Row Amount**: Use for compounding charges, such as cess over previously taxed amounts.
+   - **On Previous Row Total**: Similar to above but applied to the total bill instead of individual items.
+   - **On Item Quantity**: Calculate as `Tax Rate * Item Quantity`.
+4. Select an **Account Head** with preset tax rates or create your own.
+5. Select **Default** to apply this template to new sales transactions automatically.
+6. Click **Save**.
+
+> **Note:** For users in India, selecting 'Is Inter State' will adjust taxes based on the GST codes in the place of supply and customer shipping address.
+
+## 2. Features
+
+### 2.1 Sales Taxes and Charges Table
+
+- **Consider Tax or Charge for**: 
+   - **Total** - Applies to the total of all items.
+   - **Valuation** - Applies to each item.
+   - **Valuation and Total** - Applies to both.
+  
+  [Learn more about the differences here]().
+
+- **Reference Row #**: If the tax is based on "Previous Row Total," select the row number used as a base (default is the previous row).
+- **Is this Tax Included in Basic Rate?**: When checked, the tax amount is considered included in the item price. The system calculates the net amount by deducting the tax amount first and then applying the tax on it.
+- **Account Head**: The ledger under which this tax will be recorded. Selecting preset heads like VAT will auto-fill the rate.
+- **Cost Center**: If the tax/charge represents income (e.g., shipping) or an expense, it must be booked against a cost center.
+- **Description**: This will be printed on invoices/quotes.
+- **Rate**: Set the tax rate (e.g., 14 = 14% tax).
+- **Amount**: The tax amount (e.g., 100.00 = ₹100 tax).
+
+You can override standard tax rates by applying an **Item Tax Template** to an individual item or item group if necessary.
+
+## 3. Related Topics
+
+- [Sales Order]()
+- [Selling Settings]()

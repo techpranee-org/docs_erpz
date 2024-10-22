@@ -1,0 +1,116 @@
+---
+title: "Adding Users in ERPZ"
+description: "Overview of how to add and manage users in ERPZ, including roles, permissions, and login methods"
+---
+
+# Adding Users in ERPZ
+
+Users in ERPZ can be added and managed by the **System Manager**. To add users, navigate to: **Home > Users and Permissions > User**.
+
+There are two main types of users:
+
+- **Website users**: These include customers, suppliers, or external parties who can access the portal but do not have access to system modules.
+- **System users**: Internal users who have access to ERPZ's modules and company data.
+
+> Learn more about the [difference between system and website users](#).
+
+## 1. How to Create a New User
+
+1. Go to the **User list** and click on **New**.
+2. Enter the user’s email address and name.
+3. Save.
+
+### Add User Details
+
+- Enter additional details like **Username** and **Language**.
+- The **Email address** serves as the unique ID for the user.
+
+## 2. Features
+
+### 2.1 Setting Roles
+
+After saving the user, you can assign roles by selecting checkboxes next to the available roles. Each role has predefined permissions. Learn more about roles [here](#). **Role profiles** can be used to select multiple roles at once.
+
+### 2.2 Additional Information
+
+You can provide more details about the user, such as:
+
+- **Gender**
+- **Phone**
+- **Mobile Number**
+- **Birth Date**
+- **Location**
+- **Interests**
+- **Bio**
+- **Banner Image**
+
+You can also enable **Mute Sounds**, which mutes sound notifications when interacting with documents.
+
+### 2.3 Change Password
+
+As a System Manager, you can change a user’s password:
+
+- **Set New Password**: Reset the user's password.
+- **Send Password Update Notification**: Notify the user via email that their password has been changed.
+- **Log out from all devices**: Force log out from all devices when resetting the password.
+
+### 2.4 Document Follow
+
+Users can follow documents in the system and receive email notifications when those documents are updated. [Learn more](#).
+
+### 2.5 Email Settings
+
+Manage the user's email preferences:
+
+- **Send Notifications for Email Threads**: Enable notifications for document-related emails.
+- **Send Me A Copy of Outgoing Emails**: Sends a copy of outgoing emails to the user.
+- **Allowed In Mentions**: Enable the user's name to appear in thread conversations for mentions.
+- **Email Signature**: Set a default email signature for outgoing emails.
+
+### 2.6 Email Inbox
+
+You can subscribe users to your company’s mailing lists. Simply add a new row and select a mailing list (e.g., jobs, support, sales). [Learn more about the Email Inbox](#).
+
+### 2.7 Allow Module Access
+
+System users will have access to all modules based on their role permissions. To restrict module access, uncheck the modules you wish to block.
+
+#### 2.7.1 Module Profiles
+
+**Module Profiles** act as templates to assign access to multiple modules at once. For example, an HR user can be given access to the HR, Payroll, and Attendance modules through a single profile.
+
+### 2.8 Security Settings
+
+- **Simultaneous Sessions**: Specify how many simultaneous login sessions the user is allowed. For cloud-hosted accounts, the number of sessions is limited by the total number of subscribed users.
+- **User Type**: If the user has roles other than Customer, Supplier, or External Partner, they are classified as a **System User** (read-only).
+- **Login After/Before**: Set access times to restrict login to specific hours (e.g., office hours).
+- **Restrict IP**: Restrict the user’s login to specified IP addresses (useful for office-only access).
+
+Security settings also display details like **Last Login**, **Last IP**, and **Last Active** time.
+
+### 2.9 Third-Party Authentication
+
+You can allow users to log in using third-party providers like Facebook, Google, or GitHub. To enable this, create an app with the provider, then input the **Client ID** and **Client Secret** into ERPZ.
+
+### 2.10 API Access
+
+Generate API secret keys from this section using the **Generate Keys** button. These keys enable access to ERPZ data from other applications.
+
+## 3. Login Methods
+
+ERPZ supports multiple login methods:
+
+- **Login with Email**: Standard login using an email address.
+- **Login with Mobile Number**: If enabled in system settings, users can log in using their mobile number.
+
+## 4. Impersonating a User
+
+Administrators can impersonate other users to troubleshoot issues. This feature is new in version 15.
+
+> An activity log is created whenever an Administrator impersonates a user, and the impersonated user will be notified.
+
+## 5. Related Topics
+
+- [Role-Based Permissions]()
+- [User Permissions]()
+- [Document Follow]()

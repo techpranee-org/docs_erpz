@@ -1,0 +1,145 @@
+---
+title: "Journal Entry"
+description: "Learn about Journal Entries in ERPZ, including how to create and manage various types of journal entries."
+---
+
+# Journal Entry
+
+A **Journal Entry** is an entry made in the general ledger and it indicates the affected accounts. It is a multi-purpose transaction where the debit and credit accounts can be selected.
+
+All types of accounting entries, other than Sales and Purchase transactions, are made using the Journal Entry. A Journal Entry is a standard accounting transaction that affects multiple accounts, and the sum of debits is equal to the sum of credits. A Journal Entry impacts the main ledger.
+
+Journal Entries can be used for entering expenses, opening entries, contra entries, bank payments, excise entries, etc. For example, booking running expenses, direct expenses like petrol/transport, sundry expenses, adjustment entries, and adjusting invoice amounts.
+
+**Note**: From version-13 onwards, ERPZ introduced an immutable ledger that changes how the cancellation of accounting entries works. Learn more here.
+
+To access the Journal Entry list, go to:
+
+`Home > Accounting > General Ledger > Journal Entry`
+
+## 1. How to create a Journal Entry
+
+1. Go to the Journal Entry list and click on **New**.
+2. The default Entry Type will be **Journal Entry**, a general-purpose entry type.
+3. Change the Posting Date if necessary.
+4. Select an account from which the amount is debited.
+5. Add a row where the amount will be credited.
+6. Ensure the total debit and credit amounts are equal.
+7. Save and Submit.
+
+Finance Book: You can post this entry to a specific Finance Book. If left blank, the Journal Entry will show up in all Finance Books. This field is only visible if **Enable Finance Books** is checked in the Company master.
+
+### 1.1 Quick Entry
+
+When creating a Journal Entry, a **Quick Entry** button makes creating the entry easier. Enter the amount, select the accounts, and add a remark to populate the 'Accounting Entries' table.
+
+## 2. Features
+
+### 2.1 Accounting Entries
+
+- **Accounting Dimensions**: You can link a Project or Cost Center to track costing separately.
+- **Bank Account No**: The number associated with the bank account will be fetched.
+- **Reference Type**: Link this Journal Entry to another transaction, such as a Sales Invoice or Purchase Order.
+- **Is Advance**: If this is an advance payment by a customer, set this option to "Yes".
+
+### 2.2 Reverse Journal Entry
+
+Click the **Reverse Journal Entry** button to reverse a submitted Journal Entry. This creates a new entry that reverses the debit and credit amounts.
+
+### 2.3 Difference Entry
+
+If the total debit does not equal the total credit, click **Make Difference Entry** to automatically adjust the entry to zero.
+
+### 2.4 Referencing
+
+A reference number and date can be entered manually. This is useful for referencing offline bills.
+
+### 2.5 Multi-Currency Entries
+
+If accounts in different currencies are involved, enable the **Multi-Currency** checkbox. This will fetch the Exchange Rate for the currency.
+
+### 2.6 Journal Entry Template
+
+Select a **Journal Entry Template** to load default values like accounts and company details into the entry.
+
+### 2.7 Print Settings
+
+Journal Entries can be printed with different headings or on company letterhead. You can also specify the **Mode of Payment**, like wire transfer or credit card.
+
+## 3. Journal Entry Types
+
+### 3.1 Journal Entry (General)
+
+This is a general-purpose entry type for booking expenses like travel allowances, or crediting salaries:
+
+- Debit: Expense Account
+- Credit: Bank or Cash Account
+
+### 3.2 Inter-Company Journal Entry
+
+Use this type for transactions between companies within the same group.
+
+### 3.3 Bank Entry
+
+This type is for bank payments, such as paying for entertainment expenses via a company bank account.
+
+### 3.4 Cash Entry
+
+This type is for payments made through a cash account.
+
+### 3.5 Credit Card Entry
+
+This type tracks payments made using a credit card.
+
+### 3.6 Debit Note
+
+A Debit Note is used when returning goods to a supplier.
+
+- Debit: Supplier Account
+- Credit: Purchase Return Account
+
+### 3.7 Credit Note
+
+A Credit Note is issued to a customer when returning goods.
+
+- Debit: Sales Return Account
+- Credit: Customer Account
+
+### 3.8 Contra Entry
+
+Use this entry for transactions like **Cash to Cash**, **Bank to Bank**, or **Bank to Cash** within the same company.
+
+### 3.9 Excise Entry
+
+Track excise duty payments or receipts using this entry type.
+
+### 3.10 Write Offs or Bad Debts
+
+Use this entry type to write off bad debts.
+
+- Debit: Bad Debts Written Off
+- Credit: Customer
+
+### 3.11 Opening Entry
+
+This entry type is used when migrating from another software system to ERPZ.
+
+### 3.12 Depreciation
+
+Record depreciation of assets with this entry type.
+
+- Debit: Depreciation (Expense)
+- Credit: Asset Account
+
+### 3.13 Exchange Rate Revaluation
+
+Use this type for revaluing accounts with multiple currencies.
+
+## 4. Related Topics
+
+- [Inter-Company Journal Entry]()
+- [Credit Note]()
+- [Debit Note]()
+- [Sales Invoice]()
+- [Difference Entry Button]()
+- [Finance Book]()

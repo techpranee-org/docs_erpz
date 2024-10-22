@@ -1,0 +1,49 @@
+---
+title: "Payment Terms Template"
+description: "Learn how to create and manage Payment Terms Templates in ERPZ for efficient transaction handling."
+---
+
+# Payment Terms Template
+
+The **Payment Terms Template** allows you to combine multiple payment terms and apply them in transactions easily.
+
+Once created, the Payment Terms Table can be assigned to specific Customers or Suppliers. When you select a Customer or Supplier in a transaction, the corresponding Payment Terms Template will automatically populate the transaction.
+
+**Example:**
+
+If you receive payments in the slabs of 30-70, you can define Payment Terms for each slab, such as 30% and 70%.
+
+In the Payment Terms Template, you can select all the relevant Payment Terms and define a template that can be applied seamlessly in sales and purchase transactions.
+
+## 1. Prerequisites 
+
+Before creating and using a Payment Terms Template, it is advisable to create the following first:
+
+- **Payment Terms**
+
+## 2. How to Create a Payment Terms Template
+
+A Payment Terms Template specifies how ERPZ should populate the table in the 'Payment Terms Schedule' section of sales and purchase documents.
+
+You should use it if you have a set of standard Payment Terms or for ease of use.
+
+1. Go to the Payment Terms Template list and click on **New**.
+2. Enter a name for the template.
+3. Add the created Payment Terms in the table rows.
+4. Ensure that the total Invoice Portion adds up to 100%.
+5. Save the template.
+
+## 3. Term-Based Payment Allocation
+
+If the **Allocate Payment Based On Payment Terms** option is enabled on a template, payments made against the invoice through **Create → Payment** will have allocations based on the specified terms.
+
+![Template with 'Allocate Payment Based on Payment Terms' enabled.]()
+
+![Invoice made with the above template.]()
+
+![Payment created against the above invoice.]()
+
+## 4. Related Topics
+
+- [Payment Request]()
+- [Invoice Management]()

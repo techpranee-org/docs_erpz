@@ -1,0 +1,58 @@
+---
+title: "Advance Payment Entry"
+description: "Learn how to manage advance payment entries in ERPZ."
+---
+
+# Advance Payment Entry
+
+An Advance Payment is a payment made by a Customer or Supplier before the invoice is issued. This practice is typically associated with high-value transactions.
+
+### Example
+
+Consider a customer, **Jane D'Souza**, who places an order for a luxury furniture item costing ₹24,000. She is required to provide an advance before the furniture house begins work on her order. In this case, she pays ₹10,000 in cash.
+
+In ERPZ, you can create an advance payment entry using the Payment Entry feature. If a Sales Order exists, you can directly create a Payment Entry for the advance amount. Alternatively, you can also create a standalone Payment Entry for the Customer. Similarly, an advance Payment Entry can be created for a Supplier via a Purchase Order.
+
+**Payment Entry from Sales Order:**
+
+> **Note:** If a payment is not linked to an invoice, it is classified as an advance payment. These advance payments are reflected in the Accounts Receivable and Payable reports.
+
+## 1. Prerequisites
+
+Before creating an advance payment entry, ensure the following are set up:
+
+- **Party** (Customer/Supplier)
+- **Payment Account** (Bank or Cash account)
+
+## 2. How to Create an Advance Payment Entry
+
+Once a Sales Order or Purchase Order is submitted, you will find an option to create a Payment against it. Alternatively, you can create a new Payment Entry and manually select the necessary values (like Party and Payment Account). Here are the steps to create an advance payment against a Sales Order:
+
+1. Go to the Sales Order and click on **Make** > **Payment Entry**.
+2. Set/check the accounts.
+3. Save and Submit.
+
+Any Payment Entry that is not linked to an invoice is considered an advance payment by the ERPZ system.
+
+For example, if the Customer has given ₹5,000 as a cash advance, it will be recorded as a credit entry against the Customer's Receivable account. To balance this (according to the double-entry accounting system), ₹5,000 is debited against the Company's Cash account.
+
+### 2.1 Allocating Advance Payment in Invoice
+
+When creating an invoice, you can check for any Advance Payment linked to that Party.
+
+**Fetch Advance Payments in Sales Invoice:**
+
+By clicking the **Get Advance Received** button, the system will fetch any Advance Payment Entries associated with that party. Once fetched, you can allocate the amount of the advance against the invoice. This allocation will reduce the outstanding amount for the invoice immediately.
+
+Finally, save and submit the Sales Invoice.
+
+## 3. Related Topics
+
+- **Sales Invoice**
+- **Journal Entry**
+- **Payment Entry**
+- **Advance under Liability/Asset**
+
+---
+
+This guide provides an overview of how to effectively manage advance payment entries in ERPZ. Ensure that all prerequisites are met to streamline the payment process.

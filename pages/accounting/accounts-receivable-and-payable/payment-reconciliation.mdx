@@ -1,0 +1,48 @@
+---
+title: "Payment Reconciliation"
+description: "Learn how to link payments with invoices in ERPZ."
+---
+
+# Payment Reconciliation
+
+Payment Reconciliation is a process used to link payments with invoices, which is particularly useful in complex scenarios such as the capital goods industry. In these situations, payments may not directly correspond to specific invoices. For example, a customer may send block payments or payments based on a schedule that do not align with your invoices.
+
+To access Payment Reconciliation, navigate to:
+
+`Home > Accounting > Accounts Receivable > Payment Reconciliation`
+
+## 1. How to Match Payments with Invoices
+
+Follow these steps to match payments with invoices:
+
+1. Go to **Payment Reconciliation**.
+2. Select a **Company**.
+3. Choose a **Party Type** and select the corresponding **Party**. The Receivable/Payable account will be selected automatically.
+4. Select the **Bank/Cash account** against which the payments need to be reconciled.
+5. (Optional) To filter records, select a date range for the invoices or set minimum or maximum amounts for both invoices and payment transactions.
+6. Click on the **Get Unreconciled Entries** button. This action will fetch all unlinked invoices and payment transactions from that party, displaying them in the Invoices and Payments tables, respectively.
+7. You can either select specific entries to be allocated or click the **Allocate** button without making a selection to allocate all entries.
+8. The allocation table will populate based on FIFO (First In, First Out) or your selection.
+9. Specify the **Allocated Amount**, which is the amount you want to allocate for reconciliation.
+10. Click on **Reconcile** to reconcile the allocated entries. A message will appear confirming 'Successfully Reconciled'.
+
+**Payment Reconciliation Tool:**
+
+## 2. What Happens on Payment Reconciliation
+
+When invoices are reconciled against:
+
+- **Payment Entry:** A journal entry is not automatically created when reconciliation occurs against a payment entry, as payment entries are associated with linked transactions.
+  
+- **Credit/Debit Note:** A journal entry is automatically created to allocate a credit or debit note to an invoice being reconciled. This automatic creation of a journal entry is necessary since credit/debit notes do not have linked transactions. The resulting journal entry indicates the adjustment of a specific credit/debit note with a particular invoice.
+
+## 3. Related Topics
+
+- **Payment Request**
+- **Sales Invoice**
+- **Purchase Invoice**
+- **Semi-Auto Payment Reconciliation**
+
+---
+
+This guide provides an overview of how to efficiently manage payment reconciliation in ERPZ, ensuring accurate tracking of payments against invoices.

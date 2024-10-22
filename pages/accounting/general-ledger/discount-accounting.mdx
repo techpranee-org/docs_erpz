@@ -1,0 +1,76 @@
+---
+title: "Discount Accounting"
+description: "Learn how to manage discount accounting in ERPZ, including applying discounts to individual items and invoices."
+---
+
+# Discount Accounting
+
+In ERPZ, Discount Accounting allows you to post additional ledger entries for discounts under a separate Discount Account. You can do this for:
+
+- Discounts applied on individual items
+- Additional discounts applied to all items in an invoice
+
+## 1. Steps
+
+### Step 1: Enable Discount Accounting
+
+Go to:
+
+`Accounting > Accounting Masters > Accounts Settings`
+
+Check the **Enable Discount Accounting** box to allow posting of discount entries.
+
+![Enable Discount Accounting checkbox]()
+
+### Step 2: Create a Sales/Purchase Invoice
+
+Create a Sales or Purchase Invoice as usual.
+
+### Step 3: Post Ledger Entries for Discounts on Individual Items
+
+- Expand the row for an item in the Items table.
+- In the **Discount and Margin** section, enter the discount.
+- Scroll down to the **Accounting Details** section, and select the Discount Account.
+
+![Discount Account]()
+
+### Step 4: Post Ledger Entries for Additional Discounts on All Items
+
+- Go to the **Additional Discount** section.
+- Enter the **Additional Discount Amount/Percentage** and the **Additional Discount Account**.
+
+![Additional Discount Account]()
+
+### Step 5: Save and Submit the Invoice
+
+Once you save and submit the invoice, ledger entries for the discount will be created. The following examples show how discount accounting works for both sales and purchase invoices.
+
+#### Sales Invoice Example
+
+![Discount Accounting for Sales Invoices]()
+
+#### Purchase Invoice Example
+
+![Discount Accounting for Purchase Invoices]()
+
+---
+
+## 2. Default Discount Account
+
+You can also set a **Default Discount Account** for an item, which will be fetched automatically when creating an invoice. The visibility of this field depends on whether **Discount Accounting** is enabled in the **Accounts Settings**.
+
+### Steps to Set a Default Discount Account:
+
+1. Open the **Item** document.
+2. Go to the **Item Defaults** table in the **Sales, Purchase, and Accounting Defaults** section.
+3. Expand the row of your choice and enter the **Default Discount Account**.
+
+![Default Discount Account]()
+
+---
+
+## 3. Related Topics
+
+- [Sales Invoice]()
+- [Purchase Invoice]()
+- [Accounting Settings]()

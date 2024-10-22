@@ -1,0 +1,93 @@
+---
+title: "User Permissions in ERPZ"
+description: "Guide on managing User Permissions in ERPZ, including creation and advanced control over document access."
+---
+
+# User Permissions in ERPZ
+
+User Permissions in ERPZ provide a way to restrict user access to specific documents based on certain criteria. This ensures users can only access data relevant to their responsibilities.
+
+By default, **Role-Based Permissions** provide broad access to documents like Sales Orders and Quotations. However, **User Permissions** offer more granular control by restricting access to specific records based on criteria like Company, Customer, or Territory.
+
+## Use Cases for User Permissions
+
+- Restricting a user's access to documents belonging to a specific **Company**.
+- Limiting access to records related to a particular **Customer** or **Territory**.
+
+To access User Permissions, go to:
+
+> **Home > Users and Permissions > User Permissions**
+
+---
+
+## 1. How to Create User Permissions
+
+1. Go to the **User Permissions** list and click **New**.
+2. Select the user to whom the permission applies.
+3. Select the document type (e.g., "Company") that you want to restrict.
+4. In the **For Value** field, select the specific item (e.g., the name of the "Company") to allow.
+5. If you check **Is Default**, the selected value will be used as default for all future transactions by this user.
+
+> Example: If you select the company "Unico Plastics Inc." as the **For Value**, all transactions by this user will be set to this company by default.
+
+> **Note**: Only one default permission can be set for a document type per user.
+
+---
+
+## 2. More User Permission Actions
+
+### 2.1 Advanced Control
+
+Advanced Control offers more options for managing where the User Permissions are applied.
+
+#### 2.1.1. **Applicable For**
+
+You can apply permissions only to specific document types by unchecking **Apply To All Document Types** and selecting a document type (e.g., Sales Orders).
+
+> Example: A user may be allowed to access only **Sales Orders** of a specific company.
+
+> **Note**: If **Applicable For** is not set, the User Permission will apply across all related document types.
+
+#### 2.1.2. **Hide Descendants**
+
+If the document type has a tree structure (e.g., Company), the user will be granted access to the descendants of the selected parent document by default.
+
+- Enabling **Hide Descendants** prevents users from accessing documents related to child records.
+  
+> Example: If "Unico Plastics Inc." has a child company "Unico Toys", enabling **Hide Descendants** will prevent access to "Unico Toys" for the user.
+
+---
+
+### 2.2 Ignoring User Permissions on Certain Fields
+
+To bypass User Permissions for specific fields in a document, you can enable **Ignore User Permissions** in the **Customize Form**.
+
+> Example: If you want to allow all users to view **Assets**, enable **Ignore User Permissions** for the **Company** field in the Asset document.
+
+### 2.3 Strict Permissions
+
+Strict Permissions determine how ERPZ handles user permissions when none are defined for a specific user:
+
+- **Show everything**: The user has access to all records.
+- **Show nothing**: The user is restricted from viewing any records.
+
+You can enable **Apply Strict Permissions** in the **System Settings** to control this behavior.
+
+---
+
+### 2.4 Checking How User Permissions Are Applied
+
+To verify how User Permissions affect a user's access, use the **Permitted Documents for User** report. This report allows you to:
+
+- Select a user and document type to view the specific records they can access.
+- Enable **Show Permissions** to display detailed access levels, such as read/write permissions.
+
+> Example: The user "Bruce" is restricted to the company **Unico Plastics Inc.** in the system.
+
+---
+
+## 3. Related Topics
+
+- [Adding Users](/users-and-permissions/users/user)
+- [Role and Role Profile](/users-and-permissions/users/role-and-role-profile)
+

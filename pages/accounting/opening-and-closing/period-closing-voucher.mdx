@@ -1,0 +1,57 @@
+---
+title: "Period Closing Voucher"
+description: "Learn how to close your financial books at the end of an accounting period using the Period Closing Voucher in ERPZ."
+keywords: ["Period Closing Voucher", "Accounting", "Fiscal Year", "Profit/Loss", "Closing Accounts"]
+sidebar: true
+---
+
+## Period Closing Voucher
+
+A **Period Closing Voucher** in ERPZ ensures that the profit or loss for a specific accounting period is balanced, allowing the books to start fresh for the next period.
+
+At the end of a fiscal year, quarter, or even month, after completing audits, you can close your books of accounts by making special entries like:
+
+- **Depreciation**
+- **Asset Value Adjustments**
+- **Deferring Taxes and Liabilities**
+- **Bad Debts Adjustment**
+- **Booking Profit or Loss**
+
+By doing this, the balances in your Income and Expense Accounts become zero, allowing you to start a new fiscal period with a balanced **Balance Sheet** and fresh **Profit and Loss** account. In ERPZ, after making special entries via **Journal Entry**, the next step is to reset all Income and Expense accounts to zero using the **Period Closing Voucher**.
+
+To access the Period Closing Voucher, go to:
+
+`Home > Accounting > Opening and Closing > Period Closing Voucher`
+
+### 1. How to Create a Period Closing Voucher
+
+1. Go to the **Period Closing Voucher** list and click on **New**.
+2. Set a **Posting Date**.
+3. Select the account, typically the **Reserves and Surplus** account.
+4. Add any necessary remarks.
+5. Click **Save** and **Submit**.
+
+### 1.2 The Fields Explained
+
+- **Transaction Date**: The date the Period Closing Voucher is created.
+- **Posting Date**: The date when the closing entry should be executed (for example, if the Fiscal Year ends on December 31, select this date as the Posting Date).
+- **Closing Fiscal Year**: The fiscal year you are closing.
+- **Book Cost Center Wise Profit/Loss**: If enabled, the closing entries will be booked based on the cost center of income and expense transactions.
+
+### 1.3 What Happens After Submission?
+
+Once the Period Closing Voucher is submitted, it will generate accounting entries (GL Entry). This process zeroes out all Income and Expense Accounts, transferring the Profit/Loss balance to the Closing Account.
+
+Typically, a **liability account** such as **Reserves and Surplus**, **Revenue Reserve**, or **Owner’s Capital** is used as the Closing Account.
+
+If **Book Cost Center Wise Profit/Loss** is enabled, the net profit and loss will be booked by individual cost centers. Below is an example of closing entries made for two sales transactions with different cost centers.
+
+![Cost Center-wise Period Closing Voucher]()
+
+> **Note**: If additional accounting entries are made after the Period Closing Voucher for the closing fiscal year, a new Period Closing Voucher must be created to transfer the remaining Profit/Loss balance into the Closing Account.
+
+### 2. Related Topics
+
+- [Fiscal Year]()
+- [Tax Withholding Category]()
+- [Accounting Period]()

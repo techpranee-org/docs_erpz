@@ -1,7 +1,10 @@
 {
     "documentation": "Home",
     "introduction": "Introduction",
+    "products-and-services": "Products and Services",
     "settings": "Settings",
+    "users-and-permissions": "Users and Permissions",
+    "accounting": "Accounting",
     "buying": "Buying",
     "selling": "Selling",
     "stock": "Stock",

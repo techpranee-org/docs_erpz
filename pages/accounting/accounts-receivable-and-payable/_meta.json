@@ -1,0 +1,17 @@
+{
+    "introduction": "Introduction",
+    "purchase-invoice": "Purchase Invoice",
+    "purchase-invoice-for-services": "Purchase Invoice for Services",
+    "debit-note": "Debit Note",
+    "sales-invoice": "Sales Invoice",
+    "credit-note": "Credit Note",
+    "common-party-accounting": "Common Party Accounting",
+    "payment-request": "Payment Request",
+    "payment-entry": "Payment Entry",
+    "payment-order": "Payment Order",
+    "payment-ledger": "Payment Ledger",
+    "advance-payment-entry": "Advance Payment Entry",
+    "dunning": "Dunning",
+    "payment-reconciliation": "Payment Reconciliation",
+    "semi-auto-payment-reconciliation": "Semi-Auto Payment Reconciliation"
+}

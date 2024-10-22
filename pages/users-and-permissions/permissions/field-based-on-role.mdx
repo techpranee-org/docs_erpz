@@ -1,0 +1,49 @@
+---
+title: "Field Level Permission Management"
+description: "Learn how to restrict field access based on roles using Perm Level in ERPZ."
+---
+
+# Field Level Permission Management
+
+In ERPZ, restricting access to specific fields based on user roles can be easily managed using **Perm Level**. This functionality is essential for organizations that want to control the visibility or editability of certain fields for specific roles.
+
+Let's walk through a scenario where your organization doesn't want an **Employee** (e.g., **Accounts User**) to edit the **Item Rate** field while creating a Sales Invoice. To achieve this, we can make the **Item Rate** field read-only for the **Accounts User** role.
+
+## 1. Setting Field Permissions Using Perm Level
+
+Follow these steps to restrict the field access:
+
+1. Navigate to **Customize Form**, and select the **DocType** as **Sales Invoice Item**.
+2. Scroll to the **Item Rate** field and expand its settings.
+
+    ![Customize Form - Item Rate]()
+
+3. In the **Perm Level** field, enter the desired level (e.g., 0, 1, 2, etc.), and then **Save** the customization.
+
+    ![Set Perm Level]()
+
+## 2. Configuring Role Permissions
+
+Once you've set the **Perm Level** for the field, follow these steps to define the permissions for the user role:
+
+1. Go to the **Role Permission Manager**, click **Add a New Rule**, and select the **Document Type** as **Sales Invoice** and the **Role** as **Accounts User**.
+2. Set the **Perm Level** as 2 and grant the Employee **Read** access for that level.
+
+    ![Add Rule in Role Permission Manager]()
+
+Here’s how the **Role Permissions Manager** will display the new rule with **Perm Level 2**:
+
+    ![Role Permissions Manager Rule]()
+
+## 3. Outcome: Restricted Field in Sales Invoice
+
+Now, when an **Accounts User** creates a **Sales Invoice**, they will only be able to **read** the **Item Rate** field, which will automatically be fetched from the **Price List**. The user won’t have the ability to edit the rate, maintaining the integrity of the data.
+
+    ![Sales Invoice - Read Only Item Rate]()
+
+## 4. Related Topics
+
+- [Understanding Perm Level]()
+- [Managing Permissions in ERPZ]()
+
+For more information on **Perm Level** and managing permissions in ERPZ, refer to the above links.

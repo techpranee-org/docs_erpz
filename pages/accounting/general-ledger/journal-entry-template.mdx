@@ -1,0 +1,40 @@
+---
+title: "Journal Entry Template"
+description: "Learn how to create and use Journal Entry Templates to streamline accounting entries in ERPZ."
+---
+
+## Journal Entry Template
+
+A **Journal Entry Template** in ERPZ allows you to predefine a list of accounts and settings that can be selected while making a Journal Entry, simplifying the process and ensuring consistency in accounting transactions.
+
+### 1. How to Create and Use a Journal Entry Template
+
+To access the **Journal Entry Template**, navigate to:
+
+`Home > Accounting > General Ledger > Journal Entry Template`
+
+#### Steps to Create a Journal Entry Template:
+
+1. Go to the **Journal Entry Template** list and click on **New**.
+2. Fill in the following details:
+   - **Template Title**: The name that will be used to select the template in the Journal Entry form.
+   - **Company**: The default company defined in Global Settings will be selected. You can change it to another company if needed.
+   - **Entry Type**: Select the entry type from the options available (e.g., Journal Entry, Opening Entry, Bank Entry, Cash Entry).
+     - **Opening Entry**: Loads all accounts and populates the "Accounting Entries" table.
+     - **Bank Entry**: Loads the default bank account, if set.
+     - **Cash Entry**: Loads the default cash account, if set.
+   - **Is Opening**: This field will automatically be set to "Yes" if **Opening Entry** is selected.
+   - **Series**: Select a naming series for the journal entry.
+   - **Accounting Entries**: Add a predefined list of accounts for the template.
+
+3. Save the template.
+4. Go to the **Journal Entry** section and click on **New**.
+5. In the **From Template** field, select the created template. The accounts and options saved in the template will automatically load into the form. Note that this will clear any existing entries in the **Accounting Entries** table, but you can add more accounts in addition to those fetched from the template.
+
+### 2. Creating Journal Entry From Template
+
+By using the **Journal Entry Template**, users can expedite the process of journal entries, ensuring that repetitive or frequent transactions follow a predefined structure, thereby reducing errors and saving time.
+
+### 3. Related Topics
+- [Journal Entry]()
+- [Opening Balance]()
