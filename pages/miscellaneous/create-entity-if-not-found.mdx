@@ -1,0 +1,42 @@
+---
+title: ERPZ Search with "Add New" Functionality
+description: Guide for implementing a search feature with dynamic "Add New" options in ERPZ.
+---
+
+# ERPZ Search with "Add New" Functionality
+
+In ERPZ, when users search for a product, category, or any other entity, they can quickly add missing options directly from the search interface. If no matching options are available, users can click on **left arrow** to open a form to add the new item from the search dropdown. This feature supports various entities like products, categories, workspaces, warehouses, and more.
+
+## Feature Overview
+
+1. **Search and Dropdown Suggestions**
+   - Users can search for existing options in ERPZ, such as products or categories, using a search bar.
+   - As they type, relevant suggestions appear in a dropdown list below the search input.
+   - The dropdown provides a seamless way to navigate existing options quickly.
+
+2. **"Add New" Trigger for Missing Options**
+   - If no matching options are found, a prompt will appear at the bottom of the dropdown.
+   - A **left arrow icon** on the right side of the dropdown will appear, labeled as an "+ Add" option.
+   - Clicking this arrow icon will initiate the "Add New" process.
+
+   ![Add New Icon](/images/docs/miscellaneous/add1.png)
+
+3. **Right-Side Drawer with Dynamic Form**
+   - When the "Add New" option is selected, a form slides out from the right side of the screen in a drawer.
+   - This form is dynamically generated based on the item type the user is attempting to add, whether it's a product, category, workspace, or warehouse.
+   - The form includes all necessary fields relevant to the chosen entity, and validations ensure that required information is provided.
+
+   ![Add New Form](/images/docs/miscellaneous/add2.png)
+
+4. **Saving and Updating the Dropdown**
+   - After filling in the form, users can submit it to add the new item.
+   - Once the submission is successful, the dropdown is updated in real time to include the newly added option, allowing users to proceed immediately.
+   - A success message is displayed, and the drawer automatically closes.
+
+## Benefits
+
+- **Streamlined Workflow**: Users can add new items directly from the search interface without navigating away, saving time.
+- **Dynamic and Flexible**: This process adapts to various entity types, making it versatile for multiple ERPZ modules.
+- **Real-Time Updates**: Newly added items appear instantly, providing users with a seamless and efficient experience.
+
+By allowing users to quickly add missing items directly from the search, this feature enhances productivity and minimizes interruptions in their workflow.

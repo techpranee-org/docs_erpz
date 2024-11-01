@@ -1,0 +1,177 @@
+---
+title: "Warehouses"
+description: "Overview of warehouses in ERPZ and how to create a new warehouse."
+---
+
+# Warehouses
+
+**A warehouse is a commercial building used for the storage of goods.** Warehouses are essential in industries such as manufacturing, importing, exporting, wholesale, transportation, and customs.
+
+They are typically large, plain buildings located in industrial areas of cities, towns, or villages. These warehouses often have loading docks to facilitate the loading and unloading of goods from trucks.
+
+In ERPZ, the concept of **Warehouse** extends beyond traditional storage spaces and can also represent various storage locations within your organization. You can create sub-Warehouses to represent more granular storage locations, such as a shelf within a larger room.
+
+This structure can form a hierarchical tree like the following:
+
+>*Warehouse > Zone > Aisle > Rack > Shelf > Bin*
+
+
+## How to Create a Warehouse in ERPZ
+
+To create a new Warehouse in ERPZ, follow these steps:
+
+### 1. Navigate to Warehouses  
+
+   From the dashboard,go to **Stores** section and click on **Warehouses** to access the Warehouse list.
+
+   >**Dashboard > > Stores(Inventory) > Warehouses**
+
+   ![Navigate to Warehouses](/images/docs/stores/warehouses/warehouse.png)
+
+### 2. Click on "Add"  
+
+   In the Warehouse list, click on the **Add** button. This will open a form where you can fill in the necessary details.
+
+    ![Click on Create Warehouse](/images/docs/stores/warehouses/warehouse.png)
+
+### 3. Fill in the Warehouse Details
+
+#### 3.1 Default Warehouse 
+
+     Check the checkbox to mark this Warehouse as the default one, if applicable.
+
+    ![Select Default from CheckBox](/images/docs/stores/warehouses/warehouseCheck.png)
+
+#### 3.2 Warehouse Name  
+
+     Enter the name of the warehouse.
+
+    ![Enter Warehouse Name](/images/docs/stores/warehouses/warehouseName.png)
+
+#### 3.3 Warehouse Code  
+
+     You can manually enter a code for the warehouse. If left blank, the code will be automatically generated when the warehouse is created.
+
+    ![Enter Warehouse Code](/images/docs/stores/warehouses/warehouseCode.png) 
+
+#### 3.4 Warehouse Type
+
+    When creating a warehouse in ERPZ, you can select from several different types based on the function and location of the warehouse. Below is a brief description of each warehouse type to help you make the right selection:
+
+    ![Select Warehouse Type from Dropdown](/images/docs/stores/warehouses/warehouseType.png) 
+
+    
+- **Plant Warehouse**:  
+  A plant warehouse is typically located within or adjacent to a manufacturing facility. It is used to store raw materials, work-in-progress goods, and finished products. This type of warehouse supports production and ensures smooth operations within the plant.
+
+- **Regional Warehouse**:  
+  A regional warehouse is positioned to serve a specific geographical area. It helps streamline distribution by storing goods closer to customers in that region, reducing delivery times and shipping costs.
+
+- **Central Warehouse**:  
+  A central warehouse acts as the main hub for storage and distribution within an organization. It typically holds larger quantities of goods and supplies products to smaller, regional, or local warehouses.
+
+- **Field Warehouse**:  
+  A field warehouse is located near or at a customer or project site. It holds specific inventory to support ongoing work in the field, ensuring that required goods are readily available where they are needed.
+
+- **Transit Warehouse**:  
+  A transit warehouse is a temporary storage facility used when goods are in transit between locations. It helps organize and hold products during the shipping process, preventing bottlenecks and ensuring smooth logistics.
+
+- **Bonded Warehouse**:  
+  A bonded warehouse is a secure storage facility for goods that are awaiting customs clearance. Goods stored in a bonded warehouse are usually imported items that have not yet been cleared for domestic distribution, allowing for deferred payment of import duties.
+
+These types of warehouses serve different purposes depending on your operational needs. Choose the type that best fits the warehouse's role within your supply chain.
+
+#### 3.5 Address  
+
+When creating a warehouse in ERPZ, you can assign an address by using the search bar or creating a new address via the map feature. Follow these steps to select or create an address:
+
+1. **Search for an Address** 
+
+   In the address field of the warehouse creation form, start typing the address in the search bar. If the address exists in the system, it will appear in the dropdown list. You can select the address from the list, and all the fields (e.g., street address, locality, city, state, postal code, country) will be automatically populated based on your selection.
+
+   ![Select Warehouse Address from Dropdown](/images/docs/stores/warehouses/warehouseAddress.png) 
+
+2. **Add a New Address Using the Map**  
+
+   If the desired address does not appear in the dropdown list, you can add a new address by clicking on the map icon located to the right of the search bar. This will open a map interface where you can:
+
+   ![Open Map by Clicking Map Button](/images/docs/stores/warehouses/warehouseMap.png)
+
+   - **Pinpoint the Warehouse Location**: 
+
+     Use the map to select the exact location of the warehouse.
+
+     ![Map](/images/docs/stores/warehouses/warehouseMap1.png)
+   
+   - **Fill in Address Details**:  
+
+     After selecting the location, a form will appear where you can manually enter the following details:
+     - Street Address
+     - Locality
+     - Door Number
+     - City
+     - State
+     - Postal Code
+     - Country
+
+    ![Fill the address](/images/docs/stores/warehouses/warehouseMap2.png)
+
+3. **Search Address on the Map** 
+
+   You can also search for an address directly on the map. Enter the desired location in the map's search bar. If a related address is found, it will appear in a dropdown, and you can select it. Upon selection, all the address fields will be automatically filled with the corresponding information.
+
+   ![Search Address](/images/docs/stores/warehouses/warehouseMap3.png)
+
+   ![Select Address from Dropdown](/images/docs/stores/warehouses/warehouseMap4.png)
+
+4. **Save the Address** 
+
+   Once you have either selected or entered the address details, click the **Done** button to confirm the address. 
+
+5. **Complete the Process** 
+
+   After saving, the address will appear in the address section of the warehouse creation form. Click **Done** to finalize the address selection for your warehouse.
+
+   ![Selected Address](/images/docs/stores/warehouses/warehouseSelectedAddress.png)
+
+By following these steps, you can either select an existing address or create a new one using the map tool, ensuring that the warehouse location is correctly recorded in ERPZ.
+
+
+#### 3.6 Primary Contact  
+
+     Select the primary contact for the warehouse from the dropdown list.
+
+     ![Selected Primary Contact](/images/docs/stores/warehouses/primaryContact.png)
+
+#### 3.7 Parent Warehouse  
+
+    When assigning a parent warehouse during the creation of a new warehouse, you can either select an existing warehouse or create a new one if it does not exist. Here’s how to do it:
+
+1. **Search for the Parent Warehouse** 
+
+   In the parent warehouse field, use the search bar to search for the name of the existing warehouse. If the warehouse is available, it will appear in the dropdown list. Simply select it to assign it as the parent warehouse.
+
+   ![Search Warehouse](/images/docs/stores/warehouses/parent.png)
+
+2. **Create a New Warehouse** 
+
+   If the desired warehouse does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+3. **Finalize the Parent Warehouse Selection**
+
+   After creating or selecting the parent warehouse, it will be automatically assigned to the current warehouse you are creating.
+    
+   ![Parent](/images/docs/stores/warehouses/parent5.png)
+
+#### 3.8 Other Contact  
+     Select other contacts for the warehouse from the dropdown list, if needed.
+
+     ![Selected Other Contact](/images/docs/stores/warehouses/otherContact.png)
+
+
+### 4. Save the Warehouse  
+   Once all fields have been filled, click the **Save** button to create the warehouse.
+
+   ![Click Save](/images/docs/stores/warehouses/save.png)
+
+After completing these steps, your new warehouse will be created and added to the list of warehouses in ERPZ.

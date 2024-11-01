@@ -1,0 +1,163 @@
+---
+title: Goods Receipt Note (GRN) in ERPZ
+description: Overview of Goods Receipt Note (GRN) in ERPZ and its purpose in inventory management.
+---
+
+# Goods Receipt Note (GRN) in ERPZ
+
+A **Goods Receipt Note (GRN)** in ERPZ is a document used to confirm the receipt of goods from a supplier. It records details about items received, quantities, and the condition of goods, making it an essential part of inventory and procurement management.
+
+## 1. Purpose of GRN
+
+- **Verification of Goods Received**: The GRN serves as an official acknowledgment that ordered goods have been received. It helps verify that the items match the purchase order in terms of type, quantity, and quality.
+
+- **Inventory Management**: By recording incoming items, the GRN updates stock levels in ERPZ. This enables accurate tracking of inventory and helps prevent stock discrepancies.
+
+- **Financial Control**: The GRN provides a reference for the accounts payable team to match against supplier invoices. This ensures that payments are only made for goods that have been received and are in good condition.
+
+- **Audit and Accountability**: GRNs act as documented proof of goods received, which can be useful for audits and inventory reconciliation. It holds suppliers accountable for delivering goods as per the order specifications.
+
+The GRN process in ERPZ helps organizations maintain transparency, improve inventory accuracy, and ensure effective control over procurement activities.
+
+
+## 2. Steps to Create a New GRN
+
+#### 2.1 Navigate to GRN Section
+
+   - From the **ERPZ dashboard**, go to the **Stores** section and select **GRN**.
+   - Here, you’ll find a list of existing GRNs. 
+
+   > **Dashboard > Stores(Inventory) > GRN (Goods Receipt)**
+
+   ![Navigate to GRN](/images/docs/stores/grn/grn1.png)
+
+---
+
+#### 2.2 Initiate a New GRN
+
+   - Click on the **Add** button in the top right corner of the list view to create a new GRN.
+
+   ![Click Add](/images/docs/stores/grn/grn2.png)
+
+   - This opens a form with two main parts: **Order Information** and **Product Details**.
+
+   ![GRN Form](/images/docs/stores/grn/grn3.png)
+
+---
+
+#### 2.3 Fill in Order Information
+
+   - Complete all fields in the **Order Information** form to proceed to Product Details. This section is mandatory and organized into several parts:
+
+   - **Order Details**:
+     - **Purchase Order**: A dropdown list where you select the relevant purchase order (mandatory).
+
+     If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+     ![Select Purchase Order](/images/docs/stores/grn/grn4.png)
+
+     - **Delivery Note Number**: Field to enter the delivery note reference.
+
+     ![Enter Delivery Note Number](/images/docs/stores/grn/grn5.png)
+
+   - **Warehouse**:
+     - **Warehouse**: A dropdown list to select the receiving warehouse.
+
+     ![Select Warehouse](/images/docs/stores/grn/grn6.png)
+
+     If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+   - **Delivery Details**:
+     - **Delivery Company**: Field for the name of the delivery company.
+
+     ![Enter Delivery Details](/images/docs/stores/grn/grn7.png)
+
+     - **Delivery Person Name**: Field for the name of the delivery person.
+
+     ![Enter Delivery Person Name](/images/docs/stores/grn/grn8.png)
+
+     - **Delivery Person Number**: Contact number for the delivery person.
+
+     ![Enter Delivery Person Number](/images/docs/stores/grn/grn9.png)
+
+     - **Delivery Contact Email**: Email address for delivery-related communication.
+
+     ![Enter Delivery Contact Email](/images/docs/stores/grn/grn10.png)
+
+   - **Indirect Charges**:
+     - **Shipping Charges**: Field to record any shipping costs.
+
+     ![Enter Shipping Charges](/images/docs/stores/grn/grn11.png)
+
+     - **Handling Charges**: Field for handling fees.
+
+     ![Enter Handling Charges](/images/docs/stores/grn/grn12.png)
+
+     - **Additional Charges**: Field for any extra charges.
+
+     ![Enter Additional Charges](/images/docs/stores/grn/grn13.png)
+
+   - **Receipts**:
+     - **Upload Receipts**: Option to upload any relevant receipts as supporting documentation.
+
+     ![Upload Receipts](/images/docs/stores/grn/grn14.png)
+
+---
+
+#### 2.4 Proceed to Product Details
+
+   - Once all order information fields are filled, click **Go to Products** to continue to the **Product Details** section.
+
+---
+
+#### 2.5 Fill in Product Details
+
+   - The **Items** section displays a list of products from the selected purchase order on the left-hand side.
+   - To edit product details, select an item from the list. A form on the right-hand side will display with fields to update product-specific information:
+
+   ![Product Details](/images/docs/stores/grn/grn15.png)
+
+     - **Product**: Shows the selected product, which can be changed by searching for another item.
+
+     ![Select Product](/images/docs/stores/grn/grn16.png)
+
+     - **Quantity**: Specifies the quantity received.
+
+     ![Enter Quantity](/images/docs/stores/grn/grn17.png)
+
+     - **UOM (Unit of Measure)**: Allows you to set the unit of measure.
+
+     ![Select UOM](/images/docs/stores/grn/grn18.png)
+
+     - **Batch Number**: Field for entering the batch number if applicable.
+
+     ![Enter Batch Number](/images/docs/stores/grn/grn19.png)
+
+     - **Expiry Date**: Date field to record the product's expiry date if relevant.
+
+     ![Select Expiry Date](/images/docs/stores/grn/grn20.png)
+
+     - **Received Condition**: Dropdown list to specify the condition of the received goods.
+
+     ![Select Received Condition](/images/docs/stores/grn/grn21.png)
+
+     - **Remarks**: Add remarks for the product to mention anything special.
+
+     ![Add Remarks](/images/docs/stores/grn/grn22.png)
+
+     - **Location**: Dropdown list to specify the location of the item inside a warehouse.
+
+     ![Select Location](/images/docs/stores/grn/grn23.png)
+
+     - **Upload Images**: Upload any image relavant to the item.
+
+     ![Upload Images](/images/docs/stores/grn/grn24.png)
+
+---
+
+#### 2.6 Save the GRN
+
+   - After reviewing and editing all products, click the **Create GRN** button at the bottom of the screen to finalize the Goods Receipt Note.
+   - The new GRN will now be saved and listed in the GRN section.
+
+Creating a GRN in ERPZ helps in tracking received goods accurately, ensuring that inventory and financial records are up-to-date.

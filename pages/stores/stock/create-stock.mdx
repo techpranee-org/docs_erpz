@@ -1,0 +1,158 @@
+---
+title: "How to Create New Stock for a Product"
+description: "A guide on creating new stock for products, including setting minimum and maximum levels, unit of measure, location, and alerts."
+---
+
+
+# How to Create New Stock for a Product in ERPZ
+
+To create new stock for a product, follow the steps below:
+
+1. **Navigate to the Purchase Request Section** 
+
+  - From the ERPZ dashboard, go to the **Stores** section.
+  - Select **Stock** to view the list of existing stocks.
+
+  > **Dashboard > Stores(Inventory) > Stock**
+
+  ![Navigate to Stock](/images/docs/stores/stock/s1.png)
+
+2. **Adding a New Stock**
+   - To create a new stock, click the **Add** button located at the top right corner of the list view.
+   - A popup will appear with the following fields:
+
+    ![Popup](/images/docs/stores/stock/s2.png) 
+
+     - **Product**: Select a product from the dropdown list. If desired option is not available, then please refer [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the process to create one.
+
+    ![Select Product](/images/docs/stores/stock/s3.png) 
+
+     - **Warehouse**: Select a warehouse from the dropdown list. If the desired warehouse does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+    ![Select Warehouse](/images/docs/stores/stock/s4.png) 
+
+   - After selecting both Product and Warehouse, you have two options:
+     - **Save**: Click **Save** to create a basic Material Request.
+
+     ![Click Save](/images/docs/stores/stock/s5.png) 
+
+     - **Add All Material Request Details**: Click this button to open a detailed Material Request form.
+
+    ![Stock Detailed Form](/images/docs/stores/stock/s6.png) 
+
+3. **Filling in Stock Details** 
+   The form contains the following key fields:
+
+   - **Product**
+     Search for the product by typing its name. If the product is available, it will appear in the dropdown. 
+
+     ![Select Product](/images/docs/stores/stock/s7.png)
+
+     If desired option is not available, then please refer [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the process to create one.
+
+   - **Warehouse**
+     Search for the warehouse by name. If available, it will appear in the dropdown. 
+
+     ![Select Warehouse](/images/docs/stores/stock/s8.png)
+
+     If the desired warehouse does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+  - **In Hand**
+     Enter the current quantity of the product in hand.
+
+     ![Enter In Hand](/images/docs/stores/stock/s9.png)
+
+  - **UoM (Unit of Measure)**
+     Select the appropriate unit of measure (UoM) for the product from the dropdown options. To understand better about different UoMs, please refer [Unit of Measure(UoM)](/stores/stock/uom)
+
+     ![Select UoM](/images/docs/stores/stock/s10.png)
+
+  - **Inward Reserve**
+     Specify the reserve stock for inward movements. 
+
+     ![Enter Inward Reserve](/images/docs/stores/stock/s11.png)
+
+   - **Min Level**
+     Enter the minimum stock level for the product.
+
+     ![Enter Min Level](/images/docs/stores/stock/s12.png)
+
+   - **Max Level**
+     Enter the maximum stock level for the product.
+
+     ![Enter Max Level](/images/docs/stores/stock/s13.png)
+
+   - **Reorder Level**
+     Enter the stock level at which the product should be reordered.
+
+     ![Enter Reorder Level](/images/docs/stores/stock/s14.png)
+
+   - **Outward Reserve**
+     Specify the reserve stock for outward movements. 
+
+     ![Enter Outward Reserve](/images/docs/stores/stock/s15.png)
+
+   - **Shelf Life in Days**
+     Specify the shelf life of the product in days.
+
+     ![Enter Shelf Life in Day](/images/docs/stores/stock/s16.png)
+   
+   - **Alerts**
+     Select an alert option for the product:
+     - **Low Stock**: Indicates stock is below the minimum level.
+     - **Out of Stock**: Indicates no stock is available.
+     - **Excess Stock**: Indicates stock exceeds the maximum level.
+     - **Near to Expiry**: Warns that stock is approaching its expiry date.
+
+     ![Select Alerts](/images/docs/stores/stock/s17.png)
+   
+   - **Location**
+     Choose the location (based on warehouse names) from the dropdown. If desired option is not available, then please refer [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the process to create one.
+
+     ![Select Location](/images/docs/stores/stock/s18.png)
+
+   - **Initial Stock Date**
+     Select the date when the initial stock was recorded. By default current date is set but you can change the date using calender.
+
+     ![Select Initial Stock Date](/images/docs/stores/stock/s19.png)
+   
+   - **Initial Stock**
+     Enter the quantity of the initial stock.
+
+     ![Enter Initial Stock](/images/docs/stores/stock/s20.png)
+
+   - **Max Daily Consumption**
+     Specify the maximum daily consumption for the product.
+
+     ![Enter Max Daily Consumption](/images/docs/stores/stock/s21.png)
+
+   - **Average Lead Time Days**
+     Enter the average lead time (in days) for receiving stock after placing an order.
+
+     ![Enter Average Lead Time Days](/images/docs/stores/stock/s22.png) 
+
+   - **Avg Daily Consumption**
+     Enter the average daily consumption of the product.
+
+     ![Enter Average Daily Consumption](/images/docs/stores/stock/s23.png) 
+
+   - **Avg Value**
+     Enter the average value of the stock.
+
+     ![Enter Average Value](/images/docs/stores/stock/s24.png) 
+
+   - **Exact Value**
+     Enter the exact value of the stock.
+
+     ![Enter Average Value](/images/docs/stores/stock/s25.png)
+   
+4. **Saving the Stock** 
+   - After filling in all required fields and adding items, click **Save** to create the new stock.
+
+   ![Save](/images/docs/stores/stock/save.png)
+
+   - The new stock will appear in the list view, confirming successful creation.
+
+---
+
+Follow these steps to ensure accurate stock creation and management.

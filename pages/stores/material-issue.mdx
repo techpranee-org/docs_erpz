@@ -1,0 +1,122 @@
+---
+title: Material Issue in ERPZ
+description: Overview of Material Issue functionality in ERPZ for managing item issuance from a warehouse and step-by-step guide on how to create a new material issue in ERPZ from the Stores module.
+---
+
+# Material Issue in ERPZ
+
+The **Material Issue** entry in ERPZ is used to manage the issuance of items from a warehouse. When a material issue is submitted, the stock of the specified items is automatically deducted from the source warehouse inventory.
+
+## 1. Common Uses for Material Issue
+- **Low-Value Consumables**: Material Issues are commonly used for low-cost consumable items like office supplies, production consumables, or maintenance materials.
+- **Stock Reconciliation**: Material Issue entries can also be created to adjust stock levels for serialized or batched items, ensuring accurate stock tracking and reporting.
+
+By using Material Issues, ERPZ helps businesses efficiently manage the flow and availability of consumable items, maintain accurate stock records, and streamline inventory reconciliation.
+
+
+
+## 2. Creating a Material Issue in ERPZ
+
+To create a material issue in ERPZ, you should navigate through the Stores module, where they can view, add, and manage material issues. This guide walks through each step required to create a new material issue, including filling in essential details and adding items.
+
+### 2.1 Steps to Create a Material Issue
+
+1. **Access the Material Issue Section**  
+   - From the ERPZ dashboard, navigate to the **Stores** module.
+   - Select **Material Issue** to enter the material issue management screen. Here, you can see the list of existing material issues.
+
+   > **Dashboard > Stores(Inventory) > Material Issue**
+
+   ![Navigate to Material Issue](/images/docs/stores/material-issue/mi1.png)
+
+2. **Adding a New Material Issue** 
+   - To create a new material issue, click on the **Add** button located at the top right corner of the list.
+   - This will open a form with fields to enter the material issue details.
+
+   ![Material Issue Form](/images/docs/stores/material-issue/mi2.png)
+
+3. **Filling in Material Issue Details**
+   The form includes the following fields:
+
+   - **Number**: Auto-generated unique identifier for the material issue.
+
+   ![Number Field](/images/docs/stores/material-issue/mi3.png)
+
+   - **Issue Date**: The default value is the current date. You can modify this by selecting a date from the calendar.
+
+   ![Issue Date Field](/images/docs/stores/material-issue/mi4.png)
+
+   - **Warehouse**: A dropdown list where the you should select the warehouse associated with the material issue.
+
+   ![Warehouse Field](/images/docs/stores/material-issue/mi5.png)
+
+   If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+   - **Type**: Text field where you can mention the type of material request.
+
+   ![Type Field](/images/docs/stores/material-issue/mi6.png)
+
+   - **Status**: A dropdown list to set the status of the material issue.
+
+   ![Status Field](/images/docs/stores/material-issue/mi7.png)
+
+   To understand better about all the options available, please refer [Status in ERPZ](/miscellaneous/status-in-erpz) 
+
+   - **Material Request**: Another dropdown where you can link a specific material request to the issue.
+
+   ![Material Request Field](/images/docs/stores/material-issue/mi8.png)
+
+   Once you select an existing material request, an popup window will appear with an option to fill the **Itmes** section below this field automatically. If you select **Yes Proceed** then **Items** section will be filled automatically swith all the items available inside the selected material request and if you don't then you need to do that manually from **Items** section.
+
+   ![Material Request Popup](/images/docs/stores/material-issue/mi9.png)
+   
+   ---
+
+   ![Material Request Items Autofilled](/images/docs/stores/material-issue/mi10.png)
+
+   You can edit the items according to your requirements.
+
+   If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+4. **Adding Items to the Material Issue** 
+   - Below the main fields, there is an **Items** section.
+   - Click **Add Row** to add items to the material issue. 
+
+    ![Add Row](/images/docs/stores/material-issue/mi11.png)
+
+   Each row represents a unique item, and a form will appear for each item with the following fields:
+
+   ![Items Form](/images/docs/stores/material-issue/mi12.png)
+
+     - **Product**: Dropdown to select the product being issued.
+
+     ![Select Product](/images/docs/stores/material-issue/mi13.png)
+
+     If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+     - **Quantity (Qty)**: Numeric field to specify the quantity of the item.
+
+     ![Select Quantity](/images/docs/stores/material-issue/mi14.png)
+
+     - **UOM**: Dropdown to select the unit of measure.
+
+     ![Select UOM](/images/docs/stores/material-issue/mi15.png)
+
+     - **Location**: Dropdown to specify the location for the item.
+
+     ![Select Location](/images/docs/stores/material-issue/mi16.png)
+
+     If the desired option does not appear in the search results, please refer to [How to Create An Entity if Not Found](/miscellaneous/create-entity-if-not-found) to understand the whole process.
+
+   - Users can add multiple items by repeating this process for each new item.
+
+5. **Saving the Material Issue** 
+   - Once all fields are completed, click **Save** to create the material issue.
+
+   ![Save](/images/docs/stores/material-issue/mi17.png)
+
+   - The new material issue will appear in the list view, confirming its successful creation.
+
+## Summary
+
+Creating a material issue in ERPZ is straightforward and allows users to manage and track materials effectively. By following these steps, users can specify the materials needed, add relevant items, and store the issue in the system for future reference and tracking.
