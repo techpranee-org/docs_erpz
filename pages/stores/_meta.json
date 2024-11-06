@@ -4,5 +4,8 @@
     "stock": "Stock",
     "grn": "GRN (Goods Reciept)",
     "material-issue": "Material Issue",
+    "stock-audits": "Stock Audits",
+    "stock-reconciliation": "Stock Reconciliation",
+    "stock-movement": "Stock Movement",
     "purchase-request": "Purchase Requests"
 }

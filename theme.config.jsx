@@ -120,7 +120,6 @@ export default {
         enabled: true,  // Ensure the search is enabled
         placeholder: 'Search for documentation',
         emptyResult: 'No results found',
-
     },
 
     // Enable dark mode toggle
@@ -173,7 +172,7 @@ export default {
         float: true, // Float the TOC to the right side of the page
         title: 'On This Page', // Title of the TOC section
         depth: 3,
-        backToTop: 'Scroll To Top'
+        backToTop: true
     },
 
     // Theme switcher configuration

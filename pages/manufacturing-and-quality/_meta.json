@@ -1,5 +1,8 @@
 {
     "material-requests": "Material Requests",
     "bill-of-materials": "Bill of Materials",
+    "method-of-manufacturing": "Method of Manufacturing",
+    "product-specification": "Product Specifications",
+    "test-procedures": "Test Procedures",
     "work-order": "Work Order"
 }

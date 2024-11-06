@@ -1,5 +1,8 @@
 {
     "production-plans": "Production Plans",
     "operations": "Operations",
-    "operators": "Operators"
+    "operators": "Operators",
+    "equipment-types": "Equipment Types",
+    "equipments": "Equipments",
+    "shop-floors": "Shop Floors"
 }

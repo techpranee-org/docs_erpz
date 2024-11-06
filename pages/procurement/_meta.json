@@ -1,4 +1,7 @@
 {
+    "approved-pr": "Approved PR's",
+    "suppliers": "Suppliers",
     "rfq": "Request for Quotation (RFQ's)",
+    "supplier-quote": "Supplier Quotes",
     "purchase-order": "Purchase Orders"
 }
